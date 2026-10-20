@@ -1,0 +1,2 @@
+# No third-party dependencies, including for tests.
+# Reference interpreter: CPython 3.14.5 (see .python-version).

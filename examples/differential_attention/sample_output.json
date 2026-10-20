@@ -1,0 +1,57 @@
+{
+  "example": "Differential Transformer: one attention head before normalization",
+  "paper": "https://arxiv.org/abs/2410.05258v2",
+  "parameters": {
+    "tokens": 4,
+    "head_dimension_d": 1,
+    "value_dimension": 2,
+    "causal": true,
+    "shown_query_index_zero_based": 3,
+    "lambda": 1.0,
+    "shared_value_component": 10.0
+  },
+  "last_query": {
+    "softmax_map_1": [
+      0.4,
+      0.2,
+      0.2,
+      0.2
+    ],
+    "softmax_map_2": [
+      0.1,
+      0.3,
+      0.3,
+      0.3
+    ],
+    "signed_difference_weights": [
+      0.3,
+      -0.1,
+      -0.1,
+      -0.1
+    ],
+    "weight_sum": 0.0,
+    "standard_attention_output": [
+      10.0,
+      0.4
+    ],
+    "differential_attention_output": [
+      0.0,
+      0.3
+    ]
+  },
+  "counterexamples_last_query": {
+    "identical_maps_output": [
+      0.0,
+      0.0
+    ],
+    "nonconstant_background_output": [
+      -0.2,
+      0.3
+    ]
+  },
+  "paper_lambda_parameterization_example": {
+    "layer_one_initial": 0.2,
+    "zero_vectors_layer_one": 0.2
+  },
+  "interpretation": "Values have two channels: constructed background and a token-0 marker. At lambda=1, a constant value channel cancels; unequal maps retain a contrast. Identical maps also cancel useful signal, and a nonconstant background need not cancel. These identities are not evidence of improved LLM performance."
+}
