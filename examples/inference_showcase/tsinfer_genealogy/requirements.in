@@ -1,0 +1,6 @@
+# Direct dependencies; requirements.lock pins and hashes the full dependency set.
+tsinfer==0.5.1
+msprime==1.4.4
+tskit==1.0.3
+# bio2zarr 0.2+ requires Zarr 3, while tsinfer 0.5.1 requires Zarr 2.
+bio2zarr==0.1.6

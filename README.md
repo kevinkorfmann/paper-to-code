@@ -2,9 +2,20 @@
 
 [![Tests](https://github.com/kevinkorfmann/paper-to-code/actions/workflows/tests.yml/badge.svg)](https://github.com/kevinkorfmann/paper-to-code/actions/workflows/tests.yml)
 
-Small, reproducible implementations of ideas from attention and LLM research.
-Each example explains one mechanism, tests its mathematical properties, and
-states what it does not reproduce.
+Small, reproducible examples of ML mechanisms, population-genetic phenomena,
+and inference tools. Each example states its assumptions, tests its behavior,
+and explains its limits.
+
+| Category | Initial example | Reference environment |
+| --- | --- | --- |
+| Paper to code | [Differential attention](examples/differential_attention/README.md) | CPython 3.14.5; standard library |
+| **slimulations** | [Neutral drift and loss of diversity](examples/slimulations/neutral_drift/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
+| Inference showcase | [Genealogy inference with tsinfer](examples/inference_showcase/tsinfer_genealogy/README.md) | CPython 3.12.11; separate hash-locked environment |
+
+The new examples use only synthetic data. Their documentation includes commands,
+seeds, checked output, and tests. The inference example calls an actual inference
+engine; it separately checks genotype preservation and recovery of simulated
+genealogy topology.
 
 ## First example: differential attention
 
@@ -28,7 +39,7 @@ Read the [walkthrough, equations, and limitations](examples/differential_attenti
 inspect the [implementation](examples/differential_attention/model.py), or
 run the four-token experiment below.
 
-## Run
+## Run the differential-attention example
 
 With **CPython 3.14.5** installed:
 
@@ -46,7 +57,7 @@ On Windows, activate with `.venv\Scripts\Activate.ps1` in PowerShell. The test
 and demo commands are otherwise the same.
 
 No GPU, model weights, data downloads, paid API, or third-party Python packages
-are needed. The interpreter is pinned in [.python-version](.python-version);
+are needed for differential attention. Its interpreter is pinned in [.python-version](.python-version);
 [requirements.txt](requirements.txt) records the empty dependency set.
 The demo is deterministic and does not use randomness. Output is rounded to
 nine decimal places; numerical tests use explicit tolerances.
@@ -88,18 +99,21 @@ diff -u examples/differential_attention/sample_output.json /tmp/attention-output
 
 ## Verification
 
-The 25 tests include an independent 60-digit Decimal reference, the `sqrt(d)`
+The 25 differential-attention tests include an independent 60-digit Decimal reference, the `sqrt(d)`
 scale, causal masking in both branches, signed row sums, λ=0 reduction,
 shared-component cancellation, counterexamples, permutation equivariance,
 linearity in values, a finite-difference λ derivative, stable softmax, invalid
 inputs, CLI behavior, and the checked sample output.
 
-[CI](.github/workflows/tests.yml) runs on pushes and pull requests using a
+[CI](.github/workflows/tests.yml) runs all three suites: 25 differential-attention,
+11 SLiM, and 10 inference tests. The SLiM job builds a checksum-verified official
+source revision; the inference job installs the hash-locked package set.
+All jobs run on pushes and pull requests using a
 standard Ubuntu runner, a pinned Python version, official actions pinned by
 commit hash, and read-only repository permissions. It checks the sample output
 byte for byte. Standard GitHub-hosted runners are
 [free for public repositories](https://docs.github.com/en/billing/concepts/product-billing/github-actions).
-There is no scheduled workflow, artifact upload, cache, or external service.
+There is no scheduled workflow, artifact upload, or paid service.
 
 The implementation and explanatory material are original and
 [MIT licensed](LICENSE). No upstream code, paper figures, model weights, private

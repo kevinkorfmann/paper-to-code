@@ -1,0 +1,56 @@
+{
+  "example": "inference-showcase: tsinfer genealogy from synthetic phased variants",
+  "versions": {
+    "python": "3.12.11",
+    "tsinfer": "0.5.1",
+    "tskit": "1.0.3",
+    "msprime": "1.4.4",
+    "bio2zarr": "0.1.6",
+    "numpy": "2.5.4",
+    "zarr": "2.18.7"
+  },
+  "simulation_parameters": {
+    "diploid_individuals": 4,
+    "haploid_genomes": 8,
+    "population_size": 10000,
+    "sequence_length": 100000,
+    "recombination_rate": 0,
+    "mutation_rate": 5e-09,
+    "mutation_model": "BinaryMutationModel",
+    "discrete_genome": true,
+    "ancestry_seed": 104729,
+    "mutation_seed": 104743
+  },
+  "inference_settings": {
+    "num_threads": 0,
+    "recombination_rate": null,
+    "ancestral_states": "known synthetic ancestral alleles",
+    "site_ages_supplied": false,
+    "true_topology_supplied": false
+  },
+  "observed": {
+    "variant_sites": 37,
+    "true_local_trees": 1,
+    "inferred_local_trees_including_unknown_flanks": 3,
+    "inferred_time_units": "uncalibrated",
+    "site_inference_types": {
+      "full": 13,
+      "parsimony": 24
+    },
+    "genotype_reconstruction": {
+      "matching_allele_calls": 296,
+      "total_allele_calls": 296
+    },
+    "topology_comparison": {
+      "scored_span": 97020.0,
+      "excluded_span": 2980.0,
+      "scored_fraction": 0.9702,
+      "clade_precision": 1.0,
+      "clade_recall": 0.5,
+      "shared_clade_span": 291060.0,
+      "true_clade_span": 582120.0,
+      "inferred_clade_span": 291060.0
+    }
+  },
+  "interpretation": "Genotype preservation tests the data representation, not ancestry accuracy. Topology scores compare this one synthetic genealogy on explicitly covered intervals; they are not general tool-performance estimates. Internal times are uncalibrated, not inferred dates or demographic parameters."
+}

@@ -1,2 +1,4 @@
-# No third-party dependencies, including for tests.
+# Differential attention and the SLiM Python wrapper need only the standard library.
 # Reference interpreter: CPython 3.14.5 (see .python-version).
+# SLiM itself is a separate executable. The inference showcase has its own
+# Python 3.12.11 environment and requirements.lock; see its README.

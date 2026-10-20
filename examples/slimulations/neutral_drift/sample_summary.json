@@ -1,0 +1,126 @@
+{
+  "example": "slimulations: neutral drift removes gene diversity faster in small populations",
+  "slim_version": "4.0.1",
+  "replicates_per_population_size": 256,
+  "initial_allele_frequency": 0.5,
+  "formula": "E[2*p_t*(1-p_t)] = 2*p_0*(1-p_0)*(1-1/(2*N))^t",
+  "bounded_mean_comparisons": 20,
+  "simultaneous_hoeffding_tolerance_alpha_1e_minus_6": 0.09245034,
+  "populations": [
+    {
+      "diploid_population_size": 20,
+      "gene_copies": 40,
+      "seed": 20261020,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_allele_frequency": 0.5,
+          "mean_gene_diversity": 0.5,
+          "gene_diversity_standard_error": 0.0,
+          "expected_gene_diversity": 0.5,
+          "fixed_replicates": 0,
+          "lost_replicates": 0,
+          "segregating_replicates": 256
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_allele_frequency": 0.501757812,
+          "mean_gene_diversity": 0.489023437,
+          "gene_diversity_standard_error": 0.001056932,
+          "expected_gene_diversity": 0.4875,
+          "fixed_replicates": 0,
+          "lost_replicates": 0,
+          "segregating_replicates": 256
+        },
+        {
+          "generations_elapsed": 20,
+          "mean_allele_frequency": 0.510058594,
+          "mean_gene_diversity": 0.293696289,
+          "gene_diversity_standard_error": 0.011532931,
+          "expected_gene_diversity": 0.30134384,
+          "fixed_replicates": 28,
+          "lost_replicates": 20,
+          "segregating_replicates": 208
+        },
+        {
+          "generations_elapsed": 40,
+          "mean_allele_frequency": 0.500976562,
+          "mean_gene_diversity": 0.198154297,
+          "gene_diversity_standard_error": 0.012925546,
+          "expected_gene_diversity": 0.18161622,
+          "fixed_replicates": 56,
+          "lost_replicates": 63,
+          "segregating_replicates": 137
+        },
+        {
+          "generations_elapsed": 80,
+          "mean_allele_frequency": 0.471582031,
+          "mean_gene_diversity": 0.074487305,
+          "gene_diversity_standard_error": 0.009640767,
+          "expected_gene_diversity": 0.065968903,
+          "fixed_replicates": 95,
+          "lost_replicates": 106,
+          "segregating_replicates": 55
+        }
+      ]
+    },
+    {
+      "diploid_population_size": 100,
+      "gene_copies": 200,
+      "seed": 20261021,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_allele_frequency": 0.5,
+          "mean_gene_diversity": 0.5,
+          "gene_diversity_standard_error": 0.0,
+          "expected_gene_diversity": 0.5,
+          "fixed_replicates": 0,
+          "lost_replicates": 0,
+          "segregating_replicates": 256
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_allele_frequency": 0.499863281,
+          "mean_gene_diversity": 0.49737207,
+          "gene_diversity_standard_error": 0.000220832,
+          "expected_gene_diversity": 0.4975,
+          "fixed_replicates": 0,
+          "lost_replicates": 0,
+          "segregating_replicates": 256
+        },
+        {
+          "generations_elapsed": 20,
+          "mean_allele_frequency": 0.491328125,
+          "mean_gene_diversity": 0.4524375,
+          "gene_diversity_standard_error": 0.003625292,
+          "expected_gene_diversity": 0.45230524,
+          "fixed_replicates": 0,
+          "lost_replicates": 0,
+          "segregating_replicates": 256
+        },
+        {
+          "generations_elapsed": 40,
+          "mean_allele_frequency": 0.491933594,
+          "mean_gene_diversity": 0.406613477,
+          "gene_diversity_standard_error": 0.006474519,
+          "expected_gene_diversity": 0.409160061,
+          "fixed_replicates": 0,
+          "lost_replicates": 0,
+          "segregating_replicates": 256
+        },
+        {
+          "generations_elapsed": 80,
+          "mean_allele_frequency": 0.490625,
+          "mean_gene_diversity": 0.340025,
+          "gene_diversity_standard_error": 0.009957965,
+          "expected_gene_diversity": 0.33482391,
+          "fixed_replicates": 7,
+          "lost_replicates": 8,
+          "segregating_replicates": 241
+        }
+      ]
+    }
+  ],
+  "interpretation": "H=2p(1-p) is gene diversity from population allele frequency, not the observed fraction of heterozygous individuals. Theory describes an ensemble mean; individual finite trajectories need not decrease monotonically."
+}

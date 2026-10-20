@@ -1,0 +1,53 @@
+// Original SLiM 4.0.1 / Eidos experiment: neutral drift of standing variation.
+// Tick 1 is the initialized population (t=0); each later tick adds one generation.
+initialize() {
+    if (!exists("N")) defineConstant("N", 20);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 256);
+    if (!exists("GENERATIONS")) defineConstant("GENERATIONS", 80);
+    if (!exists("INITIAL_COPIES")) defineConstant("INITIAL_COPIES", N);
+    if ((N < 2) | (N > 1000) | (asInteger(N) != N))
+        stop("N must be an integer in [2, 1000].");
+    if ((REPLICATES < 1) | (REPLICATES > 4096) | (asInteger(REPLICATES) != REPLICATES))
+        stop("REPLICATES must be an integer in [1, 4096].");
+    if ((GENERATIONS < 0) | (GENERATIONS > 500) | (asInteger(GENERATIONS) != GENERATIONS))
+        stop("GENERATIONS must be an integer in [0, 500].");
+    if ((INITIAL_COPIES < 0) | (INITIAL_COPIES > 2*N) |
+        (asInteger(INITIAL_COPIES) != INITIAL_COPIES))
+        stop("INITIAL_COPIES must be an integer in [0, 2*N].");
+    initializeSLiMModelType("WF");
+    // Independent parent choices, including incidental selfing, match gene-copy WF theory.
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;  // A fixed marker must remain countable.
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+
+1 early() {
+    for (rep in seqLen(REPLICATES))
+        sim.addSubpop(rep + 1, N);
+}
+
+1 late() {
+    // Introduce standing variation AFTER tick 1's reproduction, before recording t=0.
+    for (pop in sim.subpopulations) {
+        // Separate populations have no migration and each has one neutral marker.
+        if (INITIAL_COPIES > 0)
+            pop.genomes[seqLen(INITIAL_COPIES)].addNewDrawnMutation(m1, 0);
+    }
+}
+
+1:501 late() {
+    elapsed = community.tick - 1;
+    checkpoints = unique(c(0, 1, asInteger(GENERATIONS/4), asInteger(GENERATIONS/2), GENERATIONS));
+    if (any(elapsed == checkpoints)) {
+        for (pop in sim.subpopulations) {
+            copies = sum(pop.genomes.countOfMutationsOfType(m1));
+            catn("DATA," + elapsed + "," + (pop.id - 1) + "," + N + "," + copies);
+        }
+    }
+    if (elapsed == GENERATIONS)
+        sim.simulationFinished();
+}
