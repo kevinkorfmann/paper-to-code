@@ -59,6 +59,9 @@ If SLiM 4.0.1 is unavailable, the
 [CI build recipe](../../../.github/workflows/tests.yml) downloads its pinned
 official source, verifies SHA-256, and builds only the CLI with CMake and a C++
 compiler in a temporary directory. It does not install or replace system tools.
+The build passes `-include cstdint` to supply the standard integer-type header
+that this older source expects transitively; current GCC requires it explicitly.
+This compatibility flag does not alter the simulation algorithm.
 The wrapper intentionally rejects other SLiM versions instead of silently
 treating their random output or APIs as interchangeable.
 

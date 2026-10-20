@@ -3,6 +3,7 @@
 import argparse
 from collections import Counter
 import csv
+import hashlib
 from importlib.metadata import version
 import json
 from pathlib import Path
@@ -19,6 +20,15 @@ import zarr
 ANCESTRY_SEED = 104729
 MUTATION_SEED = 104743
 SEQUENCE_LENGTH = 100000
+SOURCE_SHA256 = "651cf6710a86774d66505eb089e1235ec8428e25acd34bca9a4b5037670bec0d"
+
+
+def load_source_fixture():
+    """The seeded synthetic realization is frozen for cross-platform comparison."""
+    path = Path(__file__).with_name("synthetic_source.trees")
+    if hashlib.sha256(path.read_bytes()).hexdigest() != SOURCE_SHA256:
+        raise ValueError("Synthetic source fixture checksum does not match")
+    return tskit.load(path)
 
 
 def simulate_source(ancestry_seed=ANCESTRY_SEED, mutation_seed=MUTATION_SEED):
@@ -123,10 +133,10 @@ def write_variants(source, path):
             ])
 
 
-def run_pipeline(output_dir, ancestry_seed=ANCESTRY_SEED, mutation_seed=MUTATION_SEED):
+def run_pipeline(output_dir, *, resimulate=False):
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=False)
-    source = simulate_source(ancestry_seed, mutation_seed)
+    source = simulate_source() if resimulate else load_source_fixture()
     if source.num_sites == 0:
         raise ValueError("Synthetic input has no variant sites")
     source.dump(output_dir / "source.trees")
@@ -137,6 +147,10 @@ def run_pipeline(output_dir, ancestry_seed=ANCESTRY_SEED, mutation_seed=MUTATION
     inferred.dump(output_dir / "inferred.trees")
     report = {
         "example": "inference-showcase: tsinfer genealogy from synthetic phased variants",
+        "input": {
+            "mode": "fresh seeded simulation" if resimulate else "frozen seeded synthetic fixture",
+            "fixture_sha256": None if resimulate else SOURCE_SHA256,
+        },
         "versions": {
             "python": platform.python_version(),
             **{name: version(name) for name in ("tsinfer", "tskit", "msprime", "bio2zarr", "numpy", "zarr")},
@@ -146,7 +160,7 @@ def run_pipeline(output_dir, ancestry_seed=ANCESTRY_SEED, mutation_seed=MUTATION
             "population_size": 10000, "sequence_length": SEQUENCE_LENGTH,
             "recombination_rate": 0, "mutation_rate": 5e-9,
             "mutation_model": "BinaryMutationModel", "discrete_genome": True,
-            "ancestry_seed": ancestry_seed, "mutation_seed": mutation_seed,
+            "ancestry_seed": ANCESTRY_SEED, "mutation_seed": MUTATION_SEED,
         },
         "inference_settings": {
             "num_threads": 0, "recombination_rate": None,
@@ -175,17 +189,20 @@ def run_pipeline(output_dir, ancestry_seed=ANCESTRY_SEED, mutation_seed=MUTATION
     return source, variants, inferred, report
 
 
-def build_report():
+def build_report(*, resimulate=False):
     with tempfile.TemporaryDirectory(prefix="tsinfer-example-") as temporary:
-        return run_pipeline(Path(temporary) / "run")[-1]
+        return run_pipeline(Path(temporary) / "run", resimulate=resimulate)[-1]
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, help="new directory for variants, trees, and summary")
+    parser.add_argument("--resimulate", action="store_true",
+                        help="regenerate the seeded input; exact allele placement may vary by platform")
     args = parser.parse_args()
     try:
-        report = build_report() if args.output_dir is None else run_pipeline(args.output_dir)[-1]
+        report = (build_report(resimulate=args.resimulate) if args.output_dir is None
+                  else run_pipeline(args.output_dir, resimulate=args.resimulate)[-1])
     except (OSError, ValueError) as error:
         parser.error(str(error))
     print(json.dumps(report, indent=2, allow_nan=False))

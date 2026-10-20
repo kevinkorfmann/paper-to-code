@@ -30,6 +30,13 @@ class InferenceTests(unittest.TestCase):
         self.assertEqual(self.inferred.num_samples, 8)
         self.assertEqual(self.source.num_sites, 37)
 
+    def test_seeded_generator_is_available_without_assuming_cross_platform_byte_identity(self):
+        regenerated = simulate_source()
+        self.assertEqual(regenerated.num_samples, 8)
+        self.assertEqual(regenerated.num_trees, 1)
+        self.assertGreater(regenerated.num_sites, 0)
+        self.assertEqual(regenerated.num_provenances, 0)
+
     def test_no_truth_times_in_variant_input(self):
         self.assertTrue(all(tskit.is_unknown_time(x) for x in self.variants.sites_time[:]))
         self.assertTrue(all(tskit.is_unknown_time(x) for x in self.variants.individuals_time[:]))

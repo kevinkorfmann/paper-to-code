@@ -1,5 +1,9 @@
 {
   "example": "inference-showcase: tsinfer genealogy from synthetic phased variants",
+  "input": {
+    "mode": "frozen seeded synthetic fixture",
+    "fixture_sha256": "651cf6710a86774d66505eb089e1235ec8428e25acd34bca9a4b5037670bec0d"
+  },
   "versions": {
     "python": "3.12.11",
     "tsinfer": "0.5.1",

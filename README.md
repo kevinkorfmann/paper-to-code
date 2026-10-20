@@ -106,7 +106,7 @@ linearity in values, a finite-difference λ derivative, stable softmax, invalid
 inputs, CLI behavior, and the checked sample output.
 
 [CI](.github/workflows/tests.yml) runs all three suites: 25 differential-attention,
-11 SLiM, and 10 inference tests. The SLiM job builds a checksum-verified official
+11 SLiM, and 11 inference tests. The SLiM job builds a checksum-verified official
 source revision; the inference job installs the hash-locked package set.
 All jobs run on pushes and pull requests using a
 standard Ubuntu runner, a pinned Python version, official actions pinned by
@@ -116,6 +116,7 @@ byte for byte. Standard GitHub-hosted runners are
 There is no scheduled workflow, artifact upload, or paid service.
 
 The implementation and explanatory material are original and
-[MIT licensed](LICENSE). No upstream code, paper figures, model weights, private
-research, or datasets are redistributed. Citations identify the source idea,
+[MIT licensed](LICENSE). Synthetic fixtures are included for reproducibility.
+No upstream code, paper figures, model weights, private research, or real-world
+genetic data are redistributed. Citations identify the source idea,
 not an endorsement by the paper's authors.

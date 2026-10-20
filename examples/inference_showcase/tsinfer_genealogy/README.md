@@ -63,13 +63,35 @@ The output directory must be new. It contains `input_variants.csv`, `input.vcz`,
 `source.trees`, `inferred.trees`, and `summary.json`. `results/` is git-ignored.
 Running without this option uses a temporary directory and prints only JSON.
 
-## Synthetic experiment
+## Synthetic experiment and frozen input
 
-The simulator creates four diploid individuals (eight phased genomes) under a
+The committed input was generated as four diploid individuals (eight phased genomes) under a
 constant-size coalescent model with N=10,000, a 100,000-base region, and no
 recombination. Binary mutations occur at rate 5×10^-9 per base per generation
 on a discrete genome. Ancestry seed: **104729**. Mutation seed: **104743**.
 These values are illustrative; no seeds were searched for a favorable outcome.
+The generation environment was the pinned Python/package set on macOS arm64.
+
+**Default runs use the frozen [synthetic_source.trees](synthetic_source.trees)
+fixture**, verified against SHA-256
+`651cf6710a86774d66505eb089e1235ec8428e25acd34bca9a4b5037670bec0d`.
+This file is only 8,228 bytes and contains synthetic ancestry, mutations, and
+four unnamed individuals; it has no provenance records or personal metadata.
+Freezing the input is intentional: CI found that the same msprime seeds can
+place some singleton mutations on different samples on Linux versus macOS,
+even with the same pinned package versions. Seeds alone are not a promise of
+byte-identical simulations across platforms.
+
+The original generator remains executable:
+
+```sh
+.venv-inference/bin/python -m examples.inference_showcase.tsinfer_genealogy.demo \
+  --resimulate --output-dir results/tsinfer-resimulated
+```
+
+This mode reports that it used a fresh simulation; its exact input or metrics
+may differ from the frozen reference. Every normal run still executes the
+real inference pipeline afresh. It never loads a saved inferred result.
 
 The seeded result has one true local tree and 37 variant sites. The
 [checked input CSV](sample_input.csv) contains every allele used, with synthetic
@@ -141,11 +163,12 @@ tsinfer's representation behavior, not validation of the inferred genealogy.
 
 ## Tests and limits
 
-The 10 tests execute the pinned tools and check all allele calls and positions,
+The 11 tests execute the pinned tools and check all allele calls and positions,
 the committed CSV/summary, deterministic repeat inference, withheld truth times,
 and the uncalibrated time label. They validate the scoring code against the
 truth itself and an unresolved star tree, detect changed alleles, reject
 mismatched sample counts and lengths, and protect an existing output directory.
+They also execute the seeded generator without assuming cross-platform identity.
 The repository's Ubuntu CI repeats the complete inference.
 
 This does **not** infer population size, migration, selection, calibrated dates,
