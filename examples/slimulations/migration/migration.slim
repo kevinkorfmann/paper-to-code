@@ -1,0 +1,51 @@
+// Two equal-size WF demes per independent replicate. SLiM 4.0.1 / Eidos.
+initialize() {
+    if (!exists("N")) defineConstant("N", 50);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 256);
+    if (!exists("GENERATIONS")) defineConstant("GENERATIONS", 20);
+    if (!exists("MIGRATION")) defineConstant("MIGRATION", 0.05);
+    if ((N < 2) | (N > 1000) | (asInteger(N) != N)) stop("invalid N");
+    if ((REPLICATES < 1) | (REPLICATES > 1024) | (asInteger(REPLICATES) != REPLICATES))
+        stop("invalid REPLICATES");
+    if ((GENERATIONS < 0) | (GENERATIONS > 100) | (asInteger(GENERATIONS) != GENERATIONS))
+        stop("invalid GENERATIONS");
+    if (!isFinite(asFloat(MIGRATION)) | (MIGRATION < 0.0) | (MIGRATION > 1.0))
+        stop("invalid MIGRATION");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+
+1 early() {
+    for (rep in seqLen(REPLICATES)) {
+        a = sim.addSubpop(2*rep + 1, N);
+        b = sim.addSubpop(2*rep + 2, N);
+        // In WF, migration is the fraction of offspring assigned to this source.
+        a.setMigrationRates(b, MIGRATION);
+        b.setMigrationRates(a, MIGRATION);
+    }
+}
+
+1 late() {
+    // Initialize AFTER tick 1 reproduction. Each pair has a separate neutral marker.
+    for (rep in seqLen(REPLICATES))
+        sim.subpopulations[2*rep].genomes.addNewDrawnMutation(m1, 0);
+}
+
+1:101 late() {
+    elapsed = community.tick - 1;
+    checkpoints = unique(c(0, 1, asInteger(GENERATIONS/4), asInteger(GENERATIONS/2), GENERATIONS));
+    if (any(elapsed == checkpoints)) {
+        for (rep in seqLen(REPLICATES)) {
+            a = sum(sim.subpopulations[2*rep].genomes.countOfMutationsOfType(m1));
+            b = sum(sim.subpopulations[2*rep+1].genomes.countOfMutationsOfType(m1));
+            catn("DATA," + elapsed + "," + rep + "," + a + "," + b);
+        }
+    }
+    if (elapsed == GENERATIONS) sim.simulationFinished();
+}

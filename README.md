@@ -6,16 +6,19 @@ Small, reproducible examples of ML mechanisms, population-genetic phenomena,
 and inference tools. Each example states its assumptions, tests its behavior,
 and explains its limits.
 
-| Category | Initial example | Reference environment |
-| --- | --- | --- |
-| Paper to code | [Differential attention](examples/differential_attention/README.md) | CPython 3.14.5; standard library |
-| **slimulations** | [Neutral drift and loss of diversity](examples/slimulations/neutral_drift/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
-| Inference showcase | [Genealogy inference with tsinfer](examples/inference_showcase/tsinfer_genealogy/README.md) | CPython 3.12.11; separate hash-locked environment |
+| Date | Category | Example | Reference environment |
+| --- | --- | --- | --- |
+| 2026-10-21 | Paper to code | [Gated attention](examples/gated_attention/README.md) | CPython 3.14.5; standard library |
+| 2026-10-21 | **slimulations** | [Migration erodes divergence](examples/slimulations/migration/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
+| 2026-10-21 | Inference showcase | [Mutation-clock dating with tsdate](examples/inference_showcase/tsdate_clock/README.md) | CPython 3.12.11; separate hash-locked environment |
+| 2026-10-20 | Paper to code | [Differential attention](examples/differential_attention/README.md) | CPython 3.14.5; standard library |
+| 2026-10-20 | **slimulations** | [Neutral drift and loss of diversity](examples/slimulations/neutral_drift/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
+| 2026-10-20 | Inference showcase | [Genealogy inference with tsinfer](examples/inference_showcase/tsinfer_genealogy/README.md) | CPython 3.12.11; separate hash-locked environment |
 
-The new examples use only synthetic data. Their documentation includes commands,
-seeds, checked output, and tests. The inference example calls an actual inference
-engine; it separately checks genotype preservation and recovery of simulated
-genealogy topology.
+The examples use only constructed inputs or synthetic data. Their documentation
+includes commands, seeds where applicable, checked output, and tests. The two
+inference examples call actual tools: tsinfer estimates topology; tsdate estimates
+node ages conditional on a supplied topology and mutation clock.
 
 ## First example: differential attention
 
@@ -105,13 +108,14 @@ shared-component cancellation, counterexamples, permutation equivariance,
 linearity in values, a finite-difference λ derivative, stable softmax, invalid
 inputs, CLI behavior, and the checked sample output.
 
-[CI](.github/workflows/tests.yml) runs all three suites: 25 differential-attention,
-11 SLiM, and 11 inference tests. The SLiM job builds a checksum-verified official
+[CI](.github/workflows/tests.yml) runs all **82 tests**: 25 differential-attention,
+12 gated-attention, 11 neutral-drift, 11 migration, 11 tsinfer, and 12 tsdate tests.
+The SLiM job builds a checksum-verified official
 source revision; the inference job installs the hash-locked package set.
 All jobs run on pushes and pull requests using a
 standard Ubuntu runner, a pinned Python version, official actions pinned by
 commit hash, and read-only repository permissions. It checks the sample output
-byte for byte. Standard GitHub-hosted runners are
+byte for byte except for tsdate's documented numerical tolerance. Standard GitHub-hosted runners are
 [free for public repositories](https://docs.github.com/en/billing/concepts/product-billing/github-actions).
 There is no scheduled workflow, artifact upload, or paid service.
 

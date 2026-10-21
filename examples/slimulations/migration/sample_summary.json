@@ -1,0 +1,116 @@
+{
+  "example": "slimulations: migration erodes divergence between two demes",
+  "slim_version": "4.0.1",
+  "diploid_individuals_per_deme": 50,
+  "independent_pairs_per_treatment": 256,
+  "initial_p1": 1.0,
+  "initial_p2": 0.0,
+  "formula": "E[p1_t - p2_t] = (1 - 2*m)^t; E[(p1_t+p2_t)/2] = 0.5",
+  "bounded_mean_comparisons": 20,
+  "simultaneous_difference_tolerance_alpha_1e_minus_6": 0.369801362,
+  "treatments": [
+    {
+      "migration_fraction": 0.0,
+      "seed": 20261021,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_p1_minus_p2": 1.0,
+          "difference_standard_error": 0.0,
+          "expected_p1_minus_p2": 1.0,
+          "mean_pooled_frequency": 0.5,
+          "min_realized_difference": 1.0,
+          "max_realized_difference": 1.0
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_p1_minus_p2": 1.0,
+          "difference_standard_error": 0.0,
+          "expected_p1_minus_p2": 1.0,
+          "mean_pooled_frequency": 0.5,
+          "min_realized_difference": 1.0,
+          "max_realized_difference": 1.0
+        },
+        {
+          "generations_elapsed": 5,
+          "mean_p1_minus_p2": 1.0,
+          "difference_standard_error": 0.0,
+          "expected_p1_minus_p2": 1.0,
+          "mean_pooled_frequency": 0.5,
+          "min_realized_difference": 1.0,
+          "max_realized_difference": 1.0
+        },
+        {
+          "generations_elapsed": 10,
+          "mean_p1_minus_p2": 1.0,
+          "difference_standard_error": 0.0,
+          "expected_p1_minus_p2": 1.0,
+          "mean_pooled_frequency": 0.5,
+          "min_realized_difference": 1.0,
+          "max_realized_difference": 1.0
+        },
+        {
+          "generations_elapsed": 20,
+          "mean_p1_minus_p2": 1.0,
+          "difference_standard_error": 0.0,
+          "expected_p1_minus_p2": 1.0,
+          "mean_pooled_frequency": 0.5,
+          "min_realized_difference": 1.0,
+          "max_realized_difference": 1.0
+        }
+      ]
+    },
+    {
+      "migration_fraction": 0.05,
+      "seed": 20261022,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_p1_minus_p2": 1.0,
+          "difference_standard_error": 0.0,
+          "expected_p1_minus_p2": 1.0,
+          "mean_pooled_frequency": 0.5,
+          "min_realized_difference": 1.0,
+          "max_realized_difference": 1.0
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_p1_minus_p2": 0.89796875,
+          "difference_standard_error": 0.002832496,
+          "expected_p1_minus_p2": 0.9,
+          "mean_pooled_frequency": 0.499140625,
+          "min_realized_difference": 0.76,
+          "max_realized_difference": 1.0
+        },
+        {
+          "generations_elapsed": 5,
+          "mean_p1_minus_p2": 0.58890625,
+          "difference_standard_error": 0.006910773,
+          "expected_p1_minus_p2": 0.59049,
+          "mean_pooled_frequency": 0.49828125,
+          "min_realized_difference": 0.3,
+          "max_realized_difference": 0.86
+        },
+        {
+          "generations_elapsed": 10,
+          "mean_p1_minus_p2": 0.340742188,
+          "difference_standard_error": 0.008349151,
+          "expected_p1_minus_p2": 0.34867844,
+          "mean_pooled_frequency": 0.501035156,
+          "min_realized_difference": 0.0,
+          "max_realized_difference": 0.69
+        },
+        {
+          "generations_elapsed": 20,
+          "mean_p1_minus_p2": 0.10609375,
+          "difference_standard_error": 0.00972295,
+          "expected_p1_minus_p2": 0.121576655,
+          "mean_pooled_frequency": 0.49859375,
+          "min_realized_difference": -0.27,
+          "max_realized_difference": 0.61
+        }
+      ]
+    }
+  ],
+  "interpretation": "The expectation concerns signed frequency difference, not absolute difference or F_ST. Drift leaves finite replicate scatter, including reversals; pooling preserves frequency only in expectation."
+}

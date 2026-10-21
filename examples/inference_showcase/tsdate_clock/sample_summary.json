@@ -1,0 +1,43 @@
+{
+  "example": "tsdate: mutation-clock dating conditional on a known topology",
+  "versions": {
+    "tsdate": "0.2.7",
+    "tskit": "1.0.3",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "numba": "0.68.0"
+  },
+  "seed": 20261021,
+  "sequence_length": 1000000.0,
+  "samples": 4,
+  "internal_nodes": 3,
+  "sites": 144,
+  "mutations": 144,
+  "assumed_mutation_rate_per_base_per_generation": 1e-07,
+  "method": "variational_gamma; 25 EP iterations; rescaling disabled",
+  "genotype_calls_preserved": true,
+  "node_results": [
+    {
+      "node": 4,
+      "true_time_generations_for_evaluation_only": 100,
+      "posterior_mean_generations": 95.952075,
+      "posterior_sd_generations": 20.863321,
+      "posterior_mean_at_double_assumed_rate": 47.976037
+    },
+    {
+      "node": 5,
+      "true_time_generations_for_evaluation_only": 200,
+      "posterior_mean_generations": 272.46133,
+      "posterior_sd_generations": 34.29428,
+      "posterior_mean_at_double_assumed_rate": 136.230665
+    },
+    {
+      "node": 6,
+      "true_time_generations_for_evaluation_only": 500,
+      "posterior_mean_generations": 545.793297,
+      "posterior_sd_generations": 47.236757,
+      "posterior_mean_at_double_assumed_rate": 272.896649
+    }
+  ],
+  "interpretation": "Ages are inferred from mutation counts and an assumed clock conditional on a supplied topology. True ages are withheld from inference. Doubling the assumed mutation rate approximately halves ages; this is a clock sensitivity example, not a benchmark or demographic inference."
+}

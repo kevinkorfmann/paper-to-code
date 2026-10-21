@@ -1,0 +1,61 @@
+{
+  "example": "query-dependent headwise sigmoid gating after SDPA",
+  "randomness": "none; inputs and gate weights are constructed, not trained",
+  "queries": [
+    {
+      "gate_logit": -2.197224577,
+      "gate": 0.1,
+      "attention_map": [
+        0.8,
+        0.1,
+        0.1
+      ],
+      "ordinary_output": [
+        10.0,
+        0.8
+      ],
+      "gated_output": [
+        1.0,
+        0.08
+      ],
+      "effective_coefficient_sum": 0.1
+    },
+    {
+      "gate_logit": 0.0,
+      "gate": 0.5,
+      "attention_map": [
+        0.8,
+        0.1,
+        0.1
+      ],
+      "ordinary_output": [
+        10.0,
+        0.8
+      ],
+      "gated_output": [
+        5.0,
+        0.4
+      ],
+      "effective_coefficient_sum": 0.5
+    },
+    {
+      "gate_logit": 2.197224577,
+      "gate": 0.9,
+      "attention_map": [
+        0.8,
+        0.1,
+        0.1
+      ],
+      "ordinary_output": [
+        10.0,
+        0.8
+      ],
+      "gated_output": [
+        9.0,
+        0.72
+      ],
+      "effective_coefficient_sum": 0.9
+    }
+  ],
+  "interpretation": "The scalar gate shrinks both channels equally. For these fixed Q/K, attention still assigns 80% to token 0: this is not evidence that a gate alone removes an attention sink, improves an LLM, or saves compute."
+}
