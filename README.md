@@ -8,6 +8,9 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-10-23 | Paper to code | [Multi-head attention residuals](examples/multi_head_attention_residuals/README.md) | CPython 3.14.5; standard library |
+| 2026-10-23 | **slimulations** | [Selfing removes heterozygotes](examples/slimulations/selfing/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
+| 2026-10-23 | Inference showcase | [Conditional size-change inference with dadi](examples/inference_showcase/dadi_size_change/README.md) | CPython 3.12.11; separate hash-locked environment |
 | 2026-10-21 | Paper to code | [Gated attention](examples/gated_attention/README.md) | CPython 3.14.5; standard library |
 | 2026-10-21 | **slimulations** | [Migration erodes divergence](examples/slimulations/migration/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-10-21 | Inference showcase | [Mutation-clock dating with tsdate](examples/inference_showcase/tsdate_clock/README.md) | CPython 3.12.11; separate hash-locked environment |
@@ -16,9 +19,10 @@ and explains its limits.
 | 2026-10-20 | Inference showcase | [Genealogy inference with tsinfer](examples/inference_showcase/tsinfer_genealogy/README.md) | CPython 3.12.11; separate hash-locked environment |
 
 The examples use only constructed inputs or synthetic data. Their documentation
-includes commands, seeds where applicable, checked output, and tests. The two
+includes commands, seeds where applicable, checked output, and tests. The three
 inference examples call actual tools: tsinfer estimates topology; tsdate estimates
-node ages conditional on a supplied topology and mutation clock.
+node ages conditional on a supplied topology and mutation clock; dadi estimates
+a population-size ratio conditional on a supplied change time.
 
 ## First example: differential attention
 
@@ -108,14 +112,15 @@ shared-component cancellation, counterexamples, permutation equivariance,
 linearity in values, a finite-difference λ derivative, stable softmax, invalid
 inputs, CLI behavior, and the checked sample output.
 
-[CI](.github/workflows/tests.yml) runs all **82 tests**: 25 differential-attention,
-12 gated-attention, 11 neutral-drift, 11 migration, 11 tsinfer, and 12 tsdate tests.
+[CI](.github/workflows/tests.yml) runs all **127 tests**: 25 differential-attention,
+12 gated-attention, 18 multi-head attention-residual, 11 neutral-drift,
+11 migration, 12 selfing, 11 tsinfer, 12 tsdate, and 15 dadi tests.
 The SLiM job builds a checksum-verified official
-source revision; the inference job installs the hash-locked package set.
+source revision; the inference jobs install their separate hash-locked package sets.
 All jobs run on pushes and pull requests using a
 standard Ubuntu runner, a pinned Python version, official actions pinned by
 commit hash, and read-only repository permissions. It checks the sample output
-byte for byte except for tsdate's documented numerical tolerance. Standard GitHub-hosted runners are
+byte for byte except for tsdate's and dadi's documented numerical tolerances. Standard GitHub-hosted runners are
 [free for public repositories](https://docs.github.com/en/billing/concepts/product-billing/github-actions).
 There is no scheduled workflow, artifact upload, or paid service.
 

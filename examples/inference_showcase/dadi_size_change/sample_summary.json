@@ -1,0 +1,104 @@
+{
+  "example": "dadi: estimate a size ratio conditional on a fixed change time",
+  "versions": {
+    "dadi": "2.4.4",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "nlopt": "2.11.0"
+  },
+  "generator_seed": 20261023,
+  "haploid_sample_size": 20,
+  "segregating_sites": 2307,
+  "input_counts_bins_1_to_n_minus_1": [
+    881,
+    370,
+    216,
+    118,
+    122,
+    91,
+    72,
+    76,
+    48,
+    43,
+    57,
+    26,
+    42,
+    20,
+    28,
+    31,
+    22,
+    22,
+    22
+  ],
+  "optimizer": "dadi NLopt BOBYQA; direct nu; starts 0.5, 2, 6; bounds 0.2 to 10",
+  "fit": {
+    "fixed_time_2Nanc_generations": 0.2,
+    "grids": [
+      40,
+      50,
+      60
+    ],
+    "nu": 2.728412,
+    "theta": 514.188227,
+    "profile_poisson_log_likelihood": -77.643537,
+    "constant_size_profile_log_likelihood": -150.881943,
+    "nu_from_each_start": [
+      2.728412,
+      2.728412,
+      2.728412
+    ]
+  },
+  "assumed_time_0_8_control": {
+    "fixed_time_2Nanc_generations": 0.8,
+    "grids": [
+      40,
+      50,
+      60
+    ],
+    "nu": 2.38662,
+    "theta": 409.592893,
+    "profile_poisson_log_likelihood": -73.399148,
+    "constant_size_profile_log_likelihood": -150.881943,
+    "nu_from_each_start": [
+      2.38662,
+      2.38662,
+      2.38662
+    ]
+  },
+  "refined_grid_fit": {
+    "fixed_time_2Nanc_generations": 0.2,
+    "grids": [
+      60,
+      70,
+      80
+    ],
+    "nu": 2.721641,
+    "theta": 513.372544,
+    "profile_poisson_log_likelihood": -77.531787,
+    "constant_size_profile_log_likelihood": -150.440875,
+    "nu_from_each_start": [
+      2.721641,
+      2.721641,
+      2.721641
+    ]
+  },
+  "same_solver_noiseless_control": {
+    "fixed_time_2Nanc_generations": 0.2,
+    "grids": [
+      40,
+      50,
+      60
+    ],
+    "nu": 3.0,
+    "theta": 500.0,
+    "profile_poisson_log_likelihood": -57.378574,
+    "constant_size_profile_log_likelihood": -132.334427,
+    "nu_from_each_start": [
+      3.0,
+      3.0,
+      3.0
+    ]
+  },
+  "grid_refinement_relative_nu_change": 0.002481,
+  "interpretation": "nu is Ncurrent/Nancestral, conditional on an assumed time. Theta is a profiled nuisance scale. In the default checked run, the wrong-time control changes the answer and fits better. This does not identify a unique history or absolute population size."
+}

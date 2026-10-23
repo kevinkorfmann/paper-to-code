@@ -1,0 +1,56 @@
+// Original SLiM 4.0.1 experiment: every individual starts as Aa.
+initialize() {
+    if (!exists("N")) defineConstant("N", 100);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 256);
+    if (!exists("GENERATIONS")) defineConstant("GENERATIONS", 8);
+    if (!exists("SELFING")) defineConstant("SELFING", 1.0);
+    if (!exists("INITIAL_STATE")) defineConstant("INITIAL_STATE", 1);
+    if ((N < 2) | (N > 1000) | (asInteger(N) != N)) stop("invalid N");
+    if ((REPLICATES < 1) | (REPLICATES > 1024) | (asInteger(REPLICATES) != REPLICATES))
+        stop("invalid REPLICATES");
+    if ((GENERATIONS < 0) | (GENERATIONS > 50) | (asInteger(GENERATIONS) != GENERATIONS))
+        stop("invalid GENERATIONS");
+    if (!any(SELFING == c(0.0, 1.0))) stop("SELFING must be 0 or 1");
+    if (!any(INITIAL_STATE == c(0, 1, 2))) stop("INITIAL_STATE must be 0, 1, or 2");
+    initializeSLiMModelType("WF");
+    // Independent parental sampling in the random-mating control includes selfing by chance.
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+
+1 early() {
+    for (rep in seqLen(REPLICATES)) {
+        pop = sim.addSubpop(rep+1, N);
+        pop.setSelfingRate(asFloat(SELFING));
+    }
+}
+
+1 late() {
+    // t=0 is after tick 1 reproduction. State 1 means every individual is Aa.
+    for (pop in sim.subpopulations) {
+        if (INITIAL_STATE == 1)
+            pop.individuals.genome1.addNewDrawnMutation(m1, 0);
+        if (INITIAL_STATE == 2)
+            pop.genomes.addNewDrawnMutation(m1, 0);
+    }
+}
+
+1:51 late() {
+    elapsed = community.tick-1;
+    checkpoints = unique(c(0, 1, asInteger(GENERATIONS/4), asInteger(GENERATIONS/2), GENERATIONS));
+    if (any(elapsed == checkpoints)) {
+        for (pop in sim.subpopulations) {
+            first = pop.individuals.genome1.countOfMutationsOfType(m1);
+            second = pop.individuals.genome2.countOfMutationsOfType(m1);
+            heterozygotes = sum(first != second);
+            copies = sum(first) + sum(second);
+            catn("DATA," + elapsed + "," + (pop.id-1) + "," + copies + "," + heterozygotes);
+        }
+    }
+    if (elapsed == GENERATIONS) sim.simulationFinished();
+}

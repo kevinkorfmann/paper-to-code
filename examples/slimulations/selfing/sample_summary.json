@@ -1,0 +1,108 @@
+{
+  "example": "slimulations: selfing removes heterozygotes without selection",
+  "slim_version": "4.0.1",
+  "diploid_population_size": 100,
+  "replicates_per_treatment": 256,
+  "initial_state": "all individuals Aa; p=0.5; H_obs=1",
+  "complete_selfing_formula": "E[H_obs(t)] = 2^(-t)",
+  "random_mating_formula_for_t_ge_1": "E[H_obs(t)] = 0.5*(1-1/(2*N))^(t-1)",
+  "bounded_mean_comparisons": 20,
+  "simultaneous_mean_tolerance_alpha_1e_minus_6": 0.184900681,
+  "treatments": [
+    {
+      "mode": "random_mating",
+      "explicit_selfing_fraction": 0,
+      "seed": 20261023,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_observed_heterozygosity": 1.0,
+          "heterozygosity_standard_error": 0.0,
+          "expected_observed_heterozygosity": 1.0,
+          "mean_allele_frequency": 0.5,
+          "mean_gene_diversity_2p1_minus_p": 0.5
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_observed_heterozygosity": 0.497382812,
+          "heterozygosity_standard_error": 0.002943885,
+          "expected_observed_heterozygosity": 0.5,
+          "mean_allele_frequency": 0.500605469,
+          "mean_gene_diversity_2p1_minus_p": 0.497575977
+        },
+        {
+          "generations_elapsed": 2,
+          "mean_observed_heterozygosity": 0.499296875,
+          "heterozygosity_standard_error": 0.003117573,
+          "expected_observed_heterozygosity": 0.4975,
+          "mean_allele_frequency": 0.5015625,
+          "mean_gene_diversity_2p1_minus_p": 0.495058203
+        },
+        {
+          "generations_elapsed": 4,
+          "mean_observed_heterozygosity": 0.490390625,
+          "heterozygosity_standard_error": 0.003292708,
+          "expected_observed_heterozygosity": 0.492537438,
+          "mean_allele_frequency": 0.500976562,
+          "mean_gene_diversity_2p1_minus_p": 0.489895703
+        },
+        {
+          "generations_elapsed": 8,
+          "mean_observed_heterozygosity": 0.482265625,
+          "heterozygosity_standard_error": 0.003530083,
+          "expected_observed_heterozygosity": 0.482760323,
+          "mean_allele_frequency": 0.50828125,
+          "mean_gene_diversity_2p1_minus_p": 0.47984375
+        }
+      ]
+    },
+    {
+      "mode": "complete_selfing",
+      "explicit_selfing_fraction": 1,
+      "seed": 20261024,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_observed_heterozygosity": 1.0,
+          "heterozygosity_standard_error": 0.0,
+          "expected_observed_heterozygosity": 1.0,
+          "mean_allele_frequency": 0.5,
+          "mean_gene_diversity_2p1_minus_p": 0.5
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_observed_heterozygosity": 0.502929688,
+          "heterozygosity_standard_error": 0.003059116,
+          "expected_observed_heterozygosity": 0.5,
+          "mean_allele_frequency": 0.499511719,
+          "mean_gene_diversity_2p1_minus_p": 0.497767383
+        },
+        {
+          "generations_elapsed": 2,
+          "mean_observed_heterozygosity": 0.252109375,
+          "heterozygosity_standard_error": 0.003148833,
+          "expected_observed_heterozygosity": 0.25,
+          "mean_allele_frequency": 0.501914063,
+          "mean_gene_diversity_2p1_minus_p": 0.494210156
+        },
+        {
+          "generations_elapsed": 4,
+          "mean_observed_heterozygosity": 0.06484375,
+          "heterozygosity_standard_error": 0.001920581,
+          "expected_observed_heterozygosity": 0.0625,
+          "mean_allele_frequency": 0.506328125,
+          "mean_gene_diversity_2p1_minus_p": 0.485096094
+        },
+        {
+          "generations_elapsed": 8,
+          "mean_observed_heterozygosity": 0.004648437,
+          "heterozygosity_standard_error": 0.000649853,
+          "expected_observed_heterozygosity": 0.00390625,
+          "mean_allele_frequency": 0.507832031,
+          "mean_gene_diversity_2p1_minus_p": 0.46689082
+        }
+      ]
+    }
+  ],
+  "interpretation": "H_obs counts heterozygous individuals; 2p(1-p) is gene diversity. They differ under selfing. Ensemble allele frequency remains 0.5, but individual populations drift. No fitness or inbreeding-depression effect is modeled."
+}

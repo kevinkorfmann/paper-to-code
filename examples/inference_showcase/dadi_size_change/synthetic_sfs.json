@@ -1,0 +1,38 @@
+{
+  "generator": "independent Poisson counts; numpy PCG64; dadi two_epoch expectation",
+  "seed": 20261023,
+  "sample_size_haploid": 20,
+  "unfolded_counts_including_masked_corners": [
+    0,
+    881,
+    370,
+    216,
+    118,
+    122,
+    91,
+    72,
+    76,
+    48,
+    43,
+    57,
+    26,
+    42,
+    20,
+    28,
+    31,
+    22,
+    22,
+    22,
+    0
+  ],
+  "truth_for_evaluation_only": {
+    "nu": 3.0,
+    "time_2Nanc_generations": 0.2,
+    "theta": 500.0
+  },
+  "generating_grids": [
+    40,
+    50,
+    60
+  ]
+}
