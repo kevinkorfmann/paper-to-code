@@ -53,10 +53,10 @@ only counts and declared targets.
 
 | Input/control | Mean S_d | Shape b | Selected Poisson log likelihood |
 | --- | ---: | ---: | ---: |
-| Observed counts, stated targets | -15.992979 | 0.577457 | -71.789784 |
-| Same counts, selected target doubled to 4,000,000 | -282.924556 | 0.352551 | -82.082968 |
-| Same counts, finer numerical grid | -15.996884 | 0.577233 | -71.791992 |
-| Noiseless expected counts, same solver | -19.999989 | 0.500000 | -58.551563 |
+| Observed counts, stated targets | -15.99298 | 0.577457 | -71.78978 |
+| Same counts, selected target doubled to 4,000,000 | -282.92459 | 0.352551 | -82.08297 |
+| Same counts, finer numerical grid | -15.99688 | 0.577233 | -71.79199 |
+| Noiseless expected counts, same solver | -20.00000 | 0.500000 | -58.55156 |
 
 The target perturbation preserves **every neutral and selected polymorphic
 count**, the neutral target, and the estimated mutation scale. Only selected
@@ -72,12 +72,15 @@ to the noisy-data likelihood. No seeds were searched for favorable results.
 
 ## Numerical choices and verification
 
-All inference runs use deterministic L-BFGS-B through `fastdfe.BaseInference`,
+All inference runs use deterministic Nelder-Mead through `fastdfe.BaseInference`,
 with three explicit initial `(S_d,b)` pairs: `(-5,0.8)`, `(-50,0.3)`, and
 `(-150,1.2)`. Bounds are `S_d in [-10000,-0.1]` and `b in [0.1,5]`.
 The wrapper rejects failed fits, boundary optima, or disagreement between starts.
-Optimizer settings are `ftol=1e-10`, `gtol=1e-5`, `maxiter=300`, `maxls=40`; there is one
+Optimizer settings are `xatol=1e-7`, `fatol=1e-8`, `maxiter=600`; there is one
 run per specified start and no randomly chosen starts or worker pools.
+This derivative-free method avoids finite-difference line-search failures in
+the small two-parameter fit. Successful termination, agreement between starts,
+and neighboring-likelihood checks are still required.
 
 The semidominant DFE-to-SFS kernel uses midpoint integration over logarithmic
 intervals `[-1e8,-1e-6]` and `[1e-6,1e3]`, with a connecting interval around

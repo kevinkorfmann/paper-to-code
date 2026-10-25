@@ -131,8 +131,8 @@ def fit(neutral, selected, resolution=RESOLUTION, starts=STARTS):
             model=fd.GammaExpParametrization(), discretization=discretization(int(n), resolution),
             fixed_params={"all": dict(FIXED)}, x0={"all": {"S_d": mean, "b": shape}},
             bounds={"S_d": (-1e4, -0.1), "b": (0.1, 5.0)},
-            opts_mle={"ftol": 1e-10, "gtol": 1e-5, "maxiter": 300, "maxls": 40},
-            method_mle="L-BFGS-B", n_runs=1, seed=SEED,
+            opts_mle={"xatol": 1e-7, "fatol": 1e-8, "maxiter": 600},
+            method_mle="Nelder-Mead", n_runs=1, seed=SEED,
             do_bootstrap=False, parallelize=False, folded=False, include_divergence=False,
         )
         modeled = inference.run(do_bootstrap=False, pbar=False)
@@ -185,6 +185,7 @@ def build_report(data=None, target_factor=1.0):
         "neutral_polymorphic_sites": int(neutral.n_polymorphic),
         "selected_polymorphic_sites": int(selected.n_polymorphic),
         "fixed_parameters": FIXED,
+        "optimizer": "fastDFE Nelder-Mead; 3 explicit starts; xatol=1e-7; fatol=1e-8; maxiter=600",
         "integration_ranges": {"negative": [-1e8, -1e-6], "positive": [1e-6, 1e3]},
         "magnitude_bins": ["0 <= |S| < 1", "1 <= |S| < 10", "10 <= |S| < 100", "100 <= |S|"],
         "fit": baseline, "double_selected_target_control": target_control,
