@@ -1,0 +1,64 @@
+// Original SLiM 4.0.1 single-locus experiment. A is the m1 allele.
+initialize() {
+    if (!exists("N")) defineConstant("N", 200);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 128);
+    if (!exists("GENERATIONS")) defineConstant("GENERATIONS", 80);
+    if (!exists("MODE")) defineConstant("MODE", 2);
+    if (!exists("INITIAL_AA")) defineConstant("INITIAL_AA", 8);
+    if (!exists("INITIAL_HET")) defineConstant("INITIAL_HET", 64);
+    if ((N < 2) | (N > 1000) | (asInteger(N) != N)) stop("invalid N");
+    if ((REPLICATES < 1) | (REPLICATES > 2048) | (asInteger(REPLICATES) != REPLICATES))
+        stop("invalid REPLICATES");
+    if ((GENERATIONS < 0) | (GENERATIONS > 300) | (asInteger(GENERATIONS) != GENERATIONS))
+        stop("invalid GENERATIONS");
+    if (!any(MODE == c(0, 1, 2))) stop("MODE must be 0, 1, or 2");
+    if ((INITIAL_AA < 0) | (INITIAL_HET < 0) | (INITIAL_AA+INITIAL_HET > N) |
+        (asInteger(INITIAL_AA) != INITIAL_AA) | (asInteger(INITIAL_HET) != INITIAL_HET))
+        stop("invalid initial genotype counts");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    selection = (MODE == 0) ? 0.0 else 0.1;
+    dominance = (MODE == 2) ? 2.0 else 0.5;
+    initializeMutationType("m1", dominance, "f", selection);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+
+1 early() {
+    for (rep in seqLen(REPLICATES)) sim.addSubpop(rep+1, N);
+}
+
+1 late() {
+    // Install ONE shared mutation per population after tick 1 reproduction.
+    // First AA individuals carry it twice; the next INITIAL_HET carry it once.
+    for (pop in sim.subpopulations) {
+        carriers = c(pop.individuals[seqLen(INITIAL_AA)].genomes,
+                     pop.individuals[INITIAL_AA+seqLen(INITIAL_HET)].genome1);
+        if (size(carriers)) carriers.addNewDrawnMutation(m1, 0);
+    }
+    // Audit the engine's genotype fitnesses at initialization, before reproduction.
+    sim.recalculateFitness();
+    pop = sim.subpopulations[0];
+    copies = pop.individuals.genome1.countOfMutationsOfType(m1) +
+             pop.individuals.genome2.countOfMutationsOfType(m1);
+    fitness = pop.cachedFitness(NULL);
+    for (genotype in 0:2)
+        if (any(copies == genotype))
+            catn("FIT," + genotype + "," + mean(fitness[copies == genotype]));
+}
+
+1:301 late() {
+    elapsed = community.tick-1;
+    checkpoints = unique(c(0, 1, asInteger(GENERATIONS/4), asInteger(GENERATIONS/2), GENERATIONS));
+    if (any(elapsed == checkpoints)) {
+        for (pop in sim.subpopulations) {
+            copies = pop.individuals.genome1.countOfMutationsOfType(m1) +
+                     pop.individuals.genome2.countOfMutationsOfType(m1);
+            catn("DATA," + elapsed + "," + (pop.id-1) + "," + sum(copies == 2) + "," + sum(copies == 1));
+        }
+    }
+    if (elapsed == GENERATIONS) sim.simulationFinished();
+}

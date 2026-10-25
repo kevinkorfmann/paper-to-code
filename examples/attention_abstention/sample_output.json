@@ -1,0 +1,224 @@
+{
+  "example": "attention abstention, per-read value gates, and retained mass",
+  "values": [
+    [
+      2.0,
+      0.0
+    ],
+    [
+      0.0,
+      2.0
+    ]
+  ],
+  "real_logits": [
+    0.0,
+    0.0
+  ],
+  "sink_logit": 0.693147181,
+  "projection_weight": [
+    1.098612289,
+    -1.098612289
+  ],
+  "projection_bias": 0.0,
+  "baseline": {
+    "routing_weights": [
+      0.5,
+      0.5
+    ],
+    "phantom_mass": 0.0,
+    "gates": [
+      1.0,
+      1.0
+    ],
+    "retained_weights": [
+      0.5,
+      0.5
+    ],
+    "retained_mass": 1.0,
+    "output": [
+      1.0,
+      1.0
+    ],
+    "renormalized_weights": [
+      0.5,
+      0.5
+    ],
+    "renormalized_output": [
+      1.0,
+      1.0
+    ]
+  },
+  "phantom_only": {
+    "routing_weights": [
+      0.25,
+      0.25
+    ],
+    "phantom_mass": 0.5,
+    "gates": [
+      1.0,
+      1.0
+    ],
+    "retained_weights": [
+      0.25,
+      0.25
+    ],
+    "retained_mass": 0.5,
+    "output": [
+      0.5,
+      0.5
+    ],
+    "renormalized_weights": [
+      0.5,
+      0.5
+    ],
+    "renormalized_output": [
+      1.0,
+      1.0
+    ]
+  },
+  "value_gates_only": {
+    "routing_weights": [
+      0.5,
+      0.5
+    ],
+    "phantom_mass": 0.0,
+    "gates": [
+      0.9,
+      0.1
+    ],
+    "retained_weights": [
+      0.45,
+      0.05
+    ],
+    "retained_mass": 0.5,
+    "output": [
+      0.9,
+      0.1
+    ],
+    "renormalized_weights": [
+      0.9,
+      0.1
+    ],
+    "renormalized_output": [
+      1.8,
+      0.2
+    ]
+  },
+  "phantom_plus_value_gates": {
+    "routing_weights": [
+      0.25,
+      0.25
+    ],
+    "phantom_mass": 0.5,
+    "gates": [
+      0.9,
+      0.1
+    ],
+    "retained_weights": [
+      0.225,
+      0.025
+    ],
+    "retained_mass": 0.25,
+    "output": [
+      0.45,
+      0.05
+    ],
+    "renormalized_weights": [
+      0.9,
+      0.1
+    ],
+    "renormalized_output": [
+      1.8,
+      0.2
+    ]
+  },
+  "post_aggregation_scalar_at_same_retained_mass": [
+    0.5,
+    0.5
+  ],
+  "uniform_gate_control": {
+    "routing_weights": [
+      0.5,
+      0.5
+    ],
+    "phantom_mass": 0.0,
+    "gates": [
+      0.1,
+      0.1
+    ],
+    "retained_weights": [
+      0.05,
+      0.05
+    ],
+    "retained_mass": 0.1,
+    "output": [
+      0.1,
+      0.1
+    ],
+    "renormalized_weights": [
+      0.5,
+      0.5
+    ],
+    "renormalized_output": [
+      1.0,
+      1.0
+    ]
+  },
+  "low_real_logit_control": {
+    "routing_weights": [
+      0.000335238,
+      0.000335238
+    ],
+    "phantom_mass": 0.999329525,
+    "gates": [
+      1.0,
+      1.0
+    ],
+    "retained_weights": [
+      0.000335238,
+      0.000335238
+    ],
+    "retained_mass": 0.000670475,
+    "output": [
+      0.000670475,
+      0.000670475
+    ],
+    "renormalized_weights": [
+      0.5,
+      0.5
+    ],
+    "renormalized_output": [
+      1.0,
+      1.0
+    ]
+  },
+  "cancellation_without_abstention": {
+    "routing_weights": [
+      0.5,
+      0.5
+    ],
+    "phantom_mass": 0.0,
+    "gates": [
+      1.0,
+      1.0
+    ],
+    "retained_weights": [
+      0.5,
+      0.5
+    ],
+    "retained_mass": 1.0,
+    "output": [
+      0.0,
+      0.0
+    ],
+    "renormalized_weights": [
+      0.5,
+      0.5
+    ],
+    "renormalized_output": [
+      0.0,
+      0.0
+    ]
+  },
+  "interpretation": "The phantom contributes zero while absorbing routing mass. Per-read gates can change the surviving content; renormalizing their coefficients removes retained-mass attenuation. The gates are deliberately constructed, not learned relevance judgments. Zero output can also arise by cancellation at full routing mass."
+}

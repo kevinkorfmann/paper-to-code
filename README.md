@@ -8,6 +8,8 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-10-25 | Paper to code | [Attention abstention and per-read value gates](examples/attention_abstention/README.md) | CPython 3.14.5; standard library |
+| 2026-10-25 | **slimulations** | [Heterozygote advantage and finite-population loss](examples/slimulations/heterozygote_advantage/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-10-25 | Inference showcase | [fastDFE and target-site sensitivity](examples/inference_showcase/fastdfe_gamma/README.md) | CPython 3.12.11; separate hash-locked environment |
 | 2026-10-23 | Paper to code | [Multi-head attention residuals](examples/multi_head_attention_residuals/README.md) | CPython 3.14.5; standard library |
 | 2026-10-23 | **slimulations** | [Selfing removes heterozygotes](examples/slimulations/selfing/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
@@ -114,9 +116,9 @@ shared-component cancellation, counterexamples, permutation equivariance,
 linearity in values, a finite-difference λ derivative, stable softmax, invalid
 inputs, CLI behavior, and the checked sample output.
 
-[CI](.github/workflows/tests.yml) runs all **145 tests**: 25 differential-attention,
-12 gated-attention, 18 multi-head attention-residual, 11 neutral-drift,
-11 migration, 12 selfing, 11 tsinfer, 12 tsdate, 15 dadi, and 18 fastDFE tests.
+[CI](.github/workflows/tests.yml) runs all **184 tests**: 25 differential-attention,
+12 gated-attention, 18 multi-head attention-residual, 22 attention-abstention, 11 neutral-drift,
+11 migration, 12 selfing, 17 heterozygote-advantage, 11 tsinfer, 12 tsdate, 15 dadi, and 18 fastDFE tests.
 The SLiM job builds a checksum-verified official
 source revision; the inference jobs install their separate hash-locked package sets.
 All jobs run on pushes and pull requests using a

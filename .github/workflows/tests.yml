@@ -25,6 +25,7 @@ jobs:
           python -m unittest discover -s tests -v
           python -m unittest discover -s examples/gated_attention -v
           python -m unittest discover -s examples/multi_head_attention_residuals -v
+          python -m unittest discover -s examples/attention_abstention -v
       - name: Reproduce the checked output byte for byte
         run: |
           python -m examples.differential_attention.demo > /tmp/attention-output.json
@@ -33,6 +34,8 @@ jobs:
           diff -u examples/gated_attention/sample_output.json /tmp/gated-output.json
           python -m examples.multi_head_attention_residuals.demo > /tmp/mhar-output.json
           diff -u examples/multi_head_attention_residuals/sample_output.json /tmp/mhar-output.json
+          python -m examples.attention_abstention.demo > /tmp/abstention-output.json
+          diff -u examples/attention_abstention/sample_output.json /tmp/abstention-output.json
 
   slimulations:
     runs-on: ubuntu-24.04
@@ -69,6 +72,9 @@ jobs:
           python -m unittest discover -s examples/slimulations/selfing -v
           python -m examples.slimulations.selfing.demo > /tmp/selfing-summary.json
           diff -u examples/slimulations/selfing/sample_summary.json /tmp/selfing-summary.json
+          python -m unittest discover -s examples/slimulations/heterozygote_advantage -v
+          python -m examples.slimulations.heterozygote_advantage.demo > /tmp/selection-summary.json
+          diff -u examples/slimulations/heterozygote_advantage/sample_summary.json /tmp/selection-summary.json
 
   inference-showcase:
     runs-on: ubuntu-24.04

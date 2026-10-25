@@ -1,0 +1,504 @@
+{
+  "example": "slimulations: heterozygote advantage with finite-population loss",
+  "slim_version": "4.0.1",
+  "replicates_per_treatment": 128,
+  "initialization": "Exact Hardy-Weinberg genotype counts installed after tick 1 reproduction",
+  "infinite_population_overdominant_equilibrium": 0.666666667,
+  "treatments": [
+    {
+      "mode": "neutral",
+      "diploid_N": 200,
+      "p_initial": 0.2,
+      "seed": 20261025,
+      "fitness_aa_Aa_AA": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_p": 0.2,
+          "monte_carlo_se": 0.0,
+          "infinite_population_p": 0.2,
+          "mean_observed_heterozygosity": 0.32,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_p": 0.201875,
+          "monte_carlo_se": 0.002022572,
+          "infinite_population_p": 0.2,
+          "mean_observed_heterozygosity": 0.32375,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 20,
+          "mean_p": 0.194980469,
+          "monte_carlo_se": 0.007782496,
+          "infinite_population_p": 0.2,
+          "mean_observed_heterozygosity": 0.297695312,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 40,
+          "mean_p": 0.195996094,
+          "monte_carlo_se": 0.011231473,
+          "infinite_population_p": 0.2,
+          "mean_observed_heterozygosity": 0.283554688,
+          "lost": 2,
+          "fixed": 0,
+          "segregating": 126
+        },
+        {
+          "generations_elapsed": 80,
+          "mean_p": 0.185390625,
+          "monte_carlo_se": 0.014372765,
+          "infinite_population_p": 0.2,
+          "mean_observed_heterozygosity": 0.2496875,
+          "lost": 16,
+          "fixed": 0,
+          "segregating": 112
+        }
+      ]
+    },
+    {
+      "mode": "neutral",
+      "diploid_N": 200,
+      "p_initial": 0.8,
+      "seed": 20261026,
+      "fitness_aa_Aa_AA": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_p": 0.8,
+          "monte_carlo_se": 0.0,
+          "infinite_population_p": 0.8,
+          "mean_observed_heterozygosity": 0.32,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_p": 0.801132813,
+          "monte_carlo_se": 0.001757047,
+          "infinite_population_p": 0.8,
+          "mean_observed_heterozygosity": 0.316640625,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 20,
+          "mean_p": 0.807011719,
+          "monte_carlo_se": 0.00753177,
+          "infinite_population_p": 0.8,
+          "mean_observed_heterozygosity": 0.296210937,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 40,
+          "mean_p": 0.815214844,
+          "monte_carlo_se": 0.009995925,
+          "infinite_population_p": 0.8,
+          "mean_observed_heterozygosity": 0.276289063,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 80,
+          "mean_p": 0.807578125,
+          "monte_carlo_se": 0.015580842,
+          "infinite_population_p": 0.8,
+          "mean_observed_heterozygosity": 0.251171875,
+          "lost": 0,
+          "fixed": 15,
+          "segregating": 113
+        }
+      ]
+    },
+    {
+      "mode": "additive",
+      "diploid_N": 200,
+      "p_initial": 0.2,
+      "seed": 20261027,
+      "fitness_aa_Aa_AA": [
+        1.0,
+        1.05,
+        1.1
+      ],
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_p": 0.2,
+          "monte_carlo_se": 0.0,
+          "infinite_population_p": 0.2,
+          "mean_observed_heterozygosity": 0.32,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_p": 0.209453125,
+          "monte_carlo_se": 0.001765142,
+          "infinite_population_p": 0.207843137,
+          "mean_observed_heterozygosity": 0.331875,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 20,
+          "mean_p": 0.39671875,
+          "monte_carlo_se": 0.011074013,
+          "infinite_population_p": 0.395573755,
+          "mean_observed_heterozygosity": 0.450234375,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 40,
+          "mean_p": 0.608632813,
+          "monte_carlo_se": 0.014900472,
+          "infinite_population_p": 0.629087171,
+          "mean_observed_heterozygosity": 0.4178125,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 80,
+          "mean_p": 0.889101563,
+          "monte_carlo_se": 0.009605585,
+          "infinite_population_p": 0.917357405,
+          "mean_observed_heterozygosity": 0.17109375,
+          "lost": 0,
+          "fixed": 13,
+          "segregating": 115
+        }
+      ]
+    },
+    {
+      "mode": "additive",
+      "diploid_N": 200,
+      "p_initial": 0.8,
+      "seed": 20261028,
+      "fitness_aa_Aa_AA": [
+        1.0,
+        1.05,
+        1.1
+      ],
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_p": 0.8,
+          "monte_carlo_se": 0.0,
+          "infinite_population_p": 0.8,
+          "mean_observed_heterozygosity": 0.32,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_p": 0.808730469,
+          "monte_carlo_se": 0.001498696,
+          "infinite_population_p": 0.807407407,
+          "mean_observed_heterozygosity": 0.308789062,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 20,
+          "mean_p": 0.914140625,
+          "monte_carlo_se": 0.005069979,
+          "infinite_population_p": 0.910751775,
+          "mean_observed_heterozygosity": 0.152890625,
+          "lost": 0,
+          "fixed": 1,
+          "segregating": 127
+        },
+        {
+          "generations_elapsed": 40,
+          "mean_p": 0.962226563,
+          "monte_carlo_se": 0.003673895,
+          "infinite_population_p": 0.962884402,
+          "mean_observed_heterozygosity": 0.069921875,
+          "lost": 0,
+          "fixed": 32,
+          "segregating": 96
+        },
+        {
+          "generations_elapsed": 80,
+          "mean_p": 0.988769531,
+          "monte_carlo_se": 0.002522505,
+          "infinite_population_p": 0.994048914,
+          "mean_observed_heterozygosity": 0.020820313,
+          "lost": 0,
+          "fixed": 93,
+          "segregating": 35
+        }
+      ]
+    },
+    {
+      "mode": "overdominant",
+      "diploid_N": 200,
+      "p_initial": 0.2,
+      "seed": 20261029,
+      "fitness_aa_Aa_AA": [
+        1.0,
+        1.2,
+        1.1
+      ],
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_p": 0.2,
+          "monte_carlo_se": 0.0,
+          "infinite_population_p": 0.2,
+          "mean_observed_heterozygosity": 0.32,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_p": 0.217207031,
+          "monte_carlo_se": 0.001931884,
+          "infinite_population_p": 0.220973783,
+          "mean_observed_heterozygosity": 0.341757812,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 20,
+          "mean_p": 0.505742187,
+          "monte_carlo_se": 0.006204148,
+          "infinite_population_p": 0.534760019,
+          "mean_observed_heterozygosity": 0.493515625,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 40,
+          "mean_p": 0.622382813,
+          "monte_carlo_se": 0.006788777,
+          "infinite_population_p": 0.631419285,
+          "mean_observed_heterozygosity": 0.463046875,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 80,
+          "mean_p": 0.679863281,
+          "monte_carlo_se": 0.006796557,
+          "infinite_population_p": 0.663692198,
+          "mean_observed_heterozygosity": 0.425820313,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        }
+      ]
+    },
+    {
+      "mode": "overdominant",
+      "diploid_N": 200,
+      "p_initial": 0.8,
+      "seed": 20261030,
+      "fitness_aa_Aa_AA": [
+        1.0,
+        1.2,
+        1.1
+      ],
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_p": 0.8,
+          "monte_carlo_se": 0.0,
+          "infinite_population_p": 0.8,
+          "mean_observed_heterozygosity": 0.32,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_p": 0.794726562,
+          "monte_carlo_se": 0.002005052,
+          "infinite_population_p": 0.794326241,
+          "mean_observed_heterozygosity": 0.328515625,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 20,
+          "mean_p": 0.728164062,
+          "monte_carlo_se": 0.006230869,
+          "infinite_population_p": 0.715526365,
+          "mean_observed_heterozygosity": 0.38890625,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 40,
+          "mean_p": 0.688144531,
+          "monte_carlo_se": 0.007023782,
+          "infinite_population_p": 0.682122702,
+          "mean_observed_heterozygosity": 0.417304687,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 80,
+          "mean_p": 0.6803125,
+          "monte_carlo_se": 0.006325577,
+          "infinite_population_p": 0.668066386,
+          "mean_observed_heterozygosity": 0.425703125,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        }
+      ]
+    }
+  ],
+  "small_population_control_200_generations": [
+    {
+      "diploid_N": 25,
+      "p_initial": 0.2,
+      "seed": 20261031,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_p": 0.2,
+          "monte_carlo_se": 0.0,
+          "infinite_population_p": 0.2,
+          "mean_observed_heterozygosity": 0.32,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_p": 0.22125,
+          "monte_carlo_se": 0.005196673,
+          "infinite_population_p": 0.220973783,
+          "mean_observed_heterozygosity": 0.340625,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 50,
+          "mean_p": 0.61328125,
+          "monte_carlo_se": 0.024239696,
+          "infinite_population_p": 0.647886059,
+          "mean_observed_heterozygosity": 0.3315625,
+          "lost": 9,
+          "fixed": 12,
+          "segregating": 107
+        },
+        {
+          "generations_elapsed": 100,
+          "mean_p": 0.7290625,
+          "monte_carlo_se": 0.027526704,
+          "infinite_population_p": 0.665784817,
+          "mean_observed_heterozygosity": 0.200625,
+          "lost": 10,
+          "fixed": 52,
+          "segregating": 66
+        },
+        {
+          "generations_elapsed": 200,
+          "mean_p": 0.8409375,
+          "monte_carlo_se": 0.026032667,
+          "infinite_population_p": 0.666664616,
+          "mean_observed_heterozygosity": 0.095625,
+          "lost": 10,
+          "fixed": 86,
+          "segregating": 32
+        }
+      ]
+    },
+    {
+      "diploid_N": 25,
+      "p_initial": 0.8,
+      "seed": 20261032,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_p": 0.8,
+          "monte_carlo_se": 0.0,
+          "infinite_population_p": 0.8,
+          "mean_observed_heterozygosity": 0.32,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_p": 0.7896875,
+          "monte_carlo_se": 0.005647034,
+          "infinite_population_p": 0.794326241,
+          "mean_observed_heterozygosity": 0.3325,
+          "lost": 0,
+          "fixed": 0,
+          "segregating": 128
+        },
+        {
+          "generations_elapsed": 50,
+          "mean_p": 0.795,
+          "monte_carlo_se": 0.020943541,
+          "infinite_population_p": 0.675195023,
+          "mean_observed_heterozygosity": 0.22375,
+          "lost": 1,
+          "fixed": 53,
+          "segregating": 74
+        },
+        {
+          "generations_elapsed": 100,
+          "mean_p": 0.83140625,
+          "monte_carlo_se": 0.022268807,
+          "infinite_population_p": 0.667083675,
+          "mean_observed_heterozygosity": 0.1684375,
+          "lost": 2,
+          "fixed": 78,
+          "segregating": 48
+        },
+        {
+          "generations_elapsed": 200,
+          "mean_p": 0.9065625,
+          "monte_carlo_se": 0.02017896,
+          "infinite_population_p": 0.666667638,
+          "mean_observed_heterozygosity": 0.06625,
+          "lost": 5,
+          "fixed": 101,
+          "segregating": 22
+        }
+      ]
+    }
+  ],
+  "interpretation": "All means include fixed and lost populations. The deterministic path is an infinite-population comparator, not the exact finite-population expectation. Finite populations can absorb even with heterozygote advantage. Monte Carlo SE describes replicate uncertainty in this specified model, not uncertainty in biological parameters."
+}
