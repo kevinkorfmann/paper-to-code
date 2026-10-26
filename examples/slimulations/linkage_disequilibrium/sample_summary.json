@@ -1,0 +1,251 @@
+{
+  "example": "slimulations: recombination erodes linkage disequilibrium, not instantly",
+  "slim_version": "4.0.1",
+  "diploid_N": 1000,
+  "replicates_per_treatment": 128,
+  "formula": "D_t = D_0*(1-c)^t in an infinite randomly paired population",
+  "treatments": [
+    {
+      "recombination_fraction": 0,
+      "founders": "random_pairing",
+      "seed": 202610260,
+      "initial_counts_AB_Ab_aB_ab_coupling_repulsion": [
+        1000,
+        0,
+        0,
+        1000,
+        500,
+        0
+      ],
+      "first_generation_gamete_probabilities_AB_Ab_aB_ab": [
+        0.5,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "exact_expected_D_at_t1": 0.249875,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_D": 0.25,
+          "monte_carlo_se_D": 0.0,
+          "infinite_random_pairing_D": 0.25,
+          "mean_p_A": 0.5,
+          "mean_p_B": 0.5,
+          "mean_Ab_plus_aB": 0.0
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_D": 0.249867229,
+          "monte_carlo_se_D": 1.5556e-05,
+          "infinite_random_pairing_D": 0.25,
+          "mean_p_A": 0.498300781,
+          "mean_p_B": 0.498300781,
+          "mean_Ab_plus_aB": 0.0
+        },
+        {
+          "generations_elapsed": 2,
+          "mean_D": 0.249756158,
+          "monte_carlo_se_D": 2.9823e-05,
+          "infinite_random_pairing_D": 0.25,
+          "mean_p_A": 0.498050781,
+          "mean_p_B": 0.498050781,
+          "mean_Ab_plus_aB": 0.0
+        },
+        {
+          "generations_elapsed": 4,
+          "mean_D": 0.249504021,
+          "monte_carlo_se_D": 7.8706e-05,
+          "infinite_random_pairing_D": 0.25,
+          "mean_p_A": 0.498753906,
+          "mean_p_B": 0.498753906,
+          "mean_Ab_plus_aB": 0.0
+        },
+        {
+          "generations_elapsed": 8,
+          "mean_D": 0.248994209,
+          "monte_carlo_se_D": 0.000122349,
+          "infinite_random_pairing_D": 0.25,
+          "mean_p_A": 0.499285156,
+          "mean_p_B": 0.499285156,
+          "mean_Ab_plus_aB": 0.0
+        }
+      ]
+    },
+    {
+      "recombination_fraction": 0.1,
+      "founders": "random_pairing",
+      "seed": 202610261,
+      "initial_counts_AB_Ab_aB_ab_coupling_repulsion": [
+        1000,
+        0,
+        0,
+        1000,
+        500,
+        0
+      ],
+      "first_generation_gamete_probabilities_AB_Ab_aB_ab": [
+        0.475,
+        0.025,
+        0.025,
+        0.475
+      ],
+      "exact_expected_D_at_t1": 0.2248875,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_D": 0.25,
+          "monte_carlo_se_D": 0.0,
+          "infinite_random_pairing_D": 0.25,
+          "mean_p_A": 0.5,
+          "mean_p_B": 0.5,
+          "mean_Ab_plus_aB": 0.0
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_D": 0.224907953,
+          "monte_carlo_se_D": 0.000226231,
+          "infinite_random_pairing_D": 0.225,
+          "mean_p_A": 0.501261719,
+          "mean_p_B": 0.501007813,
+          "mean_Ab_plus_aB": 0.049988281
+        },
+        {
+          "generations_elapsed": 2,
+          "mean_D": 0.202142748,
+          "monte_carlo_se_D": 0.000338471,
+          "infinite_random_pairing_D": 0.2025,
+          "mean_p_A": 0.501503906,
+          "mean_p_B": 0.501550781,
+          "mean_Ab_plus_aB": 0.095289062
+        },
+        {
+          "generations_elapsed": 4,
+          "mean_D": 0.163665525,
+          "monte_carlo_se_D": 0.000549769,
+          "infinite_random_pairing_D": 0.164025,
+          "mean_p_A": 0.501320312,
+          "mean_p_B": 0.501476562,
+          "mean_Ab_plus_aB": 0.171898438
+        },
+        {
+          "generations_elapsed": 8,
+          "mean_D": 0.107046527,
+          "monte_carlo_se_D": 0.000749381,
+          "infinite_random_pairing_D": 0.107616803,
+          "mean_p_A": 0.500226562,
+          "mean_p_B": 0.49821875,
+          "mean_Ab_plus_aB": 0.284109375
+        }
+      ]
+    },
+    {
+      "recombination_fraction": 0.5,
+      "founders": "random_pairing",
+      "seed": 202610262,
+      "initial_counts_AB_Ab_aB_ab_coupling_repulsion": [
+        1000,
+        0,
+        0,
+        1000,
+        500,
+        0
+      ],
+      "first_generation_gamete_probabilities_AB_Ab_aB_ab": [
+        0.375,
+        0.125,
+        0.125,
+        0.375
+      ],
+      "exact_expected_D_at_t1": 0.1249375,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_D": 0.25,
+          "monte_carlo_se_D": 0.0,
+          "infinite_random_pairing_D": 0.25,
+          "mean_p_A": 0.5,
+          "mean_p_B": 0.5,
+          "mean_Ab_plus_aB": 0.0
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_D": 0.124534877,
+          "monte_carlo_se_D": 0.000459285,
+          "infinite_random_pairing_D": 0.125,
+          "mean_p_A": 0.498171875,
+          "mean_p_B": 0.499316406,
+          "mean_Ab_plus_aB": 0.250769531
+        },
+        {
+          "generations_elapsed": 2,
+          "mean_D": 0.061835578,
+          "monte_carlo_se_D": 0.000539977,
+          "infinite_random_pairing_D": 0.0625,
+          "mean_p_A": 0.497601562,
+          "mean_p_B": 0.498984375,
+          "mean_Ab_plus_aB": 0.376101562
+        },
+        {
+          "generations_elapsed": 4,
+          "mean_D": 0.01601234,
+          "monte_carlo_se_D": 0.000682608,
+          "infinite_random_pairing_D": 0.015625,
+          "mean_p_A": 0.4985625,
+          "mean_p_B": 0.496339844,
+          "mean_Ab_plus_aB": 0.467660156
+        },
+        {
+          "generations_elapsed": 8,
+          "mean_D": 0.001381783,
+          "monte_carlo_se_D": 0.000656428,
+          "infinite_random_pairing_D": 0.000976562,
+          "mean_p_A": 0.497261719,
+          "mean_p_B": 0.497269531,
+          "mean_Ab_plus_aB": 0.496804688
+        }
+      ]
+    },
+    {
+      "recombination_fraction": 0.5,
+      "founders": "all_double_heterozygotes",
+      "seed": 202610263,
+      "initial_counts_AB_Ab_aB_ab_coupling_repulsion": [
+        1000,
+        0,
+        0,
+        1000,
+        1000,
+        0
+      ],
+      "first_generation_gamete_probabilities_AB_Ab_aB_ab": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "exact_expected_D_at_t1": 0.0,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "mean_D": 0.25,
+          "monte_carlo_se_D": 0.0,
+          "infinite_random_pairing_D": null,
+          "mean_p_A": 0.5,
+          "mean_p_B": 0.5,
+          "mean_Ab_plus_aB": 0.0
+        },
+        {
+          "generations_elapsed": 1,
+          "mean_D": 0.000196912,
+          "monte_carlo_se_D": 0.000500199,
+          "infinite_random_pairing_D": null,
+          "mean_p_A": 0.501957031,
+          "mean_p_B": 0.500097656,
+          "mean_Ab_plus_aB": 0.49959375
+        }
+      ]
+    }
+  ],
+  "interpretation": "D is computed within each population and then averaged, not from pooled haplotypes. The trajectory curve is an infinite-population comparator, not an exact finite-population mean. The t=1 expectation conditions on the specified founder diplotypes and includes finite-sampling bias. Monte Carlo SE describes replicate variation, not uncertainty about biological parameters."
+}
