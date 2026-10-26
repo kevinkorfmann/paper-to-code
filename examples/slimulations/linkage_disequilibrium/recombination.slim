@@ -1,0 +1,67 @@
+// Original SLiM 4.0.1 experiment: two adjacent neutral markers, A and B.
+initialize() {
+    if (!exists("N")) defineConstant("N", 1000);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 128);
+    if (!exists("GENERATIONS")) defineConstant("GENERATIONS", 8);
+    if (!exists("C")) defineConstant("C", 0.5);
+    if (!exists("FOUNDERS")) defineConstant("FOUNDERS", 0);
+    if ((N < 4) | (N > 4000) | (asInteger(N) != N) | (N % 4 != 0))
+        stop("N must be a multiple of 4 in [4,4000]");
+    if ((REPLICATES < 1) | (REPLICATES > 2048) | (asInteger(REPLICATES) != REPLICATES))
+        stop("invalid REPLICATES");
+    if ((GENERATIONS < 0) | (GENERATIONS > 100) | (asInteger(GENERATIONS) != GENERATIONS))
+        stop("invalid GENERATIONS");
+    if (!isFinite(asFloat(C)) | (C < 0.0) | (C > 0.5)) stop("C must be in [0,0.5]");
+    if (!any(FOUNDERS == c(0, 1))) stop("FOUNDERS must be 0 or 1");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    initializeMutationType("m2", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    m2.convertToSubstitution = F;
+    initializeGenomicElementType("g1", c(m1, m2), c(1.0, 1.0));
+    initializeGenomicElement(g1, 0, 1);
+    // Only one interval: the rate is the recombination fraction, not map length.
+    initializeRecombinationRate(C);
+}
+
+1 early() {
+    for (rep in seqLen(REPLICATES)) sim.addSubpop(rep+1, N);
+}
+
+1 late() {
+    for (pop in sim.subpopulations) {
+        if (FOUNDERS == 0) {
+            // N/4 AB/AB, N/2 AB/ab, N/4 ab/ab: exact random-pairing proportions.
+            carriers = c(pop.individuals[seqLen(asInteger(N/4))].genomes,
+                         pop.individuals[asInteger(N/4)+seqLen(asInteger(N/2))].genome1);
+        } else {
+            // Same haplotype counts, but every individual is AB/ab.
+            carriers = pop.individuals.genome1;
+        }
+        carriers.addNewDrawnMutation(m1, 0);
+        carriers.addNewDrawnMutation(m2, 1);
+    }
+}
+
+1:101 late() {
+    elapsed = community.tick-1;
+    checkpoints = unique(c(0, 1, asInteger(GENERATIONS/4), asInteger(GENERATIONS/2), GENERATIONS));
+    if (any(elapsed == checkpoints)) {
+        for (pop in sim.subpopulations) {
+            // Encode ab=0, aB=1, Ab=2, AB=3, keeping the two homologs paired.
+            first = 2*pop.individuals.genome1.countOfMutationsOfType(m1) +
+                      pop.individuals.genome1.countOfMutationsOfType(m2);
+            second = 2*pop.individuals.genome2.countOfMutationsOfType(m1) +
+                       pop.individuals.genome2.countOfMutationsOfType(m2);
+            haplotypes = c(first, second);
+            coupling = sum(((first == 3) & (second == 0)) | ((first == 0) & (second == 3)));
+            repulsion = sum(((first == 2) & (second == 1)) | ((first == 1) & (second == 2)));
+            catn("DATA," + elapsed + "," + (pop.id-1) + "," + sum(haplotypes == 3) + "," +
+                 sum(haplotypes == 2) + "," + sum(haplotypes == 1) + "," + sum(haplotypes == 0) + "," +
+                 coupling + "," + repulsion);
+        }
+    }
+    if (elapsed == GENERATIONS) sim.simulationFinished();
+}
