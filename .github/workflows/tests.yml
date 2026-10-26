@@ -75,6 +75,9 @@ jobs:
           python -m unittest discover -s examples/slimulations/heterozygote_advantage -v
           python -m examples.slimulations.heterozygote_advantage.demo > /tmp/selection-summary.json
           diff -u examples/slimulations/heterozygote_advantage/sample_summary.json /tmp/selection-summary.json
+          python -m unittest discover -s examples/slimulations/linkage_disequilibrium -v
+          python -m examples.slimulations.linkage_disequilibrium.demo > /tmp/ld-summary.json
+          diff -u examples/slimulations/linkage_disequilibrium/sample_summary.json /tmp/ld-summary.json
 
   inference-showcase:
     runs-on: ubuntu-24.04
