@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-10-26 | Inference showcase | [Hudson F_ST and aggregation sensitivity with scikit-allel](examples/inference_showcase/scikit_allel_fst/README.md) | CPython 3.12.11; separate hash-locked environment |
 | 2026-10-25 | Paper to code | [Attention abstention and per-read value gates](examples/attention_abstention/README.md) | CPython 3.14.5; standard library |
 | 2026-10-25 | **slimulations** | [Heterozygote advantage and finite-population loss](examples/slimulations/heterozygote_advantage/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-10-25 | Inference showcase | [fastDFE and target-site sensitivity](examples/inference_showcase/fastdfe_gamma/README.md) | CPython 3.12.11; separate hash-locked environment |
@@ -22,11 +23,12 @@ and explains its limits.
 | 2026-10-20 | Inference showcase | [Genealogy inference with tsinfer](examples/inference_showcase/tsinfer_genealogy/README.md) | CPython 3.12.11; separate hash-locked environment |
 
 The examples use only constructed inputs or synthetic data. Their documentation
-includes commands, seeds where applicable, checked output, and tests. The four
+includes commands, seeds where applicable, checked output, and tests. The five
 inference examples call actual tools: tsinfer estimates topology; tsdate estimates
 node ages conditional on a supplied topology and mutation clock; dadi estimates
 a population-size ratio conditional on a supplied change time; fastDFE estimates
-a deleterious gamma DFE conditional on model assumptions and target-site counts.
+a deleterious gamma DFE conditional on model assumptions and target-site counts;
+scikit-allel estimates pairwise Hudson differentiation for a specified locus panel.
 
 ## First example: differential attention
 
@@ -116,9 +118,10 @@ shared-component cancellation, counterexamples, permutation equivariance,
 linearity in values, a finite-difference λ derivative, stable softmax, invalid
 inputs, CLI behavior, and the checked sample output.
 
-[CI](.github/workflows/tests.yml) runs all **184 tests**: 25 differential-attention,
+[CI](.github/workflows/tests.yml) runs all **206 tests**: 25 differential-attention,
 12 gated-attention, 18 multi-head attention-residual, 22 attention-abstention, 11 neutral-drift,
-11 migration, 12 selfing, 17 heterozygote-advantage, 11 tsinfer, 12 tsdate, 15 dadi, and 18 fastDFE tests.
+11 migration, 12 selfing, 17 heterozygote-advantage, 11 tsinfer, 12 tsdate, 15 dadi,
+18 fastDFE, and 22 scikit-allel tests.
 The SLiM job builds a checksum-verified official
 source revision; the inference jobs install their separate hash-locked package sets.
 All jobs run on pushes and pull requests using a
