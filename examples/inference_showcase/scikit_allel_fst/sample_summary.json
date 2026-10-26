@@ -1,0 +1,43 @@
+{
+  "block_size_loci": 60,
+  "chromosomes_per_population": 80,
+  "constructed_aggregation_counterexample": {
+    "20_common_loci": {
+      "mean_of_per_locus_ratios": 0.524658348,
+      "ratio_of_sums": 0.524658348
+    },
+    "plus_180_rare_loci": {
+      "mean_of_per_locus_ratios": 0.052465835,
+      "ratio_of_sums": 0.463334645
+    }
+  },
+  "example": "scikit-allel: Hudson F_ST and aggregation sensitivity",
+  "loci_per_scenario": 1200,
+  "scenarios": {
+    "differentiated": {
+      "block_jackknife_se": 0.001956434,
+      "blocks": 20,
+      "fst_ratio_of_sums": 0.18965639,
+      "mean_of_per_locus_ratios_not_the_estimator": 0.18897109,
+      "negative_per_locus_estimates": 0,
+      "population_target_for_evaluation_only": 0.186851211,
+      "undefined_per_locus_ratios": 0
+    },
+    "null": {
+      "block_jackknife_se": 0.000438112,
+      "blocks": 20,
+      "fst_ratio_of_sums": -0.000204354,
+      "mean_of_per_locus_ratios_not_the_estimator": -0.000301312,
+      "negative_per_locus_estimates": 819,
+      "population_target_for_evaluation_only": 0.0,
+      "undefined_per_locus_ratios": 0
+    }
+  },
+  "seed": 20261026,
+  "versions": {
+    "dask": "2026.8.0",
+    "numpy": "2.3.5",
+    "python": "3.12.11",
+    "scikit-allel": "1.3.13"
+  }
+}
