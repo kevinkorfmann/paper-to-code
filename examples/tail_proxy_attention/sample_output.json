@@ -1,0 +1,185 @@
+{
+  "example": "OpenAttention residual tail-proxy component; constructed groups",
+  "python": "3.14.5",
+  "randomness": "none; deterministic constructed inputs",
+  "equal_logit_tail": {
+    "scaled_logits": [
+      1.38629436112,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "values": [
+      [
+        1.0
+      ],
+      [
+        2.0
+      ],
+      [
+        4.0
+      ],
+      [
+        6.0
+      ]
+    ],
+    "exact_indices": [
+      0
+    ],
+    "groups_before_exact_removal": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "dense_output": [
+      2.285714285714
+    ],
+    "proxy": {
+      "output": [
+        2.285714285714
+      ],
+      "token_weights": [
+        0.571428571429,
+        0.142857142857,
+        0.142857142857,
+        0.142857142857
+      ],
+      "component_weights": [
+        0.571428571429,
+        0.428571428571
+      ],
+      "centered_component_logits": [
+        0.0,
+        -0.287682072452
+      ],
+      "exact_indices": [
+        0
+      ],
+      "proxies": [
+        {
+          "members": [
+            1,
+            2,
+            3
+          ],
+          "count": 3,
+          "mean_logit": 0.0,
+          "mean_value": [
+            4.0
+          ],
+          "centered_logit": -0.287682072452
+        }
+      ]
+    },
+    "discarded_tail_output": [
+      1.0
+    ],
+    "no_count_ablation_output": [
+      1.6
+    ],
+    "singleton_tail_output": [
+      2.285714285714
+    ],
+    "proxy_absolute_error": 0.0,
+    "discard_absolute_error": 1.285714285714,
+    "dense_softmax_entries": 4,
+    "proxy_softmax_entries": 2
+  },
+  "variable_logit_counterexample": {
+    "scaled_logits": [
+      0.0,
+      -2.0,
+      2.0
+    ],
+    "values": [
+      [
+        0.0
+      ],
+      [
+        1.0
+      ],
+      [
+        0.0
+      ]
+    ],
+    "exact_indices": [
+      0
+    ],
+    "groups_before_exact_removal": [
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "dense_output": [
+      0.015876239976
+    ],
+    "proxy": {
+      "output": [
+        0.333333333333
+      ],
+      "token_weights": [
+        0.333333333333,
+        0.333333333333,
+        0.333333333333
+      ],
+      "component_weights": [
+        0.333333333333,
+        0.666666666667
+      ],
+      "centered_component_logits": [
+        0.0,
+        0.69314718056
+      ],
+      "exact_indices": [
+        0
+      ],
+      "proxies": [
+        {
+          "members": [
+            1,
+            2
+          ],
+          "count": 2,
+          "mean_logit": 0.0,
+          "mean_value": [
+            0.5
+          ],
+          "centered_logit": 0.69314718056
+        }
+      ]
+    },
+    "discarded_tail_output": [
+      0.0
+    ],
+    "no_count_ablation_output": [
+      0.25
+    ],
+    "singleton_tail_output": [
+      0.015876239976
+    ],
+    "proxy_absolute_error": 0.317457093357,
+    "discard_absolute_error": 0.015876239976,
+    "dense_softmax_entries": 3,
+    "proxy_softmax_entries": 2
+  },
+  "causal_prefix_check": {
+    "prefix_output": [
+      2.285714285714
+    ],
+    "with_masked_extreme_future_output": [
+      2.285714285714
+    ],
+    "maximum_absolute_difference": 0.0,
+    "residual_members_after_mask": [
+      1,
+      2,
+      3
+    ]
+  },
+  "scope": "Supplied groups and exact indices only. No QGC, QGS, ErrorGate, GPU kernel, cache-read measurement, 1% experiment, training, or LLM performance claim."
+}

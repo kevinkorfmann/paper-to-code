@@ -27,6 +27,7 @@ jobs:
           python -m unittest discover -s examples/multi_head_attention_residuals -v
           python -m unittest discover -s examples/attention_abstention -v
           python -m unittest discover -s examples/first_passage_attention -v
+          python -m unittest discover -s examples/tail_proxy_attention -v
       - name: Reproduce the checked output byte for byte
         run: |
           python -m examples.differential_attention.demo > /tmp/attention-output.json
@@ -39,6 +40,8 @@ jobs:
           diff -u examples/attention_abstention/sample_output.json /tmp/abstention-output.json
           python -m examples.first_passage_attention.demo > /tmp/fpa-output.json
           diff -u examples/first_passage_attention/sample_output.json /tmp/fpa-output.json
+          python -m examples.tail_proxy_attention.demo > /tmp/tail-proxy-output.json
+          diff -u examples/tail_proxy_attention/sample_output.json /tmp/tail-proxy-output.json
 
   slimulations:
     runs-on: ubuntu-24.04

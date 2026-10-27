@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-10-27 | Paper to code | [OpenAttention residual tail proxies](examples/tail_proxy_attention/README.md) | CPython 3.14.5; standard library |
 | 2026-10-27 | Inference showcase | [Conditional migration inference with moments](examples/inference_showcase/moments_migration/README.md) | CPython 3.12.11; separate hash-locked environment |
 | 2026-10-27 | **slimulations** | [Wahlund effect: pooling samples versus parents](examples/slimulations/wahlund_effect/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-10-26 | Paper to code | [First Passage Attention: selective bias from path minima](examples/first_passage_attention/README.md) | CPython 3.14.5; standard library |
@@ -123,8 +124,8 @@ shared-component cancellation, counterexamples, permutation equivariance,
 linearity in values, a finite-difference λ derivative, stable softmax, invalid
 inputs, CLI behavior, and the checked sample output.
 
-[CI](.github/workflows/tests.yml) runs all **296 tests**: 25 differential-attention,
-12 gated-attention, 18 multi-head attention-residual, 22 attention-abstention, 28 first-passage-attention, 11 neutral-drift,
+[CI](.github/workflows/tests.yml) runs all **326 tests**: 25 differential-attention,
+12 gated-attention, 18 multi-head attention-residual, 22 attention-abstention, 28 first-passage-attention, 30 tail-proxy-attention, 11 neutral-drift,
 11 migration, 12 selfing, 17 heterozygote-advantage, 20 linkage-disequilibrium, 20 Wahlund-effect, 11 tsinfer, 12 tsdate, 15 dadi,
 18 fastDFE, 22 scikit-allel, and 22 moments tests.
 The SLiM job builds a checksum-verified official
