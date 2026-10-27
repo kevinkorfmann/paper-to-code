@@ -1,0 +1,73 @@
+// Original SLiM 4.0.1 experiment: unchanged founders, two mating treatments.
+initialize() {
+    if (!exists("N1")) defineConstant("N1", 100);
+    if (!exists("N2")) defineConstant("N2", 100);
+    if (!exists("AA1")) defineConstant("AA1", 4);
+    if (!exists("HET1")) defineConstant("HET1", 32);
+    if (!exists("AA2")) defineConstant("AA2", 64);
+    if (!exists("HET2")) defineConstant("HET2", 32);
+    if (!exists("POOLED")) defineConstant("POOLED", 0);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 256);
+    if (!exists("GENERATIONS")) defineConstant("GENERATIONS", 1);
+    for (n in c(N1, N2))
+        if ((n < 2) | (n > 1000) | (asInteger(n) != n)) stop("invalid population size");
+    if ((REPLICATES < 1) | (REPLICATES > 1024) | (asInteger(REPLICATES) != REPLICATES))
+        stop("invalid REPLICATES");
+    if (!any(POOLED == c(0, 1))) stop("POOLED must be 0 or 1");
+    if (!any(GENERATIONS == c(0, 1))) stop("GENERATIONS must be 0 or 1");
+    if (any(c(AA1, HET1, AA2, HET2) < 0) |
+        any(asInteger(c(AA1, HET1, AA2, HET2)) != c(AA1, HET1, AA2, HET2)) |
+        (AA1+HET1 > N1) | (AA2+HET2 > N2)) stop("invalid founder genotype counts");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+
+1 early() {
+    for (rep in seqLen(REPLICATES)) {
+        if (POOLED == 1) sim.addSubpop(rep+1, N1+N2);
+        else {
+            sim.addSubpop(2*rep+1, N1);
+            sim.addSubpop(2*rep+2, N2);
+        }
+    }
+}
+
+1 late() {
+    // t=0 follows tick 1 reproduction. No mating occurs during initialization.
+    for (rep in seqLen(REPLICATES)) {
+        if (POOLED == 1) {
+            individuals = sim.subpopulations[rep].individuals;
+            first = individuals[seqLen(N1)];
+            second = individuals[N1+seqLen(N2)];
+        }
+        else {
+            first = sim.subpopulations[2*rep].individuals;
+            second = sim.subpopulations[2*rep+1].individuals;
+        }
+        carriers = c(first[seqLen(AA1)].genomes,
+                     first[AA1+seqLen(HET1)].genome1,
+                     second[seqLen(AA2)].genomes,
+                     second[AA2+seqLen(HET2)].genome1);
+        // One shared marker represents the same A allele in both founder groups.
+        if (size(carriers)) carriers.addNewDrawnMutation(m1, 0);
+    }
+}
+
+1:2 late() {
+    for (pop in sim.subpopulations) {
+        index = pop.id-1;
+        rep = (POOLED == 1) ? index else asInteger(index/2);
+        group = (POOLED == 1) ? 0 else asInteger(index % 2);
+        count = pop.individuals.genome1.countOfMutationsOfType(m1) +
+                pop.individuals.genome2.countOfMutationsOfType(m1);
+        catn("DATA," + (community.tick-1) + "," + rep + "," + group + "," +
+             pop.individualCount + "," + sum(count == 2) + "," + sum(count == 1));
+    }
+    if (community.tick-1 == GENERATIONS) sim.simulationFinished();
+}

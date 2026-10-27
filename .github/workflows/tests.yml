@@ -81,6 +81,9 @@ jobs:
           python -m unittest discover -s examples/slimulations/linkage_disequilibrium -v
           python -m examples.slimulations.linkage_disequilibrium.demo > /tmp/ld-summary.json
           diff -u examples/slimulations/linkage_disequilibrium/sample_summary.json /tmp/ld-summary.json
+          python -m unittest discover -s examples/slimulations/wahlund_effect -v
+          python -m examples.slimulations.wahlund_effect.demo > /tmp/wahlund-summary.json
+          diff -u examples/slimulations/wahlund_effect/sample_summary.json /tmp/wahlund-summary.json
 
   inference-showcase:
     runs-on: ubuntu-24.04

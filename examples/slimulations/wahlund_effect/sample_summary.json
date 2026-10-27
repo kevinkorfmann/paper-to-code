@@ -1,0 +1,545 @@
+{
+  "example": "Wahlund effect: pooling samples versus pooling parents",
+  "slim_version": "4.0.1",
+  "eidos_version": "3.0.1",
+  "replicates_per_treatment": 256,
+  "treatments": [
+    {
+      "scenario": "different_frequencies",
+      "mating": "separate_demes",
+      "founder_group_sizes": [
+        100,
+        100
+      ],
+      "founder_frequencies": [
+        0.2,
+        0.8
+      ],
+      "seed": 202610270,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "means": {
+            "p": 0.5,
+            "H_observed": 0.32,
+            "H_pooled": 0.5,
+            "H_within": 0.32,
+            "twice_between_variance": 0.18,
+            "pooled_gap": 0.18,
+            "within_residual": 0.0
+          },
+          "monte_carlo_se": {
+            "p": 0.0,
+            "H_observed": 0.0,
+            "H_pooled": 0.0,
+            "H_within": 0.0,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.0,
+            "within_residual": 0.0
+          }
+        },
+        {
+          "generations_elapsed": 1,
+          "means": {
+            "p": 0.500458984,
+            "H_observed": 0.320917969,
+            "H_pooled": 0.499239795,
+            "H_within": 0.319400488,
+            "twice_between_variance": 0.179839307,
+            "pooled_gap": 0.178321826,
+            "within_residual": -0.00151748
+          },
+          "monte_carlo_se": {
+            "p": 0.001220562,
+            "H_observed": 0.002026212,
+            "H_pooled": 6.3299e-05,
+            "H_within": 0.001498383,
+            "twice_between_variance": 0.001499222,
+            "pooled_gap": 0.002024989,
+            "within_residual": 0.001372624
+          }
+        }
+      ],
+      "one_generation_expectation": {
+        "p": 0.5,
+        "H_observed": 0.32,
+        "H_pooled": 0.4992,
+        "pooled_gap": 0.1792,
+        "variance_of_p": 0.0004,
+        "founder_H_pooled": 0.5,
+        "founder_H_observed": 0.32,
+        "founder_pooling_gap": 0.18
+      }
+    },
+    {
+      "scenario": "different_frequencies",
+      "mating": "common_pool",
+      "founder_group_sizes": [
+        100,
+        100
+      ],
+      "founder_frequencies": [
+        0.2,
+        0.8
+      ],
+      "seed": 202610271,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "means": {
+            "p": 0.5,
+            "H_observed": 0.32,
+            "H_pooled": 0.5,
+            "H_within": 0.5,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.18,
+            "within_residual": 0.18
+          },
+          "monte_carlo_se": {
+            "p": 0.0,
+            "H_observed": 0.0,
+            "H_pooled": 0.0,
+            "H_within": 0.0,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.0,
+            "within_residual": 0.0
+          }
+        },
+        {
+          "generations_elapsed": 1,
+          "means": {
+            "p": 0.499990234,
+            "H_observed": 0.501035156,
+            "H_pooled": 0.498684326,
+            "H_within": 0.498684326,
+            "twice_between_variance": 0.0,
+            "pooled_gap": -0.00235083,
+            "within_residual": -0.00235083
+          },
+          "monte_carlo_se": {
+            "p": 0.001606161,
+            "H_observed": 0.002315332,
+            "H_pooled": 0.000116833,
+            "H_within": 0.000116833,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.002291403,
+            "within_residual": 0.002291403
+          }
+        }
+      ],
+      "one_generation_expectation": {
+        "p": 0.5,
+        "H_observed": 0.5,
+        "H_pooled": 0.49875,
+        "pooled_gap": -0.00125,
+        "variance_of_p": 0.000625,
+        "founder_H_pooled": 0.5,
+        "founder_H_observed": 0.32,
+        "founder_pooling_gap": 0.18
+      }
+    },
+    {
+      "scenario": "equal_frequency_control",
+      "mating": "separate_demes",
+      "founder_group_sizes": [
+        100,
+        100
+      ],
+      "founder_frequencies": [
+        0.5,
+        0.5
+      ],
+      "seed": 202610272,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "means": {
+            "p": 0.5,
+            "H_observed": 0.5,
+            "H_pooled": 0.5,
+            "H_within": 0.5,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.0,
+            "within_residual": 0.0
+          },
+          "monte_carlo_se": {
+            "p": 0.0,
+            "H_observed": 0.0,
+            "H_pooled": 0.0,
+            "H_within": 0.0,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.0,
+            "within_residual": 0.0
+          }
+        },
+        {
+          "generations_elapsed": 1,
+          "means": {
+            "p": 0.500146484,
+            "H_observed": 0.498574219,
+            "H_pooled": 0.498483252,
+            "H_within": 0.497271387,
+            "twice_between_variance": 0.001211865,
+            "pooled_gap": -9.0967e-05,
+            "within_residual": -0.001302832
+          },
+          "monte_carlo_se": {
+            "p": 0.001724509,
+            "H_observed": 0.00223557,
+            "H_pooled": 0.00015048,
+            "H_within": 0.000179482,
+            "twice_between_variance": 0.000104879,
+            "pooled_gap": 0.002231806,
+            "within_residual": 0.002233951
+          }
+        }
+      ],
+      "one_generation_expectation": {
+        "p": 0.5,
+        "H_observed": 0.5,
+        "H_pooled": 0.49875,
+        "pooled_gap": -0.00125,
+        "variance_of_p": 0.000625,
+        "founder_H_pooled": 0.5,
+        "founder_H_observed": 0.5,
+        "founder_pooling_gap": 0.0
+      }
+    },
+    {
+      "scenario": "equal_frequency_control",
+      "mating": "common_pool",
+      "founder_group_sizes": [
+        100,
+        100
+      ],
+      "founder_frequencies": [
+        0.5,
+        0.5
+      ],
+      "seed": 202610273,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "means": {
+            "p": 0.5,
+            "H_observed": 0.5,
+            "H_pooled": 0.5,
+            "H_within": 0.5,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.0,
+            "within_residual": 0.0
+          },
+          "monte_carlo_se": {
+            "p": 0.0,
+            "H_observed": 0.0,
+            "H_pooled": 0.0,
+            "H_within": 0.0,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.0,
+            "within_residual": 0.0
+          }
+        },
+        {
+          "generations_elapsed": 1,
+          "means": {
+            "p": 0.498740234,
+            "H_observed": 0.497675781,
+            "H_pooled": 0.498727197,
+            "H_within": 0.498727197,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.001051416,
+            "within_residual": 0.001051416
+          },
+          "monte_carlo_se": {
+            "p": 0.001577805,
+            "H_observed": 0.002071013,
+            "H_pooled": 0.000107913,
+            "H_within": 0.000107913,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.002064127,
+            "within_residual": 0.002064127
+          }
+        }
+      ],
+      "one_generation_expectation": {
+        "p": 0.5,
+        "H_observed": 0.5,
+        "H_pooled": 0.49875,
+        "pooled_gap": -0.00125,
+        "variance_of_p": 0.000625,
+        "founder_H_pooled": 0.5,
+        "founder_H_observed": 0.5,
+        "founder_pooling_gap": 0.0
+      }
+    },
+    {
+      "scenario": "unequal_size_control",
+      "mating": "separate_demes",
+      "founder_group_sizes": [
+        100,
+        300
+      ],
+      "founder_frequencies": [
+        0.2,
+        0.8
+      ],
+      "seed": 202610274,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "means": {
+            "p": 0.65,
+            "H_observed": 0.32,
+            "H_pooled": 0.455,
+            "H_within": 0.32,
+            "twice_between_variance": 0.135,
+            "pooled_gap": 0.135,
+            "within_residual": 0.0
+          },
+          "monte_carlo_se": {
+            "p": 0.0,
+            "H_observed": 0.0,
+            "H_pooled": 0.0,
+            "H_within": 0.0,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.0,
+            "within_residual": 0.0
+          }
+        },
+        {
+          "generations_elapsed": 1,
+          "means": {
+            "p": 0.649379883,
+            "H_observed": 0.322548828,
+            "H_pooled": 0.454980969,
+            "H_within": 0.320355778,
+            "twice_between_variance": 0.134625191,
+            "pooled_gap": 0.132432141,
+            "within_residual": -0.00219305
+          },
+          "monte_carlo_se": {
+            "p": 0.000874847,
+            "H_observed": 0.001349619,
+            "H_pooled": 0.000519024,
+            "H_within": 0.00101689,
+            "twice_between_variance": 0.000878761,
+            "pooled_gap": 0.001273291,
+            "within_residual": 0.000979162
+          }
+        }
+      ],
+      "one_generation_expectation": {
+        "p": 0.65,
+        "H_observed": 0.32,
+        "H_pooled": 0.4546,
+        "pooled_gap": 0.1346,
+        "variance_of_p": 0.0002,
+        "founder_H_pooled": 0.455,
+        "founder_H_observed": 0.32,
+        "founder_pooling_gap": 0.135
+      }
+    },
+    {
+      "scenario": "unequal_size_control",
+      "mating": "common_pool",
+      "founder_group_sizes": [
+        100,
+        300
+      ],
+      "founder_frequencies": [
+        0.2,
+        0.8
+      ],
+      "seed": 202610275,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "means": {
+            "p": 0.65,
+            "H_observed": 0.32,
+            "H_pooled": 0.455,
+            "H_within": 0.455,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.135,
+            "within_residual": 0.135
+          },
+          "monte_carlo_se": {
+            "p": 0.0,
+            "H_observed": 0.0,
+            "H_pooled": 0.0,
+            "H_within": 0.0,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.0,
+            "within_residual": 0.0
+          }
+        },
+        {
+          "generations_elapsed": 1,
+          "means": {
+            "p": 0.65059082,
+            "H_observed": 0.456767578,
+            "H_pooled": 0.454119714,
+            "H_within": 0.454119714,
+            "twice_between_variance": 0.0,
+            "pooled_gap": -0.002647864,
+            "within_residual": -0.002647864
+          },
+          "monte_carlo_se": {
+            "p": 0.001014691,
+            "H_observed": 0.0016165,
+            "H_pooled": 0.000613513,
+            "H_within": 0.000613513,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.001490206,
+            "within_residual": 0.001490206
+          }
+        }
+      ],
+      "one_generation_expectation": {
+        "p": 0.65,
+        "H_observed": 0.455,
+        "H_pooled": 0.45443125,
+        "pooled_gap": -0.00056875,
+        "variance_of_p": 0.000284375,
+        "founder_H_pooled": 0.455,
+        "founder_H_observed": 0.32,
+        "founder_pooling_gap": 0.135
+      }
+    },
+    {
+      "scenario": "opposite_fixation_control",
+      "mating": "separate_demes",
+      "founder_group_sizes": [
+        100,
+        100
+      ],
+      "founder_frequencies": [
+        0.0,
+        1.0
+      ],
+      "seed": 202610276,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "means": {
+            "p": 0.5,
+            "H_observed": 0.0,
+            "H_pooled": 0.5,
+            "H_within": 0.0,
+            "twice_between_variance": 0.5,
+            "pooled_gap": 0.5,
+            "within_residual": 0.0
+          },
+          "monte_carlo_se": {
+            "p": 0.0,
+            "H_observed": 0.0,
+            "H_pooled": 0.0,
+            "H_within": 0.0,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.0,
+            "within_residual": 0.0
+          }
+        },
+        {
+          "generations_elapsed": 1,
+          "means": {
+            "p": 0.5,
+            "H_observed": 0.0,
+            "H_pooled": 0.5,
+            "H_within": 0.0,
+            "twice_between_variance": 0.5,
+            "pooled_gap": 0.5,
+            "within_residual": 0.0
+          },
+          "monte_carlo_se": {
+            "p": 0.0,
+            "H_observed": 0.0,
+            "H_pooled": 0.0,
+            "H_within": 0.0,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.0,
+            "within_residual": 0.0
+          }
+        }
+      ],
+      "one_generation_expectation": {
+        "p": 0.5,
+        "H_observed": 0.0,
+        "H_pooled": 0.5,
+        "pooled_gap": 0.5,
+        "variance_of_p": 0.0,
+        "founder_H_pooled": 0.5,
+        "founder_H_observed": 0.0,
+        "founder_pooling_gap": 0.5
+      }
+    },
+    {
+      "scenario": "opposite_fixation_control",
+      "mating": "common_pool",
+      "founder_group_sizes": [
+        100,
+        100
+      ],
+      "founder_frequencies": [
+        0.0,
+        1.0
+      ],
+      "seed": 202610277,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "means": {
+            "p": 0.5,
+            "H_observed": 0.0,
+            "H_pooled": 0.5,
+            "H_within": 0.5,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.5,
+            "within_residual": 0.5
+          },
+          "monte_carlo_se": {
+            "p": 0.0,
+            "H_observed": 0.0,
+            "H_pooled": 0.0,
+            "H_within": 0.0,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.0,
+            "within_residual": 0.0
+          }
+        },
+        {
+          "generations_elapsed": 1,
+          "means": {
+            "p": 0.498349609,
+            "H_observed": 0.501347656,
+            "H_pooled": 0.49863335,
+            "H_within": 0.49863335,
+            "twice_between_variance": 0.0,
+            "pooled_gap": -0.002714307,
+            "within_residual": -0.002714307
+          },
+          "monte_carlo_se": {
+            "p": 0.001633715,
+            "H_observed": 0.002178676,
+            "H_pooled": 0.000128319,
+            "H_within": 0.000128319,
+            "twice_between_variance": 0.0,
+            "pooled_gap": 0.002166373,
+            "within_residual": 0.002166373
+          }
+        }
+      ],
+      "one_generation_expectation": {
+        "p": 0.5,
+        "H_observed": 0.5,
+        "H_pooled": 0.49875,
+        "pooled_gap": -0.00125,
+        "variance_of_p": 0.000625,
+        "founder_H_pooled": 0.5,
+        "founder_H_observed": 0.0,
+        "founder_pooling_gap": 0.5
+      }
+    }
+  ],
+  "interpretation": "Founder genotypes are identical across mating treatments. Pooling counts does not change observed heterozygosity. One generation of common-pool random mating changes genotype frequencies. H_pooled uses the realized census frequency and has a finite-population correction in expectation. Pooled gaps are not estimates of pedigree inbreeding."
+}
