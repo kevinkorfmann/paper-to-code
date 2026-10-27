@@ -1,0 +1,188 @@
+{
+  "checks": {
+    "halved_time_step_relative_M_change": 1.7201e-05,
+    "independent_profile_log_likelihood": -380.108777696,
+    "independent_theta": 506.811540584,
+    "larger_spectrum_relative_M_change": 0.00139832,
+    "zero_migration_profile_log_likelihood": -976.766005632
+  },
+  "example": "moments-popgen: symmetric migration conditional on split time",
+  "fits": {
+    "assumed_T_1": {
+      "M": 1.170012578,
+      "assumed_T": 1.0,
+      "dt_fac": 0.02,
+      "padding_per_population": 8,
+      "profile_log_likelihood": -381.825836415,
+      "starts": [
+        {
+          "M": 1.170012578,
+          "optimizer_warnflag": 0,
+          "profile_log_likelihood": -381.825836415,
+          "start": 0.2,
+          "theta": 448.821979602
+        },
+        {
+          "M": 1.169995614,
+          "optimizer_warnflag": 0,
+          "profile_log_likelihood": -381.825836449,
+          "start": 1.0,
+          "theta": 448.821905732
+        },
+        {
+          "M": 1.17004377,
+          "optimizer_warnflag": 0,
+          "profile_log_likelihood": -381.825836623,
+          "start": 4.0,
+          "theta": 448.822115419
+        }
+      ],
+      "theta": 448.821979602
+    },
+    "halved_time_step": {
+      "M": 1.106257613,
+      "assumed_T": 0.5,
+      "dt_fac": 0.01,
+      "padding_per_population": 8,
+      "profile_log_likelihood": -380.108459809,
+      "starts": [
+        {
+          "M": 1.106257613,
+          "optimizer_warnflag": 0,
+          "profile_log_likelihood": -380.108459809,
+          "start": 0.2,
+          "theta": 506.813542952
+        },
+        {
+          "M": 1.106276642,
+          "optimizer_warnflag": 0,
+          "profile_log_likelihood": -380.10845989,
+          "start": 1.0,
+          "theta": 506.813585722
+        },
+        {
+          "M": 1.106269684,
+          "optimizer_warnflag": 0,
+          "profile_log_likelihood": -380.108459848,
+          "start": 4.0,
+          "theta": 506.813570083
+        }
+      ],
+      "theta": 506.813542952
+    },
+    "larger_integrated_spectrum": {
+      "M": 1.107823571,
+      "assumed_T": 0.5,
+      "dt_fac": 0.02,
+      "padding_per_population": 16,
+      "profile_log_likelihood": -380.171345024,
+      "starts": [
+        {
+          "M": 1.107823571,
+          "optimizer_warnflag": 0,
+          "profile_log_likelihood": -380.171345024,
+          "start": 0.2,
+          "theta": 506.971404998
+        },
+        {
+          "M": 1.107798818,
+          "optimizer_warnflag": 0,
+          "profile_log_likelihood": -380.171345179,
+          "start": 1.0,
+          "theta": 506.971345523
+        },
+        {
+          "M": 1.107843357,
+          "optimizer_warnflag": 0,
+          "profile_log_likelihood": -380.171345027,
+          "start": 4.0,
+          "theta": 506.971452538
+        }
+      ],
+      "theta": 506.971404998
+    },
+    "noiseless_same_solver": {
+      "M": 1.0,
+      "assumed_T": 0.5,
+      "dt_fac": 0.02,
+      "padding_per_population": 8,
+      "profile_log_likelihood": -304.185746645,
+      "starts": [
+        {
+          "M": 1.0,
+          "optimizer_warnflag": 0,
+          "profile_log_likelihood": -304.185746645,
+          "start": 0.2,
+          "theta": 500.0
+        },
+        {
+          "M": 1.0,
+          "optimizer_warnflag": 0,
+          "profile_log_likelihood": -304.185746645,
+          "start": 1.0,
+          "theta": 500.0
+        },
+        {
+          "M": 1.0,
+          "optimizer_warnflag": 0,
+          "profile_log_likelihood": -304.185746645,
+          "start": 4.0,
+          "theta": 500.0
+        }
+      ],
+      "theta": 500.0
+    },
+    "observed": {
+      "M": 1.106276642,
+      "assumed_T": 0.5,
+      "dt_fac": 0.02,
+      "padding_per_population": 8,
+      "profile_log_likelihood": -380.108777696,
+      "starts": [
+        {
+          "M": 1.106344552,
+          "optimizer_warnflag": 0,
+          "profile_log_likelihood": -380.108777844,
+          "start": 0.2,
+          "theta": 506.811693211
+        },
+        {
+          "M": 1.106276642,
+          "optimizer_warnflag": 0,
+          "profile_log_likelihood": -380.108777696,
+          "start": 1.0,
+          "theta": 506.811540584
+        },
+        {
+          "M": 1.106269684,
+          "optimizer_warnflag": 0,
+          "profile_log_likelihood": -380.108777756,
+          "start": 4.0,
+          "theta": 506.811524946
+        }
+      ],
+      "theta": 506.811540584
+    }
+  },
+  "generation_for_evaluation_only": {
+    "M": 1.0,
+    "T": 0.5,
+    "dt_fac": 0.02,
+    "padding_per_population": 8,
+    "rng": "NumPy PCG64",
+    "sampling": "independent Poisson bins; not a simulated genome",
+    "seed": 20261027,
+    "theta": 500.0
+  },
+  "sample_sizes": [
+    12,
+    12
+  ],
+  "segregating_sites": 2665,
+  "versions": {
+    "moments-popgen": "1.6.1",
+    "numpy": "2.3.5",
+    "python": "3.12.11",
+    "scipy": "1.16.3"
+  }
+}
