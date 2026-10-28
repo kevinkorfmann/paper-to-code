@@ -1,0 +1,57 @@
+// Original one-locus experiment. A is deleterious; no new mutations occur.
+initialize() {
+    if (!exists("N")) defineConstant("N", 400);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 512);
+    if (!exists("GENERATIONS")) defineConstant("GENERATIONS", 1);
+    if (!exists("MODE")) defineConstant("MODE", 1);
+    if (!exists("AA")) defineConstant("AA", 1);
+    if (!exists("HET")) defineConstant("HET", 38);
+    if ((N < 2) | (N > 1000) | (asInteger(N) != N)) stop("invalid N");
+    if ((REPLICATES < 1) | (REPLICATES > 2048) | (asInteger(REPLICATES) != REPLICATES))
+        stop("invalid REPLICATES");
+    if (!any(GENERATIONS == c(0, 1))) stop("GENERATIONS must be 0 or 1");
+    if (!any(MODE == 0:3)) stop("MODE must be 0, 1, 2, or 3");
+    if ((AA < 0) | (HET < 0) | (AA+HET > N) |
+        (asInteger(AA) != AA) | (asInteger(HET) != HET)) stop("invalid founder counts");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    h = c(0.5, 0.0, 0.5, 1.0)[MODE];
+    s = (MODE == 0) ? 0.0 else -0.8;
+    initializeMutationType("m1", h, "f", s);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+
+1 early() {
+    for (r in seqLen(REPLICATES)) sim.addSubpop(r+1, N);
+}
+
+1 late() {
+    // Install the same A allele on both genomes of AA, and one genome of Aa.
+    // Founders are installed after tick 1 reproduction, defining elapsed t=0.
+    for (pop in sim.subpopulations) {
+        carriers = c(pop.individuals[seqLen(AA)].genomes,
+                     pop.individuals[AA+seqLen(HET)].genome1);
+        if (size(carriers)) carriers.addNewDrawnMutation(m1, 0);
+    }
+    sim.recalculateFitness();
+    pop = sim.subpopulations[0];
+    copies = pop.individuals.genome1.countOfMutationsOfType(m1) +
+             pop.individuals.genome2.countOfMutationsOfType(m1);
+    fitness = pop.cachedFitness(NULL);
+    for (g in 0:2)
+        if (any(copies == g)) catn("FIT," + g + "," + mean(fitness[copies == g]));
+}
+
+1:2 late() {
+    for (pop in sim.subpopulations) {
+        copies = pop.individuals.genome1.countOfMutationsOfType(m1) +
+                 pop.individuals.genome2.countOfMutationsOfType(m1);
+        catn("DATA," + (community.tick-1) + "," + (pop.id-1) + "," +
+             pop.individualCount + "," + sum(copies == 2) + "," + sum(copies == 1));
+    }
+    if (community.tick-1 == GENERATIONS) sim.simulationFinished();
+}
