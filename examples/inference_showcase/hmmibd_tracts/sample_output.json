@@ -1,0 +1,74 @@
+{
+  "fits": {
+    "blocks": {
+      "posterior_mean_ibd": 0.33172,
+      "viterbi_marker_fraction_ibd": 0.33333,
+      "viterbi_segments": [
+        {
+          "end_bp": 399001,
+          "markers": 400,
+          "start_bp": 1,
+          "state": 1
+        },
+        {
+          "end_bp": 799001,
+          "markers": 400,
+          "start_bp": 400001,
+          "state": 0
+        },
+        {
+          "end_bp": 1199001,
+          "markers": 400,
+          "start_bp": 800001,
+          "state": 1
+        }
+      ]
+    },
+    "identical": {
+      "posterior_mean_ibd": 1.0,
+      "viterbi_marker_fraction_ibd": 1.0,
+      "viterbi_segments": [
+        {
+          "end_bp": 1199001,
+          "markers": 1200,
+          "start_bp": 1,
+          "state": 0
+        }
+      ]
+    },
+    "independent": {
+      "posterior_mean_ibd": 0.0,
+      "viterbi_marker_fraction_ibd": 0.0,
+      "viterbi_segments": [
+        {
+          "end_bp": 1199001,
+          "markers": 1200,
+          "start_bp": 1,
+          "state": 1
+        }
+      ]
+    }
+  },
+  "fixed_parameter_check": {
+    "generations_used_for_decoding": 1,
+    "oracle_posterior_mean_ibd": 0.331682313,
+    "prior": 0.5,
+    "tool_posterior_mean_ibd": 0.33168
+  },
+  "hmmibd_commit": "c553843db8a7c070c50bdd96623e1f8280a8009d",
+  "markers_per_pair": 1200,
+  "matching_allele_frequency_control": {
+    "0.1": {
+      "independent_marker_bayes_oracle": 0.907598322,
+      "tool_posterior_mean_ibd": 0.9076
+    },
+    "0.5": {
+      "independent_marker_bayes_oracle": 0.666222074,
+      "tool_posterior_mean_ibd": 0.66622
+    }
+  },
+  "python": "3.14.5",
+  "seed": 20261028,
+  "source_sha256": "03d08b190ceedefa1e834ae1525c1cd5ff778b9818777ed8e1e4e3a58defd922",
+  "truth_ibd_marker_fraction_blocks": 0.333333333
+}
