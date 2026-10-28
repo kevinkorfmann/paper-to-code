@@ -1,0 +1,130 @@
+{
+  "example": "Continuum Attention: exact forward segment integration",
+  "python": "3.14.5",
+  "randomness": "none; deterministic constructed inputs",
+  "two_token_read": {
+    "scaled_logits": [
+      0.0,
+      1.38629436112
+    ],
+    "values": [
+      [
+        0.0
+      ],
+      [
+        1.0
+      ]
+    ],
+    "continuum": {
+      "output": [
+        0.712764367458
+      ],
+      "token_weights": [
+        0.287235632542,
+        0.712764367458
+      ],
+      "segment_probability_masses": [
+        0.463984308221
+      ],
+      "segment_mean_coordinates": [
+        0.611985812889
+      ],
+      "boundary_probability_mass": 0.536015691779,
+      "shifted_normalizer": 1.166010640333,
+      "logit_shift": 1.38629436112,
+      "prefix_length": 2
+    },
+    "discrete_softmax_output": [
+      0.8
+    ]
+  },
+  "equal_logit_boundary_control": {
+    "with_half_token_caps": {
+      "output": [
+        0.333333333333
+      ],
+      "token_weights": [
+        0.333333333333,
+        0.333333333333,
+        0.333333333333
+      ],
+      "segment_probability_masses": [
+        0.333333333333,
+        0.333333333333
+      ],
+      "segment_mean_coordinates": [
+        0.5,
+        0.5
+      ],
+      "boundary_probability_mass": 0.333333333333,
+      "shifted_normalizer": 3.0,
+      "logit_shift": 0.0,
+      "prefix_length": 3
+    },
+    "without_caps_ablation": {
+      "output": [
+        0.5
+      ],
+      "token_weights": [
+        0.25,
+        0.5,
+        0.25
+      ],
+      "segment_probability_masses": [
+        0.5,
+        0.5
+      ],
+      "segment_mean_coordinates": [
+        0.5,
+        0.5
+      ],
+      "boundary_probability_mass": 0.0,
+      "shifted_normalizer": 2.0,
+      "logit_shift": 0.0,
+      "prefix_length": 3
+    }
+  },
+  "segment_retrieval_coordinates": [
+    {
+      "gap": -4.0,
+      "mean_u": 0.231342639636
+    },
+    {
+      "gap": 0.0,
+      "mean_u": 0.5
+    },
+    {
+      "gap": 4.0,
+      "mean_u": 0.768657360364
+    }
+  ],
+  "causal_prefix_check": {
+    "before": [
+      0.712764367458
+    ],
+    "with_extreme_future": [
+      0.712764367458
+    ],
+    "future_weight": 0.0,
+    "maximum_output_difference": 0.0
+  },
+  "adjacency_control": {
+    "original_order": [
+      0,
+      1,
+      2
+    ],
+    "permuted_order": [
+      1,
+      0,
+      2
+    ],
+    "original_output": [
+      0.607852884793
+    ],
+    "permuted_output": [
+      0.751681323137
+    ]
+  },
+  "scope": "Forward operator on supplied logits and values; no training, learned projections, backward kernel, speed benchmark, or language-model quality claim."
+}
