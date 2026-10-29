@@ -95,6 +95,8 @@ jobs:
           diff -u examples/slimulations/wahlund_effect/sample_summary.json /tmp/wahlund-summary.json
           python -m unittest discover -s examples/slimulations/recessive_selection -v
           python -m examples.slimulations.recessive_selection.demo --check-sample
+          python -m unittest discover -s examples/slimulations/transmission_distortion -v
+          python -m examples.slimulations.transmission_distortion.demo --check-sample
 
   inference-showcase:
     runs-on: ubuntu-24.04

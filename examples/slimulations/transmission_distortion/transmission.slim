@@ -1,0 +1,71 @@
+// Original one-locus model: heterozygotes transmit A with probability TAU.
+// This sets inheritance probabilities, not a molecular drive mechanism.
+initialize() {
+    if (!exists("N")) defineConstant("N", 200);
+    if (!exists("AA")) defineConstant("AA", 50);
+    if (!exists("HET")) defineConstant("HET", 100);
+    if (!exists("TAU")) defineConstant("TAU", 0.75);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 512);
+    if (!exists("GENERATIONS")) defineConstant("GENERATIONS", 2);
+    if ((N < 2) | (N > 1000) | (asInteger(N) != N)) stop("invalid N");
+    if ((AA < 0) | (HET < 0) | (AA+HET > N) |
+        (asInteger(AA) != AA) | (asInteger(HET) != HET)) stop("invalid founder counts");
+    if (!isFinite(TAU) | (TAU < 0) | (TAU > 1)) stop("invalid TAU");
+    if ((REPLICATES < 1) | (REPLICATES > 2048) | (asInteger(REPLICATES) != REPLICATES))
+        stop("invalid REPLICATES");
+    if (!any(GENERATIONS == 0:2)) stop("GENERATIONS must be 0, 1, or 2");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+
+1 early() {
+    for (r in seqLen(REPLICATES)) sim.addSubpop(r+1, N);
+}
+
+1 late() {
+    // Install founders after tick 1 reproduction: elapsed generation zero.
+    for (pop in sim.subpopulations) {
+        carriers = c(pop.individuals[seqLen(AA)].genomes,
+                     pop.individuals[AA+seqLen(HET)].genome1);
+        if (size(carriers)) carriers.addNewDrawnMutation(m1, 0);
+    }
+    sim.recalculateFitness();
+    catn("FIT," + min(sim.subpopulations.cachedFitness(NULL)) + "," +
+         max(sim.subpopulations.cachedFitness(NULL)));
+    version();
+}
+
+modifyChild() {
+    if (community.tick == 1) return T;
+    parents = c(parent1, parent2);
+    gametes = c(child.genome1, child.genome2);
+    for (i in 0:1) {
+        // Homozygotes retain ordinary inheritance. For Aa, replace the
+        // single-locus transmission by an independent Bernoulli(TAU) draw.
+        if (sum(parents[i].genomes.countOfMutationsOfType(m1)) == 1) {
+            allele = parents[i].genomes.mutationsOfType(m1);
+            inherited = gametes[i].containsMutations(allele);
+            transmit = runif(1) < TAU;
+            if (transmit & !inherited) gametes[i].addMutations(allele);
+            if (!transmit & inherited) gametes[i].removeMutations(allele);
+        }
+    }
+    // Never reject a child or reweight which parents are chosen.
+    return T;
+}
+
+1:3 late() {
+    for (pop in sim.subpopulations) {
+        copies = pop.individuals.genome1.countOfMutationsOfType(m1) +
+                 pop.individuals.genome2.countOfMutationsOfType(m1);
+        catn("DATA," + (community.tick-1) + "," + (pop.id-1) + "," +
+             pop.individualCount + "," + sum(copies == 2) + "," + sum(copies == 1));
+    }
+    if (community.tick-1 == GENERATIONS) sim.simulationFinished();
+}

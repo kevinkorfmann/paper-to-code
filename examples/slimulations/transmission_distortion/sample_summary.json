@@ -1,0 +1,267 @@
+{
+  "example": "Transmission distortion can change frequency without a parental fitness advantage",
+  "slim_version": "4.0.1",
+  "eidos_version": "3.0.1",
+  "reference_python_version": "3.14.5",
+  "diploid_population_size": 200,
+  "replicates_per_treatment": 512,
+  "initial_frequency": 0.5,
+  "fitness_aa_Aa_AA": [
+    1,
+    1,
+    1
+  ],
+  "treatments": [
+    {
+      "founders": "hardy_weinberg",
+      "tau": 0.5,
+      "seed": 202610290,
+      "founder_counts": {
+        "aa": 50,
+        "Aa": 100,
+        "AA": 50
+      },
+      "checkpoints": [
+        {
+          "generations_elapsed": 1,
+          "exact_expected_frequency_fraction": "1/2",
+          "prediction": {
+            "mean_frequency": 0.5,
+            "frequency_variance": 0.000625,
+            "AA_fraction": 0.25,
+            "heterozygote_fraction": 0.5
+          },
+          "observed": {
+            "mean_frequency": 0.500664062,
+            "frequency_variance": 0.000537743,
+            "monte_carlo_se": 0.001024831,
+            "mean_AA_fraction": 0.250986328,
+            "mean_heterozygote_fraction": 0.499355469,
+            "lost_replicates": 0,
+            "fixed_replicates": 0
+          }
+        },
+        {
+          "generations_elapsed": 2,
+          "exact_expected_frequency_fraction": "1/2",
+          "prediction": {
+            "mean_frequency": 0.5,
+            "frequency_variance": 0.001248437,
+            "AA_fraction": 0.250625,
+            "heterozygote_fraction": 0.49875
+          },
+          "observed": {
+            "mean_frequency": 0.499765625,
+            "frequency_variance": 0.001135072,
+            "monte_carlo_se": 0.001488938,
+            "mean_AA_fraction": 0.249716797,
+            "mean_heterozygote_fraction": 0.500097656,
+            "lost_replicates": 0,
+            "fixed_replicates": 0
+          }
+        }
+      ]
+    },
+    {
+      "founders": "hardy_weinberg",
+      "tau": 0.75,
+      "seed": 202610291,
+      "founder_counts": {
+        "aa": 50,
+        "Aa": 100,
+        "AA": 50
+      },
+      "checkpoints": [
+        {
+          "generations_elapsed": 1,
+          "exact_expected_frequency_fraction": "5/8",
+          "prediction": {
+            "mean_frequency": 0.625,
+            "frequency_variance": 0.000585937,
+            "AA_fraction": 0.390625,
+            "heterozygote_fraction": 0.46875
+          },
+          "observed": {
+            "mean_frequency": 0.624243164,
+            "frequency_variance": 0.000496503,
+            "monte_carlo_se": 0.00098475,
+            "mean_AA_fraction": 0.389189453,
+            "mean_heterozygote_fraction": 0.470107422,
+            "lost_replicates": 0,
+            "fixed_replicates": 0
+          }
+        },
+        {
+          "generations_elapsed": 2,
+          "exact_expected_frequency_fraction": "95/128",
+          "prediction": {
+            "mean_frequency": 0.7421875,
+            "frequency_variance": 0.000994343,
+            "AA_fraction": 0.551359558,
+            "heterozygote_fraction": 0.381655884
+          },
+          "observed": {
+            "mean_frequency": 0.741621094,
+            "frequency_variance": 0.000998394,
+            "monte_carlo_se": 0.00139642,
+            "mean_AA_fraction": 0.549697266,
+            "mean_heterozygote_fraction": 0.383847656,
+            "lost_replicates": 0,
+            "fixed_replicates": 0
+          }
+        }
+      ]
+    },
+    {
+      "founders": "hardy_weinberg",
+      "tau": 0.25,
+      "seed": 202610292,
+      "founder_counts": {
+        "aa": 50,
+        "Aa": 100,
+        "AA": 50
+      },
+      "checkpoints": [
+        {
+          "generations_elapsed": 1,
+          "exact_expected_frequency_fraction": "3/8",
+          "prediction": {
+            "mean_frequency": 0.375,
+            "frequency_variance": 0.000585937,
+            "AA_fraction": 0.140625,
+            "heterozygote_fraction": 0.46875
+          },
+          "observed": {
+            "mean_frequency": 0.376298828,
+            "frequency_variance": 0.000560418,
+            "monte_carlo_se": 0.001046216,
+            "mean_AA_fraction": 0.142080078,
+            "mean_heterozygote_fraction": 0.4684375,
+            "lost_replicates": 0,
+            "fixed_replicates": 0
+          }
+        },
+        {
+          "generations_elapsed": 2,
+          "exact_expected_frequency_fraction": "33/128",
+          "prediction": {
+            "mean_frequency": 0.2578125,
+            "frequency_variance": 0.000994343,
+            "AA_fraction": 0.066984558,
+            "heterozygote_fraction": 0.381655884
+          },
+          "observed": {
+            "mean_frequency": 0.258608398,
+            "frequency_variance": 0.001076032,
+            "monte_carlo_se": 0.001449698,
+            "mean_AA_fraction": 0.068544922,
+            "mean_heterozygote_fraction": 0.380126953,
+            "lost_replicates": 0,
+            "fixed_replicates": 0
+          }
+        }
+      ]
+    },
+    {
+      "founders": "all_heterozygotes",
+      "tau": 0.75,
+      "seed": 202610293,
+      "founder_counts": {
+        "aa": 0,
+        "Aa": 200,
+        "AA": 0
+      },
+      "checkpoints": [
+        {
+          "generations_elapsed": 1,
+          "exact_expected_frequency_fraction": "3/4",
+          "prediction": {
+            "mean_frequency": 0.75,
+            "frequency_variance": 0.00046875,
+            "AA_fraction": 0.5625,
+            "heterozygote_fraction": 0.375
+          },
+          "observed": {
+            "mean_frequency": 0.748808594,
+            "frequency_variance": 0.000505427,
+            "monte_carlo_se": 0.00099356,
+            "mean_AA_fraction": 0.560830078,
+            "mean_heterozygote_fraction": 0.375957031,
+            "lost_replicates": 0,
+            "fixed_replicates": 0
+          }
+        },
+        {
+          "generations_elapsed": 2,
+          "exact_expected_frequency_fraction": "27/32",
+          "prediction": {
+            "mean_frequency": 0.84375,
+            "frequency_variance": 0.000636438,
+            "AA_fraction": 0.71222168,
+            "heterozygote_fraction": 0.263056641
+          },
+          "observed": {
+            "mean_frequency": 0.843027344,
+            "frequency_variance": 0.000649599,
+            "monte_carlo_se": 0.001126387,
+            "mean_AA_fraction": 0.710683594,
+            "mean_heterozygote_fraction": 0.2646875,
+            "lost_replicates": 0,
+            "fixed_replicates": 0
+          }
+        }
+      ]
+    },
+    {
+      "founders": "only_homozygotes",
+      "tau": 0.75,
+      "seed": 202610294,
+      "founder_counts": {
+        "aa": 100,
+        "Aa": 0,
+        "AA": 100
+      },
+      "checkpoints": [
+        {
+          "generations_elapsed": 1,
+          "exact_expected_frequency_fraction": "1/2",
+          "prediction": {
+            "mean_frequency": 0.5,
+            "frequency_variance": 0.000625,
+            "AA_fraction": 0.25,
+            "heterozygote_fraction": 0.5
+          },
+          "observed": {
+            "mean_frequency": 0.499941406,
+            "frequency_variance": 0.000663451,
+            "monte_carlo_se": 0.001138333,
+            "mean_AA_fraction": 0.249257813,
+            "mean_heterozygote_fraction": 0.501367187,
+            "lost_replicates": 0,
+            "fixed_replicates": 0
+          }
+        },
+        {
+          "generations_elapsed": 2,
+          "exact_expected_frequency_fraction": "5/8",
+          "prediction": {
+            "mean_frequency": 0.625,
+            "frequency_variance": 0.001287305,
+            "AA_fraction": 0.391328125,
+            "heterozygote_fraction": 0.46734375
+          },
+          "observed": {
+            "mean_frequency": 0.624326172,
+            "frequency_variance": 0.001305612,
+            "monte_carlo_se": 0.001596879,
+            "mean_AA_fraction": 0.389902344,
+            "mean_heterozygote_fraction": 0.468847656,
+            "lost_replicates": 0,
+            "fixed_replicates": 0
+          }
+        }
+      ]
+    }
+  ],
+  "interpretation": "The same transmission bias acts in both parental roles. Only heterozygotes express it. All finite replicates are included. This is a generic inheritance-probability model, not a molecular mechanism, an R2d2 model, or a prediction for a real population."
+}
