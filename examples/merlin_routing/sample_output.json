@@ -1,0 +1,80 @@
+{
+  "scope": "MERLIN moment routing only; supplied readouts; no training or speed claim",
+  "random_seed": null,
+  "equal_mean_different_variance": {
+    "keys": [
+      [
+        [
+          -2.0
+        ],
+        [
+          2.0
+        ]
+      ],
+      [
+        [
+          0.0
+        ],
+        [
+          0.0
+        ]
+      ]
+    ],
+    "query": [
+      1.0
+    ],
+    "gamma": 0.5,
+    "tau_mean": 1.0,
+    "tau_variance": 1.0,
+    "mean_scores": [
+      0.0,
+      0.0
+    ],
+    "variance_scores": [
+      4.0,
+      0.0
+    ],
+    "mean_weights": [
+      0.5,
+      0.5
+    ],
+    "variance_weights": [
+      0.98201379,
+      0.01798621
+    ],
+    "weights": [
+      0.741006895,
+      0.258993105
+    ],
+    "output": [
+      0.741006895,
+      0.258993105
+    ],
+    "dense_token_softmax_segment_mass": [
+      0.790012829,
+      0.209987171
+    ]
+  },
+  "same_first_two_moments_different_higher_moments": {
+    "mean_scores": [
+      0.0,
+      0.0
+    ],
+    "variance_scores": [
+      12.5,
+      12.5
+    ],
+    "fourth_moments": [
+      312.5,
+      168.5
+    ],
+    "moment_routing_weights": [
+      0.5,
+      0.5
+    ],
+    "dense_token_softmax_segment_mass": [
+      0.668023139,
+      0.331976861
+    ]
+  }
+}
