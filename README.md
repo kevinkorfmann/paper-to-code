@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-10-29 | Inference showcase | [KING-robust kinship and a mixed-parent counterexample](examples/inference_showcase/plink_king/README.md) | CPython 3.14.5 + checksum-pinned PLINK 2 binary |
 | 2026-10-28 | **slimulations** | [Recessive deleterious alleles and masking](examples/slimulations/recessive_selection/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-10-28 | Inference showcase | [Haploid IBD tracts with hmmIBD](examples/inference_showcase/hmmibd_tracts/README.md) | CPython 3.14.5 + checksum-pinned C source |
 | 2026-10-28 | Paper to code | [Continuum Attention over interpolated memory](examples/continuum_attention/README.md) | CPython 3.14.5; standard library |
@@ -31,14 +32,15 @@ and explains its limits.
 | 2026-10-20 | Inference showcase | [Genealogy inference with tsinfer](examples/inference_showcase/tsinfer_genealogy/README.md) | CPython 3.12.11; separate hash-locked environment |
 
 The examples use only constructed inputs or synthetic data. Their documentation
-includes commands, seeds where applicable, checked output, and tests. The seven
+includes commands, seeds where applicable, checked output, and tests. The eight
 inference examples call actual tools: tsinfer estimates topology; tsdate estimates
 node ages conditional on a supplied topology and mutation clock; dadi estimates
 a population-size ratio conditional on a supplied change time; fastDFE estimates
 a deleterious gamma DFE conditional on model assumptions and target-site counts;
 scikit-allel estimates pairwise Hudson differentiation for a specified locus panel;
 moments estimates symmetric migration conditional on a supplied split time;
-hmmIBD infers haploid IBD states and marker-averaged posterior probabilities.
+hmmIBD infers haploid IBD states and marker-averaged posterior probabilities;
+PLINK 2 estimates diploid KING-robust kinship, with an explicit ancestry counterexample.
 
 ## First example: differential attention
 
@@ -128,13 +130,14 @@ shared-component cancellation, counterexamples, permutation equivariance,
 linearity in values, a finite-difference λ derivative, stable softmax, invalid
 inputs, CLI behavior, and the checked sample output.
 
-[CI](.github/workflows/tests.yml) runs all **400 tests**: 25 differential-attention,
+[CI](.github/workflows/tests.yml) runs all **425 tests**: 25 differential-attention,
 12 gated-attention, 18 multi-head attention-residual, 22 attention-abstention, 28 first-passage-attention, 30 tail-proxy-attention, 26 continuum-attention, 11 neutral-drift,
 11 migration, 12 selfing, 17 heterozygote-advantage, 20 linkage-disequilibrium, 20 Wahlund-effect, 22 recessive-selection, 11 tsinfer, 12 tsdate, 15 dadi,
-18 fastDFE, 22 scikit-allel, 22 moments, and 26 hmmIBD tests.
+18 fastDFE, 22 scikit-allel, 22 moments, 26 hmmIBD, and 25 PLINK/KING tests.
 The SLiM job builds a checksum-verified official
-source revision; hmmIBD similarly builds checksum-verified C source, while
-the other inference jobs install their separate hash-locked package sets.
+source revision; hmmIBD similarly builds checksum-verified C source, PLINK/KING
+uses a checksum-pinned official binary, and the other inference jobs install
+their separate hash-locked package sets.
 All jobs run on pushes and pull requests using a
 standard Ubuntu runner, a pinned Python version, official actions pinned by
 commit hash, and read-only repository permissions. It checks the sample output

@@ -1,0 +1,3 @@
+# CPython 3.14.5 standard library only; no pip installation required.
+# External PLINK 2 Linux x86-64 binary (GPL-3.0) pinned/checksummed in install.py.
+# Its archive includes the Intel simplified software license for linked libraries.

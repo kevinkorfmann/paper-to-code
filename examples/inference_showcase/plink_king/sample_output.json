@@ -1,0 +1,127 @@
+{
+  "python": "3.14.5",
+  "tool": "PLINK v2.0.0-b.1.2LM 64-bit Intel (24 Oct 2026)",
+  "seed": 20261029,
+  "loci": 10000,
+  "samples": 9,
+  "synthetic_vcf_sha256": "95e61152b8342dc1e4cab092fc23f52cbcf349c0d4f1746c3a4533110c3e3aa5",
+  "generating_frequencies": {
+    "main_founders": 0.3,
+    "low": 0.1,
+    "high": 0.9
+  },
+  "all_pairs_checked": 36,
+  "max_abs_tool_reference_error": 4.96e-06,
+  "selected_pairs": {
+    "parent_child": {
+      "samples": [
+        "parentA",
+        "childA"
+      ],
+      "n_sites": 10000,
+      "heterozygotes": [
+        4194,
+        4107
+      ],
+      "both_heterozygous": 2084,
+      "ibs0_count": 0,
+      "plink_kinship": 0.248417,
+      "independent_exact_score": "4081/16428"
+    },
+    "full_siblings": {
+      "samples": [
+        "childA",
+        "childB"
+      ],
+      "n_sites": 10000,
+      "heterozygotes": [
+        4107,
+        4157
+      ],
+      "both_heterozygous": 2485,
+      "ibs0_count": 219,
+      "plink_kinship": 0.246165,
+      "independent_exact_score": "337/1369"
+    },
+    "duplicate": {
+      "samples": [
+        "parentA",
+        "duplicate"
+      ],
+      "n_sites": 10000,
+      "heterozygotes": [
+        4194,
+        4194
+      ],
+      "both_heterozygous": 4194,
+      "ibs0_count": 0,
+      "plink_kinship": 0.5,
+      "independent_exact_score": "1/2"
+    },
+    "unrelated_same_population": {
+      "samples": [
+        "parentA",
+        "unrelated"
+      ],
+      "n_sites": 10000,
+      "heterozygotes": [
+        4194,
+        4205
+      ],
+      "both_heterozygous": 1747,
+      "ibs0_count": 845,
+      "plink_kinship": 0.00613972,
+      "independent_exact_score": "103/16776"
+    },
+    "unrelated_different_populations": {
+      "samples": [
+        "low",
+        "high"
+      ],
+      "n_sites": 10000,
+      "heterozygotes": [
+        1769,
+        1766
+      ],
+      "both_heterozygous": 292,
+      "ibs0_count": 6575,
+      "plink_kinship": -3.64086,
+      "independent_exact_score": "-25719/7064"
+    },
+    "mixed_parent_child_low": {
+      "samples": [
+        "low",
+        "admixed"
+      ],
+      "n_sites": 10000,
+      "heterozygotes": [
+        1769,
+        8231
+      ],
+      "both_heterozygous": 892,
+      "ibs0_count": 0,
+      "plink_kinship": -0.661108,
+      "independent_exact_score": "-2339/3538"
+    },
+    "mixed_parent_child_high": {
+      "samples": [
+        "high",
+        "admixed"
+      ],
+      "n_sites": 10000,
+      "heterozygotes": [
+        1766,
+        8231
+      ],
+      "both_heterozygous": 919,
+      "ibs0_count": 0,
+      "plink_kinship": -0.655011,
+      "independent_exact_score": "-4627/7064"
+    }
+  },
+  "balanced_256_locus_control": {
+    "parent_child": 0.25,
+    "full_siblings": 0.25,
+    "unrelated_parents": 0.0
+  }
+}
