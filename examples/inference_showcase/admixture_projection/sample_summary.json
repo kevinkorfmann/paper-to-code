@@ -1,0 +1,88 @@
+{
+  "versions": {
+    "python": "3.14.5",
+    "admixture": "1.4.0",
+    "admixture_binary_sha256": "dbab7f695dc159bddd72a1137f11cb2888ca2939565e6123fbb80e001c4e613f"
+  },
+  "data_seed": 20261030,
+  "optimizer_seeds": [
+    41,
+    99
+  ],
+  "fixture_sha256": "2ca59d3d0a932f1670165bef7088fbea566283f6bae3879fdf6f320a219f76b9",
+  "individuals": 5,
+  "independent_markers": 2000,
+  "true_q_source_A": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "correct_references": {
+    "q_source_A": [
+      1e-05,
+      0.280409,
+      0.470208,
+      0.778415,
+      0.99999
+    ],
+    "log_likelihood_without_binomial_constant": -11773.738361
+  },
+  "independent_mathematical_mle": [
+    0.0,
+    0.280409242,
+    0.470207698,
+    0.778415125,
+    1.0
+  ],
+  "halved_reference_contrast": {
+    "q_source_A": [
+      1e-05,
+      0.560818,
+      0.940415,
+      0.99999,
+      0.99999
+    ],
+    "log_likelihood_without_binomial_constant": -12718.390908
+  },
+  "degenerate_boundary_control": {
+    "actual_tool": {
+      "q_source_A": [
+        0.998559,
+        0.001664
+      ],
+      "log_likelihood_without_binomial_constant": -35.889384
+    },
+    "mathematical_mle": [
+      1.0,
+      0.0
+    ],
+    "mathematical_max_log_likelihood": -35.702968,
+    "note": "Convergence report is not an optimality certificate on this stress case"
+  },
+  "identical_reference_profiles": {
+    "identifiable": false,
+    "seed_41": {
+      "q_source_A": [
+        0.403531,
+        0.630516,
+        0.123843,
+        0.852711,
+        0.817125
+      ],
+      "log_likelihood_without_binomial_constant": -13862.943611
+    },
+    "seed_99": {
+      "q_source_A": [
+        0.097218,
+        0.426764,
+        0.039473,
+        0.786362,
+        0.809911
+      ],
+      "log_likelihood_without_binomial_constant": -13862.943611
+    },
+    "analytical_log_likelihood": -13862.943611
+  }
+}
