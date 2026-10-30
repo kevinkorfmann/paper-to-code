@@ -1,0 +1,68 @@
+// Original finite two-state mutation model. Presence of any m1 means A.
+// Mutation identifiers are not distinct alleles or an ancestry record.
+initialize() {
+    if (!exists("N")) defineConstant("N", 20);
+    if (!exists("INITIAL_COPIES")) defineConstant("INITIAL_COPIES", 0);
+    if (!exists("U")) defineConstant("U", 0.01);
+    if (!exists("V")) defineConstant("V", 0.01);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 512);
+    if (!exists("GENERATIONS")) defineConstant("GENERATIONS", 80);
+    if ((N < 2) | (N > 1000) | (asInteger(N) != N)) stop("invalid N");
+    if ((INITIAL_COPIES < 0) | (INITIAL_COPIES > 2*N) |
+        (asInteger(INITIAL_COPIES) != INITIAL_COPIES)) stop("invalid INITIAL_COPIES");
+    if (!isFinite(asFloat(U)) | !isFinite(asFloat(V)) | (U < 0) | (U > 1) | (V < 0) | (V > 1))
+        stop("mutation probabilities must lie in [0,1]");
+    if ((REPLICATES < 1) | (REPLICATES > 2048) | (asInteger(REPLICATES) != REPLICATES))
+        stop("invalid REPLICATES");
+    if ((GENERATIONS < 0) | (GENERATIONS > 200) | (asInteger(GENERATIONS) != GENERATIONS))
+        stop("invalid GENERATIONS");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);  // All two-state mutation is explicit below.
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+
+1 early() {
+    for (r in seqLen(REPLICATES)) sim.addSubpop(r+1, N);
+}
+
+1 late() {
+    // Install founders after tick 1 reproduction: elapsed generation zero.
+    for (pop in sim.subpopulations)
+        if (INITIAL_COPIES > 0)
+            pop.genomes[seqLen(INITIAL_COPIES)].addNewDrawnMutation(m1, 0);
+    version();
+}
+
+modifyChild() {
+    if (community.tick == 1) return T;
+    for (gamete in child.genomes) {
+        allele = gamete.mutationsOfType(m1);
+        // Exactly one opportunity per inherited copy, not two successive flips.
+        if (size(allele)) {
+            if (runif(1) < V) gamete.removeMutations(allele);
+        } else {
+            if (runif(1) < U) gamete.addNewDrawnMutation(m1, 0);
+        }
+    }
+    return T;  // Never reject offspring or bias the choice of parents.
+}
+
+1:201 late() {
+    t = community.tick-1;
+    if (any(t == c(0, 1, asInteger(GENERATIONS/2), GENERATIONS))) {
+        sim.recalculateFitness();
+        catn("FIT," + t + "," + min(sim.subpopulations.cachedFitness(NULL)) + "," +
+             max(sim.subpopulations.cachedFitness(NULL)));
+        for (pop in sim.subpopulations) {
+            copies = pop.genomes.countOfMutationsOfType(m1);
+            if (any(copies > 1)) stop("not a binary allele state");
+            catn("DATA," + t + "," + (pop.id-1) + "," + pop.individualCount + "," + sum(copies));
+        }
+    }
+    if (t == GENERATIONS) sim.simulationFinished();
+}

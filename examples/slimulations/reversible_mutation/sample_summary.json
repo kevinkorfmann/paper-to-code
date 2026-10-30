@@ -1,0 +1,359 @@
+{
+  "example": "Reversible mutation restores variation after fixation",
+  "slim_version": "4.0.1",
+  "eidos_version": "3.0.1",
+  "reference_python_version": "3.14.5",
+  "replicates_per_treatment": 512,
+  "initial_A_frequency": 0,
+  "treatments": [
+    {
+      "treatment": "no_mutation",
+      "diploid_population_size": 20,
+      "u_a_to_A": 0.0,
+      "v_A_to_a": 0.0,
+      "seed": 202610300,
+      "stationary_mean_frequency": null,
+      "symmetric_stationary_gene_diversity": null,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "prediction": {
+            "mean_frequency": 0.0,
+            "frequency_variance": 0.0,
+            "mean_gene_diversity": 0.0,
+            "gene_diversity_variance": 0.0
+          },
+          "observed": {
+            "mean_frequency": 0.0,
+            "frequency_monte_carlo_se": 0.0,
+            "mean_gene_diversity": 0.0,
+            "diversity_monte_carlo_se": 0.0,
+            "diversity_of_mean_frequency": 0.0,
+            "zero_A_replicates": 512,
+            "all_A_replicates": 0,
+            "segregating_replicates": 0
+          }
+        },
+        {
+          "generations_elapsed": 1,
+          "prediction": {
+            "mean_frequency": 0.0,
+            "frequency_variance": 0.0,
+            "mean_gene_diversity": 0.0,
+            "gene_diversity_variance": 0.0
+          },
+          "observed": {
+            "mean_frequency": 0.0,
+            "frequency_monte_carlo_se": 0.0,
+            "mean_gene_diversity": 0.0,
+            "diversity_monte_carlo_se": 0.0,
+            "diversity_of_mean_frequency": 0.0,
+            "zero_A_replicates": 512,
+            "all_A_replicates": 0,
+            "segregating_replicates": 0
+          }
+        },
+        {
+          "generations_elapsed": 40,
+          "prediction": {
+            "mean_frequency": 0.0,
+            "frequency_variance": 0.0,
+            "mean_gene_diversity": 0.0,
+            "gene_diversity_variance": 0.0
+          },
+          "observed": {
+            "mean_frequency": 0.0,
+            "frequency_monte_carlo_se": 0.0,
+            "mean_gene_diversity": 0.0,
+            "diversity_monte_carlo_se": 0.0,
+            "diversity_of_mean_frequency": 0.0,
+            "zero_A_replicates": 512,
+            "all_A_replicates": 0,
+            "segregating_replicates": 0
+          }
+        },
+        {
+          "generations_elapsed": 80,
+          "prediction": {
+            "mean_frequency": 0.0,
+            "frequency_variance": 0.0,
+            "mean_gene_diversity": 0.0,
+            "gene_diversity_variance": 0.0
+          },
+          "observed": {
+            "mean_frequency": 0.0,
+            "frequency_monte_carlo_se": 0.0,
+            "mean_gene_diversity": 0.0,
+            "diversity_monte_carlo_se": 0.0,
+            "diversity_of_mean_frequency": 0.0,
+            "zero_A_replicates": 512,
+            "all_A_replicates": 0,
+            "segregating_replicates": 0
+          }
+        }
+      ]
+    },
+    {
+      "treatment": "symmetric_small",
+      "diploid_population_size": 20,
+      "u_a_to_A": 0.01,
+      "v_A_to_a": 0.01,
+      "seed": 202610301,
+      "stationary_mean_frequency": 0.5,
+      "symmetric_stationary_gene_diversity": 0.303490017,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "prediction": {
+            "mean_frequency": 0.0,
+            "frequency_variance": 0.0,
+            "mean_gene_diversity": 0.0,
+            "gene_diversity_variance": 0.0
+          },
+          "observed": {
+            "mean_frequency": 0.0,
+            "frequency_monte_carlo_se": 0.0,
+            "mean_gene_diversity": 0.0,
+            "diversity_monte_carlo_se": 0.0,
+            "diversity_of_mean_frequency": 0.0,
+            "zero_A_replicates": 512,
+            "all_A_replicates": 0,
+            "segregating_replicates": 0
+          }
+        },
+        {
+          "generations_elapsed": 1,
+          "prediction": {
+            "mean_frequency": 0.01,
+            "frequency_variance": 0.0002475,
+            "mean_gene_diversity": 0.019305,
+            "gene_diversity_variance": 0.000904328
+          },
+          "observed": {
+            "mean_frequency": 0.009667969,
+            "frequency_monte_carlo_se": 0.000679761,
+            "mean_gene_diversity": 0.018676758,
+            "diversity_monte_carlo_se": 0.001300237,
+            "diversity_of_mean_frequency": 0.019148998,
+            "zero_A_replicates": 346,
+            "all_A_replicates": 0,
+            "segregating_replicates": 166
+          }
+        },
+        {
+          "generations_elapsed": 40,
+          "prediction": {
+            "mean_frequency": 0.277149798,
+            "frequency_variance": 0.059542047,
+            "mean_gene_diversity": 0.281591481,
+            "gene_diversity_variance": 0.028281376
+          },
+          "observed": {
+            "mean_frequency": 0.26640625,
+            "frequency_monte_carlo_se": 0.010919959,
+            "mean_gene_diversity": 0.268999023,
+            "diversity_monte_carlo_se": 0.007692226,
+            "diversity_of_mean_frequency": 0.39086792,
+            "zero_A_replicates": 51,
+            "all_A_replicates": 3,
+            "segregating_replicates": 458
+          }
+        },
+        {
+          "generations_elapsed": 80,
+          "prediction": {
+            "mean_frequency": 0.400675575,
+            "frequency_variance": 0.089179702,
+            "mean_gene_diversity": 0.301909913,
+            "gene_diversity_variance": 0.02730053
+          },
+          "observed": {
+            "mean_frequency": 0.381347656,
+            "frequency_monte_carlo_se": 0.012959667,
+            "mean_gene_diversity": 0.300195312,
+            "diversity_monte_carlo_se": 0.007337941,
+            "diversity_of_mean_frequency": 0.471843243,
+            "zero_A_replicates": 28,
+            "all_A_replicates": 7,
+            "segregating_replicates": 477
+          }
+        }
+      ]
+    },
+    {
+      "treatment": "symmetric_large",
+      "diploid_population_size": 80,
+      "u_a_to_A": 0.01,
+      "v_A_to_a": 0.01,
+      "seed": 202610302,
+      "stationary_mean_frequency": 0.5,
+      "symmetric_stationary_gene_diversity": 0.431473055,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "prediction": {
+            "mean_frequency": 0.0,
+            "frequency_variance": 0.0,
+            "mean_gene_diversity": 0.0,
+            "gene_diversity_variance": 0.0
+          },
+          "observed": {
+            "mean_frequency": 0.0,
+            "frequency_monte_carlo_se": 0.0,
+            "mean_gene_diversity": 0.0,
+            "diversity_monte_carlo_se": 0.0,
+            "diversity_of_mean_frequency": 0.0,
+            "zero_A_replicates": 512,
+            "all_A_replicates": 0,
+            "segregating_replicates": 0
+          }
+        },
+        {
+          "generations_elapsed": 1,
+          "prediction": {
+            "mean_frequency": 0.01,
+            "frequency_variance": 6.1875e-05,
+            "mean_gene_diversity": 0.01967625,
+            "gene_diversity_variance": 0.000234767
+          },
+          "observed": {
+            "mean_frequency": 0.010168457,
+            "frequency_monte_carlo_se": 0.000337241,
+            "mean_gene_diversity": 0.020013885,
+            "diversity_monte_carlo_se": 0.000656929,
+            "diversity_of_mean_frequency": 0.020130119,
+            "zero_A_replicates": 88,
+            "all_A_replicates": 0,
+            "segregating_replicates": 424
+          }
+        },
+        {
+          "generations_elapsed": 40,
+          "prediction": {
+            "mean_frequency": 0.277149798,
+            "frequency_variance": 0.017951227,
+            "mean_gene_diversity": 0.364773122,
+            "gene_diversity_variance": 0.011796068
+          },
+          "observed": {
+            "mean_frequency": 0.269580078,
+            "frequency_monte_carlo_se": 0.005988354,
+            "mean_gene_diversity": 0.357164001,
+            "diversity_monte_carlo_se": 0.004979363,
+            "diversity_of_mean_frequency": 0.393813319,
+            "zero_A_replicates": 0,
+            "all_A_replicates": 0,
+            "segregating_replicates": 512
+          }
+        },
+        {
+          "generations_elapsed": 80,
+          "prediction": {
+            "mean_frequency": 0.400675575,
+            "frequency_variance": 0.029553588,
+            "mean_gene_diversity": 0.421162142,
+            "gene_diversity_variance": 0.007692521
+          },
+          "observed": {
+            "mean_frequency": 0.397314453,
+            "frequency_monte_carlo_se": 0.007869694,
+            "mean_gene_diversity": 0.41561676,
+            "diversity_monte_carlo_se": 0.004013008,
+            "diversity_of_mean_frequency": 0.478911357,
+            "zero_A_replicates": 0,
+            "all_A_replicates": 0,
+            "segregating_replicates": 512
+          }
+        }
+      ]
+    },
+    {
+      "treatment": "biased_mutation",
+      "diploid_population_size": 20,
+      "u_a_to_A": 0.02,
+      "v_A_to_a": 0.005,
+      "seed": 202610303,
+      "stationary_mean_frequency": 0.8,
+      "symmetric_stationary_gene_diversity": null,
+      "checkpoints": [
+        {
+          "generations_elapsed": 0,
+          "prediction": {
+            "mean_frequency": 0.0,
+            "frequency_variance": 0.0,
+            "mean_gene_diversity": 0.0,
+            "gene_diversity_variance": 0.0
+          },
+          "observed": {
+            "mean_frequency": 0.0,
+            "frequency_monte_carlo_se": 0.0,
+            "mean_gene_diversity": 0.0,
+            "diversity_monte_carlo_se": 0.0,
+            "diversity_of_mean_frequency": 0.0,
+            "zero_A_replicates": 512,
+            "all_A_replicates": 0,
+            "segregating_replicates": 0
+          }
+        },
+        {
+          "generations_elapsed": 1,
+          "prediction": {
+            "mean_frequency": 0.02,
+            "frequency_variance": 0.00049,
+            "mean_gene_diversity": 0.03822,
+            "gene_diversity_variance": 0.001719021
+          },
+          "observed": {
+            "mean_frequency": 0.019873047,
+            "frequency_monte_carlo_se": 0.000957103,
+            "mean_gene_diversity": 0.03802002,
+            "diversity_monte_carlo_se": 0.001795173,
+            "diversity_of_mean_frequency": 0.038956218,
+            "zero_A_replicates": 224,
+            "all_A_replicates": 0,
+            "segregating_replicates": 288
+          }
+        },
+        {
+          "generations_elapsed": 40,
+          "prediction": {
+            "mean_frequency": 0.509414048,
+            "frequency_variance": 0.074931366,
+            "mean_gene_diversity": 0.34996002,
+            "gene_diversity_variance": 0.022082241
+          },
+          "observed": {
+            "mean_frequency": 0.525732422,
+            "frequency_monte_carlo_se": 0.012477865,
+            "mean_gene_diversity": 0.339553223,
+            "diversity_monte_carlo_se": 0.006630988,
+            "diversity_of_mean_frequency": 0.498675685,
+            "zero_A_replicates": 5,
+            "all_A_replicates": 21,
+            "segregating_replicates": 486
+          }
+        },
+        {
+          "generations_elapsed": 80,
+          "prediction": {
+            "mean_frequency": 0.694449756,
+            "frequency_variance": 0.076400316,
+            "mean_gene_diversity": 0.271577952,
+            "gene_diversity_variance": 0.033019474
+          },
+          "observed": {
+            "mean_frequency": 0.689941406,
+            "frequency_monte_carlo_se": 0.012819195,
+            "mean_gene_diversity": 0.259897461,
+            "diversity_monte_carlo_se": 0.008275703,
+            "diversity_of_mean_frequency": 0.427844524,
+            "zero_A_replicates": 3,
+            "all_A_replicates": 86,
+            "segregating_replicates": 423
+          }
+        }
+      ]
+    }
+  ],
+  "interpretation": "H=2p(1-p) is within-population gene diversity, not the observed heterozygote fraction. All replicates count, including temporarily monomorphic populations. A stationary ensemble does not imply permanent polymorphism in every population. Mutation probabilities are illustrative, not estimates for real organisms."
+}
