@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-10-30 | Paper to code | [Kronecker Delta Rule: pair scores versus vector overwrite](examples/kronecker_delta/README.md) | CPython 3.14.5; standard library |
 | 2026-10-29 | **slimulations** | [Transmission distortion and heterozygous parents](examples/slimulations/transmission_distortion/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-10-29 | Paper to code | [MERLIN mean-and-variance routing](examples/merlin_routing/README.md) | CPython 3.14.5; standard library |
 | 2026-10-29 | Inference showcase | [KING-robust kinship and a mixed-parent counterexample](examples/inference_showcase/plink_king/README.md) | CPython 3.14.5 + checksum-pinned PLINK 2 binary |
@@ -132,8 +133,8 @@ shared-component cancellation, counterexamples, permutation equivariance,
 linearity in values, a finite-difference λ derivative, stable softmax, invalid
 inputs, CLI behavior, and the checked sample output.
 
-[CI](.github/workflows/tests.yml) runs all **483 tests**: 25 differential-attention,
-12 gated-attention, 18 multi-head attention-residual, 22 attention-abstention, 28 first-passage-attention, 30 tail-proxy-attention, 26 continuum-attention, 36 MERLIN-routing, 11 neutral-drift,
+[CI](.github/workflows/tests.yml) runs all **514 tests**: 25 differential-attention,
+12 gated-attention, 18 multi-head attention-residual, 22 attention-abstention, 28 first-passage-attention, 30 tail-proxy-attention, 26 continuum-attention, 36 MERLIN-routing, 31 Kronecker-delta, 11 neutral-drift,
 11 migration, 12 selfing, 17 heterozygote-advantage, 20 linkage-disequilibrium, 20 Wahlund-effect, 22 recessive-selection, 22 transmission-distortion, 11 tsinfer, 12 tsdate, 15 dadi,
 18 fastDFE, 22 scikit-allel, 22 moments, 26 hmmIBD, and 25 PLINK/KING tests.
 The SLiM job builds a checksum-verified official

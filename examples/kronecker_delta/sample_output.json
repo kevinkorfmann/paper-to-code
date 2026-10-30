@@ -1,0 +1,59 @@
+{
+  "same_key_orthogonal_values": {
+    "initial_readout": [
+      1.0,
+      0.0
+    ],
+    "kronecker_readout": [
+      1.0,
+      1.0
+    ],
+    "vector_delta_readout": [
+      0.0,
+      1.0
+    ],
+    "kronecker_old_association": 1.0,
+    "vector_delta_old_association": 0.0,
+    "new_association_both": 1.0
+  },
+  "overwrite_counterexample": {
+    "desired_readout": [
+      0.0,
+      1.0
+    ],
+    "kronecker_squared_error": 1.0,
+    "vector_delta_squared_error": 0.0
+  },
+  "explicit_scalar_erasure": {
+    "readout": [
+      0.0,
+      1.0
+    ],
+    "old_association": 0.0,
+    "new_association": 1.0
+  },
+  "overlapping_values_interfere": {
+    "new_value": [
+      0.6,
+      0.8
+    ],
+    "readout": [
+      1.24,
+      0.32
+    ],
+    "new_association": 1.0,
+    "old_association_before": 1.0,
+    "old_association_after": 1.24
+  },
+  "nonunit_feature_control": {
+    "key_norm_squared_times_value_norm_squared": 36,
+    "beta_1_association": 36.0,
+    "beta_1_over_36_association": 1.0
+  },
+  "repeated_unit_pair_beta_half_errors": [
+    -0.5,
+    -0.25,
+    -0.125,
+    -0.0625
+  ]
+}
