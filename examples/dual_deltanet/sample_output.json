@@ -1,0 +1,126 @@
+{
+  "example": "Dual DeltaNet value-side reorganization",
+  "python": "3.14.5",
+  "randomness": "none; constructed projections and gates",
+  "uniform_selector": {
+    "initial_state": [
+      [
+        1.0,
+        2.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        3.0
+      ]
+    ],
+    "key_only_state": [
+      [
+        1.0,
+        2.0
+      ],
+      [
+        0.5,
+        0.0
+      ],
+      [
+        1.0,
+        3.0
+      ]
+    ],
+    "dual_state": [
+      [
+        0.5,
+        2.0
+      ],
+      [
+        0.75,
+        0.0
+      ],
+      [
+        0.5,
+        3.0
+      ]
+    ],
+    "factorized_state": [
+      [
+        0.5,
+        2.0
+      ],
+      [
+        0.75,
+        0.0
+      ],
+      [
+        0.5,
+        3.0
+      ]
+    ],
+    "target_address": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "address_before": [
+      1.0,
+      0.5,
+      1.0
+    ],
+    "address_after": [
+      0.5,
+      0.75,
+      0.5
+    ],
+    "address_squared_error_before": 2.25,
+    "address_squared_error_after": 0.5625,
+    "orthogonal_value_channel_unchanged": [
+      2.0,
+      0.0,
+      3.0
+    ]
+  },
+  "retention_counterexample": {
+    "desired_old_address_read": [
+      0.57735026919,
+      1.154700538379
+    ],
+    "key_only_read": [
+      0.57735026919,
+      1.154700538379
+    ],
+    "dual_read": [
+      0.288675134595,
+      1.154700538379
+    ],
+    "key_only_squared_error": 0.0,
+    "dual_squared_error": 0.083333333333
+  },
+  "nonuniform_selector": {
+    "normalized_value": [
+      0.6,
+      0.8
+    ],
+    "selector": [
+      0.948683298051,
+      0.316227766017
+    ],
+    "gamma": 1.0,
+    "target_address": [
+      4.110960958219,
+      0.0
+    ],
+    "address_before": [
+      0.948683298051,
+      0.632455532034
+    ],
+    "address_after": [
+      3.548683298051,
+      0.112455532034
+    ],
+    "residual_multiplier": 0.177807808356,
+    "address_squared_error_after": 0.328802413809
+  }
+}

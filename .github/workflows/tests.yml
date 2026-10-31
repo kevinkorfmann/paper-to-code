@@ -31,6 +31,7 @@ jobs:
           python -m unittest discover -s examples/continuum_attention -v
           python -m unittest discover -s examples/merlin_routing -v
           python -m unittest discover -s examples/kronecker_delta -v
+          python -m unittest discover -s examples/dual_deltanet -v
       - name: Reproduce the checked output byte for byte
         run: |
           python -m examples.differential_attention.demo > /tmp/attention-output.json
@@ -51,6 +52,7 @@ jobs:
           diff -u examples/merlin_routing/sample_output.json /tmp/merlin-output.json
           python -m examples.kronecker_delta.demo > /tmp/kronecker-output.json
           diff -u examples/kronecker_delta/sample_output.json /tmp/kronecker-output.json
+          python -m examples.dual_deltanet.demo --check-sample
 
   slimulations:
     runs-on: ubuntu-24.04
