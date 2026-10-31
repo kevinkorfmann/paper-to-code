@@ -147,7 +147,7 @@ enumeration, recombination and sign controls, actual fitness/version audits,
 replicate coverage, first-generation mean/variance/diversity/LD checks,
 neutral diversity through time, absence of impossible haplotypes without
 recombination, fixation implications, invalid input/output, deterministic
-seeds, CLI behavior, and checked output. Five-SE bounds are predeclared
+seeds, CLI behavior, and checked output. Five-SE bounds are numerical
 simulation sanity checks, not confidence intervals for biological parameters.
 
 ## Sources and licenses

@@ -121,7 +121,7 @@ class HitchhikingTests(unittest.TestCase):
         for name,s,reverse,c in demo.TREATMENTS:
             expected=demo.first_generation_prediction(400,reverse,s,c)
             actual=demo.statistics_for(self.results[name][1],400)
-            # Predeclared 5-SE numerical sanity bound, not a confidence claim.
+            # A 5-SE numerical sanity bound, not a confidence claim.
             self.assertLess(abs(actual['mean_pB']-expected['expected_pB']),5*math.sqrt(expected['pB_variance']/256))
 
     def test_first_generation_sampling_variance(self):
