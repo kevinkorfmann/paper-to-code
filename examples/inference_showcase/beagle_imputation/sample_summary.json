@@ -1,0 +1,84 @@
+{
+  "versions": {
+    "python": "3.14.5",
+    "beagle": "5.5 (27Feb25.75f)",
+    "temurin_jre": "17.0.21+9"
+  },
+  "data_seed": 20261031,
+  "beagle_seed": 20261031,
+  "threads": 1,
+  "input": {
+    "reference_haplotypes": 80,
+    "target_diploids": 3,
+    "markers": 200,
+    "typed_markers": 51,
+    "hidden_markers": 149,
+    "hidden_genotypes": 447
+  },
+  "frequency_only_baseline": {
+    "dosage": 1.0,
+    "mse": 0.666666667
+  },
+  "cases": {
+    "matched": {
+      "hidden_dosage_mse": 0.0,
+      "signed_correlation": 1.0,
+      "squared_correlation": 1.0,
+      "exact_copy_baseline_mse": 0.0,
+      "max_dosage_distance_from_exact_copy": 0.0,
+      "first_hidden_position": 2000,
+      "first_hidden_truth": [
+        0,
+        1,
+        2
+      ],
+      "first_hidden_dosages": [
+        0.0,
+        1.0,
+        2.0
+      ],
+      "first_hidden_reported_dr2": 1.0,
+      "typed_genotypes_preserved": true
+    },
+    "flipped": {
+      "hidden_dosage_mse": 2.666666667,
+      "signed_correlation": -1.0,
+      "squared_correlation": 1.0,
+      "exact_copy_baseline_mse": 2.666666667,
+      "max_dosage_distance_from_exact_copy": 0.0,
+      "first_hidden_position": 2000,
+      "first_hidden_truth": [
+        0,
+        1,
+        2
+      ],
+      "first_hidden_dosages": [
+        2.0,
+        1.0,
+        0.0
+      ],
+      "first_hidden_reported_dr2": 1.0,
+      "typed_genotypes_preserved": true
+    },
+    "uninformative": {
+      "hidden_dosage_mse": 0.616,
+      "signed_correlation": 0.633148922,
+      "squared_correlation": 0.400877557,
+      "exact_copy_baseline_mse": 0.666666667,
+      "max_dosage_distance_from_exact_copy": 0.08,
+      "first_hidden_position": 2000,
+      "first_hidden_truth": [
+        0,
+        1,
+        2
+      ],
+      "first_hidden_dosages": [
+        0.92,
+        0.96,
+        1.0
+      ],
+      "first_hidden_reported_dr2": 0.0,
+      "typed_genotypes_preserved": true
+    }
+  }
+}
