@@ -1,0 +1,69 @@
+// Original two-locus WF experiment; haplotypes are ab=0, aB=1, Ab=2, AB=3.
+initialize() {
+    if (!exists("N")) defineConstant("N", 400);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 256);
+    if (!exists("GENERATIONS")) defineConstant("GENERATIONS", 30);
+    if (!exists("SELECTED")) defineConstant("SELECTED", 1);
+    if (!exists("REVERSED")) defineConstant("REVERSED", 0);
+    if (!exists("C")) defineConstant("C", 0.0);
+    if ((N < 100) | (N > 2000) | (asInteger(N) != N) | (N % 100 != 0)) stop("invalid N");
+    if ((REPLICATES < 1) | (REPLICATES > 1024) | (asInteger(REPLICATES) != REPLICATES)) stop("invalid REPLICATES");
+    if ((GENERATIONS < 0) | (GENERATIONS > 100) | (asInteger(GENERATIONS) != GENERATIONS)) stop("invalid GENERATIONS");
+    if (!any(SELECTED == c(0, 1)) | !any(REVERSED == c(0, 1))) stop("invalid control");
+    if (!isFinite(asFloat(C)) | (C < 0.0) | (C > 0.5)) stop("invalid C");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    // Native, exactly representable fitnesses: aa=1, Aa=1.5, AA=2 (or all 1).
+    initializeMutationType("m1", 0.5, "f", asFloat(SELECTED));
+    initializeMutationType("m2", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    m2.convertToSubstitution = F;
+    initializeGenomicElementType("g1", c(m1, m2), c(1.0, 1.0));
+    initializeGenomicElement(g1, 0, 1);
+    // One possible breakpoint: C is a recombination fraction, not a map length.
+    initializeRecombinationRate(C);
+}
+
+1 early() {
+    for (r in seqLen(REPLICATES)) sim.addSubpop(r+1, N);
+}
+
+1 late() {
+    x = (REVERSED == 0) ? c(0.5, 0.4, 0.0, 0.1) else c(0.4, 0.5, 0.1, 0.0);
+    first = integer(0); second = integer(0);
+    for (a in 0:3) for (b in a:3) {
+        count = asInteger(round(N*x[a]*x[b]*((a == b) ? 1 else 2)));
+        first = c(first, rep(a, count));
+        second = c(second, rep(b, count));
+    }
+    if (size(first) != N) stop("founder pairing error");
+    for (pop in sim.subpopulations) {
+        A = c(pop.individuals.genome1[first >= 2], pop.individuals.genome2[second >= 2]);
+        B = c(pop.individuals.genome1[first % 2 == 1], pop.individuals.genome2[second % 2 == 1]);
+        A.addNewDrawnMutation(m1, 0);
+        B.addNewDrawnMutation(m2, 1);
+        // Audit all ten actual founder diplotype counts for every replicate.
+        actual1 = 2*pop.individuals.genome1.countOfMutationsOfType(m1) + pop.individuals.genome1.countOfMutationsOfType(m2);
+        actual2 = 2*pop.individuals.genome2.countOfMutationsOfType(m1) + pop.individuals.genome2.countOfMutationsOfType(m2);
+        for (a in 0:3) for (b in a:3)
+            catn("INIT," + (pop.id-1) + "," + a + "," + b + "," + sum((actual1 == a) & (actual2 == b)));
+    }
+    sim.recalculateFitness();
+    pop = sim.subpopulations[0];
+    copies = pop.individuals.genome1.countOfMutationsOfType(m1) + pop.individuals.genome2.countOfMutationsOfType(m1);
+    fitness = pop.cachedFitness(NULL);
+    for (g in 0:2) catn("FIT," + g + "," + mean(fitness[copies == g]));
+    version();
+}
+
+1:101 late() {
+    t = community.tick-1;
+    checkpoints = unique(c(0, 1, asInteger(GENERATIONS/3), GENERATIONS));
+    if (any(t == checkpoints)) for (pop in sim.subpopulations) {
+        genomes = pop.genomes;
+        h = 2*genomes.countOfMutationsOfType(m1) + genomes.countOfMutationsOfType(m2);
+        catn("DATA," + t + "," + (pop.id-1) + "," + sum(h == 0) + "," + sum(h == 1) + "," + sum(h == 2) + "," + sum(h == 3));
+    }
+    if (t == GENERATIONS) sim.simulationFinished();
+}

@@ -104,6 +104,8 @@ jobs:
           python -m examples.slimulations.transmission_distortion.demo --check-sample
           python -m unittest discover -s examples/slimulations/reversible_mutation -v
           python -m examples.slimulations.reversible_mutation.demo --check-sample
+          python -m unittest discover -s examples/slimulations/hitchhiking -v
+          python -m examples.slimulations.hitchhiking.demo --check-sample
 
   inference-showcase:
     runs-on: ubuntu-24.04

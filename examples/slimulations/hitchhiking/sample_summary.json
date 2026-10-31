@@ -1,0 +1,416 @@
+{
+  "example": "Neutral genetic hitchhiking and recombination",
+  "slim_version": "4.0.1",
+  "eidos_version": "3.0.1",
+  "python_version": "3.14.5",
+  "diploid_population_size": 400,
+  "replicates_per_treatment": 256,
+  "generations_elapsed": 30,
+  "treatments": [
+    {
+      "name": "linked_selected",
+      "seed": 202610310,
+      "recombination_fraction": 0.0,
+      "fitness_aa_Aa_AA": [
+        1.0,
+        1.5,
+        2.0
+      ],
+      "initial_haplotype_frequencies_ab_aB_Ab_AB": [
+        0.5,
+        0.4,
+        0.0,
+        0.1
+      ],
+      "exact_first_generation": {
+        "gamete_haplotype_probabilities": [
+          0.477272727,
+          0.381818182,
+          0.0,
+          0.140909091
+        ],
+        "expected_pB_fraction": "23/44",
+        "expected_pA": 0.140909091,
+        "expected_pB": 0.522727273,
+        "pB_variance": 0.000311854,
+        "expected_gene_diversity_B": 0.498343233,
+        "expected_sample_LD": 0.067168001
+      },
+      "checkpoints": [
+        {
+          "generation": 0,
+          "mean_pA": 0.1,
+          "mean_pB": 0.5,
+          "pB_monte_carlo_se": 0.0,
+          "pB_sample_variance": 0.0,
+          "mean_gene_diversity_B": 0.5,
+          "gene_diversity_B_monte_carlo_se": 0.0,
+          "mean_LD": 0.05,
+          "selected_A_fixed": 0,
+          "selected_A_lost": 0,
+          "neutral_B_fixed": 0,
+          "neutral_B_lost": 0,
+          "infinite_population_pA": 0.1,
+          "infinite_population_pB": 0.5,
+          "infinite_population_gene_diversity_B": 0.5
+        },
+        {
+          "generation": 1,
+          "mean_pA": 0.141933594,
+          "mean_pB": 0.522275391,
+          "pB_monte_carlo_se": 0.001128706,
+          "pB_sample_variance": 0.000326138,
+          "mean_gene_diversity_B": 0.498357886,
+          "gene_diversity_B_monte_carlo_se": 0.000129898,
+          "mean_LD": 0.067730219,
+          "selected_A_fixed": 0,
+          "selected_A_lost": 0,
+          "neutral_B_fixed": 0,
+          "neutral_B_lost": 0,
+          "infinite_population_pA": 0.140909091,
+          "infinite_population_pB": 0.522727273,
+          "infinite_population_gene_diversity_B": 0.498966942
+        },
+        {
+          "generation": 10,
+          "mean_pA": 0.784863281,
+          "mean_pB": 0.882094727,
+          "pB_monte_carlo_se": 0.001742305,
+          "pB_sample_variance": 0.000777121,
+          "mean_gene_diversity_B": 0.20645907,
+          "gene_diversity_B_monte_carlo_se": 0.002635654,
+          "mean_LD": 0.091767749,
+          "selected_A_fixed": 0,
+          "selected_A_lost": 0,
+          "neutral_B_fixed": 0,
+          "neutral_B_lost": 0,
+          "infinite_population_pA": 0.788039343,
+          "infinite_population_pB": 0.882244079,
+          "infinite_population_gene_diversity_B": 0.207778928
+        },
+        {
+          "generation": 30,
+          "mean_pA": 0.999257813,
+          "mean_pB": 0.999589844,
+          "pB_monte_carlo_se": 7.8039e-05,
+          "pB_sample_variance": 1.559e-06,
+          "mean_gene_diversity_B": 0.00081687,
+          "gene_diversity_B_monte_carlo_se": 0.000155238,
+          "mean_LD": 0.000408167,
+          "selected_A_fixed": 205,
+          "selected_A_lost": 0,
+          "neutral_B_fixed": 221,
+          "neutral_B_lost": 0,
+          "infinite_population_pA": 0.999211869,
+          "infinite_population_pB": 0.999562149,
+          "infinite_population_gene_diversity_B": 0.000875318
+        }
+      ]
+    },
+    {
+      "name": "free_recombination_selected",
+      "seed": 202610311,
+      "recombination_fraction": 0.5,
+      "fitness_aa_Aa_AA": [
+        1.0,
+        1.5,
+        2.0
+      ],
+      "initial_haplotype_frequencies_ab_aB_Ab_AB": [
+        0.5,
+        0.4,
+        0.0,
+        0.1
+      ],
+      "exact_first_generation": {
+        "gamete_haplotype_probabilities": [
+          0.443181818,
+          0.415909091,
+          0.034090909,
+          0.106818182
+        ],
+        "expected_pB_fraction": "23/44",
+        "expected_pA": 0.140909091,
+        "expected_pB": 0.522727273,
+        "pB_variance": 0.000311854,
+        "expected_gene_diversity_B": 0.498343233,
+        "expected_sample_LD": 0.033119706
+      },
+      "checkpoints": [
+        {
+          "generation": 0,
+          "mean_pA": 0.1,
+          "mean_pB": 0.5,
+          "pB_monte_carlo_se": 0.0,
+          "pB_sample_variance": 0.0,
+          "mean_gene_diversity_B": 0.5,
+          "gene_diversity_B_monte_carlo_se": 0.0,
+          "mean_LD": 0.05,
+          "selected_A_fixed": 0,
+          "selected_A_lost": 0,
+          "neutral_B_fixed": 0,
+          "neutral_B_lost": 0,
+          "infinite_population_pA": 0.1,
+          "infinite_population_pB": 0.5,
+          "infinite_population_gene_diversity_B": 0.5
+        },
+        {
+          "generation": 1,
+          "mean_pA": 0.141010742,
+          "mean_pB": 0.523168945,
+          "pB_monte_carlo_se": 0.001153499,
+          "pB_sample_variance": 0.000340623,
+          "mean_gene_diversity_B": 0.498247815,
+          "gene_diversity_B_monte_carlo_se": 0.000130311,
+          "mean_LD": 0.032251886,
+          "selected_A_fixed": 0,
+          "selected_A_lost": 0,
+          "neutral_B_fixed": 0,
+          "neutral_B_lost": 0,
+          "infinite_population_pA": 0.140909091,
+          "infinite_population_pB": 0.522727273,
+          "infinite_population_gene_diversity_B": 0.498966942
+        },
+        {
+          "generation": 10,
+          "mean_pA": 0.785761719,
+          "mean_pB": 0.553837891,
+          "pB_monte_carlo_se": 0.003800803,
+          "pB_sample_variance": 0.003698203,
+          "mean_gene_diversity_B": 0.486835449,
+          "gene_diversity_B_monte_carlo_se": 0.001158207,
+          "mean_LD": 0.000294818,
+          "selected_A_fixed": 0,
+          "selected_A_lost": 0,
+          "neutral_B_fixed": 0,
+          "neutral_B_lost": 0,
+          "infinite_population_pA": 0.788039343,
+          "infinite_population_pB": 0.556163473,
+          "infinite_population_gene_diversity_B": 0.493691329
+        },
+        {
+          "generation": 30,
+          "mean_pA": 0.99934082,
+          "mean_pB": 0.553041992,
+          "pB_monte_carlo_se": 0.005999189,
+          "pB_sample_variance": 0.00921351,
+          "mean_gene_diversity_B": 0.476018054,
+          "gene_diversity_B_monte_carlo_se": 0.002020772,
+          "mean_LD": 1.7651e-05,
+          "selected_A_fixed": 199,
+          "selected_A_lost": 0,
+          "neutral_B_fixed": 0,
+          "neutral_B_lost": 0,
+          "infinite_population_pA": 0.999211869,
+          "infinite_population_pB": 0.556196384,
+          "infinite_population_gene_diversity_B": 0.493683933
+        }
+      ]
+    },
+    {
+      "name": "linked_neutral",
+      "seed": 202610312,
+      "recombination_fraction": 0.0,
+      "fitness_aa_Aa_AA": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "initial_haplotype_frequencies_ab_aB_Ab_AB": [
+        0.5,
+        0.4,
+        0.0,
+        0.1
+      ],
+      "exact_first_generation": {
+        "gamete_haplotype_probabilities": [
+          0.5,
+          0.4,
+          0.0,
+          0.1
+        ],
+        "expected_pB_fraction": "1/2",
+        "expected_pA": 0.1,
+        "expected_pB": 0.5,
+        "pB_variance": 0.0003125,
+        "expected_gene_diversity_B": 0.499375,
+        "expected_sample_LD": 0.0499375
+      },
+      "checkpoints": [
+        {
+          "generation": 0,
+          "mean_pA": 0.1,
+          "mean_pB": 0.5,
+          "pB_monte_carlo_se": 0.0,
+          "pB_sample_variance": 0.0,
+          "mean_gene_diversity_B": 0.5,
+          "gene_diversity_B_monte_carlo_se": 0.0,
+          "mean_LD": 0.05,
+          "selected_A_fixed": 0,
+          "selected_A_lost": 0,
+          "neutral_B_fixed": 0,
+          "neutral_B_lost": 0,
+          "infinite_population_pA": 0.1,
+          "infinite_population_pB": 0.5,
+          "infinite_population_gene_diversity_B": 0.5,
+          "exact_finite_neutral_expected_diversity_B": 0.5
+        },
+        {
+          "generation": 1,
+          "mean_pA": 0.09949707,
+          "mean_pB": 0.500620117,
+          "pB_monte_carlo_se": 0.001098445,
+          "pB_sample_variance": 0.000308885,
+          "mean_gene_diversity_B": 0.499383875,
+          "gene_diversity_B_monte_carlo_se": 6.5761e-05,
+          "mean_LD": 0.049619757,
+          "selected_A_fixed": 0,
+          "selected_A_lost": 0,
+          "neutral_B_fixed": 0,
+          "neutral_B_lost": 0,
+          "infinite_population_pA": 0.1,
+          "infinite_population_pB": 0.5,
+          "infinite_population_gene_diversity_B": 0.5,
+          "exact_finite_neutral_expected_diversity_B": 0.499375
+        },
+        {
+          "generation": 10,
+          "mean_pA": 0.102807617,
+          "mean_pB": 0.501450195,
+          "pB_monte_carlo_se": 0.003495385,
+          "pB_sample_variance": 0.003127735,
+          "mean_gene_diversity_B": 0.493764758,
+          "gene_diversity_B_monte_carlo_se": 0.000544429,
+          "mean_LD": 0.050588611,
+          "selected_A_fixed": 0,
+          "selected_A_lost": 0,
+          "neutral_B_fixed": 0,
+          "neutral_B_lost": 0,
+          "infinite_population_pA": 0.1,
+          "infinite_population_pB": 0.5,
+          "infinite_population_gene_diversity_B": 0.5,
+          "exact_finite_neutral_expected_diversity_B": 0.493785039
+        },
+        {
+          "generation": 30,
+          "mean_pA": 0.101469727,
+          "mean_pB": 0.497236328,
+          "pB_monte_carlo_se": 0.006347396,
+          "pB_sample_variance": 0.010314097,
+          "mean_gene_diversity_B": 0.479437109,
+          "gene_diversity_B_monte_carlo_se": 0.001628466,
+          "mean_LD": 0.048711462,
+          "selected_A_fixed": 0,
+          "selected_A_lost": 2,
+          "neutral_B_fixed": 0,
+          "neutral_B_lost": 0,
+          "infinite_population_pA": 0.1,
+          "infinite_population_pB": 0.5,
+          "infinite_population_gene_diversity_B": 0.5,
+          "exact_finite_neutral_expected_diversity_B": 0.481585912
+        }
+      ]
+    },
+    {
+      "name": "reversed_linked_selected",
+      "seed": 202610313,
+      "recombination_fraction": 0.0,
+      "fitness_aa_Aa_AA": [
+        1.0,
+        1.5,
+        2.0
+      ],
+      "initial_haplotype_frequencies_ab_aB_Ab_AB": [
+        0.4,
+        0.5,
+        0.1,
+        0.0
+      ],
+      "exact_first_generation": {
+        "gamete_haplotype_probabilities": [
+          0.381818182,
+          0.477272727,
+          0.140909091,
+          0.0
+        ],
+        "expected_pB_fraction": "21/44",
+        "expected_pA": 0.140909091,
+        "expected_pB": 0.477272727,
+        "pB_variance": 0.000311854,
+        "expected_gene_diversity_B": 0.498343233,
+        "expected_sample_LD": -0.067168001
+      },
+      "checkpoints": [
+        {
+          "generation": 0,
+          "mean_pA": 0.1,
+          "mean_pB": 0.5,
+          "pB_monte_carlo_se": 0.0,
+          "pB_sample_variance": 0.0,
+          "mean_gene_diversity_B": 0.5,
+          "gene_diversity_B_monte_carlo_se": 0.0,
+          "mean_LD": -0.05,
+          "selected_A_fixed": 0,
+          "selected_A_lost": 0,
+          "neutral_B_fixed": 0,
+          "neutral_B_lost": 0,
+          "infinite_population_pA": 0.1,
+          "infinite_population_pB": 0.5,
+          "infinite_population_gene_diversity_B": 0.5
+        },
+        {
+          "generation": 1,
+          "mean_pA": 0.141142578,
+          "mean_pB": 0.477480469,
+          "pB_monte_carlo_se": 0.001159462,
+          "pB_sample_variance": 0.000344154,
+          "mean_gene_diversity_B": 0.498300122,
+          "gene_diversity_B_monte_carlo_se": 0.00010533,
+          "mean_LD": -0.067297614,
+          "selected_A_fixed": 0,
+          "selected_A_lost": 0,
+          "neutral_B_fixed": 0,
+          "neutral_B_lost": 0,
+          "infinite_population_pA": 0.140909091,
+          "infinite_population_pB": 0.477272727,
+          "infinite_population_gene_diversity_B": 0.498966942
+        },
+        {
+          "generation": 10,
+          "mean_pA": 0.783623047,
+          "mean_pB": 0.120063477,
+          "pB_monte_carlo_se": 0.001774715,
+          "pB_sample_variance": 0.000806301,
+          "mean_gene_diversity_B": 0.209690173,
+          "gene_diversity_B_monte_carlo_se": 0.0026607,
+          "mean_LD": -0.093249402,
+          "selected_A_fixed": 0,
+          "selected_A_lost": 0,
+          "neutral_B_fixed": 0,
+          "neutral_B_lost": 0,
+          "infinite_population_pA": 0.788039343,
+          "infinite_population_pB": 0.117755921,
+          "infinite_population_gene_diversity_B": 0.207778928
+        },
+        {
+          "generation": 30,
+          "mean_pA": 0.999189453,
+          "mean_pB": 0.000415039,
+          "pB_monte_carlo_se": 8.7896e-05,
+          "pB_sample_variance": 1.978e-06,
+          "mean_gene_diversity_B": 0.000825793,
+          "gene_diversity_B_monte_carlo_se": 0.000174578,
+          "mean_LD": -0.00041239,
+          "selected_A_fixed": 201,
+          "selected_A_lost": 0,
+          "neutral_B_fixed": 0,
+          "neutral_B_lost": 225,
+          "infinite_population_pA": 0.999211869,
+          "infinite_population_pB": 0.000437851,
+          "infinite_population_gene_diversity_B": 0.000875318
+        }
+      ]
+    }
+  ],
+  "interpretation": "All replicates are included, without conditioning on fixation. The first-generation expectations are exact for the audited founders; later selected trajectories are infinite-population benchmarks, not exact finite-population means. Gene diversity is 2pB(1-pB), not observed individual heterozygosity."
+}

@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-10-31 | **slimulations** | [Neutral hitchhiking with a beneficial neighbor](examples/slimulations/hitchhiking/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-10-31 | Inference showcase | [Beagle imputation and hidden-reference sensitivity](examples/inference_showcase/beagle_imputation/README.md) | CPython 3.14.5 + checksum-pinned Beagle 5.5 / Temurin 17.0.21+9 |
 | 2026-10-31 | Paper to code | [Dual DeltaNet value-side reorganization](examples/dual_deltanet/README.md) | CPython 3.14.5; standard library |
 | 2026-10-30 | **slimulations** | [Reversible mutation restores variation after fixation](examples/slimulations/reversible_mutation/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
@@ -141,9 +142,9 @@ shared-component cancellation, counterexamples, permutation equivariance,
 linearity in values, a finite-difference λ derivative, stable softmax, invalid
 inputs, CLI behavior, and the checked sample output.
 
-[CI](.github/workflows/tests.yml) runs all **629 tests**: 25 differential-attention,
+[CI](.github/workflows/tests.yml) runs all **653 tests**: 25 differential-attention,
 12 gated-attention, 18 multi-head attention-residual, 22 attention-abstention, 28 first-passage-attention, 30 tail-proxy-attention, 26 continuum-attention, 36 MERLIN-routing, 31 Kronecker-delta, 32 Dual-DeltaNet, 11 neutral-drift,
-11 migration, 12 selfing, 17 heterozygote-advantage, 20 linkage-disequilibrium, 20 Wahlund-effect, 22 recessive-selection, 22 transmission-distortion, 23 reversible-mutation, 11 tsinfer, 12 tsdate, 15 dadi,
+11 migration, 12 selfing, 17 heterozygote-advantage, 20 linkage-disequilibrium, 20 Wahlund-effect, 22 recessive-selection, 22 transmission-distortion, 23 reversible-mutation, 24 hitchhiking, 11 tsinfer, 12 tsdate, 15 dadi,
 18 fastDFE, 22 scikit-allel, 22 moments, 26 hmmIBD, 25 PLINK/KING, 28 ADMIXTURE, and 32 Beagle tests.
 The SLiM job builds a checksum-verified official
 source revision; hmmIBD similarly builds checksum-verified C source, PLINK/KING
