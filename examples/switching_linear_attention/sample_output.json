@@ -1,0 +1,215 @@
+{
+  "example": "Switching Linear Attention: coordinate-wise mixture updates",
+  "paper": "https://arxiv.org/abs/2609.39034v1",
+  "paper_first_posted": "2026-09-30",
+  "python_version": "3.14.5",
+  "randomness": "none; all states, projections and priors constructed",
+  "coordinate_responsibilities": {
+    "initial_state": [
+      [
+        [
+          2.0,
+          0.0
+        ],
+        [
+          -2.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          -2.0,
+          0.0
+        ],
+        [
+          2.0,
+          0.0
+        ]
+      ]
+    ],
+    "key": [
+      1.0,
+      0.0
+    ],
+    "target_value": [
+      1.0,
+      1.0
+    ],
+    "write_priors": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0.5
+      ]
+    ],
+    "learning_rates": [
+      [
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "old_prediction_errors": [
+      [
+        -1.0,
+        3.0
+      ],
+      [
+        3.0,
+        -1.0
+      ]
+    ],
+    "write_responsibilities": [
+      [
+        0.982013790038,
+        0.017986209962
+      ],
+      [
+        0.017986209962,
+        0.982013790038
+      ]
+    ],
+    "updated_state": [
+      [
+        [
+          1.017986209962,
+          0.0
+        ],
+        [
+          -1.946041370114,
+          0.0
+        ]
+      ],
+      [
+        [
+          -1.946041370114,
+          0.0
+        ],
+        [
+          1.017986209962,
+          0.0
+        ]
+      ]
+    ],
+    "query": [
+      1.0,
+      0.0
+    ],
+    "query_priors": [
+      [
+        0.9,
+        0.1
+      ],
+      [
+        0.1,
+        0.9
+      ]
+    ],
+    "read_with_supplied_query_priors": [
+      0.721583451955,
+      0.721583451955
+    ],
+    "read_with_uniform_query_priors": [
+      -0.464027580076,
+      -0.464027580076
+    ],
+    "read_with_reversed_query_priors": [
+      -1.649638612106,
+      -1.649638612106
+    ]
+  },
+  "identical_expert_control": {
+    "initial_state": [
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    ],
+    "final_state_after_three_identical_tokens": [
+      [
+        [
+          0.875,
+          0.0
+        ],
+        [
+          0.875,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.875,
+          0.0
+        ],
+        [
+          0.875,
+          0.0
+        ]
+      ]
+    ],
+    "outputs": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.75,
+        0.75
+      ],
+      [
+        0.875,
+        0.875
+      ]
+    ],
+    "interpretation": "Uniform write priors and equal rates preserve identical experts; query priors cannot distinguish identical readouts."
+  },
+  "large_key_control": {
+    "initial_state": [
+      [
+        [
+          0.0
+        ]
+      ]
+    ],
+    "key": [
+      2.0
+    ],
+    "target_value": [
+      1.0
+    ],
+    "beta": 1.0,
+    "updated_state": [
+      [
+        [
+          2.0
+        ]
+      ]
+    ],
+    "read_at_key": 4.0,
+    "squared_error_before": 1.0,
+    "squared_error_after": 9.0,
+    "interpretation": "Beta in [0,1] alone does not ensure contraction when key norm is large."
+  }
+}

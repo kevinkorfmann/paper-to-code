@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-01 | Paper to code | [Switching Linear Attention: coordinate-wise mixture updates](examples/switching_linear_attention/README.md) | CPython 3.14.5; standard library |
 | 2026-11-01 | **slimulations** | [Unequal breeding sex ratios at fixed census size](examples/slimulations/sex_ratio/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-10-31 | **slimulations** | [Neutral hitchhiking with a beneficial neighbor](examples/slimulations/hitchhiking/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-10-31 | Inference showcase | [Beagle imputation and hidden-reference sensitivity](examples/inference_showcase/beagle_imputation/README.md) | CPython 3.14.5 + checksum-pinned Beagle 5.5 / Temurin 17.0.21+9 |
