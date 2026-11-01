@@ -1,0 +1,171 @@
+{
+  "example": "BCFtools/RoH: within-individual autozygosity and likelihood controls",
+  "versions": {
+    "bcftools": "1.23.1",
+    "htslib": "1.24",
+    "python": "3.14.5"
+  },
+  "synthetic_seed": 20261101,
+  "transition_HW_to_AZ_and_AZ_to_HW_per_marker": 0.02,
+  "coordinate_system": "Consecutive synthetic positions 1..180; not realistic physical SNP density",
+  "main_constructed_PLs": {
+    "tract": {
+      "markers": 180,
+      "inferred_AZ_markers": 61,
+      "inferred_AZ_marker_fraction": 0.338888889,
+      "independent_viterbi_disagreements": 0,
+      "designed_AZ_markers": 60,
+      "state_disagreements_with_design": 1,
+      "regions": [
+        {
+          "start": 60,
+          "end": 120,
+          "marker_count": 61,
+          "reported_quality": 25.8
+        }
+      ]
+    },
+    "outbred": {
+      "markers": 180,
+      "inferred_AZ_markers": 0,
+      "inferred_AZ_marker_fraction": 0,
+      "independent_viterbi_disagreements": 0,
+      "designed_AZ_markers": 0,
+      "state_disagreements_with_design": 0,
+      "regions": []
+    },
+    "all_autozygous": {
+      "markers": 180,
+      "inferred_AZ_markers": 180,
+      "inferred_AZ_marker_fraction": 1,
+      "independent_viterbi_disagreements": 0,
+      "designed_AZ_markers": 180,
+      "state_disagreements_with_design": 0,
+      "regions": [
+        {
+          "start": 1,
+          "end": 180,
+          "marker_count": 180,
+          "reported_quality": 30.2
+        }
+      ]
+    }
+  },
+  "weaker_PLs_same_best_genotypes": {
+    "tract": {
+      "markers": 180,
+      "inferred_AZ_markers": 0,
+      "inferred_AZ_marker_fraction": 0,
+      "independent_viterbi_disagreements": 0,
+      "designed_AZ_markers": 60,
+      "state_disagreements_with_design": 60,
+      "regions": []
+    },
+    "outbred": {
+      "markers": 180,
+      "inferred_AZ_markers": 0,
+      "inferred_AZ_marker_fraction": 0,
+      "independent_viterbi_disagreements": 0,
+      "designed_AZ_markers": 0,
+      "state_disagreements_with_design": 0,
+      "regions": []
+    },
+    "all_autozygous": {
+      "markers": 180,
+      "inferred_AZ_markers": 180,
+      "inferred_AZ_marker_fraction": 1,
+      "independent_viterbi_disagreements": 0,
+      "designed_AZ_markers": 180,
+      "state_disagreements_with_design": 0,
+      "regions": [
+        {
+          "start": 1,
+          "end": 180,
+          "marker_count": 180,
+          "reported_quality": 13.7
+        }
+      ]
+    }
+  },
+  "frequency_sensitivity_same_PLs": [
+    {
+      "supplied_ALT_frequency": 0.5,
+      "homref_emission_ratio_AZ_over_HW": 1.996007988,
+      "markers": 40,
+      "inferred_AZ_markers": 24,
+      "inferred_AZ_marker_fraction": 0.6,
+      "independent_viterbi_disagreements": 0,
+      "designed_AZ_markers": null,
+      "state_disagreements_with_design": null,
+      "regions": [
+        {
+          "start": 9,
+          "end": 32,
+          "marker_count": 24,
+          "reported_quality": 17.9
+        }
+      ]
+    },
+    {
+      "supplied_ALT_frequency": 0.01,
+      "homref_emission_ratio_AZ_over_HW": 1.010080615,
+      "markers": 40,
+      "inferred_AZ_markers": 0,
+      "inferred_AZ_marker_fraction": 0,
+      "independent_viterbi_disagreements": 0,
+      "designed_AZ_markers": null,
+      "state_disagreements_with_design": null,
+      "regions": []
+    }
+  ],
+  "quality_diagnostic": {
+    "PL": [
+      [
+        30,
+        0,
+        30
+      ],
+      [
+        0,
+        30,
+        60
+      ],
+      [
+        0,
+        30,
+        60
+      ],
+      [
+        30,
+        0,
+        30
+      ]
+    ],
+    "states": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "tool_reported_quality": [
+      3.0,
+      35.2,
+      25.4,
+      25.4
+    ],
+    "independent_same_site_posterior_AZ": [
+      0.000299392,
+      0.002901549,
+      0.002901549,
+      0.000299392
+    ],
+    "independent_same_site_phred_error": [
+      35.237592189,
+      25.373701378,
+      25.373701378,
+      35.237592189
+    ],
+    "interpretation": "The pinned tool quality column disagrees with same-site independent marginals in this diagnostic. Do not convert these reported Q fields into calibrated site probabilities; state paths are checked separately."
+  },
+  "limitations": "Conditional HMM state inference with supplied frequencies and fixed transitions; no genome-wide inbreeding estimate, pedigree reconstruction, empirical accuracy or calibrated confidence claim. PLs are constructed, not read-derived."
+}

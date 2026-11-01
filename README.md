@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-01 | Inference showcase | [BCFtools/RoH: autozygosity, likelihoods and allele frequencies](examples/inference_showcase/bcftools_roh/README.md) | CPython 3.14.5 + checksum-pinned BCFtools 1.23.1 / HTSlib 1.24 |
 | 2026-11-01 | Paper to code | [Switching Linear Attention: coordinate-wise mixture updates](examples/switching_linear_attention/README.md) | CPython 3.14.5; standard library |
 | 2026-11-01 | **slimulations** | [Unequal breeding sex ratios at fixed census size](examples/slimulations/sex_ratio/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-10-31 | **slimulations** | [Neutral hitchhiking with a beneficial neighbor](examples/slimulations/hitchhiking/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
@@ -42,7 +43,7 @@ and explains its limits.
 | 2026-10-20 | Inference showcase | [Genealogy inference with tsinfer](examples/inference_showcase/tsinfer_genealogy/README.md) | CPython 3.12.11; separate hash-locked environment |
 
 The examples use only constructed inputs or synthetic data. Their documentation
-includes commands, seeds where applicable, checked output, and tests. The ten
+includes commands, seeds where applicable, checked output, and tests. The eleven
 inference examples call actual tools: tsinfer estimates topology; tsdate estimates
 node ages conditional on a supplied topology and mutation clock; dadi estimates
 a population-size ratio conditional on a supplied change time; fastDFE estimates
@@ -54,7 +55,9 @@ PLINK 2 estimates diploid KING-robust kinship, with an explicit ancestry counter
 ADMIXTURE estimates global mixture coefficients conditional on fixed source profiles,
 with reference-sensitivity and nonidentifiability controls; Beagle estimates
 untyped-marker dosages conditional on a supplied phased reference panel,
-with hidden-allele and independent copying controls.
+with hidden-allele and independent copying controls; BCFtools/RoH infers
+within-individual autozygous states from genotype likelihoods, with frequency,
+evidence-strength and reported-quality diagnostics.
 
 ## First example: differential attention
 
@@ -144,14 +147,15 @@ shared-component cancellation, counterexamples, permutation equivariance,
 linearity in values, a finite-difference λ derivative, stable softmax, invalid
 inputs, CLI behavior, and the checked sample output.
 
-[CI](.github/workflows/tests.yml) runs all **653 tests**: 25 differential-attention,
-12 gated-attention, 18 multi-head attention-residual, 22 attention-abstention, 28 first-passage-attention, 30 tail-proxy-attention, 26 continuum-attention, 36 MERLIN-routing, 31 Kronecker-delta, 32 Dual-DeltaNet, 11 neutral-drift,
-11 migration, 12 selfing, 17 heterozygote-advantage, 20 linkage-disequilibrium, 20 Wahlund-effect, 22 recessive-selection, 22 transmission-distortion, 23 reversible-mutation, 24 hitchhiking, 11 tsinfer, 12 tsdate, 15 dadi,
-18 fastDFE, 22 scikit-allel, 22 moments, 26 hmmIBD, 25 PLINK/KING, 28 ADMIXTURE, and 32 Beagle tests.
+[CI](.github/workflows/tests.yml) runs all **735 tests**: 25 differential-attention,
+12 gated-attention, 18 multi-head attention-residual, 22 attention-abstention, 28 first-passage-attention, 30 tail-proxy-attention, 26 continuum-attention, 36 MERLIN-routing, 31 Kronecker-delta, 32 Dual-DeltaNet, 32 Switching-Linear-Attention, 11 neutral-drift,
+11 migration, 12 selfing, 17 heterozygote-advantage, 20 linkage-disequilibrium, 20 Wahlund-effect, 22 recessive-selection, 22 transmission-distortion, 23 reversible-mutation, 24 hitchhiking, 25 sex-ratio, 11 tsinfer, 12 tsdate, 15 dadi,
+18 fastDFE, 22 scikit-allel, 22 moments, 26 hmmIBD, 25 PLINK/KING, 28 ADMIXTURE, 32 Beagle, and 25 BCFtools/RoH tests.
 The SLiM job builds a checksum-verified official
 source revision; hmmIBD similarly builds checksum-verified C source, PLINK/KING
 uses a checksum-pinned official binary, ADMIXTURE does likewise, Beagle uses a
-checksum-pinned official JAR and isolated Java runtime, and the other inference jobs install
+checksum-pinned official JAR and isolated Java runtime, BCFtools/RoH builds
+checksum-pinned BCFtools and HTSlib source releases, and the other inference jobs install
 their separate hash-locked package sets.
 All jobs run on pushes and pull requests using a
 standard Ubuntu runner, a pinned Python version, official actions pinned by
