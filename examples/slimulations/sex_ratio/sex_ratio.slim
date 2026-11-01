@@ -1,0 +1,67 @@
+// Original neutral autosomal experiment, with fixed counts of each breeding sex.
+initialize() {
+    if (!exists("NM")) defineConstant("NM", 100);
+    if (!exists("NF")) defineConstant("NF", 100);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 512);
+    if (!exists("GENERATIONS")) defineConstant("GENERATIONS", 80);
+    if (!exists("OPPOSITE")) defineConstant("OPPOSITE", 0);
+    for (n in c(NM, NF))
+        if ((n < 4) | (n > 1000) | (asInteger(n) != n) | (n % 4 != 0)) stop("invalid sex count");
+    if ((REPLICATES < 1) | (REPLICATES > 1024) | (asInteger(REPLICATES) != REPLICATES)) stop("invalid REPLICATES");
+    if ((GENERATIONS < 0) | (GENERATIONS > 100) | (asInteger(GENERATIONS) != GENERATIONS)) stop("invalid GENERATIONS");
+    if (!any(OPPOSITE == c(0, 1))) stop("invalid OPPOSITE");
+    initializeSLiMModelType("WF");
+    initializeSex("A");
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+
+1 early() {
+    for (r in seqLen(REPLICATES)) sim.addSubpop(r+1, NM+NF, NM/(NM+NF));
+}
+
+1 late() {
+    for (pop in sim.subpopulations) {
+        males = pop.individuals[pop.individuals.sex == "M"];
+        females = pop.individuals[pop.individuals.sex == "F"];
+        if ((size(males) != NM) | (size(females) != NF)) stop("wrong founder sex counts");
+        if (OPPOSITE == 1)
+            carriers = females.genomes; // All males aa, all females AA.
+        else {
+            // In each sex: first quarter AA, middle half Aa, last quarter aa.
+            carriers = c(males.genome1[seqLen(asInteger(3*NM/4))], males.genome2[seqLen(asInteger(NM/4))],
+                         females.genome1[seqLen(asInteger(3*NF/4))], females.genome2[seqLen(asInteger(NF/4))]);
+        }
+        carriers.addNewDrawnMutation(m1, 0); // ONE shared allele per replicate.
+        for (sex in c("M", "F")) {
+            individuals = pop.individuals[pop.individuals.sex == sex];
+            copies = individuals.genome1.countOfMutationsOfType(m1) + individuals.genome2.countOfMutationsOfType(m1);
+            catn("INIT," + (pop.id-1) + "," + sex + "," + sum(copies == 0) + "," + sum(copies == 1) + "," + sum(copies == 2));
+        }
+    }
+    sim.recalculateFitness();
+    if (any(sim.subpopulations.cachedFitness(NULL) != 1.0)) stop("nonneutral fitness");
+    catn("FIT,1");
+    version();
+}
+
+1:101 late() {
+    t = community.tick-1;
+    // Check fixed cohort sizes every generation, not just at output checkpoints.
+    for (pop in sim.subpopulations) {
+        males = pop.individuals[pop.individuals.sex == "M"];
+        females = pop.individuals[pop.individuals.sex == "F"];
+        if ((size(males) != NM) | (size(females) != NF)) stop("sex ratio changed");
+        if (any(t == unique(c(0, 1, asInteger(GENERATIONS/4), GENERATIONS)))) {
+            am = sum(males.genomes.countOfMutationsOfType(m1));
+            af = sum(females.genomes.countOfMutationsOfType(m1));
+            copies = pop.individuals.genome1.countOfMutationsOfType(m1) + pop.individuals.genome2.countOfMutationsOfType(m1);
+            catn("DATA," + t + "," + (pop.id-1) + "," + size(males) + "," + size(females) + "," + am + "," + af + "," + sum(copies == 1));
+        }
+    }
+    if (t == GENERATIONS) sim.simulationFinished();
+}

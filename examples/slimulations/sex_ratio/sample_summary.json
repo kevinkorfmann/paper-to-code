@@ -1,0 +1,373 @@
+{
+  "example": "Unequal breeding sex ratios at fixed census size",
+  "slim_version": "4.0.1",
+  "eidos_version": "3.0.1",
+  "python_version": "3.14.5",
+  "diploid_census_size": 200,
+  "replicates_per_treatment": 512,
+  "treatments": [
+    {
+      "name": "balanced",
+      "males": 100,
+      "females": 100,
+      "seed": 202611010,
+      "classical_sex_ratio_Ne_benchmark": 200.0,
+      "generations_elapsed": 80,
+      "checkpoints": [
+        {
+          "generation": 0,
+          "observed": {
+            "mean_census_p": 0.5,
+            "census_p_monte_carlo_se": 0.0,
+            "mean_parental_role_p": 0.5,
+            "parental_role_p_monte_carlo_se": 0.0,
+            "census_p_sample_variance": 0.0,
+            "parental_role_p_sample_variance": 0.0,
+            "mean_census_gene_diversity": 0.5,
+            "census_gene_diversity_monte_carlo_se": 0.0,
+            "mean_observed_heterozygosity": 0.5,
+            "allele_fixed_replicates": 0,
+            "allele_lost_replicates": 0
+          },
+          "exact_finite_expectation": {
+            "mean_census_p": 0.5,
+            "mean_parental_role_p": 0.5,
+            "census_p_variance": 0.0,
+            "parental_role_p_variance": 0.0,
+            "mean_census_gene_diversity": 0.5
+          }
+        },
+        {
+          "generation": 1,
+          "observed": {
+            "mean_census_p": 0.499111328,
+            "census_p_monte_carlo_se": 0.001139168,
+            "mean_parental_role_p": 0.499111328,
+            "parental_role_p_monte_carlo_se": 0.001139168,
+            "census_p_sample_variance": 0.000664424,
+            "parental_role_p_sample_variance": 0.000664424,
+            "mean_census_gene_diversity": 0.498672168,
+            "census_gene_diversity_monte_carlo_se": 7.3479e-05,
+            "mean_observed_heterozygosity": 0.500800781,
+            "allele_fixed_replicates": 0,
+            "allele_lost_replicates": 0
+          },
+          "exact_finite_expectation": {
+            "mean_census_p": 0.5,
+            "mean_parental_role_p": 0.5,
+            "census_p_variance": 0.000625,
+            "parental_role_p_variance": 0.000625,
+            "mean_census_gene_diversity": 0.49875
+          }
+        },
+        {
+          "generation": 20,
+          "observed": {
+            "mean_census_p": 0.500869141,
+            "census_p_monte_carlo_se": 0.004887163,
+            "mean_parental_role_p": 0.500869141,
+            "parental_role_p_monte_carlo_se": 0.004887163,
+            "census_p_sample_variance": 0.012228793,
+            "parental_role_p_sample_variance": 0.012228793,
+            "mean_census_gene_diversity": 0.475588672,
+            "census_gene_diversity_monte_carlo_se": 0.001383644,
+            "mean_observed_heterozygosity": 0.478144531,
+            "allele_fixed_replicates": 0,
+            "allele_lost_replicates": 0
+          },
+          "exact_finite_expectation": {
+            "mean_census_p": 0.5,
+            "mean_parental_role_p": 0.5,
+            "census_p_variance": 0.012179217,
+            "parental_role_p_variance": 0.012179217,
+            "mean_census_gene_diversity": 0.475641565
+          }
+        },
+        {
+          "generation": 80,
+          "observed": {
+            "mean_census_p": 0.500302734,
+            "census_p_monte_carlo_se": 0.009433174,
+            "mean_parental_role_p": 0.500302734,
+            "parental_role_p_monte_carlo_se": 0.009433174,
+            "census_p_sample_variance": 0.045560207,
+            "parental_role_p_sample_variance": 0.045560207,
+            "mean_census_gene_diversity": 0.409057373,
+            "census_gene_diversity_monte_carlo_se": 0.004572182,
+            "mean_observed_heterozygosity": 0.410917969,
+            "allele_fixed_replicates": 0,
+            "allele_lost_replicates": 0
+          },
+          "exact_finite_expectation": {
+            "mean_census_p": 0.5,
+            "mean_parental_role_p": 0.5,
+            "census_p_variance": 0.045267244,
+            "parental_role_p_variance": 0.045267244,
+            "mean_census_gene_diversity": 0.409465512
+          }
+        }
+      ]
+    },
+    {
+      "name": "few_males",
+      "males": 20,
+      "females": 180,
+      "seed": 202611011,
+      "classical_sex_ratio_Ne_benchmark": 72.0,
+      "generations_elapsed": 80,
+      "checkpoints": [
+        {
+          "generation": 0,
+          "observed": {
+            "mean_census_p": 0.5,
+            "census_p_monte_carlo_se": 0.0,
+            "mean_parental_role_p": 0.5,
+            "parental_role_p_monte_carlo_se": 0.0,
+            "census_p_sample_variance": 0.0,
+            "parental_role_p_sample_variance": 0.0,
+            "mean_census_gene_diversity": 0.5,
+            "census_gene_diversity_monte_carlo_se": 0.0,
+            "mean_observed_heterozygosity": 0.5,
+            "allele_fixed_replicates": 0,
+            "allele_lost_replicates": 0
+          },
+          "exact_finite_expectation": {
+            "mean_census_p": 0.5,
+            "mean_parental_role_p": 0.5,
+            "census_p_variance": 0.0,
+            "parental_role_p_variance": 0.0,
+            "mean_census_gene_diversity": 0.5
+          }
+        },
+        {
+          "generation": 1,
+          "observed": {
+            "mean_census_p": 0.499750977,
+            "census_p_monte_carlo_se": 0.001070749,
+            "mean_parental_role_p": 0.499123806,
+            "parental_role_p_monte_carlo_se": 0.001782486,
+            "census_p_sample_variance": 0.00058701,
+            "parental_role_p_sample_variance": 0.001626755,
+            "mean_census_gene_diversity": 0.498828149,
+            "census_gene_diversity_monte_carlo_se": 7.731e-05,
+            "mean_observed_heterozygosity": 0.502177734,
+            "allele_fixed_replicates": 0,
+            "allele_lost_replicates": 0
+          },
+          "exact_finite_expectation": {
+            "mean_census_p": 0.5,
+            "mean_parental_role_p": 0.5,
+            "census_p_variance": 0.000625,
+            "parental_role_p_variance": 0.001736111,
+            "mean_census_gene_diversity": 0.49875
+          }
+        },
+        {
+          "generation": 20,
+          "observed": {
+            "mean_census_p": 0.518818359,
+            "census_p_monte_carlo_se": 0.007823438,
+            "mean_parental_role_p": 0.518115234,
+            "parental_role_p_monte_carlo_se": 0.007996941,
+            "census_p_sample_variance": 0.031337569,
+            "parental_role_p_sample_variance": 0.032742946,
+            "mean_census_gene_diversity": 0.436739014,
+            "census_gene_diversity_monte_carlo_se": 0.003358858,
+            "mean_observed_heterozygosity": 0.440429688,
+            "allele_fixed_replicates": 0,
+            "allele_lost_replicates": 0
+          },
+          "exact_finite_expectation": {
+            "mean_census_p": 0.5,
+            "mean_parental_role_p": 0.5,
+            "census_p_variance": 0.031355991,
+            "parental_role_p_variance": 0.032323396,
+            "mean_census_gene_diversity": 0.437288017
+          }
+        },
+        {
+          "generation": 80,
+          "observed": {
+            "mean_census_p": 0.515605469,
+            "census_p_monte_carlo_se": 0.014426159,
+            "mean_parental_role_p": 0.516330295,
+            "parental_role_p_monte_carlo_se": 0.014433663,
+            "census_p_sample_variance": 0.106554403,
+            "parental_role_p_sample_variance": 0.106665277,
+            "mean_census_gene_diversity": 0.286820361,
+            "census_gene_diversity_monte_carlo_se": 0.008216209,
+            "mean_observed_heterozygosity": 0.290253906,
+            "allele_fixed_replicates": 43,
+            "allele_lost_replicates": 45
+          },
+          "exact_finite_expectation": {
+            "mean_census_p": 0.5,
+            "mean_parental_role_p": 0.5,
+            "census_p_variance": 0.105650382,
+            "parental_role_p_variance": 0.106289067,
+            "mean_census_gene_diversity": 0.288699236
+          }
+        }
+      ]
+    },
+    {
+      "name": "few_females",
+      "males": 180,
+      "females": 20,
+      "seed": 202611012,
+      "classical_sex_ratio_Ne_benchmark": 72.0,
+      "generations_elapsed": 80,
+      "checkpoints": [
+        {
+          "generation": 0,
+          "observed": {
+            "mean_census_p": 0.5,
+            "census_p_monte_carlo_se": 0.0,
+            "mean_parental_role_p": 0.5,
+            "parental_role_p_monte_carlo_se": 0.0,
+            "census_p_sample_variance": 0.0,
+            "parental_role_p_sample_variance": 0.0,
+            "mean_census_gene_diversity": 0.5,
+            "census_gene_diversity_monte_carlo_se": 0.0,
+            "mean_observed_heterozygosity": 0.5,
+            "allele_fixed_replicates": 0,
+            "allele_lost_replicates": 0
+          },
+          "exact_finite_expectation": {
+            "mean_census_p": 0.5,
+            "mean_parental_role_p": 0.5,
+            "census_p_variance": 0.0,
+            "parental_role_p_variance": 0.0,
+            "mean_census_gene_diversity": 0.5
+          }
+        },
+        {
+          "generation": 1,
+          "observed": {
+            "mean_census_p": 0.501245117,
+            "census_p_monte_carlo_se": 0.001109192,
+            "mean_parental_role_p": 0.502492947,
+            "parental_role_p_monte_carlo_se": 0.001814934,
+            "census_p_sample_variance": 0.000629917,
+            "parental_role_p_sample_variance": 0.001686521,
+            "mean_census_gene_diversity": 0.498739526,
+            "census_gene_diversity_monte_carlo_se": 7.4926e-05,
+            "mean_observed_heterozygosity": 0.500908203,
+            "allele_fixed_replicates": 0,
+            "allele_lost_replicates": 0
+          },
+          "exact_finite_expectation": {
+            "mean_census_p": 0.5,
+            "mean_parental_role_p": 0.5,
+            "census_p_variance": 0.000625,
+            "parental_role_p_variance": 0.001736111,
+            "mean_census_gene_diversity": 0.49875
+          }
+        },
+        {
+          "generation": 20,
+          "observed": {
+            "mean_census_p": 0.492182617,
+            "census_p_monte_carlo_se": 0.008165459,
+            "mean_parental_role_p": 0.49144694,
+            "parental_role_p_monte_carlo_se": 0.008219532,
+            "census_p_sample_variance": 0.03413746,
+            "parental_role_p_sample_variance": 0.03459108,
+            "mean_census_gene_diversity": 0.431736206,
+            "census_gene_diversity_monte_carlo_se": 0.003625234,
+            "mean_observed_heterozygosity": 0.437255859,
+            "allele_fixed_replicates": 0,
+            "allele_lost_replicates": 0
+          },
+          "exact_finite_expectation": {
+            "mean_census_p": 0.5,
+            "mean_parental_role_p": 0.5,
+            "census_p_variance": 0.031355991,
+            "parental_role_p_variance": 0.032323396,
+            "mean_census_gene_diversity": 0.437288017
+          }
+        },
+        {
+          "generation": 80,
+          "observed": {
+            "mean_census_p": 0.480561523,
+            "census_p_monte_carlo_se": 0.014554035,
+            "mean_parental_role_p": 0.481236437,
+            "parental_role_p_monte_carlo_se": 0.014566724,
+            "census_p_sample_variance": 0.1084518,
+            "parental_role_p_sample_variance": 0.108641001,
+            "mean_census_gene_diversity": 0.282764331,
+            "census_gene_diversity_monte_carlo_se": 0.008300267,
+            "mean_observed_heterozygosity": 0.286162109,
+            "allele_fixed_replicates": 39,
+            "allele_lost_replicates": 52
+          },
+          "exact_finite_expectation": {
+            "mean_census_p": 0.5,
+            "mean_parental_role_p": 0.5,
+            "census_p_variance": 0.105650382,
+            "parental_role_p_variance": 0.106289067,
+            "mean_census_gene_diversity": 0.288699236
+          }
+        }
+      ]
+    },
+    {
+      "name": "opposite_sex_fixation_control",
+      "males": 20,
+      "females": 180,
+      "seed": 202611013,
+      "classical_sex_ratio_Ne_benchmark": 72.0,
+      "generations_elapsed": 1,
+      "checkpoints": [
+        {
+          "generation": 0,
+          "observed": {
+            "mean_census_p": 0.9,
+            "census_p_monte_carlo_se": 0.0,
+            "mean_parental_role_p": 0.5,
+            "parental_role_p_monte_carlo_se": 0.0,
+            "census_p_sample_variance": 0.0,
+            "parental_role_p_sample_variance": 0.0,
+            "mean_census_gene_diversity": 0.18,
+            "census_gene_diversity_monte_carlo_se": 0.0,
+            "mean_observed_heterozygosity": 0.0,
+            "allele_fixed_replicates": 0,
+            "allele_lost_replicates": 0
+          },
+          "exact_finite_expectation": {
+            "mean_census_p": 0.9,
+            "mean_parental_role_p": 0.5,
+            "census_p_variance": 0.0,
+            "parental_role_p_variance": 0.0,
+            "mean_census_gene_diversity": 0.18
+          }
+        },
+        {
+          "generation": 1,
+          "observed": {
+            "mean_census_p": 0.5,
+            "census_p_monte_carlo_se": 0.0,
+            "mean_parental_role_p": 0.5,
+            "parental_role_p_monte_carlo_se": 0.0,
+            "census_p_sample_variance": 0.0,
+            "parental_role_p_sample_variance": 0.0,
+            "mean_census_gene_diversity": 0.5,
+            "census_gene_diversity_monte_carlo_se": 0.0,
+            "mean_observed_heterozygosity": 1.0,
+            "allele_fixed_replicates": 0,
+            "allele_lost_replicates": 0
+          },
+          "exact_finite_expectation": {
+            "mean_census_p": 0.5,
+            "mean_parental_role_p": 0.5,
+            "census_p_variance": 0.0,
+            "parental_role_p_variance": 0.0,
+            "mean_census_gene_diversity": 0.5
+          }
+        }
+      ]
+    }
+  ],
+  "interpretation": "All replicates are included. Census p weights by sex counts; parental-role p gives each sex half the weight. Gene diversity is 2p(1-p), distinct from observed heterozygosity. Exact finite expectations come from a two-sex moment recursion, not a single-population Ne substitution."
+}
