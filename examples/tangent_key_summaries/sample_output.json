@@ -1,0 +1,170 @@
+{
+  "example": "ZHA reference-query tangent key summaries",
+  "python_version": "3.14.5",
+  "randomness": "None; all inputs and references are constructed.",
+  "symmetric_chunk": {
+    "keys": [
+      [
+        -2.0
+      ],
+      [
+        2.0
+      ]
+    ],
+    "references": [
+      [
+        -1.0
+      ],
+      [
+        0.0
+      ],
+      [
+        1.0
+      ]
+    ],
+    "summaries": [
+      {
+        "key": [
+          -1.92805516
+        ],
+        "bias": 0.090094768
+      },
+      {
+        "key": [
+          0.0
+        ],
+        "bias": 0.693147181
+      },
+      {
+        "key": [
+          1.92805516
+        ],
+        "bias": 0.090094768
+      }
+    ],
+    "queries": [
+      {
+        "query": -2.0,
+        "exact_log_mass": 4.000335406,
+        "tangent_envelope": 3.946205088,
+        "gap": 0.054130318
+      },
+      {
+        "query": -1.0,
+        "exact_log_mass": 2.018149928,
+        "tangent_envelope": 2.018149928,
+        "gap": 0.0
+      },
+      {
+        "query": 0.0,
+        "exact_log_mass": 0.693147181,
+        "tangent_envelope": 0.693147181,
+        "gap": 0.0
+      },
+      {
+        "query": 0.5,
+        "exact_log_mass": 1.126928011,
+        "tangent_envelope": 1.054122348,
+        "gap": 0.072805663
+      },
+      {
+        "query": 1.0,
+        "exact_log_mass": 2.018149928,
+        "tangent_envelope": 2.018149928,
+        "gap": 0.0
+      },
+      {
+        "query": 2.0,
+        "exact_log_mass": 4.000335406,
+        "tangent_envelope": 3.946205088,
+        "gap": 0.054130318
+      }
+    ]
+  },
+  "shared_reference_merge": {
+    "reference": [
+      0.7
+    ],
+    "direct": {
+      "key": [
+        3.169254433
+      ],
+      "bias": 1.237200184
+    },
+    "merged": {
+      "key": [
+        3.169254433
+      ],
+      "bias": 1.237200184
+    },
+    "max_parameter_difference": 0.0
+  },
+  "kl_gap_control": {
+    "reference": 1.0,
+    "query": 2.0,
+    "gap": 0.054130318,
+    "KL_reference_to_query": 0.054130318
+  },
+  "chunk_ranking_counterexample": {
+    "keys": [
+      [
+        -6.0
+      ],
+      [
+        6.0
+      ],
+      [
+        2.0
+      ],
+      [
+        2.0
+      ]
+    ],
+    "query": [
+      1.0
+    ],
+    "dense_attention_output_for_values_1100": 0.964663365,
+    "zero_reference": {
+      "exact_log_masses": [
+        6.000006144,
+        2.693147181
+      ],
+      "estimated_log_masses": [
+        0.693147181,
+        2.693147181
+      ],
+      "exact_chunk_probabilities": [
+        0.964663365,
+        0.035336635
+      ],
+      "estimated_chunk_probabilities": [
+        0.119202922,
+        0.880797078
+      ],
+      "top_one_chunk_diagnostic": 1,
+      "diagnostic_selected_chunk_output": 0.0
+    },
+    "zero_and_one_references": {
+      "exact_log_masses": [
+        6.000006144,
+        2.693147181
+      ],
+      "estimated_log_masses": [
+        6.000006144,
+        2.693147181
+      ],
+      "exact_chunk_probabilities": [
+        0.964663365,
+        0.035336635
+      ],
+      "estimated_chunk_probabilities": [
+        0.964663365,
+        0.035336635
+      ],
+      "top_one_chunk_diagnostic": 0,
+      "diagnostic_selected_chunk_output": 1.0
+    },
+    "extreme_future_tokens_leave_visible_prefix_unchanged": true
+  },
+  "limitations": "Supplied reference queries; mathematical summary and merge component only. No learned references, full hierarchy, top-p routing, RoPE, sink handling, training, optimized kernel, speed or model-gain claim. Lower log-mass bounds do not bound normalized chunk probabilities."
+}
