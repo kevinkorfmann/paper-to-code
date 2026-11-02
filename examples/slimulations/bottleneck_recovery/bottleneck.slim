@@ -1,0 +1,51 @@
+// One neutral allele; set next-generation size before each reproduction event.
+initialize() {
+    if (!exists("N0")) defineConstant("N0", 100);
+    if (!exists("SIZES")) defineConstant("SIZES", c(rep(5, 5), rep(100, 35)));
+    if (!exists("INITIAL_COPIES")) defineConstant("INITIAL_COPIES", 20);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 1024);
+    if ((N0 < 2) | (N0 > 200) | (asInteger(N0) != N0)) stop("invalid N0");
+    if ((size(SIZES) < 1) | (size(SIZES) > 100)) stop("invalid schedule length");
+    if (any(SIZES < 2) | any(SIZES > 200) | any(asInteger(SIZES) != SIZES)) stop("invalid sizes");
+    if ((INITIAL_COPIES < 0) | (INITIAL_COPIES > 2*N0) | (asInteger(INITIAL_COPIES) != INITIAL_COPIES)) stop("invalid copies");
+    if ((REPLICATES < 1) | (REPLICATES > 2048) | (asInteger(REPLICATES) != REPLICATES)) stop("invalid replicates");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+1 early() {
+    for (r in seqLen(REPLICATES)) sim.addSubpop(r+1, N0);
+}
+1 late() {
+    for (pop in sim.subpopulations) {
+        if (INITIAL_COPIES > 0)
+            pop.genomes[seqLen(INITIAL_COPIES)].addNewDrawnMutation(m1, 0);
+        copies = pop.individuals.genome1.countOfMutationsOfType(m1) + pop.individuals.genome2.countOfMutationsOfType(m1);
+        catn("INIT," + (pop.id-1) + "," + sum(copies == 0) + "," + sum(copies == 1) + "," + sum(copies == 2));
+    }
+    sim.recalculateFitness();
+    if (any(sim.subpopulations.cachedFitness(NULL) != 1.0)) stop("nonneutral fitness");
+    catn("FIT,1");
+    version();
+}
+2:101 early() {
+    t = community.tick-1;
+    if (t <= size(SIZES))
+        sim.subpopulations.setSubpopulationSize(asInteger(SIZES[t-1]));
+}
+1:101 late() {
+    t = community.tick-1;
+    wanted = N0;
+    if (t > 0) wanted = asInteger(SIZES[t-1]);
+    for (pop in sim.subpopulations) {
+        if (pop.individualCount != wanted) stop("wrong realized size");
+        copies = pop.individuals.genome1.countOfMutationsOfType(m1) + pop.individuals.genome2.countOfMutationsOfType(m1);
+        catn("DATA," + t + "," + (pop.id-1) + "," + wanted + "," + sum(copies) + "," + sum(copies == 1));
+    }
+    if (t == size(SIZES)) sim.simulationFinished();
+}

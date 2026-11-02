@@ -1,0 +1,784 @@
+{
+  "example": "Bottleneck recovery: census size and retained variation differ",
+  "slim_version": "4.0.1",
+  "eidos_version": "3.0.1",
+  "python_version": "3.14.5",
+  "founder_diploids": 100,
+  "initial_copies": 20,
+  "initial_frequency": 0.1,
+  "replicates_per_treatment": 1024,
+  "treatments": [
+    {
+      "name": "constant",
+      "seed": 202611020,
+      "offspring_size_schedule": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "checkpoints": [
+        {
+          "generation": 0,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.1,
+            "mean_p_monte_carlo_se": 0.0,
+            "mean_gene_diversity": 0.18,
+            "gene_diversity_monte_carlo_se": 0.0,
+            "mean_observed_heterozygosity": 0.0,
+            "lost_replicates": 0,
+            "loss_fraction": 0,
+            "loss_fraction_monte_carlo_se": 0.0,
+            "fixed_replicates": 0,
+            "segregating_replicates": 1024
+          },
+          "finite_model": {
+            "generation": 0,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.18,
+            "diversity_product_formula": 0.18,
+            "loss_probability": 0.0,
+            "fixation_probability": 0.0,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 1,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.099663086,
+            "mean_p_monte_carlo_se": 0.000663279,
+            "mean_gene_diversity": 0.178560596,
+            "gene_diversity_monte_carlo_se": 0.001056311,
+            "mean_observed_heterozygosity": 0.179482422,
+            "lost_replicates": 0,
+            "loss_fraction": 0,
+            "loss_fraction_monte_carlo_se": 0.0,
+            "fixed_replicates": 0,
+            "segregating_replicates": 1024
+          },
+          "finite_model": {
+            "generation": 1,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.1791,
+            "diversity_product_formula": 0.1791,
+            "loss_probability": 1e-09,
+            "fixation_probability": 0.0,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 5,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.100683594,
+            "mean_p_monte_carlo_se": 0.001477212,
+            "mean_gene_diversity": 0.176628125,
+            "gene_diversity_monte_carlo_se": 0.002315969,
+            "mean_observed_heterozygosity": 0.177890625,
+            "lost_replicates": 1,
+            "loss_fraction": 0.000976562,
+            "loss_fraction_monte_carlo_se": 0.000976562,
+            "fixed_replicates": 0,
+            "segregating_replicates": 1023
+          },
+          "finite_model": {
+            "generation": 5,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.175544776,
+            "diversity_product_formula": 0.175544776,
+            "loss_probability": 0.00147728,
+            "fixation_probability": 0.0,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 6,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.100576172,
+            "mean_p_monte_carlo_se": 0.001604298,
+            "mean_gene_diversity": 0.175655273,
+            "gene_diversity_monte_carlo_se": 0.002495712,
+            "mean_observed_heterozygosity": 0.175703125,
+            "lost_replicates": 4,
+            "loss_fraction": 0.00390625,
+            "loss_fraction_monte_carlo_se": 0.001950259,
+            "fixed_replicates": 0,
+            "segregating_replicates": 1020
+          },
+          "finite_model": {
+            "generation": 6,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.174667052,
+            "diversity_product_formula": 0.174667052,
+            "loss_probability": 0.00369695,
+            "fixation_probability": 0.0,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 34,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.097744141,
+            "mean_p_monte_carlo_se": 0.003638839,
+            "mean_gene_diversity": 0.149289063,
+            "gene_diversity_monte_carlo_se": 0.004740602,
+            "mean_observed_heterozygosity": 0.149863281,
+            "lost_replicates": 309,
+            "loss_fraction": 0.301757812,
+            "loss_fraction_monte_carlo_se": 0.014351407,
+            "fixed_replicates": 0,
+            "segregating_replicates": 715
+          },
+          "finite_model": {
+            "generation": 34,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.151794924,
+            "diversity_product_formula": 0.151794924,
+            "loss_probability": 0.305370333,
+            "fixation_probability": 1.1e-08,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 35,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.097138672,
+            "mean_p_monte_carlo_se": 0.003710374,
+            "mean_gene_diversity": 0.147238477,
+            "gene_diversity_monte_carlo_se": 0.004773024,
+            "mean_observed_heterozygosity": 0.148203125,
+            "lost_replicates": 324,
+            "loss_fraction": 0.31640625,
+            "loss_fraction_monte_carlo_se": 0.014540648,
+            "fixed_replicates": 0,
+            "segregating_replicates": 700
+          },
+          "finite_model": {
+            "generation": 35,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.15103595,
+            "diversity_product_formula": 0.15103595,
+            "loss_probability": 0.315106413,
+            "fixation_probability": 1.8e-08,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 39,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.098168945,
+            "mean_p_monte_carlo_se": 0.003953625,
+            "mean_gene_diversity": 0.145082275,
+            "gene_diversity_monte_carlo_se": 0.004927925,
+            "mean_observed_heterozygosity": 0.145615234,
+            "lost_replicates": 364,
+            "loss_fraction": 0.35546875,
+            "loss_fraction_monte_carlo_se": 0.014965281,
+            "fixed_replicates": 0,
+            "segregating_replicates": 660
+          },
+          "finite_model": {
+            "generation": 39,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.148037811,
+            "diversity_product_formula": 0.148037811,
+            "loss_probability": 0.351755563,
+            "fixation_probability": 1.01e-07,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 40,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.098237305,
+            "mean_p_monte_carlo_se": 0.003998438,
+            "mean_gene_diversity": 0.144463037,
+            "gene_diversity_monte_carlo_se": 0.004959052,
+            "mean_observed_heterozygosity": 0.145537109,
+            "lost_replicates": 375,
+            "loss_fraction": 0.366210938,
+            "loss_fraction_monte_carlo_se": 0.015062609,
+            "fixed_replicates": 0,
+            "segregating_replicates": 649
+          },
+          "finite_model": {
+            "generation": 40,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.147297622,
+            "diversity_product_formula": 0.147297622,
+            "loss_probability": 0.36036838,
+            "fixation_probability": 1.46e-07,
+            "probability_mass": 1.0
+          }
+        }
+      ],
+      "alleles_lost_by_generation_5_still_lost_at_40": 1
+    },
+    {
+      "name": "early_bottleneck",
+      "seed": 202611021,
+      "offspring_size_schedule": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "checkpoints": [
+        {
+          "generation": 0,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.1,
+            "mean_p_monte_carlo_se": 0.0,
+            "mean_gene_diversity": 0.18,
+            "gene_diversity_monte_carlo_se": 0.0,
+            "mean_observed_heterozygosity": 0.0,
+            "lost_replicates": 0,
+            "loss_fraction": 0,
+            "loss_fraction_monte_carlo_se": 0.0,
+            "fixed_replicates": 0,
+            "segregating_replicates": 1024
+          },
+          "finite_model": {
+            "generation": 0,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.18,
+            "diversity_product_formula": 0.18,
+            "loss_probability": 0.0,
+            "fixation_probability": 0.0,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 1,
+          "diploids": 5,
+          "observed": {
+            "mean_p": 0.100878906,
+            "mean_p_monte_carlo_se": 0.002903174,
+            "mean_gene_diversity": 0.164160156,
+            "gene_diversity_monte_carlo_se": 0.004328746,
+            "mean_observed_heterozygosity": 0.180664062,
+            "lost_replicates": 353,
+            "loss_fraction": 0.344726562,
+            "loss_fraction_monte_carlo_se": 0.014859727,
+            "fixed_replicates": 0,
+            "segregating_replicates": 671
+          },
+          "finite_model": {
+            "generation": 1,
+            "diploids": 5,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.162,
+            "diversity_product_formula": 0.162,
+            "loss_probability": 0.34867844,
+            "fixation_probability": 0.0,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 5,
+          "diploids": 5,
+          "observed": {
+            "mean_p": 0.097363281,
+            "mean_p_monte_carlo_se": 0.005870609,
+            "mean_gene_diversity": 0.105253906,
+            "gene_diversity_monte_carlo_se": 0.005424897,
+            "mean_observed_heterozygosity": 0.117382813,
+            "lost_replicates": 713,
+            "loss_fraction": 0.696289062,
+            "loss_fraction_monte_carlo_se": 0.014377626,
+            "fixed_replicates": 0,
+            "segregating_replicates": 311
+          },
+          "finite_model": {
+            "generation": 5,
+            "diploids": 5,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.1062882,
+            "diversity_product_formula": 0.1062882,
+            "loss_probability": 0.700468469,
+            "fixation_probability": 0.002633955,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 6,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.097983398,
+            "mean_p_monte_carlo_se": 0.005892794,
+            "mean_gene_diversity": 0.10571792,
+            "gene_diversity_monte_carlo_se": 0.00545323,
+            "mean_observed_heterozygosity": 0.105595703,
+            "lost_replicates": 713,
+            "loss_fraction": 0.696289062,
+            "loss_fraction_monte_carlo_se": 0.014377626,
+            "fixed_replicates": 0,
+            "segregating_replicates": 311
+          },
+          "finite_model": {
+            "generation": 6,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.105756759,
+            "diversity_product_formula": 0.105756759,
+            "loss_probability": 0.700468469,
+            "fixation_probability": 0.002633955,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 34,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.095654297,
+            "mean_p_monte_carlo_se": 0.006333525,
+            "mean_gene_diversity": 0.090936816,
+            "gene_diversity_monte_carlo_se": 0.005234371,
+            "mean_observed_heterozygosity": 0.091855469,
+            "lost_replicates": 743,
+            "loss_fraction": 0.725585938,
+            "loss_fraction_monte_carlo_se": 0.013951143,
+            "fixed_replicates": 1,
+            "segregating_replicates": 280
+          },
+          "finite_model": {
+            "generation": 34,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.091908228,
+            "diversity_product_formula": 0.091908228,
+            "loss_probability": 0.721711417,
+            "fixation_probability": 0.004459505,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 35,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.096142578,
+            "mean_p_monte_carlo_se": 0.006353911,
+            "mean_gene_diversity": 0.091196875,
+            "gene_diversity_monte_carlo_se": 0.005257296,
+            "mean_observed_heterozygosity": 0.091621094,
+            "lost_replicates": 744,
+            "loss_fraction": 0.7265625,
+            "loss_fraction_monte_carlo_se": 0.013935665,
+            "fixed_replicates": 1,
+            "segregating_replicates": 279
+          },
+          "finite_model": {
+            "generation": 35,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.091448687,
+            "diversity_product_formula": 0.091448687,
+            "loss_probability": 0.722885425,
+            "fixation_probability": 0.004586559,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 39,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.097294922,
+            "mean_p_monte_carlo_se": 0.006455782,
+            "mean_gene_diversity": 0.09038584,
+            "gene_diversity_monte_carlo_se": 0.005250916,
+            "mean_observed_heterozygosity": 0.090527344,
+            "lost_replicates": 750,
+            "loss_fraction": 0.732421875,
+            "loss_fraction_monte_carlo_se": 0.013841021,
+            "fixed_replicates": 1,
+            "segregating_replicates": 273
+          },
+          "finite_model": {
+            "generation": 39,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.089633385,
+            "diversity_product_formula": 0.089633385,
+            "loss_probability": 0.727571108,
+            "fixation_probability": 0.005125718,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 40,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.09734375,
+            "mean_p_monte_carlo_se": 0.006478957,
+            "mean_gene_diversity": 0.089851172,
+            "gene_diversity_monte_carlo_se": 0.00524381,
+            "mean_observed_heterozygosity": 0.090820312,
+            "lost_replicates": 752,
+            "loss_fraction": 0.734375,
+            "loss_fraction_monte_carlo_se": 0.013808789,
+            "fixed_replicates": 1,
+            "segregating_replicates": 271
+          },
+          "finite_model": {
+            "generation": 40,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.089185218,
+            "diversity_product_formula": 0.089185218,
+            "loss_probability": 0.728735874,
+            "fixation_probability": 0.005268025,
+            "probability_mass": 1.0
+          }
+        }
+      ],
+      "alleles_lost_by_generation_5_still_lost_at_40": 713
+    },
+    {
+      "name": "late_bottleneck",
+      "seed": 202611022,
+      "offspring_size_schedule": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        5,
+        5,
+        5,
+        5,
+        5,
+        100
+      ],
+      "checkpoints": [
+        {
+          "generation": 0,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.1,
+            "mean_p_monte_carlo_se": 0.0,
+            "mean_gene_diversity": 0.18,
+            "gene_diversity_monte_carlo_se": 0.0,
+            "mean_observed_heterozygosity": 0.0,
+            "lost_replicates": 0,
+            "loss_fraction": 0,
+            "loss_fraction_monte_carlo_se": 0.0,
+            "fixed_replicates": 0,
+            "segregating_replicates": 1024
+          },
+          "finite_model": {
+            "generation": 0,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.18,
+            "diversity_product_formula": 0.18,
+            "loss_probability": 0.0,
+            "fixation_probability": 0.0,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 1,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.099204102,
+            "mean_p_monte_carlo_se": 0.00064431,
+            "mean_gene_diversity": 0.177875928,
+            "gene_diversity_monte_carlo_se": 0.001027201,
+            "mean_observed_heterozygosity": 0.179072266,
+            "lost_replicates": 0,
+            "loss_fraction": 0,
+            "loss_fraction_monte_carlo_se": 0.0,
+            "fixed_replicates": 0,
+            "segregating_replicates": 1024
+          },
+          "finite_model": {
+            "generation": 1,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.1791,
+            "diversity_product_formula": 0.1791,
+            "loss_probability": 1e-09,
+            "fixation_probability": 0.0,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 5,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.100605469,
+            "mean_p_monte_carlo_se": 0.00143268,
+            "mean_gene_diversity": 0.176768457,
+            "gene_diversity_monte_carlo_se": 0.00224048,
+            "mean_observed_heterozygosity": 0.177050781,
+            "lost_replicates": 1,
+            "loss_fraction": 0.000976562,
+            "loss_fraction_monte_carlo_se": 0.000976562,
+            "fixed_replicates": 0,
+            "segregating_replicates": 1023
+          },
+          "finite_model": {
+            "generation": 5,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.175544776,
+            "diversity_product_formula": 0.175544776,
+            "loss_probability": 0.00147728,
+            "fixation_probability": 0.0,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 6,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.099848633,
+            "mean_p_monte_carlo_se": 0.001580798,
+            "mean_gene_diversity": 0.174644971,
+            "gene_diversity_monte_carlo_se": 0.002440178,
+            "mean_observed_heterozygosity": 0.175712891,
+            "lost_replicates": 5,
+            "loss_fraction": 0.004882812,
+            "loss_fraction_monte_carlo_se": 0.002179387,
+            "fixed_replicates": 0,
+            "segregating_replicates": 1019
+          },
+          "finite_model": {
+            "generation": 6,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.174667052,
+            "diversity_product_formula": 0.174667052,
+            "loss_probability": 0.00369695,
+            "fixation_probability": 0.0,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 34,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.099956055,
+            "mean_p_monte_carlo_se": 0.003572984,
+            "mean_gene_diversity": 0.15381001,
+            "gene_diversity_monte_carlo_se": 0.004708995,
+            "mean_observed_heterozygosity": 0.154501953,
+            "lost_replicates": 285,
+            "loss_fraction": 0.278320312,
+            "loss_fraction_monte_carlo_se": 0.014012218,
+            "fixed_replicates": 0,
+            "segregating_replicates": 739
+          },
+          "finite_model": {
+            "generation": 34,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.151794924,
+            "diversity_product_formula": 0.151794924,
+            "loss_probability": 0.305370333,
+            "fixation_probability": 1.1e-08,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 35,
+          "diploids": 5,
+          "observed": {
+            "mean_p": 0.100585938,
+            "mean_p_monte_carlo_se": 0.0045639,
+            "mean_gene_diversity": 0.138320313,
+            "gene_diversity_monte_carlo_se": 0.005304841,
+            "mean_observed_heterozygosity": 0.15703125,
+            "lost_replicates": 555,
+            "loss_fraction": 0.541992188,
+            "loss_fraction_monte_carlo_se": 0.015577406,
+            "fixed_replicates": 0,
+            "segregating_replicates": 469
+          },
+          "finite_model": {
+            "generation": 35,
+            "diploids": 5,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.136615432,
+            "diversity_product_formula": 0.136615432,
+            "loss_probability": 0.554187309,
+            "fixation_probability": 7.6581e-05,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 39,
+          "diploids": 5,
+          "observed": {
+            "mean_p": 0.098144531,
+            "mean_p_monte_carlo_se": 0.006499075,
+            "mean_gene_diversity": 0.090605469,
+            "gene_diversity_monte_carlo_se": 0.005208384,
+            "mean_observed_heterozygosity": 0.103320312,
+            "lost_replicates": 755,
+            "loss_fraction": 0.737304688,
+            "loss_fraction_monte_carlo_se": 0.013759791,
+            "fixed_replicates": 12,
+            "segregating_replicates": 257
+          },
+          "finite_model": {
+            "generation": 39,
+            "diploids": 5,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.089633385,
+            "diversity_product_formula": 0.089633385,
+            "loss_probability": 0.747350524,
+            "fixation_probability": 0.008365656,
+            "probability_mass": 1.0
+          }
+        },
+        {
+          "generation": 40,
+          "diploids": 100,
+          "observed": {
+            "mean_p": 0.098671875,
+            "mean_p_monte_carlo_se": 0.006530269,
+            "mean_gene_diversity": 0.090620996,
+            "gene_diversity_monte_carlo_se": 0.005227509,
+            "mean_observed_heterozygosity": 0.092089844,
+            "lost_replicates": 755,
+            "loss_fraction": 0.737304688,
+            "loss_fraction_monte_carlo_se": 0.013759791,
+            "fixed_replicates": 12,
+            "segregating_replicates": 257
+          },
+          "finite_model": {
+            "generation": 40,
+            "diploids": 100,
+            "mean_p": 0.1,
+            "mean_gene_diversity": 0.089185218,
+            "diversity_product_formula": 0.089185218,
+            "loss_probability": 0.747350525,
+            "fixation_probability": 0.008365656,
+            "probability_mass": 1.0
+          }
+        }
+      ],
+      "alleles_lost_by_generation_5_still_lost_at_40": 1
+    }
+  ],
+  "interpretation": "All replicates including absorption are counted. H=2p(1-p) is gene diversity, not observed heterozygosity. Finite-state probabilities are numerical evaluations of the exact variable-size binomial model; no mutation, migration or selection."
+}
