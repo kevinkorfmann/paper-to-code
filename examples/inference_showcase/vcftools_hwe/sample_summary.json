@@ -1,0 +1,186 @@
+{
+  "versions": {
+    "python": "3.14.5",
+    "vcftools": "0.1.17"
+  },
+  "seed": null,
+  "input": "Constructed counts; unrelated synthetic diploids under the null",
+  "inference_target": "Conditional exact test of Hardy-Weinberg genotype proportions",
+  "counts_order": [
+    "0/0",
+    "0/1",
+    "1/1"
+  ],
+  "cases": [
+    {
+      "name": "balanced",
+      "counts": [
+        25,
+        50,
+        25
+      ],
+      "expected_counts_printed": [
+        25.0,
+        50.0,
+        25.0
+      ],
+      "chi_square": 0.0,
+      "p_two_sided": 1.0,
+      "p_deficit": 0.5596168,
+      "p_excess": 0.5989659,
+      "asymptotic_chi_square_p": 1.0
+    },
+    {
+      "name": "deficit_n10",
+      "counts": [
+        4,
+        2,
+        4
+      ],
+      "expected_counts_printed": [
+        2.5,
+        5.0,
+        2.5
+      ],
+      "chi_square": 3.6,
+      "p_two_sided": 0.07510446,
+      "p_deficit": 0.06956202,
+      "p_excess": 0.998636,
+      "asymptotic_chi_square_p": 0.05777957112
+    },
+    {
+      "name": "deficit_n100",
+      "counts": [
+        40,
+        20,
+        40
+      ],
+      "expected_counts_printed": [
+        25.0,
+        50.0,
+        25.0
+      ],
+      "chi_square": 36.0,
+      "p_two_sided": 7.901338e-10,
+      "p_deficit": 7.066794e-10,
+      "p_excess": 1.0,
+      "asymptotic_chi_square_p": 1.97317529e-09
+    },
+    {
+      "name": "excess_n100",
+      "counts": [
+        10,
+        80,
+        10
+      ],
+      "expected_counts_printed": [
+        25.0,
+        50.0,
+        25.0
+      ],
+      "chi_square": 36.0,
+      "p_two_sided": 2.112246e-09,
+      "p_deficit": 1.0,
+      "p_excess": 1.405566e-09,
+      "asymptotic_chi_square_p": 1.97317529e-09
+    },
+    {
+      "name": "rare_homozygote",
+      "counts": [
+        99,
+        0,
+        1
+      ],
+      "expected_counts_printed": [
+        98.01,
+        1.98,
+        0.01
+      ],
+      "chi_square": 100.0,
+      "p_two_sided": 0.005025126,
+      "p_deficit": 0.005025126,
+      "p_excess": 1.0,
+      "asymptotic_chi_square_p": 1.523970605e-23
+    },
+    {
+      "name": "rare_heterozygotes",
+      "counts": [
+        98,
+        2,
+        0
+      ],
+      "expected_counts_printed": [
+        98.01,
+        1.98,
+        0.01
+      ],
+      "chi_square": 0.01020304,
+      "p_two_sided": 1.0,
+      "p_deficit": 1.0,
+      "p_excess": 0.9949749,
+      "asymptotic_chi_square_p": 0.9195424417
+    },
+    {
+      "name": "remove_40_heterozygotes",
+      "counts": [
+        25,
+        10,
+        25
+      ],
+      "expected_counts_printed": [
+        15.0,
+        30.0,
+        15.0
+      ],
+      "chi_square": 26.66667,
+      "p_two_sided": 1.129777e-07,
+      "p_deficit": 1.044401e-07,
+      "p_excess": 1.0,
+      "asymptotic_chi_square_p": 2.417563881e-07
+    }
+  ],
+  "calibration": {
+    "diploid_individuals": 20,
+    "alt_copies": 4,
+    "alpha": "1/20",
+    "configurations": [
+      {
+        "counts": [
+          18,
+          0,
+          2
+        ],
+        "conditional_null_probability": 0.002079002079,
+        "vcftools_p_two_sided": 0.002079002,
+        "asymptotic_chi_square_p": 7.744216431e-06
+      },
+      {
+        "counts": [
+          17,
+          2,
+          1
+        ],
+        "conditional_null_probability": 0.1496881497,
+        "vcftools_p_two_sided": 0.1517672,
+        "asymptotic_chi_square_p": 0.0468541776
+      },
+      {
+        "counts": [
+          16,
+          4,
+          0
+        ],
+        "conditional_null_probability": 0.8482328482,
+        "vcftools_p_two_sided": 1.0,
+        "asymptotic_chi_square_p": 0.6192567542
+      }
+    ],
+    "exact_null_rejection_probability": 0.002079002079,
+    "exact_null_rejection_fraction": "1/481",
+    "chi_square_null_rejection_probability": 0.1517671518,
+    "chi_square_null_rejection_fraction": "73/481"
+  },
+  "rare_homozygote_exact_p_fraction": "1/199",
+  "records_independently_checked": 10,
+  "limitations": "Per-site conditional hypothesis tests; no causal diagnosis, posterior HWE probability, genome-wide error rate, fitted inbreeding coefficient or empirical accuracy claim."
+}

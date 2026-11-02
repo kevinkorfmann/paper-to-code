@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "seed": null,
+  "generation": "Deterministic constructed genotype counts; no random sampling or real individuals",
+  "count_order": ["0/0", "0/1", "1/1"],
+  "cases": [
+    {"name": "balanced", "counts": [25, 50, 25]},
+    {"name": "deficit_n10", "counts": [4, 2, 4]},
+    {"name": "deficit_n100", "counts": [40, 20, 40]},
+    {"name": "excess_n100", "counts": [10, 80, 10]},
+    {"name": "rare_homozygote", "counts": [99, 0, 1]},
+    {"name": "rare_heterozygotes", "counts": [98, 2, 0]},
+    {"name": "remove_40_heterozygotes", "counts": [25, 10, 25]}
+  ],
+  "calibration": {"diploid_individuals": 20, "alt_copies": 4, "alpha": "1/20"}
+}
