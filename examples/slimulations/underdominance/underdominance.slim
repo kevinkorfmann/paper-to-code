@@ -1,0 +1,58 @@
+// One synthetic locus: aa and AA have fitness 1; Aa has fitness W_HET.
+initialize() {
+    if (!exists("N")) defineConstant("N", 100);
+    if (!exists("INITIAL_AA")) defineConstant("INITIAL_AA", 25);
+    if (!exists("INITIAL_HET")) defineConstant("INITIAL_HET", 50);
+    if (!exists("W_HET")) defineConstant("W_HET", 0.6);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 512);
+    if (!exists("GENERATIONS")) defineConstant("GENERATIONS", 80);
+    if ((N < 2) | (N > 200) | (asInteger(N) != N)) stop("invalid N");
+    if ((INITIAL_AA < 0) | (INITIAL_HET < 0) | (INITIAL_AA+INITIAL_HET > N) |
+        (asInteger(INITIAL_AA) != INITIAL_AA) | (asInteger(INITIAL_HET) != INITIAL_HET))
+        stop("invalid founder genotypes");
+    if (!isFinite(W_HET) | (W_HET <= 0) | (W_HET > 1)) stop("invalid heterozygote fitness");
+    if ((REPLICATES < 1) | (REPLICATES > 2048) | (asInteger(REPLICATES) != REPLICATES)) stop("invalid replicates");
+    if ((GENERATIONS < 0) | (GENERATIONS > 100) | (asInteger(GENERATIONS) != GENERATIONS)) stop("invalid generations");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+fitnessEffect() {
+    copies = sum(individual.genomes.countOfMutationsOfType(m1));
+    return (copies == 1) ? W_HET else 1.0;
+}
+1 early() {
+    for (r in seqLen(REPLICATES)) sim.addSubpop(r+1, N);
+}
+1 late() {
+    for (pop in sim.subpopulations) {
+        carriers = c(pop.individuals[seqLen(INITIAL_AA)].genomes,
+                     pop.individuals[INITIAL_AA+seqLen(INITIAL_HET)].genome1);
+        if (size(carriers)) carriers.addNewDrawnMutation(m1, 0);
+    }
+    sim.recalculateFitness();
+    pop = sim.subpopulations[0];
+    copies = pop.individuals.genome1.countOfMutationsOfType(m1) + pop.individuals.genome2.countOfMutationsOfType(m1);
+    fitness = pop.cachedFitness(NULL);
+    for (g in 0:2)
+        if (any(copies == g)) {
+            expected = (g == 1) ? W_HET else 1.0;
+            if (any(abs(fitness[copies == g]-expected) > 1e-12)) stop("wrong fitness");
+            catn("FIT," + g + "," + mean(fitness[copies == g]));
+        }
+    version();
+}
+1:101 late() {
+    t = community.tick-1;
+    for (pop in sim.subpopulations) {
+        if (pop.individualCount != N) stop("wrong realized size");
+        copies = pop.individuals.genome1.countOfMutationsOfType(m1) + pop.individuals.genome2.countOfMutationsOfType(m1);
+        catn("DATA," + t + "," + (pop.id-1) + "," + sum(copies == 0) + "," + sum(copies == 1) + "," + sum(copies == 2));
+    }
+    if (t == GENERATIONS) sim.simulationFinished();
+}
