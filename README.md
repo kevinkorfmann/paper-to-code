@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-03 | Inference showcase | [ANGSD: genotype likelihoods, hard calls and allele frequency](examples/inference_showcase/angsd_frequency/README.md) | CPython 3.14.5 + checksum-pinned ANGSD 0.941 / HTSlib 1.24 |
 | 2026-11-03 | Paper to code | [DAMI: joint calibration of memory decay and Softplus sensitivity](examples/dami_calibration/README.md) | CPython 3.14.5; standard library |
 | 2026-11-03 | **slimulations** | [Underdominance: ensemble means can hide population polarization](examples/slimulations/underdominance/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-11-02 | Inference showcase | [VCFtools: exact Hardy–Weinberg tests and discrete calibration](examples/inference_showcase/vcftools_hwe/README.md) | CPython 3.14.5 + checksum-pinned VCFtools 0.1.17 |
@@ -48,7 +49,7 @@ and explains its limits.
 | 2026-10-20 | Inference showcase | [Genealogy inference with tsinfer](examples/inference_showcase/tsinfer_genealogy/README.md) | CPython 3.12.11; separate hash-locked environment |
 
 The examples use only constructed inputs or synthetic data. Their documentation
-includes commands, seeds where applicable, checked output, and tests. The twelve
+includes commands, seeds where applicable, checked output, and tests. The thirteen
 inference examples call actual tools: tsinfer estimates topology; tsdate estimates
 node ages conditional on a supplied topology and mutation clock; dadi estimates
 a population-size ratio conditional on a supplied change time; fastDFE estimates
@@ -64,7 +65,9 @@ with hidden-allele and independent copying controls; BCFtools/RoH infers
 within-individual autozygous states from genotype likelihoods, with frequency,
 evidence-strength and reported-quality diagnostics; VCFtools tests Hardy–Weinberg
 genotype proportions conditional on observed allele counts, with exact null
-calibration and rare-allele controls.
+calibration and rare-allele controls; ANGSD estimates population ALT frequency
+from genotype likelihoods, with exact analytical optima and hard-call,
+normalization and missing-information controls.
 
 ## First example: differential attention
 

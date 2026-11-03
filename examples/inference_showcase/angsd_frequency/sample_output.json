@@ -1,0 +1,59 @@
+{
+  "controls": {
+    "all_alternate": {
+      "alt_frequency": 1.0,
+      "informative_diploids": 20
+    },
+    "all_reference": {
+      "alt_frequency": 0.0,
+      "informative_diploids": 20
+    },
+    "all_uninformative": {
+      "emitted": false,
+      "likelihood": "constant for every p in [0,1]"
+    },
+    "alleles_reversed": {
+      "alt_frequency": 0.799963,
+      "informative_diploids": 20
+    },
+    "half_uninformative": {
+      "alt_frequency": 0.19996,
+      "informative_diploids": 10
+    },
+    "rescaled": {
+      "alt_frequency": 0.19996,
+      "informative_diploids": 20
+    }
+  },
+  "data": {
+    "diploids": 20,
+    "origin": "Deterministic constructed likelihoods; no biological sample data",
+    "seed": null,
+    "sites": 8
+  },
+  "main_comparison": {
+    "asymmetric": {
+      "alt_frequency": 0.19996,
+      "exact_population_mle": 0.2,
+      "hard_call_alt_frequency": 0.5,
+      "informative_diploids": 20,
+      "log_likelihood_loss_at_hard_call": 2.266573706,
+      "normalized_gl_dosage_frequency": 0.35
+    },
+    "symmetric": {
+      "alt_frequency": 0.499995,
+      "exact_population_mle": 0.5,
+      "hard_call_alt_frequency": 0.5,
+      "informative_diploids": 20,
+      "log_likelihood_loss_at_hard_call": 0.0,
+      "normalized_gl_dosage_frequency": 0.5
+    }
+  },
+  "scope": "Population ALT frequency conditional on supplied likelihoods and diploid HWE; not sample allele count or a calibrated uncertainty interval",
+  "versions": {
+    "angsd": "0.941",
+    "angsd_revision": "b3099ed756e7aff87d2d1dd4fd30cdf36998380b",
+    "htslib": "1.24",
+    "python": "3.14.5"
+  }
+}
