@@ -1,0 +1,203 @@
+{
+  "example": "DAMI scalar gate calibration",
+  "python_version": "3.14.5",
+  "randomness": "None; all calibration activations and targets are constructed.",
+  "calibration_activations": [
+    -2.0,
+    -0.5,
+    0.5,
+    2.0
+  ],
+  "head_timescales": [
+    64.0,
+    16.0,
+    4.0
+  ],
+  "supplied_layer_sensitivities": [
+    0.25,
+    0.75,
+    0.25
+  ],
+  "calibrated_grid": [
+    {
+      "layer": 0,
+      "head": 0,
+      "target_timescale": 64.0,
+      "target_sensitivity": 0.25,
+      "bias": -1.571276765,
+      "a_log": -3.088364032,
+      "mean_softplus_sensitivity": 0.25,
+      "mean_log_decay_slope_magnitude": 0.011394114,
+      "mean_log_retention": -0.015625,
+      "geometric_mean_retention": 0.984496437,
+      "arithmetic_mean_retention": 0.984622863
+    },
+    {
+      "layer": 0,
+      "head": 1,
+      "target_timescale": 16.0,
+      "target_sensitivity": 0.25,
+      "bias": -1.571276765,
+      "a_log": -1.70206967,
+      "mean_softplus_sensitivity": 0.25,
+      "mean_log_decay_slope_magnitude": 0.045576455,
+      "mean_log_retention": -0.0625,
+      "geometric_mean_retention": 0.939413063,
+      "arithmetic_mean_retention": 0.941316082
+    },
+    {
+      "layer": 0,
+      "head": 2,
+      "target_timescale": 4.0,
+      "target_sensitivity": 0.25,
+      "bias": -1.571276765,
+      "a_log": -0.315775309,
+      "mean_softplus_sensitivity": 0.25,
+      "mean_log_decay_slope_magnitude": 0.18230582,
+      "mean_log_retention": -0.25,
+      "geometric_mean_retention": 0.778800783,
+      "arithmetic_mean_retention": 0.802794956
+    },
+    {
+      "layer": 1,
+      "head": 0,
+      "target_timescale": 64.0,
+      "target_sensitivity": 0.75,
+      "bias": 1.571276765,
+      "a_log": -4.80813443,
+      "mean_softplus_sensitivity": 0.75,
+      "mean_log_decay_slope_magnitude": 0.006122306,
+      "mean_log_retention": -0.015625,
+      "geometric_mean_retention": 0.984496437,
+      "arithmetic_mean_retention": 0.984539127
+    },
+    {
+      "layer": 1,
+      "head": 1,
+      "target_timescale": 16.0,
+      "target_sensitivity": 0.75,
+      "bias": 1.571276765,
+      "a_log": -3.421840069,
+      "mean_softplus_sensitivity": 0.75,
+      "mean_log_decay_slope_magnitude": 0.024489223,
+      "mean_log_retention": -0.0625,
+      "geometric_mean_retention": 0.939413063,
+      "arithmetic_mean_retention": 0.94006309
+    },
+    {
+      "layer": 1,
+      "head": 2,
+      "target_timescale": 4.0,
+      "target_sensitivity": 0.75,
+      "bias": 1.571276765,
+      "a_log": -2.035545708,
+      "mean_softplus_sensitivity": 0.75,
+      "mean_log_decay_slope_magnitude": 0.097956891,
+      "mean_log_retention": -0.25,
+      "geometric_mean_retention": 0.778800783,
+      "arithmetic_mean_retention": 0.787350708
+    },
+    {
+      "layer": 2,
+      "head": 0,
+      "target_timescale": 64.0,
+      "target_sensitivity": 0.25,
+      "bias": -1.571276765,
+      "a_log": -3.088364032,
+      "mean_softplus_sensitivity": 0.25,
+      "mean_log_decay_slope_magnitude": 0.011394114,
+      "mean_log_retention": -0.015625,
+      "geometric_mean_retention": 0.984496437,
+      "arithmetic_mean_retention": 0.984622863
+    },
+    {
+      "layer": 2,
+      "head": 1,
+      "target_timescale": 16.0,
+      "target_sensitivity": 0.25,
+      "bias": -1.571276765,
+      "a_log": -1.70206967,
+      "mean_softplus_sensitivity": 0.25,
+      "mean_log_decay_slope_magnitude": 0.045576455,
+      "mean_log_retention": -0.0625,
+      "geometric_mean_retention": 0.939413063,
+      "arithmetic_mean_retention": 0.941316082
+    },
+    {
+      "layer": 2,
+      "head": 2,
+      "target_timescale": 4.0,
+      "target_sensitivity": 0.25,
+      "bias": -1.571276765,
+      "a_log": -0.315775309,
+      "mean_softplus_sensitivity": 0.25,
+      "mean_log_decay_slope_magnitude": 0.18230582,
+      "mean_log_retention": -0.25,
+      "geometric_mean_retention": 0.778800783,
+      "arithmetic_mean_retention": 0.802794956
+    }
+  ],
+  "parameter_coupling": {
+    "low_sensitivity_joint": {
+      "mean_softplus_sensitivity": 0.25,
+      "mean_log_decay_slope_magnitude": 0.045576455,
+      "mean_log_retention": -0.0625,
+      "geometric_mean_retention": 0.939413063,
+      "arithmetic_mean_retention": 0.941316082
+    },
+    "change_bias_only": {
+      "mean_softplus_sensitivity": 0.75,
+      "mean_log_decay_slope_magnitude": 0.136729365,
+      "mean_log_retention": -0.3489529,
+      "geometric_mean_retention": 0.705426355,
+      "arithmetic_mean_retention": 0.720469381
+    },
+    "high_sensitivity_joint": {
+      "mean_softplus_sensitivity": 0.75,
+      "mean_log_decay_slope_magnitude": 0.024489223,
+      "mean_log_retention": -0.0625,
+      "geometric_mean_retention": 0.939413063,
+      "arithmetic_mean_retention": 0.94006309
+    }
+  },
+  "decay_envelope": {
+    "steps": 16,
+    "calibration_sample_repeated": 0.367879441,
+    "matched_exp_minus_one": 0.367879441,
+    "activations_shifted_by_two": 0.034378789,
+    "shifted_diagnostics_without_recalibration": {
+      "mean_softplus_sensitivity": 0.572507631,
+      "mean_log_decay_slope_magnitude": 0.104371473,
+      "mean_log_retention": -0.210644719,
+      "geometric_mean_retention": 0.810061815,
+      "arithmetic_mean_retention": 0.820017705
+    }
+  },
+  "exact_mean_retention_counterexample": {
+    "activations": [
+      -1.098612289,
+      1.098612289
+    ],
+    "bias": 0.0,
+    "a_log": -0.0,
+    "individual_retentions": [
+      0.75,
+      0.25
+    ],
+    "mean_softplus_sensitivity": 0.5,
+    "mean_log_decay_slope_magnitude": 0.5,
+    "mean_log_retention": -0.836988217,
+    "geometric_mean_retention": 0.433012702,
+    "arithmetic_mean_retention": 0.5
+  },
+  "write_interference_counterexample": {
+    "state_before": 1.0,
+    "explicit_retention": 0.994957086,
+    "state_after_decay": 0.994957086,
+    "key": 1.0,
+    "beta": 1.0,
+    "new_value": 0.0,
+    "state_after_delta_write": 0.0
+  },
+  "limitations": "Supplied samples only, not layer-sequential model calibration, training, architecture-specific extensions or retrieval benchmarking. Mean log decay is matched on the calibration sample; distribution shifts and writes can invalidate a memory-retention interpretation. No speed or model-quality claim."
+}
