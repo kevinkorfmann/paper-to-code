@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-04 | **slimulations** | [Sexually antagonistic selection and heterozygote excess](examples/slimulations/sexual_antagonism/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-11-03 | Inference showcase | [ANGSD: genotype likelihoods, hard calls and allele frequency](examples/inference_showcase/angsd_frequency/README.md) | CPython 3.14.5 + checksum-pinned ANGSD 0.941 / HTSlib 1.24 |
 | 2026-11-03 | Paper to code | [DAMI: joint calibration of memory decay and Softplus sensitivity](examples/dami_calibration/README.md) | CPython 3.14.5; standard library |
 | 2026-11-03 | **slimulations** | [Underdominance: ensemble means can hide population polarization](examples/slimulations/underdominance/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
@@ -157,9 +158,9 @@ shared-component cancellation, counterexamples, permutation equivariance,
 linearity in values, a finite-difference λ derivative, stable softmax, invalid
 inputs, CLI behavior, and the checked sample output.
 
-[CI](.github/workflows/tests.yml) runs all **897 tests**: 25 differential-attention,
+[CI](.github/workflows/tests.yml) runs all **909 tests**: 25 differential-attention,
 12 gated-attention, 18 multi-head attention-residual, 22 attention-abstention, 28 first-passage-attention, 30 tail-proxy-attention, 26 continuum-attention, 36 MERLIN-routing, 31 Kronecker-delta, 32 Dual-DeltaNet, 32 Switching-Linear-Attention, 32 tangent-key-summary, 38 DAMI-calibration, 11 neutral-drift,
-11 migration, 12 selfing, 17 heterozygote-advantage, 20 linkage-disequilibrium, 20 Wahlund-effect, 22 recessive-selection, 22 transmission-distortion, 23 reversible-mutation, 24 hitchhiking, 25 sex-ratio, 28 bottleneck-recovery, 32 underdominance, 11 tsinfer, 12 tsdate, 15 dadi,
+11 migration, 12 selfing, 17 heterozygote-advantage, 20 linkage-disequilibrium, 20 Wahlund-effect, 22 recessive-selection, 22 transmission-distortion, 23 reversible-mutation, 24 hitchhiking, 25 sex-ratio, 28 bottleneck-recovery, 32 underdominance, 12 sexual-antagonism, 11 tsinfer, 12 tsdate, 15 dadi,
 18 fastDFE, 22 scikit-allel, 22 moments, 26 hmmIBD, 25 PLINK/KING, 28 ADMIXTURE, 32 Beagle, 25 BCFtools/RoH, and 32 VCFtools/HWE tests.
 The SLiM job builds a checksum-verified official
 source revision; hmmIBD similarly builds checksum-verified C source, PLINK/KING

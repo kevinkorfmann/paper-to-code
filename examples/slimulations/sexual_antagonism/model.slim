@@ -1,0 +1,56 @@
+// Synthetic autosomal locus; one fitness-weighted mating generation.
+initialize() {
+    if (!exists("N")) defineConstant("N", 200);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 512);
+    if (!exists("MODE")) defineConstant("MODE", 1);
+    if ((N < 8) | (N > 1000) | (N % 8 != 0)) stop("invalid N");
+    if ((REPLICATES < 1) | (REPLICATES > 2048) | (asInteger(REPLICATES) != REPLICATES)) stop("invalid REPLICATES");
+    if (!any(MODE == c(0, 1, 2))) stop("invalid MODE");
+    initializeSLiMModelType("WF");
+    initializeSex("A");
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+fitnessEffect() {
+    if (MODE == 0) return 1.0;
+    k = sum(individual.genomes.countOfMutationsOfType(m1));
+    if ((MODE == 1) & (individual.sex == "M")) return c(9.0, 3.0, 1.0)[k];
+    return c(1.0, 3.0, 9.0)[k];
+}
+1 early() {
+    for (r in seqLen(REPLICATES)) sim.addSubpop(r+1, N, 0.5);
+}
+1 late() {
+    for (pop in sim.subpopulations) {
+        carriers = NULL;
+        for (sex in c("M", "F")) {
+            inds = pop.individuals[pop.individuals.sex == sex];
+            if (size(inds) != N/2) stop("wrong sex count");
+            carriers = c(carriers, inds.genome1[seqLen(asInteger(3*N/8))], inds.genome2[seqLen(asInteger(N/8))]);
+        }
+        carriers.addNewDrawnMutation(m1, 0);
+    }
+    sim.recalculateFitness();
+    for (pop in sim.subpopulations) {
+        for (sex in c("M", "F")) {
+            inds = pop.individuals[pop.individuals.sex == sex];
+            k = inds.genome1.countOfMutationsOfType(m1)+inds.genome2.countOfMutationsOfType(m1);
+            w = pop.cachedFitness(inds.index);
+            expected = (MODE == 0) ? rep(1.0, size(inds)) else c(1.0,3.0,9.0)[k];
+            if ((MODE == 1) & (sex == "M")) expected = c(9.0,3.0,1.0)[k];
+            if (any(abs(w-expected) > 1e-12)) stop("wrong realized fitness");
+            catn("INIT,"+(pop.id-1)+","+sex+","+sum(k==0)+","+sum(k==1)+","+sum(k==2));
+        }
+    }
+}
+2 late() {
+    for (pop in sim.subpopulations) {
+        k = pop.individuals.genome1.countOfMutationsOfType(m1)+pop.individuals.genome2.countOfMutationsOfType(m1);
+        catn("DATA,"+(pop.id-1)+","+sum(k==0)+","+sum(k==1)+","+sum(k==2));
+    }
+    sim.simulationFinished();
+}

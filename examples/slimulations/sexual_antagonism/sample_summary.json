@@ -1,0 +1,81 @@
+{
+  "experiment": "Sexually antagonistic reproductive selection: one generation",
+  "population_size": 200,
+  "python_version": "3.14.5",
+  "replicates_per_treatment": 512,
+  "seed_by_treatment": {
+    "antagonistic": 202611041,
+    "concordant": 202611042,
+    "neutral": 202611040
+  },
+  "slim_version": "4.0.1",
+  "synthetic_only": true,
+  "treatments": {
+    "antagonistic": {
+      "exact": {
+        "allele_frequency": 0.5,
+        "female_gamete_A": 0.75,
+        "genotype_probabilities_aa_Aa_AA": [
+          0.1875,
+          0.625,
+          0.1875
+        ],
+        "heterozygosity": 0.625,
+        "heterozygote_excess": 0.125,
+        "hwe_at_expected_frequency": 0.5,
+        "male_gamete_A": 0.25
+      },
+      "observed_allele_frequency": 0.50099609375,
+      "observed_genotype_frequencies_aa_Aa_AA": [
+        0.187109375,
+        0.6237890625,
+        0.1891015625
+      ],
+      "observed_heterozygosity": 0.6237890625
+    },
+    "concordant": {
+      "exact": {
+        "allele_frequency": 0.75,
+        "female_gamete_A": 0.75,
+        "genotype_probabilities_aa_Aa_AA": [
+          0.0625,
+          0.375,
+          0.5625
+        ],
+        "heterozygosity": 0.375,
+        "heterozygote_excess": 0.0,
+        "hwe_at_expected_frequency": 0.375,
+        "male_gamete_A": 0.75
+      },
+      "observed_allele_frequency": 0.7487060546875,
+      "observed_genotype_frequencies_aa_Aa_AA": [
+        0.06427734375,
+        0.374033203125,
+        0.561689453125
+      ],
+      "observed_heterozygosity": 0.374033203125
+    },
+    "neutral": {
+      "exact": {
+        "allele_frequency": 0.5,
+        "female_gamete_A": 0.5,
+        "genotype_probabilities_aa_Aa_AA": [
+          0.25,
+          0.5,
+          0.25
+        ],
+        "heterozygosity": 0.5,
+        "heterozygote_excess": 0.0,
+        "hwe_at_expected_frequency": 0.5,
+        "male_gamete_A": 0.5
+      },
+      "observed_allele_frequency": 0.5004833984375,
+      "observed_genotype_frequencies_aa_Aa_AA": [
+        0.24962890625,
+        0.499775390625,
+        0.250595703125
+      ],
+      "observed_heterozygosity": 0.499775390625
+    }
+  }
+}
