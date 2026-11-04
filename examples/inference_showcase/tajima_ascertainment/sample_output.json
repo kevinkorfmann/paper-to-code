@@ -1,0 +1,67 @@
+{
+  "chromosomes": 20,
+  "randomness": "none; deterministic constructed allele counts",
+  "scenarios": {
+    "all_sites": {
+      "pairwise_differences": 18.526315789,
+      "reference_D": -1.40806535,
+      "scikit_allel_D": -1.40806535,
+      "segregating_sites": 100,
+      "watterson_theta": 28.186961182
+    },
+    "alleles_reversed": {
+      "pairwise_differences": 18.526315789,
+      "reference_D": -1.40806535,
+      "scikit_allel_D": -1.40806535,
+      "segregating_sites": 100,
+      "watterson_theta": 28.186961182
+    },
+    "intermediate_only": {
+      "pairwise_differences": 52.631578947,
+      "reference_D": 3.562869547,
+      "scikit_allel_D": 3.562869547,
+      "segregating_sites": 100,
+      "watterson_theta": 28.186961182
+    },
+    "minor_count_at_least_2": {
+      "pairwise_differences": 10.526315789,
+      "reference_D": 3.295285566,
+      "scikit_allel_D": 3.295285566,
+      "segregating_sites": 20,
+      "watterson_theta": 5.637392236
+    },
+    "monomorphic_padding": {
+      "pairwise_differences": 18.526315789,
+      "reference_D": -1.40806535,
+      "scikit_allel_D": -1.40806535,
+      "segregating_sites": 100,
+      "watterson_theta": 28.186961182
+    },
+    "no_segregating_sites": {
+      "pairwise_differences": 0.0,
+      "reference_D": null,
+      "scikit_allel_D": null,
+      "segregating_sites": 0,
+      "watterson_theta": 0.0
+    },
+    "singletons_only": {
+      "pairwise_differences": 10.0,
+      "reference_D": -2.650799074,
+      "scikit_allel_D": -2.650799074,
+      "segregating_sites": 100,
+      "watterson_theta": 28.186961182
+    },
+    "two_segregating_sites": {
+      "pairwise_differences": 0.626315789,
+      "reference_D": null,
+      "scikit_allel_D": null,
+      "segregating_sites": 2,
+      "watterson_theta": 0.563739224
+    }
+  },
+  "versions": {
+    "numpy": "2.3.5",
+    "python": "3.12.11",
+    "scikit-allel": "1.3.13"
+  }
+}
