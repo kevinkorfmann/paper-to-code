@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-04 | Paper to code | [Born attention: quartic overlaps and coherent readout](examples/born_attention/README.md) | CPython 3.14.5; standard library |
 | 2026-11-04 | Inference showcase | [Tajima’s D: ascertainment can reverse the sign](examples/inference_showcase/tajima_ascertainment/README.md) | CPython 3.12.11 + hash-locked scikit-allel 1.3.13 |
 | 2026-11-04 | **slimulations** | [Sexually antagonistic selection and heterozygote excess](examples/slimulations/sexual_antagonism/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-11-03 | Inference showcase | [ANGSD: genotype likelihoods, hard calls and allele frequency](examples/inference_showcase/angsd_frequency/README.md) | CPython 3.14.5 + checksum-pinned ANGSD 0.941 / HTSlib 1.24 |
