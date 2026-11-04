@@ -5,7 +5,7 @@ import math
 import subprocess
 import sys
 import unittest
-from . import demo, model
+from examples.born_attention import demo, model
 
 
 def oracle(query, keys, values):
