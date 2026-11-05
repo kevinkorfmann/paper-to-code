@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-05 | Inference showcase | [Patterson D: copied sites are not independent evidence](examples/inference_showcase/patterson_blocks/README.md) | CPython 3.12.11 + hash-locked scikit-allel 1.3.13 |
 | 2026-11-04 | Paper to code | [Born attention: quartic overlaps and coherent readout](examples/born_attention/README.md) | CPython 3.14.5; standard library |
 | 2026-11-04 | Inference showcase | [Tajima’s D: ascertainment can reverse the sign](examples/inference_showcase/tajima_ascertainment/README.md) | CPython 3.12.11 + hash-locked scikit-allel 1.3.13 |
 | 2026-11-04 | **slimulations** | [Sexually antagonistic selection and heterozygote excess](examples/slimulations/sexual_antagonism/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
@@ -52,7 +53,7 @@ and explains its limits.
 | 2026-10-20 | Inference showcase | [Genealogy inference with tsinfer](examples/inference_showcase/tsinfer_genealogy/README.md) | CPython 3.12.11; separate hash-locked environment |
 
 The examples use only constructed inputs or synthetic data. Their documentation
-includes commands, seeds where applicable, checked output, and tests. The fourteen
+includes commands, seeds where applicable, checked output, and tests. The fifteen
 inference examples call actual tools: tsinfer estimates topology; tsdate estimates
 node ages conditional on a supplied topology and mutation clock; dadi estimates
 a population-size ratio conditional on a supplied change time; fastDFE estimates
@@ -72,7 +73,9 @@ calibration and rare-allele controls; ANGSD estimates population ALT frequency
 from genotype likelihoods, with exact analytical optima and hard-call,
 normalization and missing-information controls; a separate scikit-allel example
 computes Tajima’s D and shows a frequency-filtering sign reversal, without
-claiming a uniquely identified demographic cause.
+claiming a uniquely identified demographic cause; another computes Patterson D
+and shows how treating copied sites as independent inflates a block-jackknife
+Z score without adding information.
 
 ## First example: differential attention
 
