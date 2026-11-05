@@ -1,0 +1,197 @@
+{
+  "causality": {
+    "correct_after_future_append": [
+      0
+    ],
+    "correct_before": [
+      0
+    ],
+    "future_derived_means": [
+      [
+        -49.0
+      ],
+      [
+        1.0
+      ]
+    ],
+    "future_key": [
+      -100
+    ],
+    "future_snapshot_rejected": true,
+    "visible_prefix": [
+      [
+        2
+      ],
+      [
+        1
+      ]
+    ],
+    "wrong_global_route_then_mask_candidates": [
+      1
+    ]
+  },
+  "cluster_cancellation": {
+    "contiguous_means": [
+      [
+        0.0
+      ],
+      [
+        4.0
+      ]
+    ],
+    "contiguous_selection": {
+      "candidate_ids": [
+        2,
+        3
+      ],
+      "cluster_order": [
+        1,
+        0
+      ],
+      "cluster_scores": [
+        0.0,
+        4.0
+      ],
+      "reserved_ids": [],
+      "selected_ids": [
+        2
+      ],
+      "selected_scores": [
+        4.0
+      ]
+    },
+    "exhaustive_top_1": [
+      0
+    ],
+    "full_budget_selection": {
+      "candidate_ids": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "cluster_order": [
+        1,
+        0
+      ],
+      "cluster_scores": [
+        0.0,
+        4.0
+      ],
+      "reserved_ids": [],
+      "selected_ids": [
+        0
+      ],
+      "selected_scores": [
+        9.0
+      ]
+    },
+    "keys": [
+      [
+        9
+      ],
+      [
+        -9
+      ],
+      [
+        4
+      ],
+      [
+        4
+      ]
+    ],
+    "mean_of_member_scores": [
+      4.5,
+      4.0
+    ],
+    "native_scores": [
+      9.0,
+      0.0,
+      4.0,
+      4.0
+    ],
+    "similarity_regrouping": {
+      "candidate_ids": [
+        0,
+        2
+      ],
+      "cluster_order": [
+        0,
+        1
+      ],
+      "cluster_scores": [
+        6.5,
+        0.0
+      ],
+      "reserved_ids": [],
+      "selected_ids": [
+        0
+      ],
+      "selected_scores": [
+        9.0
+      ]
+    },
+    "top_1_recall_contiguous": 0.0,
+    "top_1_recall_regrouped": 1.0
+  },
+  "environment": {
+    "dependencies": [],
+    "implementation": "CPython",
+    "python": "3.14.5"
+  },
+  "reserved_candidate_slots": {
+    "candidate_ids": [
+      0,
+      3,
+      1
+    ],
+    "cluster_order": [
+      0
+    ],
+    "cluster_scores": [
+      2.0
+    ],
+    "reserved_ids": [
+      0,
+      3
+    ],
+    "selected_ids": [
+      3
+    ],
+    "selected_scores": [
+      10.0
+    ]
+  },
+  "scope": "Supplied-cluster mean routing only; no training or speed claims",
+  "truncation_counterexample": {
+    "exhaustive_top_1": [
+      1
+    ],
+    "keys": [
+      [
+        1
+      ],
+      [
+        10
+      ]
+    ],
+    "selection": {
+      "candidate_ids": [
+        0
+      ],
+      "cluster_order": [
+        0
+      ],
+      "cluster_scores": [
+        5.5
+      ],
+      "reserved_ids": [],
+      "selected_ids": [
+        0
+      ],
+      "selected_scores": [
+        1.0
+      ]
+    }
+  }
+}
