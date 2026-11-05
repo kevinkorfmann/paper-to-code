@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-05 | **slimulations** | [Epistasis creates LD without shifting allele frequencies](examples/slimulations/epistasis_ld/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-11-05 | Inference showcase | [Patterson D: copied sites are not independent evidence](examples/inference_showcase/patterson_blocks/README.md) | CPython 3.12.11 + hash-locked scikit-allel 1.3.13 |
 | 2026-11-04 | Paper to code | [Born attention: quartic overlaps and coherent readout](examples/born_attention/README.md) | CPython 3.14.5; standard library |
 | 2026-11-04 | Inference showcase | [Tajima’s D: ascertainment can reverse the sign](examples/inference_showcase/tajima_ascertainment/README.md) | CPython 3.12.11 + hash-locked scikit-allel 1.3.13 |
@@ -167,7 +168,7 @@ inputs, CLI behavior, and the checked sample output.
 
 [CI](.github/workflows/tests.yml) runs the repository tests: 25 differential-attention,
 12 gated-attention, 18 multi-head attention-residual, 22 attention-abstention, 28 first-passage-attention, 30 tail-proxy-attention, 26 continuum-attention, 36 MERLIN-routing, 31 Kronecker-delta, 32 Dual-DeltaNet, 32 Switching-Linear-Attention, 32 tangent-key-summary, 38 DAMI-calibration, 11 neutral-drift,
-11 migration, 12 selfing, 17 heterozygote-advantage, 20 linkage-disequilibrium, 20 Wahlund-effect, 22 recessive-selection, 22 transmission-distortion, 23 reversible-mutation, 24 hitchhiking, 25 sex-ratio, 28 bottleneck-recovery, 32 underdominance, 12 sexual-antagonism, 11 tsinfer, 12 tsdate, 15 dadi,
+11 migration, 12 selfing, 17 heterozygote-advantage, 20 linkage-disequilibrium, 20 Wahlund-effect, 22 recessive-selection, 22 transmission-distortion, 23 reversible-mutation, 24 hitchhiking, 25 sex-ratio, 28 bottleneck-recovery, 32 underdominance, 12 sexual-antagonism, 24 epistasis-LD, 11 tsinfer, 12 tsdate, 15 dadi,
 18 fastDFE, 22 scikit-allel, 22 moments, 26 hmmIBD, 25 PLINK/KING, 28 ADMIXTURE, 32 Beagle, 25 BCFtools/RoH, 32 VCFtools/HWE, 32 ANGSD-frequency, and 26 Tajima-D tests.
 The SLiM job builds a checksum-verified official
 source revision; hmmIBD similarly builds checksum-verified C source, PLINK/KING

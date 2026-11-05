@@ -1,0 +1,69 @@
+// Synthetic dosage-by-dosage epistasis, one WF reproductive generation.
+initialize() {
+    if (!exists("N")) defineConstant("N", 256);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 512);
+    if (!exists("S")) defineConstant("S", 0.8);
+    if (!exists("R")) defineConstant("R", 0.5);
+    if ((N < 16) | (N > 1024) | (N % 16 != 0)) stop("invalid N");
+    if ((REPLICATES < 1) | (REPLICATES > 2048) | (asInteger(REPLICATES) != REPLICATES)) stop("invalid REPLICATES");
+    if (!isFinite(asFloat(S)) | (abs(S) > 1.0)) stop("invalid S");
+    if (!isFinite(asFloat(R)) | (R < 0.0) | (R > 0.5)) stop("invalid R");
+    initializeSLiMModelType("WF");
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    initializeMutationType("m2", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    m2.convertToSubstitution = F;
+    initializeGenomicElementType("g1", c(m1,m2), c(1.0,1.0));
+    initializeGenomicElement(g1, 0, 1);
+    initializeRecombinationRate(R);
+}
+fitnessEffect() {
+    na = sum(individual.genomes.countOfMutationsOfType(m1));
+    nb = sum(individual.genomes.countOfMutationsOfType(m2));
+    return 1.0 + S*(na-1)*(nb-1);
+}
+1 early() {
+    for (r in seqLen(REPLICATES)) sim.addSubpop(r+1, N);
+}
+1 late() {
+    for (pop in sim.subpopulations) {
+        a = NULL;
+        b = NULL;
+        for (i in seqLen(N)) {
+            pair = asInteger(i % 16);
+            h1 = asInteger(pair % 4);
+            h2 = asInteger(floor(pair/4));
+            ind = pop.individuals[i];
+            if (h1 >= 2) a = c(a, ind.genome1);
+            if (h2 >= 2) a = c(a, ind.genome2);
+            if (h1 % 2 == 1) b = c(b, ind.genome1);
+            if (h2 % 2 == 1) b = c(b, ind.genome2);
+        }
+        a.addNewDrawnMutation(m1, 0);
+        b.addNewDrawnMutation(m2, 1);
+    }
+    sim.recalculateFitness();
+    for (pop in sim.subpopulations) {
+        inds = pop.individuals;
+        a1 = inds.genome1.countOfMutationsOfType(m1);
+        a2 = inds.genome2.countOfMutationsOfType(m1);
+        b1 = inds.genome1.countOfMutationsOfType(m2);
+        b2 = inds.genome2.countOfMutationsOfType(m2);
+        pair = (2*a1+b1)+4*(2*a2+b2);
+        counts = sapply(seqLen(16), "sum(pair == applyValue);");
+        if (any(counts != N/16)) stop("wrong phased founders");
+        expected = 1.0+S*(a1+a2-1)*(b1+b2-1);
+        if (any(abs(pop.cachedFitness(NULL)-expected) > 1e-12)) stop("wrong realized fitness");
+        catn("INIT,"+(pop.id-1)+","+paste(counts, sep=","));
+    }
+}
+2 late() {
+    for (pop in sim.subpopulations) {
+        genomes = pop.genomes;
+        hap = 2*genomes.countOfMutationsOfType(m1)+genomes.countOfMutationsOfType(m2);
+        counts = sapply(seqLen(4), "sum(hap == applyValue);");
+        catn("DATA,"+(pop.id-1)+","+paste(counts, sep=","));
+    }
+    sim.simulationFinished();
+}

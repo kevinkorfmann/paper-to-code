@@ -1,0 +1,116 @@
+{
+  "experiment": "Dosage epistasis generates LD in one reproductive generation",
+  "population_size": 256,
+  "python_version": "3.14.5",
+  "replicates_per_treatment": 512,
+  "seed_by_treatment": {
+    "negative_unlinked": 202611052,
+    "neutral_unlinked": 202611053,
+    "positive_linked": 202611051,
+    "positive_unlinked": 202611050
+  },
+  "slim_version": "4.0.1",
+  "synthetic_only": true,
+  "treatments": {
+    "negative_unlinked": {
+      "exact": {
+        "mean_sample_ld": -0.04990234375,
+        "population_ld": -0.05,
+        "variance_sample_ld": 0.00011697765439748764
+      },
+      "exact_haplotype_probabilities_ab_aB_Ab_AB": [
+        0.2,
+        0.3,
+        0.3,
+        0.2
+      ],
+      "exact_standard_error_of_mean_ld": 0.00047798742791530934,
+      "mean_within_population_sample_ld": -0.05070405453443527,
+      "observed_A_frequency": 0.4997406005859375,
+      "observed_B_frequency": 0.5001335144042969,
+      "observed_haplotype_frequencies_ab_aB_Ab_AB": [
+        0.19924545288085938,
+        0.3010139465332031,
+        0.30062103271484375,
+        0.19911956787109375
+      ],
+      "recombination_fraction": 0.5,
+      "s": -0.8
+    },
+    "neutral_unlinked": {
+      "exact": {
+        "mean_sample_ld": 0.0,
+        "population_ld": 0.0,
+        "variance_sample_ld": 0.00012183189392089844
+      },
+      "exact_haplotype_probabilities_ab_aB_Ab_AB": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "exact_standard_error_of_mean_ld": 0.0004878041797835016,
+      "mean_within_population_sample_ld": 0.0006621852517127991,
+      "observed_A_frequency": 0.4990882873535156,
+      "observed_B_frequency": 0.49874114990234375,
+      "observed_haplotype_frequencies_ab_aB_Ab_AB": [
+        0.251739501953125,
+        0.24917221069335938,
+        0.24951934814453125,
+        0.24956893920898438
+      ],
+      "recombination_fraction": 0.5,
+      "s": 0.0
+    },
+    "positive_linked": {
+      "exact": {
+        "mean_sample_ld": 0.04990234375,
+        "population_ld": 0.05,
+        "variance_sample_ld": 0.00011697765439748764
+      },
+      "exact_haplotype_probabilities_ab_aB_Ab_AB": [
+        0.3,
+        0.2,
+        0.2,
+        0.3
+      ],
+      "exact_standard_error_of_mean_ld": 0.00047798742791530934,
+      "mean_within_population_sample_ld": 0.050078243017196655,
+      "observed_A_frequency": 0.49996185302734375,
+      "observed_B_frequency": 0.49774169921875,
+      "observed_haplotype_frequencies_ab_aB_Ab_AB": [
+        0.3013191223144531,
+        0.19871902465820312,
+        0.20093917846679688,
+        0.2990226745605469
+      ],
+      "recombination_fraction": 0.0,
+      "s": 0.8
+    },
+    "positive_unlinked": {
+      "exact": {
+        "mean_sample_ld": 0.04990234375,
+        "population_ld": 0.05,
+        "variance_sample_ld": 0.00011697765439748764
+      },
+      "exact_haplotype_probabilities_ab_aB_Ab_AB": [
+        0.3,
+        0.2,
+        0.2,
+        0.3
+      ],
+      "exact_standard_error_of_mean_ld": 0.00047798742791530934,
+      "mean_within_population_sample_ld": 0.04925587773323059,
+      "observed_A_frequency": 0.5005683898925781,
+      "observed_B_frequency": 0.5004119873046875,
+      "observed_haplotype_frequencies_ab_aB_Ab_AB": [
+        0.29883575439453125,
+        0.20059585571289062,
+        0.20075225830078125,
+        0.2998161315917969
+      ],
+      "recombination_fraction": 0.5,
+      "s": 0.8
+    }
+  }
+}
