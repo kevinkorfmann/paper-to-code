@@ -1,0 +1,113 @@
+{
+  "example": "HOBA joint triplet attention: marginals can hide dependence",
+  "python_version": "3.14.5",
+  "randomness": "None; fixed supplied projections.",
+  "sign_pairs": [
+    {
+      "query": 1,
+      "joint_weights": [
+        [
+          0.440398538989,
+          0.059601461011
+        ],
+        [
+          0.059601461011,
+          0.440398538989
+        ]
+      ],
+      "first_marginal": [
+        0.5,
+        0.5
+      ],
+      "second_marginal": [
+        0.5,
+        0.5
+      ],
+      "joint_output": 0.761594155956,
+      "product_of_marginals_output": 0.0
+    },
+    {
+      "query": -1,
+      "joint_weights": [
+        [
+          0.059601461011,
+          0.440398538989
+        ],
+        [
+          0.440398538989,
+          0.059601461011
+        ]
+      ],
+      "first_marginal": [
+        0.5,
+        0.5
+      ],
+      "second_marginal": [
+        0.5,
+        0.5
+      ],
+      "joint_output": -0.761594155956,
+      "product_of_marginals_output": 0.0
+    },
+    {
+      "query": 0,
+      "joint_weights": [
+        [
+          0.25,
+          0.25
+        ],
+        [
+          0.25,
+          0.25
+        ]
+      ],
+      "first_marginal": [
+        0.5,
+        0.5
+      ],
+      "second_marginal": [
+        0.5,
+        0.5
+      ],
+      "joint_output": 0.0,
+      "product_of_marginals_output": 0.0
+    }
+  ],
+  "block_boundary_control": {
+    "queries": [
+      0,
+      0,
+      0
+    ],
+    "values_both_branches": [
+      1,
+      1,
+      10
+    ],
+    "block_size_two_outputs": [
+      1.0,
+      1.0,
+      100.0
+    ],
+    "one_full_block_outputs": [
+      16.0,
+      16.0,
+      16.0
+    ],
+    "local_weight_shapes": [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  "scope": "Single-head supplied-input kernel and nonoverlapping blocks only. Bidirectional within blocks; no training, full HOBA, speed or model-quality claims."
+}
