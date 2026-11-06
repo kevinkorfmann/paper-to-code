@@ -1,0 +1,76 @@
+// Original one-generation, two-habitat reproductive-selection experiment.
+initialize() {
+    if (!exists("N")) defineConstant("N", 200);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 512);
+    if (!exists("MODE")) defineConstant("MODE", 1); // 0 neutral, 1 soft, 2 hard
+    if (!exists("START")) defineConstant("START", 1); // .2, .5, .8
+    if (!exists("SCALE")) defineConstant("SCALE", 1.0);
+    if ((N < 200) | (N > 1000) | (N % 200 != 0)) stop("invalid N");
+    if ((REPLICATES < 1) | (REPLICATES > 2048) | (asInteger(REPLICATES) != REPLICATES)) stop("invalid REPLICATES");
+    if (!any(MODE == c(0,1,2))) stop("invalid MODE");
+    if (!any(START == c(1,2,3))) stop("invalid START");
+    if (!isFinite(asFloat(SCALE)) | (SCALE < 0.01) | (SCALE > 10.0)) stop("invalid SCALE");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+fitnessEffect() {
+    // Before founders are installed, all individuals have placeholder weight 1.
+    return individual.getValue("weight");
+}
+1 early() {
+    for (r in seqLen(REPLICATES)) {
+        pop = sim.addSubpop(r+1, N);
+        pop.individuals.setValue("weight", 1.0);
+    }
+}
+// Newborns at tick 1 need a valid placeholder before their fitness is evaluated.
+modifyChild() {
+    child.setValue("weight", 1.0);
+    if (community.tick == 2) child.setValue("h0", asInteger(parent1.tag == 0)+asInteger(parent2.tag == 0));
+    return T;
+}
+1 late() {
+    fractions = (START == 1) ? c(0.64,0.32,0.04) else ((START == 2) ? c(0.25,0.50,0.25) else c(0.04,0.32,0.64));
+    nh = asInteger(N/2);
+    aa = asInteger(round(nh*fractions[0]));
+    het = asInteger(round(nh*fractions[1]));
+    for (pop in sim.subpopulations) {
+        for (habitat in 0:1) {
+            inds = pop.individuals[habitat*nh+seqLen(nh)];
+            inds.tag = habitat;
+            // Same mutation identity for all carriers within this habitat.
+            carriers = c(inds[aa+seqLen(het)].genome1, inds[(aa+het): (nh-1)].genomes);
+            carriers.addNewDrawnMutation(m1, 0);
+            dosage = inds.genome1.countOfMutationsOfType(m1)+inds.genome2.countOfMutationsOfType(m1);
+            w = (habitat == 0) ? SCALE*c(1.0,2.0,3.0)[dosage] else c(3.0,2.0,1.0)[dosage];
+            if (MODE == 0) w = rep(1.0, nh);
+            if (MODE == 1) w = w/mean(w);
+            for (i in seqLen(nh)) inds[i].setValue("weight", w[i]);
+            counts = sapply(0:2, "sum(dosage == applyValue);");
+            if (any(counts != asInteger(round(nh*fractions)))) stop("wrong founders");
+            catn("INIT,"+(pop.id-1)+","+habitat+","+paste(counts, sep=","));
+        }
+    }
+    sim.recalculateFitness();
+    for (pop in sim.subpopulations) {
+        inds = pop.individuals;
+        w = pop.cachedFitness(NULL);
+        if (any(abs(w-inds.getValue("weight")) > 1e-12)) stop("wrong realized fitness");
+        catn("WEIGHT,"+(pop.id-1)+","+format("%.17g", sum(w[inds.tag == 0])/sum(w)));
+    }
+    version();
+}
+2 late() {
+    for (pop in sim.subpopulations) {
+        dosage = pop.individuals.genome1.countOfMutationsOfType(m1)+pop.individuals.genome2.countOfMutationsOfType(m1);
+        counts = sapply(0:2, "sum(dosage == applyValue);");
+        catn("DATA,"+(pop.id-1)+","+paste(counts, sep=",")+","+sum(pop.individuals.getValue("h0")));
+    }
+    sim.simulationFinished();
+}

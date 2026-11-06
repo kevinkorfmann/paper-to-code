@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-06 | **slimulations** | [Soft versus hard selection: habitat contributions](examples/slimulations/soft_selection/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-11-06 | Paper to code | [HOBA triplet attention: marginals can hide dependence](examples/hoba_triplet_attention/README.md) | CPython 3.14.5; standard library |
 | 2026-11-05 | Paper to code | [AttentionIndex: causal index routing and candidate limits](examples/causal_index_routing/README.md) | CPython 3.14.5; standard library |
 | 2026-11-05 | **slimulations** | [Epistasis creates LD without shifting allele frequencies](examples/slimulations/epistasis_ld/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
@@ -174,6 +175,7 @@ inputs, CLI behavior, and the checked sample output.
 18 fastDFE, 22 scikit-allel, 22 moments, 26 hmmIBD, 25 PLINK/KING, 28 ADMIXTURE, 32 Beagle, 25 BCFtools/RoH, 32 VCFtools/HWE, 32 ANGSD-frequency, and 26 Tajima-D tests.
 The causal-index-routing example adds 27 model and demo tests.
 The HOBA triplet example adds 29 model and demo tests.
+The soft-versus-hard-selection example adds 26 analytical and SLiM tests.
 The SLiM job builds a checksum-verified official
 source revision; hmmIBD similarly builds checksum-verified C source, PLINK/KING
 uses a checksum-pinned official binary, ADMIXTURE does likewise, Beagle uses a

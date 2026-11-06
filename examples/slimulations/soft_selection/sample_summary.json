@@ -1,0 +1,253 @@
+{
+  "diploids_per_population": 200,
+  "experiment": "Soft versus hard reproductive selection: one generation",
+  "founders_per_habitat": 100,
+  "python_version": "3.14.5",
+  "replicates_per_treatment": 512,
+  "seed_by_treatment": {
+    "hard_common": 202611063,
+    "hard_rare": 202611061,
+    "hard_scaled_habitat": 202611067,
+    "neutral_rare": 202611065,
+    "soft_balanced": 202611064,
+    "soft_common": 202611062,
+    "soft_rare": 202611060,
+    "soft_scaled_habitat": 202611066
+  },
+  "slim_version": "4.0.1",
+  "synthetic_only": true,
+  "treatments": {
+    "hard_common": {
+      "empirical_standard_error_of_mean_frequency": 0.0008973150772939735,
+      "exact": {
+        "allele_frequency": 0.7999999999999999,
+        "genotype_probabilities_aa_Aa_AA": [
+          0.04000000000000003,
+          0.32000000000000006,
+          0.6399999999999999
+        ],
+        "habitat0_parent_probability": 0.65,
+        "initial_allele_frequency": 0.8,
+        "raw_mean_fitness_by_habitat": [
+          2.6,
+          1.4
+        ],
+        "selected_gamete_frequency_by_habitat": [
+          0.8615384615384615,
+          0.6857142857142857
+        ]
+      },
+      "exact_standard_error_of_mean_frequency": 0.0008838834764831845,
+      "observed_allele_frequency": 0.801953125,
+      "observed_genotype_frequencies_aa_Aa_AA": [
+        0.03943359375,
+        0.3172265625,
+        0.64333984375
+      ],
+      "observed_habitat0_parent_fraction": 0.6507177734375
+    },
+    "hard_rare": {
+      "empirical_standard_error_of_mean_frequency": 0.0008680599506994345,
+      "exact": {
+        "allele_frequency": 0.2,
+        "genotype_probabilities_aa_Aa_AA": [
+          0.6400000000000001,
+          0.32000000000000006,
+          0.04000000000000001
+        ],
+        "habitat0_parent_probability": 0.35,
+        "initial_allele_frequency": 0.2,
+        "raw_mean_fitness_by_habitat": [
+          1.4,
+          2.6
+        ],
+        "selected_gamete_frequency_by_habitat": [
+          0.31428571428571433,
+          0.13846153846153844
+        ]
+      },
+      "exact_standard_error_of_mean_frequency": 0.0008838834764831845,
+      "observed_allele_frequency": 0.1979345703125,
+      "observed_genotype_frequencies_aa_Aa_AA": [
+        0.643896484375,
+        0.316337890625,
+        0.039765625
+      ],
+      "observed_habitat0_parent_fraction": 0.349833984375
+    },
+    "hard_scaled_habitat": {
+      "empirical_standard_error_of_mean_frequency": 0.000938044102112082,
+      "exact": {
+        "allele_frequency": 0.22962962962962963,
+        "genotype_probabilities_aa_Aa_AA": [
+          0.5934705075445816,
+          0.3537997256515775,
+          0.05272976680384088
+        ],
+        "habitat0_parent_probability": 0.5185185185185185,
+        "initial_allele_frequency": 0.2,
+        "raw_mean_fitness_by_habitat": [
+          2.8,
+          2.6
+        ],
+        "selected_gamete_frequency_by_habitat": [
+          0.31428571428571433,
+          0.13846153846153844
+        ]
+      },
+      "exact_standard_error_of_mean_frequency": 0.0009293916620317005,
+      "observed_allele_frequency": 0.23099609375,
+      "observed_genotype_frequencies_aa_Aa_AA": [
+        0.59216796875,
+        0.353671875,
+        0.05416015625
+      ],
+      "observed_habitat0_parent_fraction": 0.5185009765625
+    },
+    "neutral_rare": {
+      "empirical_standard_error_of_mean_frequency": 0.0008538922249878371,
+      "exact": {
+        "allele_frequency": 0.2,
+        "genotype_probabilities_aa_Aa_AA": [
+          0.6400000000000001,
+          0.32000000000000006,
+          0.04000000000000001
+        ],
+        "habitat0_parent_probability": 0.5,
+        "initial_allele_frequency": 0.2,
+        "raw_mean_fitness_by_habitat": [
+          1.0,
+          1.0
+        ],
+        "selected_gamete_frequency_by_habitat": [
+          0.2,
+          0.2
+        ]
+      },
+      "exact_standard_error_of_mean_frequency": 0.0008838834764831845,
+      "observed_allele_frequency": 0.2005029296875,
+      "observed_genotype_frequencies_aa_Aa_AA": [
+        0.6391015625,
+        0.320791015625,
+        0.040107421875
+      ],
+      "observed_habitat0_parent_fraction": 0.49896484375
+    },
+    "soft_balanced": {
+      "empirical_standard_error_of_mean_frequency": 0.0010721188298164093,
+      "exact": {
+        "allele_frequency": 0.5,
+        "genotype_probabilities_aa_Aa_AA": [
+          0.25,
+          0.5,
+          0.25
+        ],
+        "habitat0_parent_probability": 0.5,
+        "initial_allele_frequency": 0.5,
+        "raw_mean_fitness_by_habitat": [
+          2.0,
+          2.0
+        ],
+        "selected_gamete_frequency_by_habitat": [
+          0.625,
+          0.375
+        ]
+      },
+      "exact_standard_error_of_mean_frequency": 0.0011048543456039805,
+      "observed_allele_frequency": 0.4992822265625,
+      "observed_genotype_frequencies_aa_Aa_AA": [
+        0.25029296875,
+        0.500849609375,
+        0.248857421875
+      ],
+      "observed_habitat0_parent_fraction": 0.49919921875
+    },
+    "soft_common": {
+      "empirical_standard_error_of_mean_frequency": 0.0009493744067956139,
+      "exact": {
+        "allele_frequency": 0.7736263736263735,
+        "genotype_probabilities_aa_Aa_AA": [
+          0.05124501871754623,
+          0.3502572153121605,
+          0.5984977659702934
+        ],
+        "habitat0_parent_probability": 0.5,
+        "initial_allele_frequency": 0.8,
+        "raw_mean_fitness_by_habitat": [
+          2.6,
+          1.4
+        ],
+        "selected_gamete_frequency_by_habitat": [
+          0.8615384615384615,
+          0.6857142857142857
+        ]
+      },
+      "exact_standard_error_of_mean_frequency": 0.0009247270703135625,
+      "observed_allele_frequency": 0.7722509765625,
+      "observed_genotype_frequencies_aa_Aa_AA": [
+        0.052333984375,
+        0.350830078125,
+        0.5968359375
+      ],
+      "observed_habitat0_parent_fraction": 0.4996728515625
+    },
+    "soft_rare": {
+      "empirical_standard_error_of_mean_frequency": 0.0009003406453154281,
+      "exact": {
+        "allele_frequency": 0.2263736263736264,
+        "genotype_probabilities_aa_Aa_AA": [
+          0.5984977659702934,
+          0.35025721531216036,
+          0.051245018717546206
+        ],
+        "habitat0_parent_probability": 0.5,
+        "initial_allele_frequency": 0.2,
+        "raw_mean_fitness_by_habitat": [
+          1.4,
+          2.6
+        ],
+        "selected_gamete_frequency_by_habitat": [
+          0.31428571428571433,
+          0.13846153846153844
+        ]
+      },
+      "exact_standard_error_of_mean_frequency": 0.0009247270703135623,
+      "observed_allele_frequency": 0.226435546875,
+      "observed_genotype_frequencies_aa_Aa_AA": [
+        0.59791015625,
+        0.35130859375,
+        0.05078125
+      ],
+      "observed_habitat0_parent_fraction": 0.501103515625
+    },
+    "soft_scaled_habitat": {
+      "empirical_standard_error_of_mean_frequency": 0.0009747382936036937,
+      "exact": {
+        "allele_frequency": 0.2263736263736264,
+        "genotype_probabilities_aa_Aa_AA": [
+          0.5984977659702934,
+          0.35025721531216036,
+          0.051245018717546206
+        ],
+        "habitat0_parent_probability": 0.5,
+        "initial_allele_frequency": 0.2,
+        "raw_mean_fitness_by_habitat": [
+          2.8,
+          2.6
+        ],
+        "selected_gamete_frequency_by_habitat": [
+          0.31428571428571433,
+          0.13846153846153844
+        ]
+      },
+      "exact_standard_error_of_mean_frequency": 0.0009247270703135623,
+      "observed_allele_frequency": 0.226650390625,
+      "observed_genotype_frequencies_aa_Aa_AA": [
+        0.598125,
+        0.35044921875,
+        0.05142578125
+      ],
+      "observed_habitat0_parent_fraction": 0.50025390625
+    }
+  }
+}
