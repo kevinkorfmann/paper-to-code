@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-06 | Inference showcase | [Garud H12: same genotypes, different sweep statistics](examples/inference_showcase/garud_phase/README.md) | CPython 3.12.11 + hash-locked scikit-allel 1.3.13 |
 | 2026-11-06 | **slimulations** | [Soft versus hard selection: habitat contributions](examples/slimulations/soft_selection/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-11-06 | Paper to code | [HOBA triplet attention: marginals can hide dependence](examples/hoba_triplet_attention/README.md) | CPython 3.14.5; standard library |
 | 2026-11-05 | Paper to code | [AttentionIndex: causal index routing and candidate limits](examples/causal_index_routing/README.md) | CPython 3.14.5; standard library |
@@ -57,7 +58,7 @@ and explains its limits.
 | 2026-10-20 | Inference showcase | [Genealogy inference with tsinfer](examples/inference_showcase/tsinfer_genealogy/README.md) | CPython 3.12.11; separate hash-locked environment |
 
 The examples use only constructed inputs or synthetic data. Their documentation
-includes commands, seeds where applicable, checked output, and tests. The fifteen
+includes commands, seeds where applicable, checked output, and tests. The sixteen
 inference examples call actual tools: tsinfer estimates topology; tsdate estimates
 node ages conditional on a supplied topology and mutation clock; dadi estimates
 a population-size ratio conditional on a supplied change time; fastDFE estimates
@@ -79,7 +80,9 @@ normalization and missing-information controls; a separate scikit-allel example
 computes Tajima’s D and shows a frequency-filtering sign reversal, without
 claiming a uniquely identified demographic cause; another computes Patterson D
 and shows how treating copied sites as independent inflates a block-jackknife
-Z score without adding information.
+Z score without adding information; another computes Garud haplotype-concentration
+statistics and shows that identical unphased genotypes permit different H12
+values, with exact phase-compatibility bounds and a genotype-reshape diagnostic.
 
 ## First example: differential attention
 
@@ -175,6 +178,7 @@ inputs, CLI behavior, and the checked sample output.
 18 fastDFE, 22 scikit-allel, 22 moments, 26 hmmIBD, 25 PLINK/KING, 28 ADMIXTURE, 32 Beagle, 25 BCFtools/RoH, 32 VCFtools/HWE, 32 ANGSD-frequency, and 26 Tajima-D tests.
 The causal-index-routing example adds 27 model and demo tests.
 The HOBA triplet example adds 29 model and demo tests.
+The Garud phase example adds 32 tool, exact-reference, validation and CLI tests.
 The soft-versus-hard-selection example adds 26 analytical and SLiM tests.
 The SLiM job builds a checksum-verified official
 source revision; hmmIBD similarly builds checksum-verified C source, PLINK/KING
