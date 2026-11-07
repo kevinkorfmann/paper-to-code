@@ -1,0 +1,133 @@
+{
+  "adaptive_mixture_mse": 0.609098611314,
+  "key_energy": [
+    0.5,
+    0.5
+  ],
+  "lags": [
+    {
+      "controls": {
+        "inverse_noise_direction": {
+          "bias_squared": 0.146887130618,
+          "gain": [
+            2.073080440747,
+            0.207308044075
+          ],
+          "mse": 0.383258568878,
+          "noise_variance": 0.23637143826,
+          "signal_gain": 0.616741431122
+        },
+        "matched": {
+          "bias_squared": 0.137047286239,
+          "gain": [
+            1.850994909764,
+            0.351689032855
+          ],
+          "mse": 0.370198981953,
+          "noise_variance": 0.233151695714,
+          "signal_gain": 0.629801018047
+        },
+        "unit_direction": {
+          "bias_squared": 0.26145900472,
+          "gain": [
+            0.674026728646,
+            0.674026728646
+          ],
+          "mse": 0.511330621732,
+          "noise_variance": 0.249871617011,
+          "signal_gain": 0.488669378268
+        },
+        "unit_signal_matched": {
+          "bias_squared": 0.0,
+          "gain": [
+            2.939015429831,
+            0.558412931668
+          ],
+          "mse": 0.587803085966,
+          "noise_variance": 0.587803085966,
+          "signal_gain": 1.0
+        }
+      },
+      "lag": 1,
+      "survival": [
+        0.5,
+        0.95
+      ]
+    },
+    {
+      "controls": {
+        "inverse_noise_direction": {
+          "bias_squared": 0.967169742496,
+          "gain": [
+            0.544027781648,
+            0.054402778165
+          ],
+          "mse": 0.983447884993,
+          "noise_variance": 0.016278142496,
+          "signal_gain": 0.016552115007
+        },
+        "matched": {
+          "bias_squared": 0.719101016187,
+          "gain": [
+            0.008281232819,
+            0.507727871101
+          ],
+          "mse": 0.847998240675,
+          "noise_variance": 0.128897224487,
+          "signal_gain": 0.152001759325
+        },
+        "unit_direction": {
+          "bias_squared": 0.738723745314,
+          "gain": [
+            0.468589087877,
+            0.468589087877
+          ],
+          "mse": 0.859490398616,
+          "noise_variance": 0.120766653303,
+          "signal_gain": 0.140509601384
+        },
+        "unit_signal_matched": {
+          "bias_squared": 0.0,
+          "gain": [
+            0.05448116427,
+            3.340276279399
+          ],
+          "mse": 5.578871221221,
+          "noise_variance": 5.578871221221,
+          "signal_gain": 1.0
+        }
+      },
+      "lag": 10,
+      "survival": [
+        0.0009765625,
+        0.598736939238
+      ]
+    }
+  ],
+  "mixture": {
+    "mean_survival_substitution": {
+      "gain": [
+        1.552409487375,
+        0.479917444825
+      ],
+      "mse": 0.675362759629
+    },
+    "mixture_optimum": {
+      "gain": [
+        1.189350758823,
+        0.481247600199
+      ],
+      "mse": 0.664709302473
+    }
+  },
+  "randomness": "none",
+  "reference_python": "CPython 3.14.5",
+  "retention": [
+    0.5,
+    0.95
+  ],
+  "row_noise": [
+    0.1,
+    1.0
+  ]
+}

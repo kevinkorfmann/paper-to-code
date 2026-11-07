@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-07 | Paper to code | [Muir readout: lag-dependent matched filters](examples/muir_readout/README.md) | CPython 3.14.5; standard library |
 | 2026-11-06 | Inference showcase | [Garud H12: same genotypes, different sweep statistics](examples/inference_showcase/garud_phase/README.md) | CPython 3.12.11 + hash-locked scikit-allel 1.3.13 |
 | 2026-11-06 | **slimulations** | [Soft versus hard selection: habitat contributions](examples/slimulations/soft_selection/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-11-06 | Paper to code | [HOBA triplet attention: marginals can hide dependence](examples/hoba_triplet_attention/README.md) | CPython 3.14.5; standard library |

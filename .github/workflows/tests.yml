@@ -38,6 +38,7 @@ jobs:
           python -m unittest discover -s examples/born_attention -v
           python -m unittest discover -s examples/causal_index_routing -v
           python -m unittest discover -s examples/hoba_triplet_attention -v
+          python -m unittest discover -s examples/muir_readout -t . -v
       - name: Reproduce the checked output byte for byte
         run: |
           python -m examples.differential_attention.demo > /tmp/attention-output.json
@@ -65,6 +66,7 @@ jobs:
           python -m examples.born_attention.demo --check-sample
           python -m examples.causal_index_routing.demo --check-sample
           python -m examples.hoba_triplet_attention.demo --check-sample
+          python -m examples.muir_readout.demo --check-sample
 
   slimulations:
     runs-on: ubuntu-24.04
