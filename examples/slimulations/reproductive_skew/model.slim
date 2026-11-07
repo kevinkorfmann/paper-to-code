@@ -1,0 +1,62 @@
+// Original one-generation clonal founder-contribution experiment.
+initialize() {
+    if (!exists("N")) defineConstant("N", 100);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 512);
+    if (!exists("MODE")) defineConstant("MODE", 0);
+    if (!exists("SCALE")) defineConstant("SCALE", 1.0);
+    if ((N < 2) | (N > 200) | (N != asInteger(N))) stop("invalid N");
+    if ((REPLICATES < 1) | (REPLICATES > 1024) | (REPLICATES != asInteger(REPLICATES))) stop("invalid REPLICATES");
+    if (!any(MODE == c(0,1,2))) stop("invalid MODE");
+    if (!isFinite(asFloat(SCALE)) | (SCALE < 0.01) | (SCALE > 10)) stop("invalid SCALE");
+    initializeSLiMModelType("WF");
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, N-1);
+    initializeRecombinationRate(0.0);
+}
+fitnessEffect() { return individual.getValue("weight"); }
+modifyChild() {
+    child.setValue("weight", 1.0);
+    return T;
+}
+1 early() {
+    for (r in seqLen(REPLICATES)) {
+        pop = sim.addSubpop(r+1, N);
+        pop.setCloningRate(1.0);
+        pop.individuals.setValue("weight", 1.0);
+    }
+}
+1 late() {
+    for (pop in sim.subpopulations) {
+        inds = pop.individuals;
+        w = rep(1.0,N);
+        if (MODE == 1) w[0] = N-1;
+        if (MODE == 2) { w = rep(0.0,N); w[0] = 1.0; }
+        for (i in seqLen(N)) {
+            // Both homologues carry a unique neutral founder marker.
+            inds[i].genomes.addNewDrawnMutation(m1, i);
+            inds[i].setValue("weight", SCALE*w[i]);
+        }
+    }
+    sim.recalculateFitness();
+    for (pop in sim.subpopulations) {
+        w = pop.cachedFitness(NULL);
+        catn("INIT,"+(pop.id-1)+","+paste(format("%.17g",w/sum(w)),sep=","));
+    }
+}
+2 late() {
+    for (pop in sim.subpopulations) {
+        muts = unique(pop.genomes.mutationsOfType(m1));
+        counts = integer(N);
+        for (mut in muts) {
+            copies = sum(pop.genomes.containsMutations(mut));
+            if (copies % 2 != 0) stop("nonclonal marker count");
+            counts[mut.position] = asInteger(copies/2);
+        }
+        if (sum(counts) != N) stop("marker loss or duplication");
+        catn("DATA,"+(pop.id-1)+","+paste(counts,sep=","));
+    }
+    sim.simulationFinished();
+}

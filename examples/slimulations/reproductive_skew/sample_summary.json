@@ -1,0 +1,54 @@
+{
+  "experiment": "One-generation clonal founder-contribution skew",
+  "individuals_per_population": 100,
+  "python_version": "3.14.5",
+  "replicates_per_treatment": 512,
+  "seed_by_treatment": {
+    "single": 202611072,
+    "skew": 202611071,
+    "uniform": 202611070
+  },
+  "slim_version": "4.0.1",
+  "synthetic_only": true,
+  "treatments": {
+    "single": {
+      "exact": {
+        "effective_contributors": 1.0,
+        "expected_diversity": 0.0,
+        "expected_richness": 1.0,
+        "pair_same_founder_probability": 1.0,
+        "variance_diversity": 0.0
+      },
+      "exact_standard_error_of_mean_diversity": 0.0,
+      "mean_diversity": 0.0,
+      "mean_founder0_fraction": 1.0,
+      "mean_founder_richness": 1
+    },
+    "skew": {
+      "exact": {
+        "effective_contributors": 3.96,
+        "expected_diversity": 0.7399999999999999,
+        "expected_richness": 40.33237046623063,
+        "pair_same_founder_probability": 0.25252525252525254,
+        "variance_diversity": 0.0024141212121212116
+      },
+      "exact_standard_error_of_mean_diversity": 0.0021714236096220933,
+      "mean_diversity": 0.73982421875,
+      "mean_founder0_fraction": 0.4998046875,
+      "mean_founder_richness": 40.1171875
+    },
+    "uniform": {
+      "exact": {
+        "effective_contributors": 100.0,
+        "expected_diversity": 0.9801,
+        "expected_richness": 63.396765872677086,
+        "pair_same_founder_probability": 0.01,
+        "variance_diversity": 1.9602000000000007e-06
+      },
+      "exact_standard_error_of_mean_diversity": 6.187500000000001e-05,
+      "mean_diversity": 0.980146484375,
+      "mean_founder0_fraction": 0.010234375,
+      "mean_founder_richness": 63.552734375
+    }
+  }
+}

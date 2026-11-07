@@ -132,6 +132,8 @@ jobs:
           python -m examples.slimulations.epistasis_ld.demo --check-sample
           python -m unittest discover -s examples/slimulations/soft_selection -v
           python -m examples.slimulations.soft_selection.demo --check-sample
+          python -m unittest discover -s examples/slimulations/reproductive_skew -v
+          python -m examples.slimulations.reproductive_skew.demo --check-sample
 
   inference-showcase:
     runs-on: ubuntu-24.04

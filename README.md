@@ -206,3 +206,7 @@ not an endorsement by the paper's authors.
 ### Nucleotide diversity and callable bases
 
 [Original scikit-allel callability example](examples/inference_showcase/diversity_callability): identical variant records yield different per-base pi under different declared callable regions, with explicit pair-count controls and invariant-site assumptions.
+
+### Clonal reproductive skew
+
+[Original SLiM founder-lineage example](examples/slimulations/reproductive_skew): identical census sizes with unequal reproductive contributions produce different lineage diversity; exact multinomial controls distinguish effective contributors from diploid effective population size.
