@@ -1,0 +1,81 @@
+{
+  "allele_counts": [
+    [
+      3,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      1,
+      3
+    ]
+  ],
+  "cases": {
+    "all_100_bases": {
+      "callable_bases": 100,
+      "exact_pair_oracle": "1/60",
+      "pi": 0.016666666667,
+      "retained_records": 3,
+      "window_1based_inclusive": [
+        1,
+        100
+      ]
+    },
+    "exclude_middle_variant_and_its_base": {
+      "callable_bases": 19,
+      "exact_pair_oracle": "1/19",
+      "pi": 0.052631578947,
+      "retained_records": 2,
+      "window_1based_inclusive": [
+        1,
+        100
+      ]
+    },
+    "incorrect_variant_only_mask": {
+      "callable_bases": 3,
+      "exact_pair_oracle": "5/9",
+      "pi": 0.555555555556,
+      "retained_records": 3,
+      "window_1based_inclusive": [
+        1,
+        100
+      ]
+    },
+    "no_callable_bases": {
+      "callable_bases": 0,
+      "exact_pair_oracle": null,
+      "pi": null,
+      "retained_records": 0,
+      "window_1based_inclusive": [
+        1,
+        100
+      ]
+    },
+    "only_20_callable_bases": {
+      "callable_bases": 20,
+      "exact_pair_oracle": "1/12",
+      "pi": 0.083333333333,
+      "retained_records": 3,
+      "window_1based_inclusive": [
+        1,
+        100
+      ]
+    }
+  },
+  "default_variant_span_bases": 11,
+  "default_variant_span_pi": 0.151515151515,
+  "positions_1based": [
+    10,
+    15,
+    20
+  ],
+  "seed": null,
+  "versions": {
+    "numpy": "2.3.5",
+    "python": "3.12.11",
+    "scikit_allel": "1.3.13"
+  }
+}

@@ -202,3 +202,7 @@ example, is GPL-3.0-or-later, as documented in its example.
 No upstream code, paper figures, model weights, private research, or real-world
 genetic data are redistributed. Citations identify the source idea,
 not an endorsement by the paper's authors.
+
+### Nucleotide diversity and callable bases
+
+[Original scikit-allel callability example](examples/inference_showcase/diversity_callability): identical variant records yield different per-base pi under different declared callable regions, with explicit pair-count controls and invariant-site assumptions.
