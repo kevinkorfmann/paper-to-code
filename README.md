@@ -216,3 +216,5 @@ not an endorsement by the paper's authors.
 ### November 8: genotype-assortative mating
 
 [Original SLiM mating-correlation example](examples/slimulations/assortative_mating): balanced parental allele frequencies yield different offspring heterozygosity, with exact multinomial moments and deterministic controls.
+
+- [TriAttention shared normalization](examples/triattention_merge/): precision-group partials need one denominator, with compact tile policy and supplied-score controls.

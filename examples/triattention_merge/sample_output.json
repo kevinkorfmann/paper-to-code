@@ -1,0 +1,28 @@
+{
+  "environment": "CPython 3.14.5, standard library only",
+  "supplied_logits": [
+    2.197224577,
+    0
+  ],
+  "values": [
+    0,
+    10
+  ],
+  "shared_normalization": 1.0,
+  "wrong_equal_average_of_group_outputs": 5.0,
+  "skip_second_group": 0.0,
+  "retained_with_supplied_logit_error_0.1": 1.093668704,
+  "absolute_error_perturb": 0.093668704,
+  "absolute_error_skip": 1.0,
+  "query_block_6_policy_w8_2_w4_4": [
+    "8-bit",
+    "skip",
+    "skip",
+    "4-bit",
+    "4-bit",
+    "8-bit",
+    "8-bit",
+    "masked"
+  ],
+  "note": "Supplied score perturbation is not a simulation of INT4 quantization."
+}
