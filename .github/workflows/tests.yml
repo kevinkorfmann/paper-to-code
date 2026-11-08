@@ -252,6 +252,8 @@ jobs:
           python -m examples.inference_showcase.garud_phase.demo --check-sample
           python -m unittest discover -s examples/inference_showcase/diversity_callability -v
           python -m examples.inference_showcase.diversity_callability.demo --check-sample
+          python -m unittest discover -s examples/inference_showcase/f3_drift -v
+          python -m examples.inference_showcase.f3_drift.demo --check-sample
 
   moments-migration:
     runs-on: ubuntu-24.04

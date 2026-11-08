@@ -210,3 +210,5 @@ not an endorsement by the paper's authors.
 ### Clonal reproductive skew
 
 [Original SLiM founder-lineage example](examples/slimulations/reproductive_skew): identical census sizes with unequal reproductive contributions produce different lineage diversity; exact multinomial controls distinguish effective contributors from diploid effective population size.
+
+- [Admixture f3 and target drift](examples/inference_showcase/f3_drift/): a positive statistic does not exclude admixture, with finite-sample bias and independent exact controls.
