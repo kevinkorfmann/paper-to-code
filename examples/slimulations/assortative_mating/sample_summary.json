@@ -1,0 +1,127 @@
+{
+  "experiment": "One-generation genotype-assortative mating",
+  "individuals_per_population": 200,
+  "python_version": "3.14.5",
+  "replicates_per_treatment": 512,
+  "seed_by_treatment": {
+    "assortative": 202611082,
+    "disassortative": 202611080,
+    "opposite_only": 202611083,
+    "random": 202611081,
+    "same_only": 202611084
+  },
+  "slim_version": "4.0.1",
+  "synthetic_only": true,
+  "treatments": {
+    "assortative": {
+      "exact": {
+        "genotype_probabilities_aa_Aa_AA": [
+          0.45,
+          0.09999999999999998,
+          0.45
+        ],
+        "mean_frequency": 0.5,
+        "mean_gene_diversity": 0.49775,
+        "mean_observed_heterozygosity": 0.09999999999999998,
+        "variance_frequency": 0.0011250000000000001,
+        "variance_gene_diversity": 1.0077187499999998e-05,
+        "variance_observed_heterozygosity": 0.00044999999999999993
+      },
+      "exact_standard_error_frequency": 0.001482317653203928,
+      "exact_standard_error_gene_diversity": 0.00014029257584041108,
+      "exact_standard_error_observed_heterozygosity": 0.0009375,
+      "mean_frequency": 0.49689453125,
+      "mean_gene_diversity": 0.497740771484375,
+      "mean_observed_heterozygosity": 0.0997265625,
+      "replicates": 512
+    },
+    "disassortative": {
+      "exact": {
+        "genotype_probabilities_aa_Aa_AA": [
+          0.05,
+          0.9,
+          0.05
+        ],
+        "mean_frequency": 0.5,
+        "mean_gene_diversity": 0.49975,
+        "mean_observed_heterozygosity": 0.9,
+        "variance_frequency": 0.000125,
+        "variance_gene_diversity": 1.2718750000000005e-07,
+        "variance_observed_heterozygosity": 0.00045000000000000004
+      },
+      "exact_standard_error_frequency": 0.0004941058844013092,
+      "exact_standard_error_gene_diversity": 1.5761125782681265e-05,
+      "exact_standard_error_observed_heterozygosity": 0.0009375000000000001,
+      "mean_frequency": 0.5003564453125,
+      "mean_gene_diversity": 0.4997576904296875,
+      "mean_observed_heterozygosity": 0.900654296875,
+      "replicates": 512
+    },
+    "opposite_only": {
+      "exact": {
+        "genotype_probabilities_aa_Aa_AA": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "mean_frequency": 0.5,
+        "mean_gene_diversity": 0.5,
+        "mean_observed_heterozygosity": 1.0,
+        "variance_frequency": 0.0,
+        "variance_gene_diversity": 0.0,
+        "variance_observed_heterozygosity": 0.0
+      },
+      "exact_standard_error_frequency": 0.0,
+      "exact_standard_error_gene_diversity": 0.0,
+      "exact_standard_error_observed_heterozygosity": 0.0,
+      "mean_frequency": 0.5,
+      "mean_gene_diversity": 0.5,
+      "mean_observed_heterozygosity": 1.0,
+      "replicates": 512
+    },
+    "random": {
+      "exact": {
+        "genotype_probabilities_aa_Aa_AA": [
+          0.25,
+          0.5,
+          0.25
+        ],
+        "mean_frequency": 0.5,
+        "mean_gene_diversity": 0.49875,
+        "mean_observed_heterozygosity": 0.5,
+        "variance_frequency": 0.000625,
+        "variance_gene_diversity": 3.1171875000000004e-06,
+        "variance_observed_heterozygosity": 0.00125
+      },
+      "exact_standard_error_frequency": 0.0011048543456039805,
+      "exact_standard_error_gene_diversity": 7.802728263843039e-05,
+      "exact_standard_error_observed_heterozygosity": 0.0015625,
+      "mean_frequency": 0.50060546875,
+      "mean_gene_diversity": 0.49889326171875,
+      "mean_observed_heterozygosity": 0.5012109375,
+      "replicates": 512
+    },
+    "same_only": {
+      "exact": {
+        "genotype_probabilities_aa_Aa_AA": [
+          0.5,
+          0.0,
+          0.5
+        ],
+        "mean_frequency": 0.5,
+        "mean_gene_diversity": 0.4975,
+        "mean_observed_heterozygosity": 0.0,
+        "variance_frequency": 0.00125,
+        "variance_gene_diversity": 1.24375e-05,
+        "variance_observed_heterozygosity": 0.0
+      },
+      "exact_standard_error_frequency": 0.0015625,
+      "exact_standard_error_gene_diversity": 0.0001558588854942188,
+      "exact_standard_error_observed_heterozygosity": 0.0,
+      "mean_frequency": 0.500703125,
+      "mean_gene_diversity": 0.4976142578125,
+      "mean_observed_heterozygosity": 0.0,
+      "replicates": 512
+    }
+  }
+}

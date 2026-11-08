@@ -1,0 +1,45 @@
+// Original synthetic one-generation mating correlation experiment.
+initialize() {
+    if (!exists("N")) defineConstant("N", 200);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 512);
+    if (!exists("Q")) defineConstant("Q", 0.5);
+    if ((N < 4) | (N > 1000) | (N % 2 != 0)) stop("invalid N");
+    if ((REPLICATES < 1) | (REPLICATES > 2048) | (REPLICATES != asInteger(REPLICATES))) stop("invalid REPLICATES");
+    if (!isFinite(asFloat(Q)) | (Q < 0) | (Q > 1)) stop("invalid Q");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+// SLiM samples firstParent uniformly. Return relative weights for its mate.
+mateChoice() {
+    if (community.tick != 2) return weights;
+    same = sourceSubpop.individuals.tag == individual.tag;
+    return ifelse(same, asFloat(Q), 1.0-Q);
+}
+1 early() {
+    for (r in seqLen(REPLICATES)) sim.addSubpop(r+1, N);
+}
+1 late() {
+    for (pop in sim.subpopulations) {
+        pop.individuals.tag = 0;
+        carriers = pop.individuals[seqLen(asInteger(N/2))];
+        carriers.tag = 1;
+        carriers.genomes.addNewDrawnMutation(m1, 0);
+        dosage = pop.individuals.genome1.countOfMutationsOfType(m1)+pop.individuals.genome2.countOfMutationsOfType(m1);
+        counts = sapply(0:2, "sum(dosage == applyValue);");
+        catn("INIT,"+(pop.id-1)+","+paste(counts,sep=","));
+    }
+}
+2 late() {
+    for (pop in sim.subpopulations) {
+        dosage = pop.individuals.genome1.countOfMutationsOfType(m1)+pop.individuals.genome2.countOfMutationsOfType(m1);
+        counts = sapply(0:2, "sum(dosage == applyValue);");
+        catn("DATA,"+(pop.id-1)+","+paste(counts,sep=","));
+    }
+    sim.simulationFinished();
+}
