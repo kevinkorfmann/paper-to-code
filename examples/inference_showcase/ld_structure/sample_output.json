@@ -1,0 +1,214 @@
+{
+  "versions": {
+    "python": "3.12.11",
+    "scikit_allel": "1.3.13",
+    "numpy": "2.3.5"
+  },
+  "randomness": "none",
+  "cases": {
+    "group_A": {
+      "n_diploids": 625,
+      "joint_dosage_counts": [
+        [
+          256,
+          128,
+          16
+        ],
+        [
+          128,
+          64,
+          8
+        ],
+        [
+          16,
+          8,
+          1
+        ]
+      ],
+      "alt_frequencies": [
+        0.2,
+        0.2
+      ],
+      "r": -4.6566128730773926e-08,
+      "r_squared": 2.168404344971009e-15,
+      "exact_sign": 0,
+      "exact_r_squared": "0"
+    },
+    "group_B": {
+      "n_diploids": 625,
+      "joint_dosage_counts": [
+        [
+          1,
+          8,
+          16
+        ],
+        [
+          8,
+          64,
+          128
+        ],
+        [
+          16,
+          128,
+          256
+        ]
+      ],
+      "alt_frequencies": [
+        0.8,
+        0.8
+      ],
+      "r": -7.450582302226394e-07,
+      "r_squared": 5.551117664224915e-13,
+      "exact_sign": 0,
+      "exact_r_squared": "0"
+    },
+    "pooled": {
+      "n_diploids": 1250,
+      "joint_dosage_counts": [
+        [
+          257,
+          136,
+          32
+        ],
+        [
+          136,
+          128,
+          136
+        ],
+        [
+          32,
+          136,
+          257
+        ]
+      ],
+      "alt_frequencies": [
+        0.5,
+        0.5
+      ],
+      "r": 0.5294118523597717,
+      "r_squared": 0.28027690941900474,
+      "exact_sign": 1,
+      "exact_r_squared": "81/289"
+    },
+    "pooled_reverse_Y": {
+      "n_diploids": 1250,
+      "joint_dosage_counts": [
+        [
+          32,
+          136,
+          257
+        ],
+        [
+          136,
+          128,
+          136
+        ],
+        [
+          257,
+          136,
+          32
+        ]
+      ],
+      "alt_frequencies": [
+        0.5,
+        0.5
+      ],
+      "r": -0.5294118523597717,
+      "r_squared": 0.28027690941900474,
+      "exact_sign": -1,
+      "exact_r_squared": "81/289"
+    },
+    "no_frequency_difference": {
+      "n_diploids": 1250,
+      "joint_dosage_counts": [
+        [
+          512,
+          256,
+          32
+        ],
+        [
+          256,
+          128,
+          16
+        ],
+        [
+          32,
+          16,
+          2
+        ]
+      ],
+      "alt_frequencies": [
+        0.2,
+        0.2
+      ],
+      "r": -4.6566128730773926e-08,
+      "r_squared": 2.168404344971009e-15,
+      "exact_sign": 0,
+      "exact_r_squared": "0"
+    },
+    "constant_X": {
+      "n_diploids": 40,
+      "joint_dosage_counts": [
+        [
+          10,
+          20,
+          10
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "alt_frequencies": [
+        0.0,
+        0.5
+      ],
+      "r": null,
+      "r_squared": null,
+      "exact_sign": null,
+      "exact_r_squared": null
+    },
+    "perfect_association": {
+      "n_diploids": 10,
+      "joint_dosage_counts": [
+        [
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          4
+        ]
+      ],
+      "alt_frequencies": [
+        0.5,
+        0.5
+      ],
+      "r": 1.0,
+      "r_squared": 1.0,
+      "exact_sign": 1,
+      "exact_r_squared": "1"
+    }
+  },
+  "population_moments": {
+    "within_dosage_covariance": "0",
+    "within_dosage_variance": "8/25",
+    "between_group_dosage_mean_covariance": "9/25",
+    "pooled_dosage_variance": "17/25",
+    "pooled_r": "9/17",
+    "pooled_r_squared": "81/289"
+  }
+}
