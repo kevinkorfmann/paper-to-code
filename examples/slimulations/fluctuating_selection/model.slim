@@ -1,0 +1,51 @@
+// Original two-clone temporal-selection experiment. Marker is neutral.
+initialize() {
+    if (!exists("N")) defineConstant("N", 100);
+    if (!exists("K")) defineConstant("K", 50);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 512);
+    if (!exists("STEPS")) defineConstant("STEPS", 12);
+    if (!exists("W1")) defineConstant("W1", 1.8);
+    if (!exists("W2")) defineConstant("W2", 0.4);
+    if ((N < 2) | (N > 200) | (N != asInteger(N))) stop("invalid N");
+    if ((K < 0) | (K > N) | (K != asInteger(K))) stop("invalid K");
+    if ((REPLICATES < 1) | (REPLICATES > 2048) | (REPLICATES != asInteger(REPLICATES))) stop("invalid REPLICATES");
+    if ((STEPS < 1) | (STEPS > 40) | (STEPS != asInteger(STEPS))) stop("invalid STEPS");
+    if (!isFinite(asFloat(W1)) | !isFinite(asFloat(W2)) | (W1 < 0.1) | (W1 > 3) | (W2 < 0.1) | (W2 > 3)) stop("invalid fitness");
+    initializeSLiMModelType("WF");
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+fitnessEffect() {
+    if (individual.genome1.countOfMutationsOfType(m1) == 0) return 1.0;
+    return sim.getValue("w");
+}
+1 early() {
+    sim.setValue("w", asFloat(W1));
+    for (r in seqLen(REPLICATES)) {
+        pop = sim.addSubpop(r+1, N);
+        pop.setCloningRate(1.0);
+    }
+}
+1 late() {
+    for (pop in sim.subpopulations) {
+        if (K > 0) pop.individuals[seqLen(K)].genomes.addNewDrawnMutation(m1, 0);
+        catn("DATA,0,"+(pop.id-1)+","+K);
+    }
+    sim.recalculateFitness();
+}
+2:41 late() {
+    g = community.tick-1;
+    for (pop in sim.subpopulations) {
+        a = pop.individuals.genome1.countOfMutationsOfType(m1);
+        b = pop.individuals.genome2.countOfMutationsOfType(m1);
+        if (any(a != b)) stop("not clonal");
+        catn("DATA,"+g+","+(pop.id-1)+","+sum(a));
+    }
+    if (g == STEPS) { sim.simulationFinished(); return; }
+    sim.setValue("w", ifelse(g % 2 == 0, asFloat(W1), asFloat(W2)));
+    sim.recalculateFitness();
+}

@@ -218,3 +218,9 @@ not an endorsement by the paper's authors.
 [Original SLiM mating-correlation example](examples/slimulations/assortative_mating): balanced parental allele frequencies yield different offspring heterozygosity, with exact multinomial moments and deterministic controls.
 
 - [TriAttention shared normalization](examples/triattention_merge/): precision-group partials need one denominator, with compact tile policy and supplied-score controls.
+
+### Fluctuating selection: arithmetic versus geometric mean fitness
+
+[SLiM example](examples/slimulations/fluctuating_selection) contrasts alternating
+reproductive weights with constant arithmetic/geometric controls, with an exact
+finite-population transition oracle, independent tests and checked trajectories.

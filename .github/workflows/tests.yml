@@ -138,6 +138,8 @@ jobs:
           python -m examples.slimulations.reproductive_skew.demo --check-sample
           python -m unittest discover -s examples/slimulations/assortative_mating -v
           python -m examples.slimulations.assortative_mating.demo --check-sample
+          python -m unittest discover -s examples/slimulations/fluctuating_selection -v
+          python -m examples.slimulations.fluctuating_selection.demo --check-sample
 
   inference-showcase:
     runs-on: ubuntu-24.04
