@@ -1,0 +1,287 @@
+{
+  "generations": 40,
+  "n_clonal_individuals": 100,
+  "replicates": 512,
+  "runtime": {
+    "eidos": "3.0.1",
+    "python": "3.14.5",
+    "slim": "4.0.1"
+  },
+  "treatments": {
+    "initially_all_A": {
+      "A_fitness_relative_to_B": 0.8,
+      "deterministic_equilibrium": 0.095763772,
+      "initial_count": 100,
+      "seed": 202611104,
+      "trajectory": [
+        {
+          "absent_populations": 0,
+          "all_A_populations": 512,
+          "deterministic_frequency": 1.0,
+          "exact_finite_mean": 1.0,
+          "generation": 0,
+          "mean_frequency": 1.0,
+          "monte_carlo_se": 0.0
+        },
+        {
+          "absent_populations": 0,
+          "all_A_populations": 199,
+          "deterministic_frequency": 0.99,
+          "exact_finite_mean": 0.99,
+          "generation": 1,
+          "mean_frequency": 0.990488281,
+          "monte_carlo_se": 0.000442279
+        },
+        {
+          "absent_populations": 0,
+          "all_A_populations": 4,
+          "deterministic_frequency": 0.763858026,
+          "exact_finite_mean": 0.777973854,
+          "generation": 10,
+          "mean_frequency": 0.78109375,
+          "monte_carlo_se": 0.005942338
+        },
+        {
+          "absent_populations": 0,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.301948111,
+          "exact_finite_mean": 0.373638167,
+          "generation": 20,
+          "mean_frequency": 0.377832031,
+          "monte_carlo_se": 0.008509479
+        },
+        {
+          "absent_populations": 0,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.099330345,
+          "exact_finite_mean": 0.108057986,
+          "generation": 40,
+          "mean_frequency": 0.108027344,
+          "monte_carlo_se": 0.002588711
+        }
+      ],
+      "u_B_to_A": 0.02,
+      "v_A_to_B": 0.01
+    },
+    "neutral": {
+      "A_fitness_relative_to_B": 1.0,
+      "deterministic_equilibrium": 0.666666667,
+      "initial_count": 0,
+      "seed": 202611102,
+      "trajectory": [
+        {
+          "absent_populations": 512,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.0,
+          "exact_finite_mean": 0.0,
+          "generation": 0,
+          "mean_frequency": 0.0,
+          "monte_carlo_se": 0.0
+        },
+        {
+          "absent_populations": 71,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.02,
+          "exact_finite_mean": 0.02,
+          "generation": 1,
+          "mean_frequency": 0.019863281,
+          "monte_carlo_se": 0.000616039
+        },
+        {
+          "absent_populations": 1,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.175050582,
+          "exact_finite_mean": 0.175050582,
+          "generation": 10,
+          "mean_frequency": 0.173925781,
+          "monte_carlo_se": 0.003695383
+        },
+        {
+          "absent_populations": 0,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.304137105,
+          "exact_finite_mean": 0.304137105,
+          "generation": 20,
+          "mean_frequency": 0.31328125,
+          "monte_carlo_se": 0.006016774
+        },
+        {
+          "absent_populations": 0,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.469525142,
+          "exact_finite_mean": 0.469525142,
+          "generation": 40,
+          "mean_frequency": 0.479238281,
+          "monte_carlo_se": 0.007771308
+        }
+      ],
+      "u_B_to_A": 0.02,
+      "v_A_to_B": 0.01
+    },
+    "no_forward_mutation": {
+      "A_fitness_relative_to_B": 0.8,
+      "deterministic_equilibrium": null,
+      "initial_count": 0,
+      "seed": 202611101,
+      "trajectory": [
+        {
+          "absent_populations": 512,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.0,
+          "exact_finite_mean": 0.0,
+          "generation": 0,
+          "mean_frequency": 0.0,
+          "monte_carlo_se": 0.0
+        },
+        {
+          "absent_populations": 512,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.0,
+          "exact_finite_mean": 0.0,
+          "generation": 1,
+          "mean_frequency": 0.0,
+          "monte_carlo_se": 0.0
+        },
+        {
+          "absent_populations": 512,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.0,
+          "exact_finite_mean": 0.0,
+          "generation": 10,
+          "mean_frequency": 0.0,
+          "monte_carlo_se": 0.0
+        },
+        {
+          "absent_populations": 512,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.0,
+          "exact_finite_mean": 0.0,
+          "generation": 20,
+          "mean_frequency": 0.0,
+          "monte_carlo_se": 0.0
+        },
+        {
+          "absent_populations": 512,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.0,
+          "exact_finite_mean": 0.0,
+          "generation": 40,
+          "mean_frequency": 0.0,
+          "monte_carlo_se": 0.0
+        }
+      ],
+      "u_B_to_A": 0.0,
+      "v_A_to_B": 0.01
+    },
+    "selected": {
+      "A_fitness_relative_to_B": 0.8,
+      "deterministic_equilibrium": 0.095763772,
+      "initial_count": 0,
+      "seed": 202611100,
+      "trajectory": [
+        {
+          "absent_populations": 512,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.0,
+          "exact_finite_mean": 0.0,
+          "generation": 0,
+          "mean_frequency": 0.0,
+          "monte_carlo_se": 0.0
+        },
+        {
+          "absent_populations": 68,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.02,
+          "exact_finite_mean": 0.02,
+          "generation": 1,
+          "mean_frequency": 0.019804688,
+          "monte_carlo_se": 0.000622489
+        },
+        {
+          "absent_populations": 1,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.085514698,
+          "exact_finite_mean": 0.086551542,
+          "generation": 10,
+          "mean_frequency": 0.086738281,
+          "monte_carlo_se": 0.001949017
+        },
+        {
+          "absent_populations": 3,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.094580327,
+          "exact_finite_mean": 0.096507112,
+          "generation": 20,
+          "mean_frequency": 0.093164063,
+          "monte_carlo_se": 0.002174289
+        },
+        {
+          "absent_populations": 1,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.09574771,
+          "exact_finite_mean": 0.097960467,
+          "generation": 40,
+          "mean_frequency": 0.095175781,
+          "monte_carlo_se": 0.002110518
+        }
+      ],
+      "u_B_to_A": 0.02,
+      "v_A_to_B": 0.01
+    },
+    "strong_selection": {
+      "A_fitness_relative_to_B": 0.5,
+      "deterministic_equilibrium": 0.039587804,
+      "initial_count": 0,
+      "seed": 202611103,
+      "trajectory": [
+        {
+          "absent_populations": 512,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.0,
+          "exact_finite_mean": 0.0,
+          "generation": 0,
+          "mean_frequency": 0.0,
+          "monte_carlo_se": 0.0
+        },
+        {
+          "absent_populations": 60,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.02,
+          "exact_finite_mean": 0.02,
+          "generation": 1,
+          "mean_frequency": 0.019355469,
+          "monte_carlo_se": 0.000570278
+        },
+        {
+          "absent_populations": 15,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.039546945,
+          "exact_finite_mean": 0.039812648,
+          "generation": 10,
+          "mean_frequency": 0.039433594,
+          "monte_carlo_se": 0.000997903
+        },
+        {
+          "absent_populations": 17,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.03958776,
+          "exact_finite_mean": 0.039858043,
+          "generation": 20,
+          "mean_frequency": 0.039765625,
+          "monte_carlo_se": 0.001066116
+        },
+        {
+          "absent_populations": 13,
+          "all_A_populations": 0,
+          "deterministic_frequency": 0.039587804,
+          "exact_finite_mean": 0.039858097,
+          "generation": 40,
+          "mean_frequency": 0.04078125,
+          "monte_carlo_se": 0.001014525
+        }
+      ],
+      "u_B_to_A": 0.02,
+      "v_A_to_B": 0.01
+    }
+  }
+}

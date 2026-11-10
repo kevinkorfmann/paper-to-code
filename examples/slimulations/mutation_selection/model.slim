@@ -1,0 +1,60 @@
+// Original two-state clonal mutation-selection model. Markers encode state only.
+initialize() {
+    if (!exists("N")) defineConstant("N", 100);
+    if (!exists("K")) defineConstant("K", 0);
+    if (!exists("STEPS")) defineConstant("STEPS", 40);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 512);
+    if (!exists("W")) defineConstant("W", 0.8);
+    if (!exists("U")) defineConstant("U", 0.02);
+    if (!exists("V")) defineConstant("V", 0.01);
+    if ((N < 2) | (N > 200) | (N != asInteger(N))) stop("invalid N");
+    if ((K < 0) | (K > N) | (K != asInteger(K))) stop("invalid K");
+    if ((STEPS < 1) | (STEPS > 80) | (STEPS != asInteger(STEPS))) stop("invalid STEPS");
+    if ((REPLICATES < 1) | (REPLICATES > 2048) | (REPLICATES != asInteger(REPLICATES))) stop("invalid REPLICATES");
+    if (!isFinite(asFloat(W)) | (W < 0.1) | (W > 1)) stop("invalid W");
+    if (!isFinite(asFloat(U)) | !isFinite(asFloat(V)) | (U < 0) | (U > 1) | (V < 0) | (V > 1)) stop("invalid mutation probability");
+    initializeSLiMModelType("WF");
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+fitnessEffect() {
+    return ifelse(individual.genome1.countOfMutationsOfType(m1) > 0, asFloat(W), 1.0);
+}
+1 early() {
+    for (r in seqLen(REPLICATES)) {
+        pop = sim.addSubpop(r+1, N);
+        pop.setCloningRate(1.0);
+    }
+}
+1 late() {
+    for (pop in sim.subpopulations) {
+        if (K > 0) pop.individuals[seqLen(K)].genomes.addNewDrawnMutation(m1, 0);
+        catn("DATA,0,"+(pop.id-1)+","+K);
+    }
+    sim.recalculateFitness();
+}
+modifyChild() {
+    if (community.tick == 1) return T;
+    // One state transition per clone, mirrored on both homologues.
+    // No independent gamete mutation: this is a haploid-like two-type model.
+    if (child.genome1.countOfMutationsOfType(m1) > 0) {
+        if (runif(1) < V) child.genomes.removeMutations(child.genomes.mutationsOfType(m1));
+    } else {
+        if (runif(1) < U) child.genomes.addNewDrawnMutation(m1, 0);
+    }
+    return T;
+}
+2:81 late() {
+    g = community.tick-1;
+    for (pop in sim.subpopulations) {
+        a = pop.individuals.genome1.countOfMutationsOfType(m1);
+        b = pop.individuals.genome2.countOfMutationsOfType(m1);
+        if (any(a != b) | any(a > 1)) stop("invalid binary clonal state");
+        catn("DATA,"+g+","+(pop.id-1)+","+sum(a));
+    }
+    if (g == STEPS) sim.simulationFinished();
+}

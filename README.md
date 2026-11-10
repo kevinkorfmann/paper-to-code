@@ -229,3 +229,5 @@ finite-population transition oracle, independent tests and checked trajectories.
 - [EHH and physical spacing](examples/inference_showcase/ehh_spacing/): identical shared haplotypes can span different distances, with exact pair-count, marker-removal and unit controls.
 
 - [LiSA truncated walks](examples/lisa_walks/): indirect attention paths, conditioned stopping lengths and normalization controls.
+
+- [Recurrent mutation and purifying selection](examples/slimulations/mutation_selection/): a deleterious clonal allele is continually replenished, with an exact finite-state oracle and boundary controls.
