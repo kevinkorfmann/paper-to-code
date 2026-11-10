@@ -227,3 +227,5 @@ reproductive weights with constant arithmetic/geometric controls, with an exact
 finite-population transition oracle, independent tests and checked trajectories.
 
 - [EHH and physical spacing](examples/inference_showcase/ehh_spacing/): identical shared haplotypes can span different distances, with exact pair-count, marker-removal and unit controls.
+
+- [LiSA truncated walks](examples/lisa_walks/): indirect attention paths, conditioned stopping lengths and normalization controls.

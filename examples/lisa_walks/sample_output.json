@@ -1,0 +1,37 @@
+{
+  "environment": "CPython 3.14.5; standard library; deterministic",
+  "beta": 0.5,
+  "retained_hops": [
+    0,
+    1,
+    2
+  ],
+  "conditioned_length_weights": [
+    0.5714285714285714,
+    0.2857142857142857,
+    0.14285714285714285
+  ],
+  "one_hop_value_at_token_0": 0,
+  "conditioned_diffusion": [
+    0.14285714285714285,
+    0.42857142857142855,
+    1.0
+  ],
+  "forced_stop_at_cap_weights": [
+    0.5,
+    0.25,
+    0.25
+  ],
+  "forced_stop_value_at_token_0": 0.25,
+  "infinite_geometric_value_at_token_0": 0.25,
+  "constant_value_exact_normalization": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "constant_value_epsilon_1e_6": [
+    0.999999428572143,
+    0.999999428572143,
+    0.999999428572143
+  ]
+}
