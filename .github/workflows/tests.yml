@@ -262,6 +262,8 @@ jobs:
           python -m examples.inference_showcase.f3_drift.demo --check-sample
           python -m unittest discover -s examples/inference_showcase/ld_structure -v
           python -m examples.inference_showcase.ld_structure.demo --check-sample
+          python -m unittest discover -s examples/inference_showcase/ehh_spacing -v
+          python -m examples.inference_showcase.ehh_spacing.demo --check-sample
 
   moments-migration:
     runs-on: ubuntu-24.04

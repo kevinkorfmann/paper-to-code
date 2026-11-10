@@ -225,3 +225,5 @@ not an endorsement by the paper's authors.
 [SLiM example](examples/slimulations/fluctuating_selection) contrasts alternating
 reproductive weights with constant arithmetic/geometric controls, with an exact
 finite-population transition oracle, independent tests and checked trajectories.
+
+- [EHH and physical spacing](examples/inference_showcase/ehh_spacing/): identical shared haplotypes can span different distances, with exact pair-count, marker-removal and unit controls.
