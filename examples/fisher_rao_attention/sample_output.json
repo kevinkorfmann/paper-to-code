@@ -1,0 +1,85 @@
+{
+  "environment": "CPython 3.14.5; standard library; deterministic",
+  "scope": "One unmasked row, supplied constant or affine scores; no training",
+  "half_life": 0.693147181,
+  "constant_scores": [
+    0.0,
+    2.197224577
+  ],
+  "target_probabilities": [
+    0.1,
+    0.9
+  ],
+  "exact_half_life_probabilities": [
+    0.25,
+    0.75
+  ],
+  "arithmetic_probability_average": [
+    0.3,
+    0.7
+  ],
+  "fixed_score_relaxation": [
+    {
+      "half_lives": 0,
+      "probability_source_1": 0.5,
+      "kl_to_target": 0.510825624
+    },
+    {
+      "half_lives": 1,
+      "probability_source_1": 0.75,
+      "kl_to_target": 0.092331515
+    },
+    {
+      "half_lives": 2,
+      "probability_source_1": 0.838609522,
+      "kl_to_target": 0.018003207
+    },
+    {
+      "half_lives": 4,
+      "probability_source_1": 0.886943946,
+      "kl_to_target": 0.000912619
+    },
+    {
+      "half_lives": 8,
+      "probability_source_1": 0.899224882,
+      "kl_to_target": 3.33e-06
+    }
+  ],
+  "ramp_scores": "[0,-t], temperature=mobility=1",
+  "ramp_at_t1": {
+    "probabilities": [
+      0.590946477,
+      0.409053523
+    ],
+    "free_energy": -0.267458687,
+    "kl_to_target": 0.045803,
+    "free_energy_gap": 0.045803,
+    "dissipation": 0.096589099,
+    "score_work": 0.409053523,
+    "energy_derivative": 0.312464423,
+    "probability_derivative": [
+      0.152801705,
+      -0.152801705
+    ]
+  },
+  "initial_free_energy": -0.693147181,
+  "ramp_at_t5": {
+    "probabilities": [
+      0.982132415,
+      0.017867585
+    ],
+    "instantaneous_probabilities": [
+      0.993307149,
+      0.006692851
+    ],
+    "log_odds_lag": 0.993262053
+  },
+  "probability_euler_dt2": [
+    -0.598612289,
+    1.598612289
+  ],
+  "exact_constant_score_dt2": [
+    0.13012403,
+    0.86987597
+  ]
+}
