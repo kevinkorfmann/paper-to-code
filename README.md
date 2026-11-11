@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-11 | **slimulations** | [Clonal genotype fixation need not be allele fixation](examples/slimulations/clonal_heterozygosity/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-11-11 | Paper to code | [Fisher–Rao attention: logit filtering and moving-score lag](examples/fisher_rao_attention/README.md) | CPython 3.14.5; standard library |
 | 2026-11-09 | Inference showcase | [Rogers-Huff LD: pooling creates genotype correlation](examples/inference_showcase/ld_structure/README.md) | CPython 3.12.11 + hash-locked scikit-allel 1.3.13 |
 | 2026-11-07 | Paper to code | [Muir readout: lag-dependent matched filters](examples/muir_readout/README.md) | CPython 3.14.5; standard library |

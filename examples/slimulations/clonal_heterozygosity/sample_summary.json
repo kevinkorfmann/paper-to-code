@@ -1,0 +1,851 @@
+{
+  "experiment": "Clonal genotype fixation need not be allele fixation",
+  "generations": 320,
+  "individuals_per_population": 40,
+  "python_version": "3.14.5",
+  "replicates_per_treatment": 512,
+  "slim_version": "4.0.1",
+  "synthetic_only": true,
+  "treatments": {
+    "clonal_all_heterozygotes": {
+      "checkpoints": {
+        "0": {
+          "all_AA": 0,
+          "all_Aa": 512,
+          "all_aa": 0,
+          "allelic_polymorphic": 512,
+          "exact_expectations": {
+            "frequency": 0.5,
+            "gene_diversity": 0.5,
+            "genotype_diversity": 0.0,
+            "observed_heterozygosity": 1.0,
+            "variance_frequency": 0.0
+          },
+          "exact_standard_error_mean_frequency": 0.0,
+          "frequency": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "gene_diversity": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_diversity": {
+            "mean": 0.0,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_monomorphic": 512,
+          "observed_heterozygosity": {
+            "mean": 1.0,
+            "monte_carlo_standard_error": 0.0
+          },
+          "replicates": 512
+        },
+        "1": {
+          "all_AA": 0,
+          "all_Aa": 512,
+          "all_aa": 0,
+          "allelic_polymorphic": 512,
+          "exact_expectations": {
+            "frequency": 0.5,
+            "gene_diversity": 0.5,
+            "genotype_diversity": 0.0,
+            "observed_heterozygosity": 1.0,
+            "variance_frequency": 0.0
+          },
+          "exact_standard_error_mean_frequency": 0.0,
+          "frequency": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "gene_diversity": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_diversity": {
+            "mean": 0.0,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_monomorphic": 512,
+          "observed_heterozygosity": {
+            "mean": 1.0,
+            "monte_carlo_standard_error": 0.0
+          },
+          "replicates": 512
+        },
+        "160": {
+          "all_AA": 0,
+          "all_Aa": 512,
+          "all_aa": 0,
+          "allelic_polymorphic": 512,
+          "exact_expectations": {
+            "frequency": 0.5,
+            "gene_diversity": 0.5,
+            "genotype_diversity": 0.0,
+            "observed_heterozygosity": 1.0,
+            "variance_frequency": 0.0
+          },
+          "exact_standard_error_mean_frequency": 0.0,
+          "frequency": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "gene_diversity": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_diversity": {
+            "mean": 0.0,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_monomorphic": 512,
+          "observed_heterozygosity": {
+            "mean": 1.0,
+            "monte_carlo_standard_error": 0.0
+          },
+          "replicates": 512
+        },
+        "320": {
+          "all_AA": 0,
+          "all_Aa": 512,
+          "all_aa": 0,
+          "allelic_polymorphic": 512,
+          "exact_expectations": {
+            "frequency": 0.5,
+            "gene_diversity": 0.5,
+            "genotype_diversity": 0.0,
+            "observed_heterozygosity": 1.0,
+            "variance_frequency": 0.0
+          },
+          "exact_standard_error_mean_frequency": 0.0,
+          "frequency": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "gene_diversity": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_diversity": {
+            "mean": 0.0,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_monomorphic": 512,
+          "observed_heterozygosity": {
+            "mean": 1.0,
+            "monte_carlo_standard_error": 0.0
+          },
+          "replicates": 512
+        },
+        "80": {
+          "all_AA": 0,
+          "all_Aa": 512,
+          "all_aa": 0,
+          "allelic_polymorphic": 512,
+          "exact_expectations": {
+            "frequency": 0.5,
+            "gene_diversity": 0.5,
+            "genotype_diversity": 0.0,
+            "observed_heterozygosity": 1.0,
+            "variance_frequency": 0.0
+          },
+          "exact_standard_error_mean_frequency": 0.0,
+          "frequency": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "gene_diversity": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_diversity": {
+            "mean": 0.0,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_monomorphic": 512,
+          "observed_heterozygosity": {
+            "mean": 1.0,
+            "monte_carlo_standard_error": 0.0
+          },
+          "replicates": 512
+        }
+      },
+      "cloning_probability": 1.0,
+      "initial_counts_aa_Aa_AA": [
+        0,
+        40,
+        0
+      ],
+      "seed": 202611113
+    },
+    "clonal_mixed_founders": {
+      "checkpoints": {
+        "0": {
+          "all_AA": 0,
+          "all_Aa": 0,
+          "all_aa": 0,
+          "allelic_polymorphic": 512,
+          "exact_expectations": {
+            "frequency": 0.25,
+            "gene_diversity": 0.375,
+            "genotype_diversity": 0.5,
+            "observed_heterozygosity": 0.5,
+            "variance_frequency": 0.0
+          },
+          "exact_standard_error_mean_frequency": 0.0,
+          "frequency": {
+            "mean": 0.25,
+            "monte_carlo_standard_error": 0.0
+          },
+          "gene_diversity": {
+            "mean": 0.375,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_diversity": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_monomorphic": 0,
+          "observed_heterozygosity": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "replicates": 512
+        },
+        "1": {
+          "all_AA": 0,
+          "all_Aa": 0,
+          "all_aa": 0,
+          "allelic_polymorphic": 512,
+          "exact_expectations": {
+            "frequency": 0.25,
+            "gene_diversity": 0.37187499999999996,
+            "genotype_diversity": 0.4875,
+            "observed_heterozygosity": 0.5,
+            "variance_frequency": 0.0015625000000000222
+          },
+          "exact_standard_error_mean_frequency": 0.001746928107421723,
+          "frequency": {
+            "mean": 0.25185546875,
+            "monte_carlo_standard_error": 0.0017149651494224047
+          },
+          "gene_diversity": {
+            "mean": 0.3738427734375,
+            "monte_carlo_standard_error": 0.001711012562285644
+          },
+          "genotype_diversity": {
+            "mean": 0.48794921874999997,
+            "monte_carlo_standard_error": 0.000710240159378453
+          },
+          "genotype_monomorphic": 0,
+          "observed_heterozygosity": {
+            "mean": 0.5037109375,
+            "monte_carlo_standard_error": 0.0034299302988448094
+          },
+          "replicates": 512
+        },
+        "160": {
+          "all_AA": 0,
+          "all_Aa": 250,
+          "all_aa": 255,
+          "allelic_polymorphic": 257,
+          "exact_expectations": {
+            "frequency": 0.25,
+            "gene_diversity": 0.25217594806128835,
+            "genotype_diversity": 0.008703792245156092,
+            "observed_heterozygosity": 0.5,
+            "variance_frequency": 0.06141202596935583
+          },
+          "exact_standard_error_mean_frequency": 0.010951957049833518,
+          "frequency": {
+            "mean": 0.2478515625,
+            "monte_carlo_standard_error": 0.011003936942586322
+          },
+          "gene_diversity": {
+            "mean": 0.249091796875,
+            "monte_carlo_standard_error": 0.011019488222135873
+          },
+          "genotype_diversity": {
+            "mean": 0.004960937499999999,
+            "monte_carlo_standard_error": 0.0019718789869172196
+          },
+          "genotype_monomorphic": 505,
+          "observed_heterozygosity": {
+            "mean": 0.495703125,
+            "monte_carlo_standard_error": 0.022007873885172644
+          },
+          "replicates": 512
+        },
+        "320": {
+          "all_AA": 0,
+          "all_Aa": 253,
+          "all_aa": 259,
+          "allelic_polymorphic": 253,
+          "exact_expectations": {
+            "frequency": 0.25,
+            "gene_diversity": 0.2500378779997229,
+            "genotype_diversity": 0.00015151199889367866,
+            "observed_heterozygosity": 0.5,
+            "variance_frequency": 0.06248106100013856
+          },
+          "exact_standard_error_mean_frequency": 0.011046869342302172,
+          "frequency": {
+            "mean": 0.2470703125,
+            "monte_carlo_standard_error": 0.01105858946879922
+          },
+          "gene_diversity": {
+            "mean": 0.2470703125,
+            "monte_carlo_standard_error": 0.01105858946879922
+          },
+          "genotype_diversity": {
+            "mean": 0.0,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_monomorphic": 512,
+          "observed_heterozygosity": {
+            "mean": 0.494140625,
+            "monte_carlo_standard_error": 0.02211717893759844
+          },
+          "replicates": 512
+        },
+        "80": {
+          "all_AA": 0,
+          "all_Aa": 215,
+          "all_aa": 212,
+          "allelic_polymorphic": 300,
+          "exact_expectations": {
+            "frequency": 0.25,
+            "gene_diversity": 0.2664922256733619,
+            "genotype_diversity": 0.06596890269345129,
+            "observed_heterozygosity": 0.5,
+            "variance_frequency": 0.05425388716331905
+          },
+          "exact_standard_error_mean_frequency": 0.0102939119563875,
+          "frequency": {
+            "mean": 0.2487060546875,
+            "monte_carlo_standard_error": 0.010401537827297207
+          },
+          "gene_diversity": {
+            "mean": 0.2631304931640625,
+            "monte_carlo_standard_error": 0.010478962009542812
+          },
+          "genotype_diversity": {
+            "mean": 0.057697753906249996,
+            "monte_carlo_standard_error": 0.006201292722434925
+          },
+          "genotype_monomorphic": 427,
+          "observed_heterozygosity": {
+            "mean": 0.497412109375,
+            "monte_carlo_standard_error": 0.020803075654594414
+          },
+          "replicates": 512
+        }
+      },
+      "cloning_probability": 1.0,
+      "initial_counts_aa_Aa_AA": [
+        20,
+        20,
+        0
+      ],
+      "seed": 202611110
+    },
+    "half_clonal_mixed_founders": {
+      "checkpoints": {
+        "0": {
+          "all_AA": 0,
+          "all_Aa": 0,
+          "all_aa": 0,
+          "allelic_polymorphic": 512,
+          "exact_expectations": {
+            "frequency": 0.25,
+            "gene_diversity": 0.375,
+            "observed_heterozygosity": 0.5,
+            "variance_frequency": 0.0
+          },
+          "exact_standard_error_mean_frequency": 0.0,
+          "frequency": {
+            "mean": 0.25,
+            "monte_carlo_standard_error": 0.0
+          },
+          "gene_diversity": {
+            "mean": 0.375,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_diversity": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_monomorphic": 0,
+          "observed_heterozygosity": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "replicates": 512
+        },
+        "1": {
+          "all_AA": 0,
+          "all_Aa": 0,
+          "all_aa": 0,
+          "allelic_polymorphic": 512,
+          "exact_expectations": {
+            "frequency": 0.25,
+            "gene_diversity": 0.37109375,
+            "observed_heterozygosity": 0.4375,
+            "variance_frequency": 0.001953125
+          },
+          "exact_standard_error_mean_frequency": 0.001953125,
+          "frequency": {
+            "mean": 0.2513427734375,
+            "monte_carlo_standard_error": 0.002019214487936134
+          },
+          "gene_diversity": {
+            "mean": 0.3721722412109375,
+            "monte_carlo_standard_error": 0.0020107072720769365
+          },
+          "genotype_diversity": {
+            "mean": 0.511923828125,
+            "monte_carlo_standard_error": 0.00147870984070406
+          },
+          "genotype_monomorphic": 0,
+          "observed_heterozygosity": {
+            "mean": 0.439599609375,
+            "monte_carlo_standard_error": 0.0036076850669120738
+          },
+          "replicates": 512
+        },
+        "160": {
+          "all_AA": 87,
+          "all_Aa": 0,
+          "all_aa": 346,
+          "allelic_polymorphic": 79,
+          "exact_expectations": {
+            "frequency": 0.25,
+            "gene_diversity": 0.051616248133461884,
+            "observed_heterozygosity": 0.05292257010075366,
+            "variance_frequency": 0.16169187593326906
+          },
+          "exact_standard_error_mean_frequency": 0.01777088757440568,
+          "frequency": {
+            "mean": 0.2429443359375,
+            "monte_carlo_standard_error": 0.017641549746892308
+          },
+          "gene_diversity": {
+            "mean": 0.0497735595703125,
+            "monte_carlo_standard_error": 0.005696017179069104
+          },
+          "genotype_diversity": {
+            "mean": 0.07037353515625,
+            "monte_carlo_standard_error": 0.007757648718532972
+          },
+          "genotype_monomorphic": 433,
+          "observed_heterozygosity": {
+            "mean": 0.050634765625,
+            "monte_carlo_standard_error": 0.00584525061351413
+          },
+          "replicates": 512
+        },
+        "320": {
+          "all_AA": 113,
+          "all_Aa": 0,
+          "all_aa": 389,
+          "allelic_polymorphic": 10,
+          "exact_expectations": {
+            "frequency": 0.25,
+            "gene_diversity": 0.007077056060245383,
+            "observed_heterozygosity": 0.007256164657432644,
+            "variance_frequency": 0.1839614719698773
+          },
+          "exact_standard_error_mean_frequency": 0.018955203769444595,
+          "frequency": {
+            "mean": 0.23154296875,
+            "monte_carlo_standard_error": 0.01848147690085303
+          },
+          "gene_diversity": {
+            "mean": 0.0067822265625,
+            "monte_carlo_standard_error": 0.002316401396154792
+          },
+          "genotype_diversity": {
+            "mean": 0.0091357421875,
+            "monte_carlo_standard_error": 0.003033181706478603
+          },
+          "genotype_monomorphic": 502,
+          "observed_heterozygosity": {
+            "mean": 0.00712890625,
+            "monte_carlo_standard_error": 0.002476019012063364
+          },
+          "replicates": 512
+        },
+        "80": {
+          "all_AA": 39,
+          "all_Aa": 0,
+          "all_aa": 272,
+          "allelic_polymorphic": 201,
+          "exact_expectations": {
+            "frequency": 0.25,
+            "gene_diversity": 0.1393969695118231,
+            "observed_heterozygosity": 0.1429248765184764,
+            "variance_frequency": 0.11780151524408845
+          },
+          "exact_standard_error_mean_frequency": 0.015168423928052323,
+          "frequency": {
+            "mean": 0.2546630859375,
+            "monte_carlo_standard_error": 0.015508443154507215
+          },
+          "gene_diversity": {
+            "mean": 0.1338165283203125,
+            "monte_carlo_standard_error": 0.008336409760886312
+          },
+          "genotype_diversity": {
+            "mean": 0.18467773437499999,
+            "monte_carlo_standard_error": 0.011047595307829214
+          },
+          "genotype_monomorphic": 311,
+          "observed_heterozygosity": {
+            "mean": 0.136376953125,
+            "monte_carlo_standard_error": 0.008670058324866572
+          },
+          "replicates": 512
+        }
+      },
+      "cloning_probability": 0.5,
+      "initial_counts_aa_Aa_AA": [
+        20,
+        20,
+        0
+      ],
+      "seed": 202611111
+    },
+    "sexual_all_heterozygotes": {
+      "checkpoints": {
+        "0": {
+          "all_AA": 0,
+          "all_Aa": 512,
+          "all_aa": 0,
+          "allelic_polymorphic": 512,
+          "exact_expectations": {
+            "frequency": 0.5,
+            "gene_diversity": 0.5,
+            "observed_heterozygosity": 1.0,
+            "variance_frequency": 0.0
+          },
+          "exact_standard_error_mean_frequency": 0.0,
+          "frequency": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "gene_diversity": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_diversity": {
+            "mean": 0.0,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_monomorphic": 512,
+          "observed_heterozygosity": {
+            "mean": 1.0,
+            "monte_carlo_standard_error": 0.0
+          },
+          "replicates": 512
+        },
+        "1": {
+          "all_AA": 0,
+          "all_Aa": 0,
+          "all_aa": 0,
+          "allelic_polymorphic": 512,
+          "exact_expectations": {
+            "frequency": 0.5,
+            "gene_diversity": 0.49374999999999997,
+            "observed_heterozygosity": 0.5,
+            "variance_frequency": 0.0031250000000000167
+          },
+          "exact_standard_error_mean_frequency": 0.002470529422006553,
+          "frequency": {
+            "mean": 0.498974609375,
+            "monte_carlo_standard_error": 0.0024017104849319
+          },
+          "gene_diversity": {
+            "mean": 0.494102783203125,
+            "monte_carlo_standard_error": 0.0003784891151601959
+          },
+          "genotype_diversity": {
+            "mean": 0.61001708984375,
+            "monte_carlo_standard_error": 0.0017700878807384228
+          },
+          "genotype_monomorphic": 0,
+          "observed_heterozygosity": {
+            "mean": 0.49970703125,
+            "monte_carlo_standard_error": 0.0034705073664734703
+          },
+          "replicates": 512
+        },
+        "160": {
+          "all_AA": 203,
+          "all_Aa": 0,
+          "all_aa": 210,
+          "allelic_polymorphic": 99,
+          "exact_expectations": {
+            "frequency": 0.5,
+            "gene_diversity": 0.06682003397102661,
+            "observed_heterozygosity": 0.06766585718584972,
+            "variance_frequency": 0.2165899830144867
+          },
+          "exact_standard_error_mean_frequency": 0.020567627733289257,
+          "frequency": {
+            "mean": 0.48681640625,
+            "monte_carlo_standard_error": 0.020545905466733273
+          },
+          "gene_diversity": {
+            "mean": 0.068231201171875,
+            "monte_carlo_standard_error": 0.006786967798624937
+          },
+          "genotype_diversity": {
+            "mean": 0.0931591796875,
+            "monte_carlo_standard_error": 0.009033158134420639
+          },
+          "genotype_monomorphic": 413,
+          "observed_heterozygosity": {
+            "mean": 0.06796875,
+            "monte_carlo_standard_error": 0.006863798888756752
+          },
+          "replicates": 512
+        },
+        "320": {
+          "all_AA": 241,
+          "all_Aa": 0,
+          "all_aa": 258,
+          "allelic_polymorphic": 13,
+          "exact_expectations": {
+            "frequency": 0.5,
+            "gene_diversity": 0.008929833879778304,
+            "observed_heterozygosity": 0.009042869751674232,
+            "variance_frequency": 0.24553508306011085
+          },
+          "exact_standard_error_mean_frequency": 0.021898874608111234,
+          "frequency": {
+            "mean": 0.483056640625,
+            "monte_carlo_standard_error": 0.02190770015849774
+          },
+          "gene_diversity": {
+            "mean": 0.008919677734375,
+            "monte_carlo_standard_error": 0.002576475082623599
+          },
+          "genotype_diversity": {
+            "mean": 0.012456054687499999,
+            "monte_carlo_standard_error": 0.0035062859819552147
+          },
+          "genotype_monomorphic": 499,
+          "observed_heterozygosity": {
+            "mean": 0.0091796875,
+            "monte_carlo_standard_error": 0.002682822202086545
+          },
+          "replicates": 512
+        },
+        "80": {
+          "all_AA": 111,
+          "all_Aa": 0,
+          "all_aa": 126,
+          "allelic_polymorphic": 275,
+          "exact_expectations": {
+            "frequency": 0.5,
+            "gene_diversity": 0.18278407202355798,
+            "observed_heterozygosity": 0.18509779445423594,
+            "variance_frequency": 0.15860796398822102
+          },
+          "exact_standard_error_mean_frequency": 0.017600601684729253,
+          "frequency": {
+            "mean": 0.4810546875,
+            "monte_carlo_standard_error": 0.017470646342614884
+          },
+          "gene_diversity": {
+            "mean": 0.18734375,
+            "monte_carlo_standard_error": 0.009031887719833383
+          },
+          "genotype_diversity": {
+            "mean": 0.25434814453125,
+            "monte_carlo_standard_error": 0.011696208078198577
+          },
+          "genotype_monomorphic": 237,
+          "observed_heterozygosity": {
+            "mean": 0.19404296875,
+            "monte_carlo_standard_error": 0.009594489315610856
+          },
+          "replicates": 512
+        }
+      },
+      "cloning_probability": 0.0,
+      "initial_counts_aa_Aa_AA": [
+        0,
+        40,
+        0
+      ],
+      "seed": 202611114
+    },
+    "sexual_mixed_founders": {
+      "checkpoints": {
+        "0": {
+          "all_AA": 0,
+          "all_Aa": 0,
+          "all_aa": 0,
+          "allelic_polymorphic": 512,
+          "exact_expectations": {
+            "frequency": 0.25,
+            "gene_diversity": 0.375,
+            "observed_heterozygosity": 0.5,
+            "variance_frequency": 0.0
+          },
+          "exact_standard_error_mean_frequency": 0.0,
+          "frequency": {
+            "mean": 0.25,
+            "monte_carlo_standard_error": 0.0
+          },
+          "gene_diversity": {
+            "mean": 0.375,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_diversity": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "genotype_monomorphic": 0,
+          "observed_heterozygosity": {
+            "mean": 0.5,
+            "monte_carlo_standard_error": 0.0
+          },
+          "replicates": 512
+        },
+        "1": {
+          "all_AA": 0,
+          "all_Aa": 0,
+          "all_aa": 0,
+          "allelic_polymorphic": 512,
+          "exact_expectations": {
+            "frequency": 0.25,
+            "gene_diversity": 0.3703125,
+            "observed_heterozygosity": 0.375,
+            "variance_frequency": 0.0023437500000000056
+          },
+          "exact_standard_error_mean_frequency": 0.0021395412402545576,
+          "frequency": {
+            "mean": 0.250927734375,
+            "monte_carlo_standard_error": 0.0021454199988263094
+          },
+          "gene_diversity": {
+            "mean": 0.371221923828125,
+            "monte_carlo_standard_error": 0.002099813661171217
+          },
+          "genotype_diversity": {
+            "mean": 0.52663818359375,
+            "monte_carlo_standard_error": 0.0019177035437249357
+          },
+          "genotype_monomorphic": 0,
+          "observed_heterozygosity": {
+            "mean": 0.3767578125,
+            "monte_carlo_standard_error": 0.0033147319498186304
+          },
+          "replicates": 512
+        },
+        "160": {
+          "all_AA": 95,
+          "all_Aa": 0,
+          "all_aa": 346,
+          "allelic_polymorphic": 71,
+          "exact_expectations": {
+            "frequency": 0.25,
+            "gene_diversity": 0.05011502547826994,
+            "observed_heterozygosity": 0.05074939288938728,
+            "variance_frequency": 0.16244248726086502
+          },
+          "exact_standard_error_mean_frequency": 0.017812088112609845,
+          "frequency": {
+            "mean": 0.254443359375,
+            "monte_carlo_standard_error": 0.018175836364258253
+          },
+          "gene_diversity": {
+            "mean": 0.041774902343749996,
+            "monte_carlo_standard_error": 0.005238244631102977
+          },
+          "genotype_diversity": {
+            "mean": 0.05925048828125,
+            "monte_carlo_standard_error": 0.007171851534016841
+          },
+          "genotype_monomorphic": 441,
+          "observed_heterozygosity": {
+            "mean": 0.0404296875,
+            "monte_carlo_standard_error": 0.005171836789781902
+          },
+          "replicates": 512
+        },
+        "320": {
+          "all_AA": 126,
+          "all_Aa": 0,
+          "all_aa": 376,
+          "allelic_polymorphic": 10,
+          "exact_expectations": {
+            "frequency": 0.25,
+            "gene_diversity": 0.006697375409833725,
+            "observed_heterozygosity": 0.006782152313755671,
+            "variance_frequency": 0.18415131229508314
+          },
+          "exact_standard_error_mean_frequency": 0.018964981724914322,
+          "frequency": {
+            "mean": 0.2571533203125,
+            "monte_carlo_standard_error": 0.019243652596739987
+          },
+          "gene_diversity": {
+            "mean": 0.0035858154296875,
+            "monte_carlo_standard_error": 0.0014111296112596856
+          },
+          "genotype_diversity": {
+            "mean": 0.005705566406250001,
+            "monte_carlo_standard_error": 0.002106425446176652
+          },
+          "genotype_monomorphic": 502,
+          "observed_heterozygosity": {
+            "mean": 0.003564453125,
+            "monte_carlo_standard_error": 0.001363796243873576
+          },
+          "replicates": 512
+        },
+        "80": {
+          "all_AA": 36,
+          "all_Aa": 0,
+          "all_aa": 281,
+          "allelic_polymorphic": 195,
+          "exact_expectations": {
+            "frequency": 0.25,
+            "gene_diversity": 0.13708805401766866,
+            "observed_heterozygosity": 0.13882334584067713,
+            "variance_frequency": 0.11895597299116567
+          },
+          "exact_standard_error_mean_frequency": 0.015242568180866715,
+          "frequency": {
+            "mean": 0.2461181640625,
+            "monte_carlo_standard_error": 0.01547235443994181
+          },
+          "gene_diversity": {
+            "mean": 0.1264276123046875,
+            "monte_carlo_standard_error": 0.008241290773893621
+          },
+          "genotype_diversity": {
+            "mean": 0.1740771484375,
+            "monte_carlo_standard_error": 0.010839951198286991
+          },
+          "genotype_monomorphic": 317,
+          "observed_heterozygosity": {
+            "mean": 0.129345703125,
+            "monte_carlo_standard_error": 0.008593198103285979
+          },
+          "replicates": 512
+        }
+      },
+      "cloning_probability": 0.0,
+      "initial_counts_aa_Aa_AA": [
+        20,
+        20,
+        0
+      ],
+      "seed": 202611112
+    }
+  }
+}

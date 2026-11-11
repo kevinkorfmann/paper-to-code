@@ -1,0 +1,46 @@
+// Original synthetic diploid cloning versus random-mating experiment.
+initialize() {
+    if (!exists("N")) defineConstant("N", 40);
+    if (!exists("HET")) defineConstant("HET", 20);
+    if (!exists("HOM")) defineConstant("HOM", 0);
+    if (!exists("C")) defineConstant("C", 1.0);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 512);
+    if (!exists("STEPS")) defineConstant("STEPS", 320);
+    if (!isFinite(asFloat(N)) | (N < 2) | (N > 200) | (N != asInteger(N))) stop("invalid N");
+    if (!isFinite(asFloat(HET)) | (HET < 0) | (HET > N) | (HET != asInteger(HET))) stop("invalid HET");
+    if (!isFinite(asFloat(HOM)) | (HOM < 0) | (HOM+HET > N) | (HOM != asInteger(HOM))) stop("invalid HOM");
+    if (!isFinite(asFloat(C)) | (C < 0) | (C > 1)) stop("invalid C");
+    if (!isFinite(asFloat(REPLICATES)) | (REPLICATES < 1) | (REPLICATES > 2048) | (REPLICATES != asInteger(REPLICATES))) stop("invalid REPLICATES");
+    if (!isFinite(asFloat(STEPS)) | (STEPS < 1) | (STEPS > 400) | (STEPS != asInteger(STEPS))) stop("invalid STEPS");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+1 early() {
+    for (r in seqLen(REPLICATES)) {
+        pop = sim.addSubpop(r+1, N);
+        pop.setCloningRate(asFloat(C));
+    }
+}
+1 late() {
+    for (pop in sim.subpopulations) {
+        if (HET > 0) pop.individuals[seqLen(HET)].genome1.addNewDrawnMutation(m1, 0);
+        if (HOM > 0) pop.individuals[HET+seqLen(HOM)].genomes.addNewDrawnMutation(m1, 0);
+    }
+}
+1:401 late() {
+    g = community.tick-1;
+    if (any(g == c(0, 1, asInteger(STEPS/4), asInteger(STEPS/2), STEPS))) {
+        for (pop in sim.subpopulations) {
+            dose = pop.individuals.genome1.countOfMutationsOfType(m1)+pop.individuals.genome2.countOfMutationsOfType(m1);
+            counts = sapply(0:2, "sum(dose == applyValue);");
+            catn("DATA,"+g+","+(pop.id-1)+","+paste(counts,sep=","));
+        }
+    }
+    if (g == STEPS) sim.simulationFinished();
+}
