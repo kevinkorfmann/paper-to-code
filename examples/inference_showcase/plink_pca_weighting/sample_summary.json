@@ -1,0 +1,94 @@
+{
+  "versions": {
+    "python": "3.14.5",
+    "plink": "PLINK v2.0.0-b.1.2LM 64-bit Intel (24 Oct 2026)"
+  },
+  "randomness": "none; deterministic PCA, no --approx",
+  "samples": 16,
+  "input": "synthetic_genotypes.json",
+  "allele_frequencies": "1/2 at every marker; supplied from this exact toy construction",
+  "baseline_versus_B_copied_PC1_absolute_alignment": 0.0,
+  "cases": {
+    "baseline": {
+      "pattern_counts": {
+        "A": 2,
+        "B": 1
+      },
+      "markers": 3,
+      "plink_eigenvalues_printed": [
+        10.6667,
+        5.33333
+      ],
+      "exact_nonzero_eigenvalues": [
+        "32/3",
+        "16/3"
+      ],
+      "max_grm_error": 0.0,
+      "max_two_PC_projector_error": 0.0,
+      "PC1_absolute_alignment_A_B": [
+        1.0,
+        0.0
+      ]
+    },
+    "copy_B_three_more_times": {
+      "pattern_counts": {
+        "A": 2,
+        "B": 4
+      },
+      "markers": 6,
+      "plink_eigenvalues_printed": [
+        10.6667,
+        5.33333
+      ],
+      "exact_nonzero_eigenvalues": [
+        "32/3",
+        "16/3"
+      ],
+      "max_grm_error": 0.0,
+      "max_two_PC_projector_error": 0.0,
+      "PC1_absolute_alignment_A_B": [
+        0.0,
+        1.0
+      ]
+    },
+    "one_per_pattern": {
+      "pattern_counts": {
+        "A": 1,
+        "B": 1
+      },
+      "markers": 2,
+      "plink_eigenvalues_printed": [
+        8.0,
+        8.0
+      ],
+      "exact_nonzero_eigenvalues": [
+        "8",
+        "8"
+      ],
+      "max_grm_error": 0.0,
+      "max_two_PC_projector_error": 0.0
+    },
+    "copy_every_marker": {
+      "pattern_counts": {
+        "A": 4,
+        "B": 2
+      },
+      "markers": 6,
+      "plink_eigenvalues_printed": [
+        10.6667,
+        5.33333
+      ],
+      "exact_nonzero_eigenvalues": [
+        "32/3",
+        "16/3"
+      ],
+      "max_grm_error": 0.0,
+      "max_two_PC_projector_error": 0.0,
+      "PC1_absolute_alignment_A_B": [
+        1.0,
+        0.0
+      ]
+    }
+  },
+  "interpretation": "Changing relative marker multiplicity swaps PC1, not the two-dimensional subspace."
+}

@@ -333,6 +333,8 @@ jobs:
         run: |
           python -m unittest discover -s examples/inference_showcase/plink_king -v
           python -m examples.inference_showcase.plink_king.demo --check-sample
+          python -m unittest examples.inference_showcase.plink_pca_weighting.test_demo -v
+          python -m examples.inference_showcase.plink_pca_weighting.demo --check-sample
 
   admixture-projection:
     runs-on: ubuntu-24.04
