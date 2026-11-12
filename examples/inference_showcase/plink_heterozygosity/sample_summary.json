@@ -1,0 +1,74 @@
+{
+  "cases": {
+    "balanced_reference": {
+      "exact_F": "0",
+      "plink": {
+        "E(HET)": 10.0,
+        "E(HOM)": 10.0,
+        "F": 0.0,
+        "O(HET)": 10.0,
+        "O(HOM)": 10.0,
+        "OBS_CT": 20.0
+      }
+    },
+    "copy_all_sites": {
+      "exact_F": "0",
+      "plink": {
+        "E(HET)": 20.0,
+        "E(HOM)": 20.0,
+        "F": 0.0,
+        "O(HET)": 20.0,
+        "O(HOM)": 20.0,
+        "OBS_CT": 40.0
+      }
+    },
+    "mask_heterozygotes": {
+      "exact_F": "1",
+      "plink": {
+        "E(HET)": 5.0,
+        "E(HOM)": 5.0,
+        "F": 1.0,
+        "O(HET)": 0.0,
+        "O(HOM)": 10.0,
+        "OBS_CT": 10.0
+      }
+    },
+    "mask_homozygotes": {
+      "exact_F": "-1",
+      "plink": {
+        "E(HET)": 5.0,
+        "E(HOM)": 5.0,
+        "F": -1.0,
+        "O(HET)": 10.0,
+        "O(HOM)": 0.0,
+        "OBS_CT": 10.0
+      }
+    },
+    "rare_ALT_reference": {
+      "exact_F": "-16/9",
+      "plink": {
+        "E(HET)": 3.6,
+        "E(HOM)": 16.4,
+        "F": -1.77778,
+        "O(HET)": 10.0,
+        "O(HOM)": 10.0,
+        "OBS_CT": 20.0
+      }
+    },
+    "rare_REF_reference": {
+      "exact_F": "-16/9",
+      "plink": {
+        "E(HET)": 3.6,
+        "E(HOM)": 16.4,
+        "F": -1.77778,
+        "O(HET)": 10.0,
+        "O(HOM)": 10.0,
+        "OBS_CT": 20.0
+      }
+    }
+  },
+  "design": "Deterministic 20-marker one-sample fixture; supplied synthetic reference frequencies.",
+  "plink": "PLINK v2.0.0-b.1.2LM 64-bit Intel (24 Oct 2026)",
+  "python": "3.14.5",
+  "seed": null
+}
