@@ -1,0 +1,72 @@
+{
+  "environment": "CPython 3.14.5; standard library; no randomness",
+  "source": "Ouyang et al., arXiv:2611.07226v1, 2026-11-04; eqs. 14-16",
+  "scope": "Supplied depth reader and scalar toy blocks; not a trained Transformer",
+  "boundary_prior_K2_lambda_half": [
+    [
+      1.0
+    ],
+    [
+      0.5,
+      0.5
+    ],
+    [
+      0.5,
+      0.5,
+      1.0
+    ],
+    [
+      0.25,
+      0.25,
+      0.5,
+      0.5
+    ]
+  ],
+  "four_update_prior": [
+    0.25,
+    0.25,
+    0.5,
+    0.5
+  ],
+  "four_update_total_mass": 1.5,
+  "scores_log6_0_0_0_weights": [
+    0.818181818,
+    0.136363636,
+    0.272727273,
+    0.272727273
+  ],
+  "values_1_0_0_0_readout_with_initial_10": 10.818181818,
+  "cumulative_states_11_9_equal_read": 10.0,
+  "updates_1_minus2_equal_read_plus_initial_10": 9.5,
+  "replacement_states_unit_updates": [
+    10.5,
+    10.75,
+    10.875,
+    10.9375
+  ],
+  "wrong_accumulate_each_complete_mixture": [
+    10.5,
+    11.25,
+    12.125,
+    13.0625
+  ],
+  "bounded_mass_not_bounded_state": {
+    "block": "f(h)=3h; K=1; lambda=0.5; zero queries",
+    "states": [
+      2.0,
+      3.5,
+      5.75,
+      9.125,
+      14.1875,
+      21.78125,
+      33.171875,
+      50.2578125
+    ],
+    "mass_after_8": 0.99609375,
+    "mass_limit": 1.0
+  },
+  "RMS_read_example": [
+    10.880796947,
+    0.238406107
+  ]
+}

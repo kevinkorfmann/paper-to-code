@@ -238,3 +238,5 @@ finite-population transition oracle, independent tests and checked trajectories.
 - [PLINK heterozygosity and reference frequencies](examples/inference_showcase/plink_heterozygosity/): unchanged calls can yield different method-of-moments F, with exact expectations and missingness controls.
 
 - [Frequency-dependent selection without overdominance](examples/slimulations/frequency_dependence/): rare-allele advantage reverses when common, with exact conditional expectations and finite-population controls.
+
+- [Loopback depth-memory reader](examples/loopback_memory/): geometric update mass, content allocation, and replacement-versus-accumulation controls.

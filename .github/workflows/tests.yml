@@ -42,6 +42,7 @@ jobs:
           python -m unittest discover -s examples/triattention_merge -t . -v
           python -m unittest discover -s examples/lisa_walks -t . -v
           python -m unittest discover -s examples/fisher_rao_attention -t . -v
+          python -m unittest discover -s examples/loopback_memory -t . -v
       - name: Reproduce the checked output byte for byte
         run: |
           python -m examples.differential_attention.demo > /tmp/attention-output.json
@@ -73,6 +74,7 @@ jobs:
           python -m examples.triattention_merge.demo --check-sample
           python -m examples.lisa_walks.demo --check-sample
           python -m examples.fisher_rao_attention.demo --check-sample
+          python -m examples.loopback_memory.demo --check-sample
 
   slimulations:
     runs-on: ubuntu-24.04
