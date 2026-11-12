@@ -236,3 +236,5 @@ finite-population transition oracle, independent tests and checked trajectories.
 - [Recurrent mutation and purifying selection](examples/slimulations/mutation_selection/): a deleterious clonal allele is continually replenished, with an exact finite-state oracle and boundary controls.
 
 - [PLINK heterozygosity and reference frequencies](examples/inference_showcase/plink_heterozygosity/): unchanged calls can yield different method-of-moments F, with exact expectations and missingness controls.
+
+- [Frequency-dependent selection without overdominance](examples/slimulations/frequency_dependence/): rare-allele advantage reverses when common, with exact conditional expectations and finite-population controls.

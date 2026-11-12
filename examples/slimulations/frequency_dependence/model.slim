@@ -1,0 +1,49 @@
+// Original one-generation frequency-dependent genic selection experiment.
+initialize() {
+    if (!exists("AA")) defineConstant("AA", 81); // lowercase-allele homozygotes
+    if (!exists("HET")) defineConstant("HET", 18);
+    if (!exists("HOM")) defineConstant("HOM", 1);
+    if (!exists("S")) defineConstant("S", 0.8);
+    if (!exists("REPLICATES")) defineConstant("REPLICATES", 1024);
+    for (x in c(AA,HET,HOM)) if (!isFinite(asFloat(x)) | x < 0 | x != asInteger(x)) stop("invalid counts");
+    defineConstant("N", AA+HET+HOM);
+    if (N < 2 | N > 1000) stop("invalid N");
+    if (!isFinite(asFloat(S)) | S < 0.0 | S >= 1.0) stop("invalid S");
+    if (REPLICATES < 1 | REPLICATES > 4096 | REPLICATES != asInteger(REPLICATES)) stop("invalid REPLICATES");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+fitnessEffect() {
+    k = sum(individual.genomes.countOfMutationsOfType(m1));
+    p = sum(individual.subpopulation.genomes.countOfMutationsOfType(m1))/(2.0*N);
+    return 1.0 + S*(1.0-2.0*p)*(k-1.0);
+}
+1 early() {
+    for (r in seqLen(REPLICATES)) sim.addSubpop(r+1,N);
+}
+1 late() {
+    for (pop in sim.subpopulations) {
+        if (HET > 0) pop.individuals[seqLen(HET)].genome1.addNewDrawnMutation(m1,0);
+        if (HOM > 0) pop.individuals[HET+seqLen(HOM)].genomes.addNewDrawnMutation(m1,0);
+    }
+    sim.recalculateFitness();
+    for (pop in sim.subpopulations) {
+        k = pop.individuals.genome1.countOfMutationsOfType(m1)+pop.individuals.genome2.countOfMutationsOfType(m1);
+        p = (HET+2.0*HOM)/(2.0*N);
+        if (any(abs(pop.cachedFitness(NULL)-(1.0+S*(1.0-2.0*p)*(k-1.0))) > 1e-12)) stop("wrong fitness");
+        catn("INIT,"+(pop.id-1)+","+sum(k==0)+","+sum(k==1)+","+sum(k==2));
+    }
+}
+2 late() {
+    for (pop in sim.subpopulations) {
+        k = pop.individuals.genome1.countOfMutationsOfType(m1)+pop.individuals.genome2.countOfMutationsOfType(m1);
+        catn("DATA,"+(pop.id-1)+","+sum(k==0)+","+sum(k==1)+","+sum(k==2));
+    }
+    sim.simulationFinished();
+}

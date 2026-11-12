@@ -148,6 +148,8 @@ jobs:
           python -m examples.slimulations.mutation_selection.demo --check-sample
           python -m unittest examples.slimulations.clonal_heterozygosity.test_demo -v
           python -m examples.slimulations.clonal_heterozygosity.demo --check-sample
+          python -m unittest discover -s examples/slimulations/frequency_dependence -v
+          python -m examples.slimulations.frequency_dependence.demo --check-sample
 
   inference-showcase:
     runs-on: ubuntu-24.04

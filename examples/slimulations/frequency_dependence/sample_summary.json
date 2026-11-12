@@ -1,0 +1,188 @@
+{
+  "generations": 1,
+  "python": "3.14.5",
+  "replicates": 1024,
+  "slim": "4.0.1",
+  "treatments": {
+    "absent_A": {
+      "expected_frequency": 0.0,
+      "expected_genotype_frequencies": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "expected_variance_frequency": 0.0,
+      "fitness_aa_Aa_AA": [
+        0.19999999999999996,
+        1,
+        1.8
+      ],
+      "founders_aa_Aa_AA": [
+        100,
+        0,
+        0
+      ],
+      "initial_frequency": 0.0,
+      "mean_frequency_standard_error": 0.0,
+      "observed_mean_frequency": 0.0,
+      "observed_mean_genotype_frequencies": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "observed_variance_frequency": 0.0,
+      "seed": 202611124,
+      "strength": 0.8
+    },
+    "common_A": {
+      "expected_frequency": 0.781967213114754,
+      "expected_genotype_frequencies": [
+        0.04753829615694709,
+        0.3409889814565978,
+        0.6114727223864551
+      ],
+      "expected_variance_frequency": 0.0008524724536414944,
+      "fitness_aa_Aa_AA": [
+        1.6400000000000001,
+        1,
+        0.3599999999999999
+      ],
+      "founders_aa_Aa_AA": [
+        1,
+        18,
+        81
+      ],
+      "initial_frequency": 0.9,
+      "mean_frequency_standard_error": 0.0009124103410797534,
+      "observed_mean_frequency": 0.7799658203125001,
+      "observed_mean_genotype_frequencies": [
+        0.0478125,
+        0.344443359375,
+        0.607744140625
+      ],
+      "observed_variance_frequency": 0.0008405902284564395,
+      "seed": 202611122,
+      "strength": 0.8
+    },
+    "fixed_A": {
+      "expected_frequency": 1.0,
+      "expected_genotype_frequencies": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "expected_variance_frequency": 0.0,
+      "fitness_aa_Aa_AA": [
+        1.8,
+        1,
+        0.19999999999999996
+      ],
+      "founders_aa_Aa_AA": [
+        0,
+        0,
+        100
+      ],
+      "initial_frequency": 1.0,
+      "mean_frequency_standard_error": 0.0,
+      "observed_mean_frequency": 1.0,
+      "observed_mean_genotype_frequencies": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "observed_variance_frequency": 0.0,
+      "seed": 202611125,
+      "strength": 0.8
+    },
+    "intermediate_A": {
+      "expected_frequency": 0.5,
+      "expected_genotype_frequencies": [
+        0.25,
+        0.5,
+        0.25
+      ],
+      "expected_variance_frequency": 0.00125,
+      "fitness_aa_Aa_AA": [
+        1.0,
+        1,
+        1.0
+      ],
+      "founders_aa_Aa_AA": [
+        25,
+        50,
+        25
+      ],
+      "initial_frequency": 0.5,
+      "mean_frequency_standard_error": 0.0011048543456039805,
+      "observed_mean_frequency": 0.500986328125,
+      "observed_mean_genotype_frequencies": [
+        0.250732421875,
+        0.4965625,
+        0.252705078125
+      ],
+      "observed_variance_frequency": 0.0012443829996028842,
+      "seed": 202611121,
+      "strength": 0.8
+    },
+    "neutral_rare_A": {
+      "expected_frequency": 0.1,
+      "expected_genotype_frequencies": [
+        0.81,
+        0.18000000000000002,
+        0.010000000000000002
+      ],
+      "expected_variance_frequency": 0.00045000000000000004,
+      "fitness_aa_Aa_AA": [
+        1.0,
+        1,
+        1.0
+      ],
+      "founders_aa_Aa_AA": [
+        81,
+        18,
+        1
+      ],
+      "initial_frequency": 0.1,
+      "mean_frequency_standard_error": 0.0006629126073623883,
+      "observed_mean_frequency": 0.100771484375,
+      "observed_mean_genotype_frequencies": [
+        0.80841796875,
+        0.18162109375,
+        0.0099609375
+      ],
+      "observed_variance_frequency": 0.0004608411801991691,
+      "seed": 202611123,
+      "strength": 0
+    },
+    "rare_A": {
+      "expected_frequency": 0.21803278688524597,
+      "expected_genotype_frequencies": [
+        0.6114727223864551,
+        0.3409889814565978,
+        0.04753829615694709
+      ],
+      "expected_variance_frequency": 0.0008524724536414944,
+      "fitness_aa_Aa_AA": [
+        0.3599999999999999,
+        1,
+        1.6400000000000001
+      ],
+      "founders_aa_Aa_AA": [
+        81,
+        18,
+        1
+      ],
+      "initial_frequency": 0.1,
+      "mean_frequency_standard_error": 0.0009124103410797534,
+      "observed_mean_frequency": 0.2187744140625,
+      "observed_mean_genotype_frequencies": [
+        0.6101953125,
+        0.342060546875,
+        0.047744140625
+      ],
+      "observed_variance_frequency": 0.0008237897259515518,
+      "seed": 202611120,
+      "strength": 0.8
+    }
+  }
+}
