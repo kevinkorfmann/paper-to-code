@@ -1,0 +1,40 @@
+{
+  "discarded_key_read": 0.0,
+  "environment": "CPython 3.14.5; standard library; deterministic, no seed",
+  "orthogonal_key_collision": {
+    "compact_reads": [
+      -0.75,
+      -1.0
+    ],
+    "dense_reads": [
+      1.0,
+      -1.0
+    ]
+  },
+  "single_write": {
+    "cap_2": {
+      "effective_write": 0.72,
+      "gamma": 2.0,
+      "rho": 0.36,
+      "same_key_read": 0.72
+    },
+    "compensated": {
+      "effective_write": 1.0,
+      "gamma": 2.777777778,
+      "rho": 0.36,
+      "same_key_read": 1.0
+    },
+    "floor_half": {
+      "effective_write": 0.72,
+      "gamma": 2.0,
+      "rho": 0.36,
+      "same_key_read": 0.72
+    },
+    "uncompensated": {
+      "effective_write": 0.36,
+      "gamma": 1.0,
+      "rho": 0.36,
+      "same_key_read": 0.36
+    }
+  }
+}

@@ -240,3 +240,5 @@ finite-population transition oracle, independent tests and checked trajectories.
 - [Frequency-dependent selection without overdominance](examples/slimulations/frequency_dependence/): rare-allele advantage reverses when common, with exact conditional expectations and finite-population controls.
 
 - [Loopback depth-memory reader](examples/loopback_memory/): geometric update mass, content allocation, and replacement-versus-accumulation controls.
+
+- [SPARE compact write compensation](examples/spare_projection/): current-key write strength, subspace exactness and projection-collision controls.
