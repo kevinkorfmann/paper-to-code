@@ -244,3 +244,5 @@ finite-population transition oracle, independent tests and checked trajectories.
 - [SPARE compact write compensation](examples/spare_projection/): current-key write strength, subspace exactness and projection-collision controls.
 
 - [Migration–selection order](examples/slimulations/migration_selection_order/): reversing two clonal replacement stages can reverse the expected frequency change, with exact finite-state controls.
+
+- [dadi joint folding](examples/inference_showcase/dadi_joint_folding/): removing ancestral polarity while preserving population allele alignment, with exact tie and fixed-difference controls.

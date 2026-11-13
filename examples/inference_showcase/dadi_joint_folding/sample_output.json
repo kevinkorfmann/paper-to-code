@@ -1,0 +1,103 @@
+{
+  "panels": {
+    "fixed_differences": {
+      "dadi_joint_folded": [
+        {
+          "counts": [
+            0,
+            10
+          ],
+          "sites": 10.0
+        },
+        {
+          "counts": [
+            10,
+            0
+          ],
+          "sites": 10.0
+        }
+      ],
+      "independent_minor_counts": [
+        {
+          "counts": [
+            0,
+            0
+          ],
+          "sites": 20.0
+        }
+      ],
+      "retained_segregating_sites": 20.0
+    },
+    "opposite_minor_alleles": {
+      "dadi_joint_folded": [
+        {
+          "counts": [
+            1,
+            9
+          ],
+          "sites": 10.0
+        },
+        {
+          "counts": [
+            9,
+            1
+          ],
+          "sites": 10.0
+        }
+      ],
+      "independent_minor_counts": [
+        {
+          "counts": [
+            1,
+            1
+          ],
+          "sites": 20.0
+        }
+      ],
+      "retained_segregating_sites": 20.0
+    },
+    "same_minor_allele": {
+      "dadi_joint_folded": [
+        {
+          "counts": [
+            1,
+            1
+          ],
+          "sites": 20.0
+        }
+      ],
+      "independent_minor_counts": [
+        {
+          "counts": [
+            1,
+            1
+          ],
+          "sites": 20.0
+        }
+      ],
+      "retained_segregating_sites": 20.0
+    },
+    "shared_absence": {
+      "dadi_joint_folded": [],
+      "independent_minor_counts": [
+        {
+          "counts": [
+            0,
+            0
+          ],
+          "sites": 20.0
+        }
+      ],
+      "retained_segregating_sites": 0.0
+    }
+  },
+  "sample_sizes": [
+    10,
+    10
+  ],
+  "seed": null,
+  "versions": {
+    "dadi": "2.4.4",
+    "numpy": "2.5.4"
+  }
+}
