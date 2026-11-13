@@ -1,0 +1,57 @@
+// Original two-stage clonal Wright-Fisher migration/selection experiment.
+initialize() {
+    if (!exists("N")) defineConstant("N",100);
+    if (!exists("K")) defineConstant("K",50);
+    if (!exists("M")) defineConstant("M",0.3);
+    if (!exists("W")) defineConstant("W",2.0);
+    if (!exists("ORDER")) defineConstant("ORDER",0); // 0: selection then migration
+    if (!exists("REPLICATES")) defineConstant("REPLICATES",1024);
+    if (N < 2 | N > 200 | N != asInteger(N)) stop("invalid N");
+    if (K < 0 | K > N | K != asInteger(K)) stop("invalid K");
+    if (!isFinite(asFloat(M)) | M < 0 | M > 1) stop("invalid M");
+    if (!isFinite(asFloat(W)) | W < 0.1 | W > 10) stop("invalid W");
+    if (!any(ORDER == c(0,1))) stop("invalid ORDER");
+    if (REPLICATES < 1 | REPLICATES > 2048 | REPLICATES != asInteger(REPLICATES)) stop("invalid REPLICATES");
+    initializeSLiMModelType("WF");
+    initializeMutationRate(0.0);
+    initializeMutationType("m1",0.5,"f",0.0);
+    m1.convertToSubstitution=F;
+    initializeGenomicElementType("g1",m1,1.0);
+    initializeGenomicElement(g1,0,0);
+    initializeRecombinationRate(0.0);
+}
+fitnessEffect() {
+    if (individual.genome1.countOfMutationsOfType(m1)==0) return 1.0;
+    return sim.getValue("weight");
+}
+1 early() {
+    sim.setValue("weight",ifelse(ORDER==0,asFloat(W),1.0));
+    sim.addSubpop("p1",N); // Constant all-aa source. No destination feeds back.
+    p1.setCloningRate(1.0);
+    for (r in seqLen(REPLICATES)) {
+        pop=sim.addSubpop(r+2,N);
+        pop.setCloningRate(1.0);
+        pop.setMigrationRates(p1,ifelse(ORDER==0,0.0,asFloat(M)));
+    }
+}
+1 late() {
+    for (pop in sim.subpopulations[1:(size(sim.subpopulations)-1)]) {
+        if (K>0) pop.individuals[seqLen(K)].genomes.addNewDrawnMutation(m1,0);
+        catn("DATA,0,"+(pop.id-2)+","+K);
+    }
+    sim.recalculateFitness();
+}
+2:3 late() {
+    if (sum(p1.genomes.countOfMutationsOfType(m1)) != 0) stop("source changed");
+    for (pop in sim.subpopulations[1:(size(sim.subpopulations)-1)]) {
+        a=pop.individuals.genome1.countOfMutationsOfType(m1);
+        b=pop.individuals.genome2.countOfMutationsOfType(m1);
+        if (any(a!=b) | any(a>1)) stop("invalid clonal marker");
+        catn("DATA,"+(community.tick-1)+","+(pop.id-2)+","+sum(a));
+    }
+    if (community.tick==3) { sim.simulationFinished(); return; }
+    sim.setValue("weight",ifelse(ORDER==0,1.0,asFloat(W)));
+    for (pop in sim.subpopulations[1:(size(sim.subpopulations)-1)])
+        pop.setMigrationRates(p1,ifelse(ORDER==0,asFloat(M),0.0));
+    sim.recalculateFitness();
+}

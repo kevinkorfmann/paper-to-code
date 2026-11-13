@@ -242,3 +242,5 @@ finite-population transition oracle, independent tests and checked trajectories.
 - [Loopback depth-memory reader](examples/loopback_memory/): geometric update mass, content allocation, and replacement-versus-accumulation controls.
 
 - [SPARE compact write compensation](examples/spare_projection/): current-key write strength, subspace exactness and projection-collision controls.
+
+- [Migration–selection order](examples/slimulations/migration_selection_order/): reversing two clonal replacement stages can reverse the expected frequency change, with exact finite-state controls.
