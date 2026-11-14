@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-14 | Inference showcase | [dadi projection: fewer sites, preserved expected pairwise diversity](examples/inference_showcase/dadi_projection/README.md) | CPython 3.12.11 + hash-locked dadi 2.4.4 |
 | 2026-11-11 | Inference showcase | [PLINK PCA: copied markers can swap the leading axis](examples/inference_showcase/plink_pca_weighting/README.md) | CPython 3.14.5 + checksum-pinned PLINK 2 binary |
 | 2026-11-11 | **slimulations** | [Clonal genotype fixation need not be allele fixation](examples/slimulations/clonal_heterozygosity/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-11-11 | Paper to code | [Fisher–Rao attention: logit filtering and moving-score lag](examples/fisher_rao_attention/README.md) | CPython 3.14.5; standard library |

@@ -226,6 +226,8 @@ jobs:
           python -m examples.inference_showcase.dadi_size_change.demo --check-sample
           python -m unittest discover -s examples/inference_showcase/dadi_joint_folding -v
           python -m examples.inference_showcase.dadi_joint_folding.demo --check-sample
+          python -m unittest examples.inference_showcase.dadi_projection.test_demo -v
+          python -m examples.inference_showcase.dadi_projection.demo --check-sample
 
   fastdfe-gamma:
     runs-on: ubuntu-24.04

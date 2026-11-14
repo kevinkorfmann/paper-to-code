@@ -1,0 +1,136 @@
+{
+  "chromosomes_after": 4,
+  "chromosomes_before": 20,
+  "condition_on_polymorphism_then_renormalize_to_100_sites": {
+    "expected_segregating_sites": 100.0,
+    "pairwise_difference_total": 54.065775207806
+  },
+  "panels": {
+    "intermediate_only": {
+      "after": {
+        "expected_segregating_sites": 91.331269349845,
+        "pairwise_difference_total": 52.631578947368
+      },
+      "before": {
+        "expected_segregating_sites": 100.0,
+        "pairwise_difference_total": 52.631578947368
+      },
+      "input_sfs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        100,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "projected_expected_sfs_including_corners": [
+        4.334365325077,
+        24.767801857585,
+        41.795665634675,
+        24.767801857585,
+        4.334365325077
+      ]
+    },
+    "mixed": {
+      "after": {
+        "expected_segregating_sites": 34.266253869969,
+        "pairwise_difference_total": 18.526315789474
+      },
+      "before": {
+        "expected_segregating_sites": 100.0,
+        "pairwise_difference_total": 18.526315789474
+      },
+      "input_sfs": [
+        0,
+        80,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        20,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "projected_expected_sfs_including_corners": [
+        64.866873065016,
+        20.953560371517,
+        8.359133126935,
+        4.953560371517,
+        0.866873065015
+      ]
+    },
+    "singletons_only": {
+      "after": {
+        "expected_segregating_sites": 20.0,
+        "pairwise_difference_total": 10.0
+      },
+      "before": {
+        "expected_segregating_sites": 100.0,
+        "pairwise_difference_total": 10.0
+      },
+      "input_sfs": [
+        0,
+        100,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "projected_expected_sfs_including_corners": [
+        80.0,
+        20.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "seed": null,
+  "versions": {
+    "dadi": "2.4.4",
+    "numpy": "2.5.4",
+    "python": "3.12.11"
+  }
+}
