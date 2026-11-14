@@ -1,0 +1,368 @@
+{
+  "N": 20,
+  "python": "3.14.5",
+  "replicates": 2048,
+  "slim": "4.0.1",
+  "treatments": {
+    "absent": {
+      "checkpoints": {
+        "0": {
+          "expected": {
+            "fixed": 0.0,
+            "mean": 0.0,
+            "segregating": 0.0,
+            "segregating_mean": null,
+            "survival": 0.0,
+            "survivor_mean": null,
+            "variance": 0
+          },
+          "mean_standard_error": 0.0,
+          "observed": {
+            "fixed": 0,
+            "mean": 0.0,
+            "replicates": 2048,
+            "segregating": 0,
+            "segregating_mean": null,
+            "survivor_mean": null,
+            "survivors": 0
+          }
+        },
+        "15": {
+          "expected": {
+            "fixed": 0.0,
+            "mean": 0.0,
+            "segregating": 0.0,
+            "segregating_mean": null,
+            "survival": 0.0,
+            "survivor_mean": null,
+            "variance": 0
+          },
+          "mean_standard_error": 0.0,
+          "observed": {
+            "fixed": 0,
+            "mean": 0.0,
+            "replicates": 2048,
+            "segregating": 0,
+            "segregating_mean": null,
+            "survivor_mean": null,
+            "survivors": 0
+          }
+        },
+        "30": {
+          "expected": {
+            "fixed": 0.0,
+            "mean": 0.0,
+            "segregating": 0.0,
+            "segregating_mean": null,
+            "survival": 0.0,
+            "survivor_mean": null,
+            "variance": 0
+          },
+          "mean_standard_error": 0.0,
+          "observed": {
+            "fixed": 0,
+            "mean": 0.0,
+            "replicates": 2048,
+            "segregating": 0,
+            "segregating_mean": null,
+            "survivor_mean": null,
+            "survivors": 0
+          }
+        },
+        "5": {
+          "expected": {
+            "fixed": 0.0,
+            "mean": 0.0,
+            "segregating": 0.0,
+            "segregating_mean": null,
+            "survival": 0.0,
+            "survivor_mean": null,
+            "variance": 0
+          },
+          "mean_standard_error": 0.0,
+          "observed": {
+            "fixed": 0,
+            "mean": 0.0,
+            "replicates": 2048,
+            "segregating": 0,
+            "segregating_mean": null,
+            "survivor_mean": null,
+            "survivors": 0
+          }
+        }
+      },
+      "initial_count": 0,
+      "seed": 202611142
+    },
+    "common": {
+      "checkpoints": {
+        "0": {
+          "expected": {
+            "fixed": 0.0,
+            "mean": 0.9,
+            "segregating": 1.0,
+            "segregating_mean": 0.9,
+            "survival": 1.0,
+            "survivor_mean": 0.9,
+            "variance": 0
+          },
+          "mean_standard_error": 0.0,
+          "observed": {
+            "fixed": 0,
+            "mean": 0.9,
+            "replicates": 2048,
+            "segregating": 2048,
+            "segregating_mean": 0.9,
+            "survivor_mean": 0.9,
+            "survivors": 2048
+          }
+        },
+        "15": {
+          "expected": {
+            "fixed": 0.7525891135,
+            "mean": 0.9,
+            "segregating": 0.2377860801,
+            "segregating_mean": 0.6199306809,
+            "survival": 0.9903751935,
+            "survivor_mean": 0.9087465093,
+            "variance": 0.0483037893
+          },
+          "mean_standard_error": 0.004856525,
+          "observed": {
+            "fixed": 1543,
+            "mean": 0.8957275391,
+            "replicates": 2048,
+            "segregating": 470,
+            "segregating_mean": 0.620106383,
+            "survivor_mean": 0.91130154,
+            "survivors": 2013
+          }
+        },
+        "30": {
+          "expected": {
+            "fixed": 0.8431456866,
+            "mean": 0.9,
+            "segregating": 0.1082766432,
+            "segregating_mean": 0.5250838199,
+            "survival": 0.9514223298,
+            "survivor_mean": 0.9459521517,
+            "variance": 0.0706825112
+          },
+          "mean_standard_error": 0.0058747719,
+          "observed": {
+            "fixed": 1729,
+            "mean": 0.9004150391,
+            "replicates": 2048,
+            "segregating": 218,
+            "segregating_mean": 0.5277522936,
+            "survivor_mean": 0.9471237802,
+            "survivors": 1947
+          }
+        },
+        "5": {
+          "expected": {
+            "fixed": 0.5069676077,
+            "mean": 0.9,
+            "segregating": 0.4930186787,
+            "segregating_mean": 0.7971957437,
+            "survival": 0.9999862865,
+            "survivor_mean": 0.9000123423,
+            "variance": 0.0203597156
+          },
+          "mean_standard_error": 0.0031529775,
+          "observed": {
+            "fixed": 1054,
+            "mean": 0.9004394531,
+            "replicates": 2048,
+            "segregating": 994,
+            "segregating_mean": 0.7948692153,
+            "survivor_mean": 0.9004394531,
+            "survivors": 2048
+          }
+        }
+      },
+      "initial_count": 18,
+      "seed": 202611141
+    },
+    "fixed": {
+      "checkpoints": {
+        "0": {
+          "expected": {
+            "fixed": 1.0,
+            "mean": 1.0,
+            "segregating": 0.0,
+            "segregating_mean": null,
+            "survival": 1.0,
+            "survivor_mean": 1.0,
+            "variance": 0
+          },
+          "mean_standard_error": 0.0,
+          "observed": {
+            "fixed": 2048,
+            "mean": 1.0,
+            "replicates": 2048,
+            "segregating": 0,
+            "segregating_mean": null,
+            "survivor_mean": 1.0,
+            "survivors": 2048
+          }
+        },
+        "15": {
+          "expected": {
+            "fixed": 1.0,
+            "mean": 1.0,
+            "segregating": 0.0,
+            "segregating_mean": null,
+            "survival": 1.0,
+            "survivor_mean": 1.0,
+            "variance": 0
+          },
+          "mean_standard_error": 0.0,
+          "observed": {
+            "fixed": 2048,
+            "mean": 1.0,
+            "replicates": 2048,
+            "segregating": 0,
+            "segregating_mean": null,
+            "survivor_mean": 1.0,
+            "survivors": 2048
+          }
+        },
+        "30": {
+          "expected": {
+            "fixed": 1.0,
+            "mean": 1.0,
+            "segregating": 0.0,
+            "segregating_mean": null,
+            "survival": 1.0,
+            "survivor_mean": 1.0,
+            "variance": 0
+          },
+          "mean_standard_error": 0.0,
+          "observed": {
+            "fixed": 2048,
+            "mean": 1.0,
+            "replicates": 2048,
+            "segregating": 0,
+            "segregating_mean": null,
+            "survivor_mean": 1.0,
+            "survivors": 2048
+          }
+        },
+        "5": {
+          "expected": {
+            "fixed": 1.0,
+            "mean": 1.0,
+            "segregating": 0.0,
+            "segregating_mean": null,
+            "survival": 1.0,
+            "survivor_mean": 1.0,
+            "variance": 0
+          },
+          "mean_standard_error": 0.0,
+          "observed": {
+            "fixed": 2048,
+            "mean": 1.0,
+            "replicates": 2048,
+            "segregating": 0,
+            "segregating_mean": null,
+            "survivor_mean": 1.0,
+            "survivors": 2048
+          }
+        }
+      },
+      "initial_count": 20,
+      "seed": 202611143
+    },
+    "rare": {
+      "checkpoints": {
+        "0": {
+          "expected": {
+            "fixed": 0.0,
+            "mean": 0.1,
+            "segregating": 1.0,
+            "segregating_mean": 0.1,
+            "survival": 1.0,
+            "survivor_mean": 0.1,
+            "variance": 0
+          },
+          "mean_standard_error": 0.0,
+          "observed": {
+            "fixed": 0,
+            "mean": 0.1,
+            "replicates": 2048,
+            "segregating": 2048,
+            "segregating_mean": 0.1,
+            "survivor_mean": 0.1,
+            "survivors": 2048
+          }
+        },
+        "15": {
+          "expected": {
+            "fixed": 0.0096248065,
+            "mean": 0.1,
+            "segregating": 0.2377860801,
+            "segregating_mean": 0.3800693191,
+            "survival": 0.2474108865,
+            "survivor_mean": 0.404185933,
+            "variance": 0.0483037893
+          },
+          "mean_standard_error": 0.004856525,
+          "observed": {
+            "fixed": 11,
+            "mean": 0.0977783203,
+            "replicates": 2048,
+            "segregating": 494,
+            "segregating_mean": 0.383097166,
+            "survivor_mean": 0.3965346535,
+            "survivors": 505
+          }
+        },
+        "30": {
+          "expected": {
+            "fixed": 0.0485776702,
+            "mean": 0.1,
+            "segregating": 0.1082766432,
+            "segregating_mean": 0.4749161801,
+            "survival": 0.1568543134,
+            "survivor_mean": 0.6375342688,
+            "variance": 0.0706825112
+          },
+          "mean_standard_error": 0.0058747719,
+          "observed": {
+            "fixed": 100,
+            "mean": 0.0965576172,
+            "replicates": 2048,
+            "segregating": 229,
+            "segregating_mean": 0.4268558952,
+            "survivor_mean": 0.6010638298,
+            "survivors": 329
+          }
+        },
+        "5": {
+          "expected": {
+            "fixed": 1.37135e-05,
+            "mean": 0.1,
+            "segregating": 0.4930186787,
+            "segregating_mean": 0.2028042563,
+            "survival": 0.4930323923,
+            "survivor_mean": 0.20282643,
+            "variance": 0.0203597156
+          },
+          "mean_standard_error": 0.0031529775,
+          "observed": {
+            "fixed": 0,
+            "mean": 0.0999511719,
+            "replicates": 2048,
+            "segregating": 1029,
+            "segregating_mean": 0.198931001,
+            "survivor_mean": 0.198931001,
+            "survivors": 1029
+          }
+        }
+      },
+      "initial_count": 2,
+      "seed": 202611140
+    }
+  }
+}

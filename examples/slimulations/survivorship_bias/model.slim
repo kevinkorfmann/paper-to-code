@@ -1,0 +1,36 @@
+// Original clonal neutral Wright-Fisher experiment; all replicates retained.
+initialize() {
+    if (!exists("N")) defineConstant("N",20);
+    if (!exists("K")) defineConstant("K",2);
+    if (!exists("G")) defineConstant("G",30);
+    if (!exists("R")) defineConstant("R",2048);
+    if (N<2 | N>100 | N!=asInteger(N)) stop("invalid N");
+    if (K<0 | K>N | K!=asInteger(K)) stop("invalid K");
+    if (G<1 | G>100 | G!=asInteger(G)) stop("invalid G");
+    if (R<1 | R>4096 | R!=asInteger(R)) stop("invalid R");
+    initializeSLiMModelType("WF");
+    initializeMutationRate(0.0);
+    initializeMutationType("m1",0.5,"f",0.0);
+    m1.convertToSubstitution=F;
+    initializeGenomicElementType("g1",m1,1.0);
+    initializeGenomicElement(g1,0,0);
+    initializeRecombinationRate(0.0);
+}
+1 early() {
+    for (r in seqLen(R)) { pop=sim.addSubpop(r+1,N); pop.setCloningRate(1.0); }
+}
+1 late() {
+    for (pop in sim.subpopulations) {
+        if (K>0) pop.individuals[seqLen(K)].genomes.addNewDrawnMutation(m1,0);
+        catn("DATA,0,"+(pop.id-1)+","+K);
+    }
+}
+2:101 late() {
+    for (pop in sim.subpopulations) {
+        a=pop.individuals.genome1.countOfMutationsOfType(m1);
+        b=pop.individuals.genome2.countOfMutationsOfType(m1);
+        if (any(a!=b) | any(a>1)) stop("invalid marker");
+        catn("DATA,"+(community.tick-1)+","+(pop.id-1)+","+sum(a));
+    }
+    if (community.tick==G+1) sim.simulationFinished();
+}

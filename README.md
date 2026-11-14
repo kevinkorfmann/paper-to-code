@@ -249,3 +249,9 @@ finite-population transition oracle, independent tests and checked trajectories.
 - [dadi joint folding](examples/inference_showcase/dadi_joint_folding/): removing ancestral polarity while preserving population allele alignment, with exact tie and fixed-difference controls.
 
 - [DecoupAttn centroid compensation](examples/decoupled_compensation/): exact-block replacement, cluster multiplicities and residual-cancellation controls.
+
+### Neutral survivorship bias
+
+[SLiM neutral survivors](examples/slimulations/survivorship_bias): excluding extinct
+alleles raises conditional mean frequency without selection. Exact finite-state
+predictions, boundary controls and explicit survivor/segregating distinction.
