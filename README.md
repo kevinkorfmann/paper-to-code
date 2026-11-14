@@ -246,3 +246,5 @@ finite-population transition oracle, independent tests and checked trajectories.
 - [Migration–selection order](examples/slimulations/migration_selection_order/): reversing two clonal replacement stages can reverse the expected frequency change, with exact finite-state controls.
 
 - [dadi joint folding](examples/inference_showcase/dadi_joint_folding/): removing ancestral polarity while preserving population allele alignment, with exact tie and fixed-difference controls.
+
+- [DecoupAttn centroid compensation](examples/decoupled_compensation/): exact-block replacement, cluster multiplicities and residual-cancellation controls.

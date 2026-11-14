@@ -1,0 +1,38 @@
+{
+  "cancellation": {
+    "absolute_errors": [
+      0.0,
+      0.5,
+      0.0
+    ],
+    "dense": 1.0,
+    "exact_token_counts": [
+      0,
+      1,
+      2
+    ],
+    "outputs": [
+      1.0,
+      0.5,
+      1.0
+    ]
+  },
+  "cluster_multiplicity": {
+    "correct": 3.0,
+    "equal_cluster_average_wrong": 4.5
+  },
+  "environment": "CPython 3.14.5; standard library; deterministic; no seed",
+  "key_value_spread": {
+    "exact_token_counts": [
+      0,
+      1,
+      2
+    ],
+    "outputs": [
+      0.0,
+      -0.268941421,
+      0.761594156
+    ]
+  },
+  "scope": "CENTROID only; supplied scalar inputs/clusters; no calibration, FULL corrections, GPU or model claims"
+}
