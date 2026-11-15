@@ -163,6 +163,8 @@ jobs:
           python -m examples.slimulations.migration_selection_order.demo --check-sample
           python -m unittest examples.slimulations.survivorship_bias.test_demo -v
           python -m examples.slimulations.survivorship_bias.demo --check-sample
+          python -m unittest examples.slimulations.temporal_sampling.test_demo -v
+          python -m examples.slimulations.temporal_sampling.demo --check-sample
 
   inference-showcase:
     runs-on: ubuntu-24.04

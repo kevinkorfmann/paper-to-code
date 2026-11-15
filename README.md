@@ -257,3 +257,7 @@ alleles raises conditional mean frequency without selection. Exact finite-state
 predictions, boundary controls and explicit survivor/segregating distinction.
 
 - [Saturated counting coordinates](examples/counting_geometry/): bounded prototype coefficients, shrinking margins and fixed-point collision controls.
+
+### Temporal sampling noise (SLiM)
+
+[Temporal sampling](examples/slimulations/temporal_sampling) separates neutral census drift from additional observation-sampling variance using exact binomial/hypergeometric controls and nondestructive samples.

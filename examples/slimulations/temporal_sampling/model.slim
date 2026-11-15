@@ -1,0 +1,35 @@
+// Original neutral clonal WF experiment with nondestructive observation samples.
+initialize() {
+    if (!exists("N")) defineConstant("N",40);
+    if (!exists("K")) defineConstant("K",20);
+    if (!exists("S")) defineConstant("S",5);
+    if (!exists("R")) defineConstant("R",4096);
+    if (N<2 | N>100 | N!=asInteger(N)) stop("invalid N");
+    if (K<0 | K>N | K!=asInteger(K)) stop("invalid K");
+    if (S<1 | S>N | S!=asInteger(S)) stop("invalid S");
+    if (R<1 | R>4096 | R!=asInteger(R)) stop("invalid R");
+    initializeSLiMModelType("WF");
+    initializeMutationRate(0.0);
+    initializeMutationType("m1",0.5,"f",0.0);
+    m1.convertToSubstitution=F;
+    initializeGenomicElementType("g1",m1,1.0);
+    initializeGenomicElement(g1,0,0);
+    initializeRecombinationRate(0.0);
+}
+1 early() {
+    for (r in seqLen(R)) { pop=sim.addSubpop(r+1,N); pop.setCloningRate(1.0); }
+}
+1 late() {
+    for (pop in sim.subpopulations)
+        if (K>0) pop.individuals[seqLen(K)].genomes.addNewDrawnMutation(m1,0);
+}
+1:2 late() {
+    for (pop in sim.subpopulations) {
+        a=pop.individuals.genome1.countOfMutationsOfType(m1);
+        b=pop.individuals.genome2.countOfMutationsOfType(m1);
+        if (any(a!=b) | any(a>1)) stop("invalid marker");
+        sampled=sample(pop.individuals,S,replace=F);
+        catn("DATA,"+(community.tick-1)+","+(pop.id-1)+","+sum(a)+","+sum(sampled.genome1.countOfMutationsOfType(m1)));
+    }
+    if (community.tick==2) sim.simulationFinished();
+}
