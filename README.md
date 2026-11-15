@@ -261,3 +261,5 @@ predictions, boundary controls and explicit survivor/segregating distinction.
 ### Temporal sampling noise (SLiM)
 
 [Temporal sampling](examples/slimulations/temporal_sampling) separates neutral census drift from additional observation-sampling variance using exact binomial/hypergeometric controls and nondestructive samples.
+
+- [Between-population differences and net divergence](examples/inference_showcase/net_divergence/): shared variation, finite-sample negative net estimates, and exact independent-sampling controls.

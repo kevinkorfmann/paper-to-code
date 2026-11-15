@@ -1,0 +1,46 @@
+{
+  "independent_binomial_expectations": {
+    "different_frequency": {
+      "dxy": "17/25",
+      "net": "9/25",
+      "pi_a": "8/25",
+      "pi_b": "8/25"
+    },
+    "same_frequency": {
+      "dxy": "1/2",
+      "net": "0",
+      "pi_a": "1/2",
+      "pi_b": "1/2"
+    }
+  },
+  "numpy": "2.3.5",
+  "per_site_panels": {
+    "fixed_difference": {
+      "dxy": 1.0,
+      "net": 1.0,
+      "pi_a": 0.0,
+      "pi_b": 0.0
+    },
+    "identical_counts": {
+      "dxy": 0.5,
+      "net": -0.055555556,
+      "pi_a": 0.555555556,
+      "pi_b": 0.555555556
+    },
+    "shared_invariant": {
+      "dxy": 0.0,
+      "net": 0.0,
+      "pi_a": 0.0,
+      "pi_b": 0.0
+    },
+    "unequal_counts": {
+      "dxy": 0.68,
+      "net": 0.324444444,
+      "pi_a": 0.355555556,
+      "pi_b": 0.355555556
+    }
+  },
+  "python": "3.12.11",
+  "randomness": "none; exact constructed counts",
+  "scikit_allel": "1.3.13"
+}
