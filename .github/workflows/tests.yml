@@ -45,8 +45,11 @@ jobs:
           python -m unittest discover -s examples/loopback_memory -t . -v
           python -m unittest discover -s examples/spare_projection -t . -v
           python -m unittest discover -s examples/decoupled_compensation -t . -v
+          python -m unittest discover -s examples/counting_geometry -t . -v
       - name: Reproduce the checked output byte for byte
         run: |
+          python -m examples.counting_geometry.demo > /tmp/counting-output.json
+          diff -u examples/counting_geometry/sample_output.json /tmp/counting-output.json
           python -m examples.differential_attention.demo > /tmp/attention-output.json
           diff -u examples/differential_attention/sample_output.json /tmp/attention-output.json
           python -m examples.gated_attention.demo > /tmp/gated-output.json

@@ -1,0 +1,68 @@
+{
+  "collision": {
+    "counts": [
+      255,
+      256
+    ],
+    "grid_coordinates": [
+      0.9921875,
+      0.9921875
+    ],
+    "predictions": [
+      254,
+      254
+    ]
+  },
+  "distractor_collision": {
+    "coordinates": [
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "inputs": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        2
+      ]
+    ]
+  },
+  "outside_class_range": {
+    "prediction": 256,
+    "true_count": 300
+  },
+  "regression": {
+    "error": 0.496124031,
+    "gamma": 8192,
+    "limit": 64,
+    "prediction": 63.503875969
+  },
+  "rows": [
+    {
+      "classes": 17,
+      "float_correct": 17,
+      "grid_8bit_correct": 17,
+      "limit": 16,
+      "max_head_weight": 1.777777778,
+      "min_exact_formula_margin": 4.2718612e-05
+    },
+    {
+      "classes": 65,
+      "float_correct": 65,
+      "grid_8bit_correct": 36,
+      "limit": 64,
+      "max_head_weight": 1.939393939,
+      "min_exact_formula_margin": 2.17343e-07
+    },
+    {
+      "classes": 257,
+      "float_correct": 257,
+      "grid_8bit_correct": 42,
+      "limit": 256,
+      "max_head_weight": 1.984496124,
+      "min_exact_formula_margin": 9.1e-10
+    }
+  ]
+}

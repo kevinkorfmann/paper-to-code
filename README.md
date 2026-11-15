@@ -255,3 +255,5 @@ finite-population transition oracle, independent tests and checked trajectories.
 [SLiM neutral survivors](examples/slimulations/survivorship_bias): excluding extinct
 alleles raises conditional mean frequency without selection. Exact finite-state
 predictions, boundary controls and explicit survivor/segregating distinction.
+
+- [Saturated counting coordinates](examples/counting_geometry/): bounded prototype coefficients, shrinking margins and fixed-point collision controls.
