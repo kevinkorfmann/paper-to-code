@@ -1,0 +1,144 @@
+{
+  "input": {
+    "edges": [
+      [
+        0.0,
+        100.0,
+        6,
+        0
+      ],
+      [
+        0.0,
+        100.0,
+        6,
+        1
+      ],
+      [
+        0.0,
+        100.0,
+        6,
+        2
+      ],
+      [
+        0.0,
+        100.0,
+        6,
+        3
+      ],
+      [
+        0.0,
+        100.0,
+        6,
+        4
+      ],
+      [
+        0.0,
+        100.0,
+        7,
+        5
+      ],
+      [
+        0.0,
+        100.0,
+        7,
+        6
+      ]
+    ],
+    "focal": 0,
+    "node_times": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      2.0
+    ],
+    "sample_nodes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "sequence_length": 100.0,
+    "time_units": "arbitrary"
+  },
+  "interpretation": "Conditional reference-neighbour fractions, not admixture proportions or inferred history.",
+  "seed": null,
+  "single_tree": {
+    "one_near_A_one_near_B": {
+      "gnn_A_B": [
+        0.5,
+        0.5
+      ],
+      "reference_groups": [
+        [
+          1
+        ],
+        [
+          4,
+          5
+        ]
+      ]
+    },
+    "only_distant_B": {
+      "gnn_A_B": [
+        1.0,
+        0.0
+      ],
+      "reference_groups": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          5
+        ]
+      ]
+    },
+    "three_near_A_one_near_B": {
+      "gnn_A_B": [
+        0.75,
+        0.25
+      ],
+      "reference_groups": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ]
+    }
+  },
+  "two_tree_control": {
+    "breakpoint": 75,
+    "description": "Second tree pairs focal 0 with B reference 4; spans are 75 and 25.",
+    "gnn_A_B": {
+      "one_near_A_one_near_B": [
+        0.375,
+        0.625
+      ],
+      "only_distant_B": [
+        1.0,
+        0.0
+      ],
+      "three_near_A_one_near_B": [
+        0.5625,
+        0.4375
+      ]
+    }
+  },
+  "versions": {
+    "numpy": "2.5.4",
+    "python": "3.12.11",
+    "tskit": "1.0.3"
+  }
+}
