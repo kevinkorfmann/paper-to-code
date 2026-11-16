@@ -46,8 +46,11 @@ jobs:
           python -m unittest discover -s examples/spare_projection -t . -v
           python -m unittest discover -s examples/decoupled_compensation -t . -v
           python -m unittest discover -s examples/counting_geometry -t . -v
+          python -m unittest discover -s examples/bias_pruning -t . -v
       - name: Reproduce the checked output byte for byte
         run: |
+          python -m examples.bias_pruning.demo > /tmp/bias-output.json
+          diff -u examples/bias_pruning/sample_output.json /tmp/bias-output.json
           python -m examples.counting_geometry.demo > /tmp/counting-output.json
           diff -u examples/counting_geometry/sample_output.json /tmp/counting-output.json
           python -m examples.differential_attention.demo > /tmp/attention-output.json

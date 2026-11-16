@@ -1,0 +1,45 @@
+{
+  "all_keys_max_error": 0.0,
+  "common_query": {
+    "dense_output": 0.96402758,
+    "pruned_output": 1.0
+  },
+  "constant_values_max_error": 0.0,
+  "inputs": {
+    "bias": [
+      4.0,
+      0.0
+    ],
+    "budget": 1,
+    "keys": [
+      [
+        1.0
+      ],
+      [
+        -1.0
+      ]
+    ],
+    "query_counts": {
+      "-8": 1,
+      "0": 99
+    },
+    "values": [
+      [
+        1.0
+      ],
+      [
+        -1.0
+      ]
+    ]
+  },
+  "kept_indices": [
+    0
+  ],
+  "max_absolute_output_error": 1.999987712,
+  "mean_retained_mass": 0.972193714,
+  "min_retained_mass": 6.144e-06,
+  "rare_query": {
+    "dense_output": -0.999987712,
+    "pruned_output": 1.0
+  }
+}
