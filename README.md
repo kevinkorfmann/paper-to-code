@@ -266,3 +266,5 @@ predictions, boundary controls and explicit survivor/segregating distinction.
 - [Between-population differences and net divergence](examples/inference_showcase/net_divergence/): shared variation, finite-sample negative net estimates, and exact independent-sampling controls.
 
 - [Bias-pruned attention](examples/bias_pruning/): high average retained mass can conceal a large rare-query error, with independent numerical controls.
+
+- [Semantic-block head votes](examples/semantic_block_votes/): per-head softmax aggregation, whole-block budgets and fixed-index causal controls.

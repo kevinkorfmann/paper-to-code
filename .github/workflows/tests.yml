@@ -47,8 +47,11 @@ jobs:
           python -m unittest discover -s examples/decoupled_compensation -t . -v
           python -m unittest discover -s examples/counting_geometry -t . -v
           python -m unittest discover -s examples/bias_pruning -t . -v
+          python -m unittest discover -s examples/semantic_block_votes -t . -v
       - name: Reproduce the checked output byte for byte
         run: |
+          python -m examples.semantic_block_votes.demo > /tmp/semantic-output.json
+          diff -u examples/semantic_block_votes/sample_output.json /tmp/semantic-output.json
           python -m examples.bias_pruning.demo > /tmp/bias-output.json
           diff -u examples/bias_pruning/sample_output.json /tmp/bias-output.json
           python -m examples.counting_geometry.demo > /tmp/counting-output.json

@@ -1,0 +1,52 @@
+{
+  "actual_historical_tokens": 2,
+  "all_keys_max_error": 0.0,
+  "alternative_selected_cluster": 2,
+  "causal_recent_control": {
+    "dense_positions": [
+      4
+    ],
+    "query_index": 4,
+    "selected_indices": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "visible_block_sizes": [
+      2,
+      1,
+      1
+    ]
+  },
+  "historical_budget": 1,
+  "penalized_vote_sums": [
+    0.721281967,
+    0.721281967,
+    0.077107437
+  ],
+  "per_head_votes": [
+    [
+      0.949217359,
+      4.3094e-05,
+      0.050739547
+    ],
+    [
+      4.3094e-05,
+      0.949217359,
+      0.050739547
+    ]
+  ],
+  "selected_clusters": [
+    0
+  ],
+  "selected_indices": [
+    0,
+    3
+  ],
+  "softmax_of_summed_logits": [
+    0.01539952,
+    0.01539952,
+    0.96920096
+  ]
+}
