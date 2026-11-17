@@ -1,0 +1,131 @@
+{
+  "different_shape_control": {
+    "active_bins": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "fitted_means": [
+      31.25,
+      31.25,
+      31.25,
+      31.25
+    ],
+    "profile_poisson_log_likelihood": -28.268875594,
+    "scale": 31.25,
+    "unscaled_poisson_log_likelihood": -337.521297617
+  },
+  "input": {
+    "counts_bins_1_to_4": [
+      60,
+      30,
+      20,
+      15
+    ],
+    "description": "Original exact-count construction proportional to 1/i; not a random sample or empirical data. Ancestral polarity is assumed known.",
+    "sample_size_haploid": 5
+  },
+  "interpretation": "Only a conditional SFS scale is fitted. Model shape is supplied, not estimated.",
+  "scale_controls": {
+    "0.1": {
+      "active_bins": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "fitted_means": [
+        60.0,
+        30.0,
+        20.0,
+        15.0
+      ],
+      "profile_poisson_log_likelihood": -10.289303946,
+      "scale": 600.0,
+      "unscaled_poisson_log_likelihood": -685.113844182
+    },
+    "1": {
+      "active_bins": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "fitted_means": [
+        60.0,
+        30.0,
+        20.0,
+        15.0
+      ],
+      "profile_poisson_log_likelihood": -10.289303946,
+      "scale": 60.0,
+      "unscaled_poisson_log_likelihood": -399.165707557
+    },
+    "10": {
+      "active_bins": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "fitted_means": [
+        60.0,
+        30.0,
+        20.0,
+        15.0
+      ],
+      "profile_poisson_log_likelihood": -10.289303946,
+      "scale": 6.0,
+      "unscaled_poisson_log_likelihood": -130.092570933
+    }
+  },
+  "seed": null,
+  "singleton_sensitivity": {
+    "all_bins": {
+      "active_bins": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "fitted_means": [
+        88.8,
+        44.4,
+        29.6,
+        22.2
+      ],
+      "profile_poisson_log_likelihood": -21.285058532,
+      "scale": 88.8,
+      "unscaled_poisson_log_likelihood": -668.349922115
+    },
+    "altered_counts_bins_1_to_4": [
+      120,
+      30,
+      20,
+      15
+    ],
+    "exclude_singletons": {
+      "active_bins": [
+        2,
+        3,
+        4
+      ],
+      "fitted_means": [
+        null,
+        30.0,
+        20.0,
+        15.0
+      ],
+      "profile_poisson_log_likelihood": -7.321804256,
+      "scale": 60.0,
+      "unscaled_poisson_log_likelihood": -209.537534134
+    },
+    "warning": "Different masks change the data and target; do not compare their absolute scores as model evidence."
+  },
+  "versions": {
+    "dadi": "2.4.4",
+    "numpy": "2.5.4",
+    "python": "3.12.11"
+  }
+}

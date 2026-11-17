@@ -1,0 +1,5 @@
+{
+  "sample_size_haploid": 5,
+  "counts_bins_1_to_4": [60, 30, 20, 15],
+  "description": "Original exact-count construction proportional to 1/i; not a random sample or empirical data. Ancestral polarity is assumed known."
+}
