@@ -1,0 +1,63 @@
+{
+  "N": 40,
+  "python": "3.14.5",
+  "replicates": 4096,
+  "slim": "4.0.1",
+  "ticks": 1,
+  "treatments": {
+    "absent": {
+      "K": 0,
+      "M": 5,
+      "expected_msd": 0.0,
+      "mean_frequency": 0.0,
+      "msd_monte_carlo_se": 0.0,
+      "observed_msd": 0.0,
+      "seed": 202611174
+    },
+    "five_replacements": {
+      "K": 20,
+      "M": 5,
+      "expected_msd": 0.0014823717948717948,
+      "mean_frequency": 0.500103759765625,
+      "msd_monte_carlo_se": 3.122483565522185e-05,
+      "observed_msd": 0.0014665222167968752,
+      "seed": 202611171
+    },
+    "fixed": {
+      "K": 40,
+      "M": 5,
+      "expected_msd": 0.0,
+      "mean_frequency": 1.0,
+      "msd_monte_carlo_se": 0.0,
+      "observed_msd": 0.0,
+      "seed": 202611175
+    },
+    "full_replacement": {
+      "K": 20,
+      "M": 40,
+      "expected_msd": 0.00625,
+      "mean_frequency": 0.500860595703125,
+      "msd_monte_carlo_se": 0.00013636953167743107,
+      "observed_msd": 0.006206512451171875,
+      "seed": 202611172
+    },
+    "no_replacement": {
+      "K": 20,
+      "M": 0,
+      "expected_msd": 0.0,
+      "mean_frequency": 0.5,
+      "msd_monte_carlo_se": 0.0,
+      "observed_msd": 0.0,
+      "seed": 202611173
+    },
+    "one_replacement": {
+      "K": 20,
+      "M": 1,
+      "expected_msd": 0.0003125,
+      "mean_frequency": 0.50010986328125,
+      "msd_monte_carlo_se": 4.882812500000001e-06,
+      "observed_msd": 0.00031585693359375004,
+      "seed": 202611170
+    }
+  }
+}

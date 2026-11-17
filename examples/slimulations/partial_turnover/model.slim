@@ -1,0 +1,45 @@
+// Original neutral partial-turnover model: births and deaths sampled independently.
+initialize() {
+    if (!exists("N")) defineConstant("N",40);
+    if (!exists("K")) defineConstant("K",20);
+    if (!exists("M")) defineConstant("M",5);
+    if (!exists("R")) defineConstant("R",4096);
+    if (N<2 | N>100 | N!=asInteger(N)) stop("invalid N");
+    if (K<0 | K>N | K!=asInteger(K)) stop("invalid K");
+    if (M<0 | M>N | M!=asInteger(M)) stop("invalid M");
+    if (R<1 | R>4096 | R!=asInteger(R)) stop("invalid R");
+    initializeSLiMModelType("nonWF");
+    initializeMutationRate(0.0);
+    initializeMutationType("m1",0.5,"f",0.0);
+    m1.convertToSubstitution=F;
+    initializeGenomicElementType("g1",m1,1.0);
+    initializeGenomicElement(g1,0,0);
+    initializeRecombinationRate(0.0);
+}
+1 early() {
+    for (r in seqLen(R)) {
+        pop=sim.addSubpop(r+1,N);
+        if (K>0) pop.individuals[seqLen(K)].genomes.addNewDrawnMutation(m1,0);
+    }
+}
+2 reproduction() {
+    // This callback is invoked once globally, not once per individual.
+    self.active=0;
+    for (pop in sim.subpopulations) {
+        old=pop.individuals;
+        if (M>0) {
+            parents=sample(old,M,replace=T);
+            for (parent in parents) pop.addCloned(parent);
+            sample(old,M,replace=F).fitnessScaling=0.0;
+        }
+    }
+}
+1:2 late() {
+    for (pop in sim.subpopulations) {
+        a=pop.individuals.genome1.countOfMutationsOfType(m1);
+        b=pop.individuals.genome2.countOfMutationsOfType(m1);
+        if (pop.individualCount!=N | any(a!=b) | any(a>1)) stop("invalid population");
+        catn("DATA,"+(community.tick-1)+","+(pop.id-1)+","+sum(a));
+    }
+    if (community.tick==2) sim.simulationFinished();
+}
