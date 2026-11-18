@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-18 | Paper to code | [Bilateral buckets: early versus recent interference](examples/bilateral_buckets/README.md) | CPython 3.14.5; standard library |
 | 2026-11-17 | Inference showcase | [dadi profile likelihood: shape versus scale](examples/inference_showcase/dadi_profile_scale/README.md) | CPython 3.12.11 + existing hash-locked dadi 2.4.4 |
 | 2026-11-17 | **slimulations** | [Partial turnover: drift per update versus per generation](examples/slimulations/partial_turnover/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-11-16 | Inference showcase | [tskit GNN reference-panel sensitivity](examples/inference_showcase/gnn_reference/README.md) | CPython 3.12.11; existing hash-locked tsinfer environment |

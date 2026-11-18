@@ -1,0 +1,71 @@
+{
+  "forward_buckets_at_14": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    [
+      8,
+      9,
+      10,
+      11
+    ],
+    [
+      12,
+      13
+    ],
+    [
+      14
+    ]
+  ],
+  "hand_selected_bucket_reads": {
+    "target_0_distractor_1": {
+      "desired": 1.0,
+      "forward": 0.0,
+      "reverse": 1.0
+    },
+    "target_14_distractor_13": {
+      "desired": 1.0,
+      "forward": 1.0,
+      "reverse": 0.0
+    },
+    "target_4_distractor_5": {
+      "desired": 1.0,
+      "forward": 0.0,
+      "reverse": 0.0
+    }
+  },
+  "note": "Synthetic oracle bucket selection, not learned retrieval or a benchmark.",
+  "reverse_buckets_at_14": [
+    [
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      4,
+      5,
+      6
+    ],
+    [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  ],
+  "reverse_states_after_1024_tokens": 11
+}
