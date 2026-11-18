@@ -1,0 +1,7 @@
+{
+  "sampled_chromosomes": 5,
+  "bin_order": "derived allele counts 1,2,3,4",
+  "supplied_shape": [120, 60, 40, 30],
+  "observed_counts": [102, 56, 44, 48],
+  "construction": "Exact mixture: 80% supplied shape plus 20% reversed shape. Deliberate integer counts, not random biological data. Construction rate is evaluation metadata, never supplied to scan."
+}

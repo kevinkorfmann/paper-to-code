@@ -272,3 +272,5 @@ predictions, boundary controls and explicit survivor/segregating distinction.
 - [Semantic-block head votes](examples/semantic_block_votes/): per-head softmax aggregation, whole-block budgets and fixed-index causal controls.
 
 - [Adult bottleneck and carrier distribution](examples/slimulations/carrier_bottleneck/): the same allele frequency can have different loss risks when survival samples whole diploids, with exact multivariate-hypergeometric controls.
+
+- [dadi ancestral-state misidentification](examples/inference_showcase/dadi_misid/): conditional error-rate fitting and information lost by folding.

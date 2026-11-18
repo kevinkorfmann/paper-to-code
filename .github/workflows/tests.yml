@@ -248,6 +248,8 @@ jobs:
           python -m unittest examples.inference_showcase.dadi_projection.test_demo -v
           python -m unittest examples.inference_showcase.dadi_profile_scale.test_demo -v
           python -m examples.inference_showcase.dadi_profile_scale.demo --check-sample
+          python -m unittest examples.inference_showcase.dadi_misid.test_demo -v
+          python -m examples.inference_showcase.dadi_misid.demo --check-sample
           python -m examples.inference_showcase.dadi_projection.demo --check-sample
 
   fastdfe-gamma:
