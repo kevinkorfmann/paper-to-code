@@ -1,0 +1,86 @@
+{
+  "population_size": 40,
+  "python_version": "3.14.5",
+  "replicates": 4096,
+  "slim_version": "4.0.1",
+  "treatments": {
+    "absent": {
+      "expected_frequency": 0.0,
+      "expected_frequency_variance": 0.0,
+      "expected_loss": 1.0,
+      "heterozygotes": 0,
+      "homozygotes": 0,
+      "loss_monte_carlo_se": 0.0,
+      "losses": 4096,
+      "mean_frequency": 0.0,
+      "observed_loss": 1.0,
+      "seed": 202611184,
+      "survivors": 5
+    },
+    "clustered": {
+      "expected_frequency": 0.1,
+      "expected_frequency_variance": 0.016153846153846154,
+      "expected_loss": 0.5729292045081519,
+      "heterozygotes": 0,
+      "homozygotes": 4,
+      "loss_monte_carlo_se": 0.007728949029969296,
+      "losses": 2327,
+      "mean_frequency": 0.1,
+      "observed_loss": 0.568115234375,
+      "seed": 202611181,
+      "survivors": 5
+    },
+    "fixed": {
+      "expected_frequency": 1.0,
+      "expected_frequency_variance": 0.0,
+      "expected_loss": 0.0,
+      "heterozygotes": 0,
+      "homozygotes": 40,
+      "loss_monte_carlo_se": 0.0,
+      "losses": 0,
+      "mean_frequency": 1.0,
+      "observed_loss": 0.0,
+      "seed": 202611185,
+      "survivors": 5
+    },
+    "mixed": {
+      "expected_frequency": 0.1,
+      "expected_frequency_variance": 0.011666666666666665,
+      "expected_loss": 0.4228763176131597,
+      "heterozygotes": 4,
+      "homozygotes": 2,
+      "loss_monte_carlo_se": 0.007719002045718734,
+      "losses": 1690,
+      "mean_frequency": 0.10043945312500001,
+      "observed_loss": 0.41259765625,
+      "seed": 202611182,
+      "survivors": 5
+    },
+    "no_bottleneck": {
+      "expected_frequency": 0.1,
+      "expected_frequency_variance": 0.0,
+      "expected_loss": 0.0,
+      "heterozygotes": 8,
+      "homozygotes": 0,
+      "loss_monte_carlo_se": 0.0,
+      "losses": 0,
+      "mean_frequency": 0.1,
+      "observed_loss": 0.0,
+      "seed": 202611183,
+      "survivors": 40
+    },
+    "spread": {
+      "expected_frequency": 0.1,
+      "expected_frequency_variance": 0.00717948717948718,
+      "expected_loss": 0.3060388323546218,
+      "heterozygotes": 8,
+      "homozygotes": 0,
+      "loss_monte_carlo_se": 0.007200719253992258,
+      "losses": 1223,
+      "mean_frequency": 0.1004638671875,
+      "observed_loss": 0.298583984375,
+      "seed": 202611180,
+      "survivors": 5
+    }
+  }
+}

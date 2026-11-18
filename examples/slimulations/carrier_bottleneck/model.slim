@@ -1,0 +1,44 @@
+// One neutral adult-survival bottleneck. No reproduction occurs.
+initialize() {
+    if (!exists("N")) defineConstant("N",40);
+    if (!exists("HET")) defineConstant("HET",8);
+    if (!exists("HOM")) defineConstant("HOM",0);
+    if (!exists("S")) defineConstant("S",5);
+    if (!exists("R")) defineConstant("R",4096);
+    if (N<2 | N>100 | N!=asInteger(N)) stop("invalid N");
+    if (HET<0 | HOM<0 | HET+HOM>N | HET!=asInteger(HET) | HOM!=asInteger(HOM)) stop("invalid genotype counts");
+    if (S<1 | S>N | S!=asInteger(S)) stop("invalid survivor count");
+    if (R<1 | R>4096 | R!=asInteger(R)) stop("invalid replicates");
+    initializeSLiMModelType("nonWF");
+    initializeMutationRate(0.0);
+    initializeMutationType("m1",0.5,"f",0.0);
+    m1.convertToSubstitution=F;
+    initializeGenomicElementType("g1",m1,1.0);
+    initializeGenomicElement(g1,0,0);
+    initializeRecombinationRate(0.0);
+}
+1 early() {
+    for (r in seqLen(R)) {
+        pop=sim.addSubpop(r+1,N);
+        if (HET>0) pop.individuals[seqLen(HET)].genome1.addNewDrawnMutation(m1,0);
+        if (HOM>0) pop.individuals[HET+seqLen(HOM)].genomes.addNewDrawnMutation(m1,0);
+    }
+}
+// The empty callback prevents any reproduction throughout the experiment.
+reproduction() { self.active=0; }
+2 early() {
+    for (pop in sim.subpopulations) {
+        pop.individuals.fitnessScaling=0.0;
+        sample(pop.individuals,S,replace=F).fitnessScaling=1.0;
+    }
+}
+1:2 late() {
+    for (pop in sim.subpopulations) {
+        dosage=pop.individuals.genome1.countOfMutationsOfType(m1)+pop.individuals.genome2.countOfMutationsOfType(m1);
+        target=N;
+        if (community.tick==2) target=S;
+        if (pop.individualCount!=target | any(dosage>2)) stop("invalid census");
+        catn("DATA,"+(community.tick-1)+","+(pop.id-1)+","+sum(dosage==1)+","+sum(dosage==2));
+    }
+    if (community.tick==2) sim.simulationFinished();
+}

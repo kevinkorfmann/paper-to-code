@@ -270,3 +270,5 @@ predictions, boundary controls and explicit survivor/segregating distinction.
 - [Bias-pruned attention](examples/bias_pruning/): high average retained mass can conceal a large rare-query error, with independent numerical controls.
 
 - [Semantic-block head votes](examples/semantic_block_votes/): per-head softmax aggregation, whole-block budgets and fixed-index causal controls.
+
+- [Adult bottleneck and carrier distribution](examples/slimulations/carrier_bottleneck/): the same allele frequency can have different loss risks when survival samples whole diploids, with exact multivariate-hypergeometric controls.

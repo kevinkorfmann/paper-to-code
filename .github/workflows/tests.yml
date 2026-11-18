@@ -173,6 +173,8 @@ jobs:
           python -m examples.slimulations.temporal_sampling.demo --check-sample
           python -m unittest examples.slimulations.partial_turnover.test_demo -v
           python -m examples.slimulations.partial_turnover.demo --check-sample
+          python -m unittest examples.slimulations.carrier_bottleneck.test_demo -v
+          python -m examples.slimulations.carrier_bottleneck.demo --check-sample
 
   inference-showcase:
     runs-on: ubuntu-24.04
