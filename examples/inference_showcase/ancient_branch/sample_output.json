@@ -1,0 +1,48 @@
+{
+  "mixed_group_per_tree_branch": [
+    17.0,
+    37.0
+  ],
+  "mixed_group_unnormalised_branch": 2200.0,
+  "modern_ancient_pair": {
+    "branch_divergence": 19.0,
+    "corrected_mean_tmrca": 12.5,
+    "mean_sample_age_sum": 6.0,
+    "naive_half_branch": 9.5
+  },
+  "modern_pair": {
+    "branch_divergence": 25.0,
+    "corrected_mean_tmrca": 12.5,
+    "mean_sample_age_sum": 0.0,
+    "naive_half_branch": 12.5
+  },
+  "modern_vs_mixed_group": {
+    "branch_divergence": 22.0,
+    "corrected_mean_tmrca": 12.5,
+    "mean_sample_age_sum": 3.0,
+    "naive_half_branch": 11.0
+  },
+  "note": "Exact constructed-tree summary, not a genealogy-inference run.",
+  "root_times": [
+    10,
+    20
+  ],
+  "sample_times": [
+    0,
+    0,
+    6
+  ],
+  "site_divergence_without_mutations": 0.0,
+  "time_units": "generations",
+  "tree_intervals": [
+    [
+      0,
+      75
+    ],
+    [
+      75,
+      100
+    ]
+  ],
+  "tskit_version": "1.0.3"
+}
