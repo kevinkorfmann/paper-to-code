@@ -1,0 +1,27 @@
+{
+  "cap": 1.0,
+  "cases": {
+    "orthogonal_spread": {
+      "dense": 0.666666666667,
+      "mean": 0.666666666667,
+      "mean_absolute_error": 0.0,
+      "vcm": 0.693842896486,
+      "vcm_absolute_error": 0.027176229819
+    },
+    "selection_mean_shift": {
+      "dense": 0.755271528945,
+      "mean": 0.788058442383,
+      "mean_absolute_error": 0.032786913438,
+      "vcm": 0.813676276774,
+      "vcm_absolute_error": 0.058404747829
+    },
+    "symmetric_spread": {
+      "dense": 0.692804114282,
+      "mean": 0.666666666667,
+      "mean_absolute_error": 0.026137447615,
+      "vcm": 0.693842896486,
+      "vcm_absolute_error": 0.001038782204
+    }
+  },
+  "note": "Handwritten fixed clusters and selections; no trained model or speed measurement."
+}
