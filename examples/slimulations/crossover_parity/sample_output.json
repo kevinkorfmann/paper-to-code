@@ -1,0 +1,117 @@
+{
+  "N": 20000,
+  "generations": 1,
+  "slim": "4.0.1",
+  "treatments": {
+    "many_expected": {
+      "counts": {
+        "any_breakpoint": 40000,
+        "breakpoints": 399218,
+        "gametes": 40000,
+        "odd_breakpoints": 20264,
+        "recombinant_markers": 20264
+      },
+      "distance": 100,
+      "expected": {
+        "mean_breakpoints": 10.0,
+        "probability_any": 0.9999734386011124,
+        "probability_odd": 0.4999999998981482
+      },
+      "observed": {
+        "mean_breakpoints": 9.98045,
+        "probability_any": 1.0,
+        "probability_odd": 0.5066
+      },
+      "per_gap_rate": 0.1,
+      "seed": 202611194
+    },
+    "no_recombination": {
+      "counts": {
+        "any_breakpoint": 0,
+        "breakpoints": 0,
+        "gametes": 40000,
+        "odd_breakpoints": 0,
+        "recombinant_markers": 0
+      },
+      "distance": 100,
+      "expected": {
+        "mean_breakpoints": 0.0,
+        "probability_any": 0.0,
+        "probability_odd": 0.0
+      },
+      "observed": {
+        "mean_breakpoints": 0.0,
+        "probability_any": 0.0,
+        "probability_odd": 0.0
+      },
+      "per_gap_rate": 0.0,
+      "seed": 202611190
+    },
+    "one_expected": {
+      "counts": {
+        "any_breakpoint": 25330,
+        "breakpoints": 40158,
+        "gametes": 40000,
+        "odd_breakpoints": 17220,
+        "recombinant_markers": 17220
+      },
+      "distance": 100,
+      "expected": {
+        "mean_breakpoints": 1.0,
+        "probability_any": 0.6339676587267705,
+        "probability_odd": 0.4336902220526234
+      },
+      "observed": {
+        "mean_breakpoints": 1.00395,
+        "probability_any": 0.63325,
+        "probability_odd": 0.4305
+      },
+      "per_gap_rate": 0.01,
+      "seed": 202611193
+    },
+    "one_gap": {
+      "counts": {
+        "any_breakpoint": 3979,
+        "breakpoints": 3979,
+        "gametes": 40000,
+        "odd_breakpoints": 3979,
+        "recombinant_markers": 3979
+      },
+      "distance": 1,
+      "expected": {
+        "mean_breakpoints": 0.1,
+        "probability_any": 0.1,
+        "probability_odd": 0.1
+      },
+      "observed": {
+        "mean_breakpoints": 0.099475,
+        "probability_any": 0.099475,
+        "probability_odd": 0.099475
+      },
+      "per_gap_rate": 0.1,
+      "seed": 202611191
+    },
+    "sparse": {
+      "counts": {
+        "any_breakpoint": 3809,
+        "breakpoints": 3998,
+        "gametes": 40000,
+        "odd_breakpoints": 3636,
+        "recombinant_markers": 3636
+      },
+      "distance": 100,
+      "expected": {
+        "mean_breakpoints": 0.1,
+        "probability_any": 0.09520785288629095,
+        "probability_odd": 0.0907165976557861
+      },
+      "observed": {
+        "mean_breakpoints": 0.09995,
+        "probability_any": 0.095225,
+        "probability_odd": 0.0909
+      },
+      "per_gap_rate": 0.001,
+      "seed": 202611192
+    }
+  }
+}

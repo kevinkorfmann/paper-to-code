@@ -118,6 +118,8 @@ jobs:
       - name: Run SLiM integration and analytical checks
         run: |
           slim -v
+          python -m unittest examples.slimulations.crossover_parity.test_demo -v
+          python -m examples.slimulations.crossover_parity.demo --check-sample
           python -m unittest discover -s examples/slimulations/neutral_drift -v
           python -m examples.slimulations.neutral_drift.demo > /tmp/slim-summary.json
           diff -u examples/slimulations/neutral_drift/sample_summary.json /tmp/slim-summary.json

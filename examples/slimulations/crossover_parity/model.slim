@@ -1,0 +1,40 @@
+initialize() {
+    if (!exists("N")) defineConstant("N",20000);
+    if (!exists("D")) defineConstant("D",100);
+    if (!exists("R")) defineConstant("R",0.01);
+    if (N<2 | N>40000 | N!=asInteger(N)) stop("invalid N");
+    if (D<1 | D>1000 | D!=asInteger(D)) stop("invalid D");
+    if (!isFinite(asFloat(R)) | R<0 | R>0.5) stop("invalid rate");
+    initializeSLiMModelType("WF");
+    initializeMutationRate(0.0);
+    initializeMutationType("m1",0.5,"f",0.0);
+    m1.convertToSubstitution=F;
+    initializeGenomicElementType("g1",m1,1.0);
+    initializeGenomicElement(g1,0,D);
+    initializeRecombinationRate(R);
+}
+1 early() { sim.addSubpop("p1",N); }
+1 late() {
+    a=p1.individuals[0].genome1.addNewDrawnMutation(m1,0);
+    b=p1.individuals[0].genome1.addNewDrawnMutation(m1,D);
+    p1.individuals.genome1.addMutations(c(a,b));
+    sim.setValue("events",0);
+    sim.setValue("odd",0);
+    sim.setValue("positive",0);
+    sim.setValue("draws",0);
+}
+recombination() {
+    if (community.tick==2) {
+        n=size(breakpoints);
+        sim.setValue("events",sim.getValue("events")+n);
+        sim.setValue("odd",sim.getValue("odd")+asInteger(n%2==1));
+        sim.setValue("positive",sim.getValue("positive")+asInteger(n>0));
+        sim.setValue("draws",sim.getValue("draws")+1);
+    }
+    return F;
+}
+2 late() {
+    dose=p1.genomes.countOfMutationsOfType(m1);
+    catn("DATA,"+sim.getValue("draws")+","+sim.getValue("events")+","+sim.getValue("positive")+","+sim.getValue("odd")+","+sum(dose==1));
+    sim.simulationFinished();
+}
