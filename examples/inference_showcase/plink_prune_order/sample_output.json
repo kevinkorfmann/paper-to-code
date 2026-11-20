@@ -1,0 +1,125 @@
+{
+  "allele_frequencies": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "construction": "16 repeats of each (A,C) in {0,2} x {0,2}; B=(A+C)/2",
+  "exact_r2_matrix": [
+    [
+      "1",
+      "1/2",
+      "0"
+    ],
+    [
+      "1/2",
+      "1",
+      "1/2"
+    ],
+    [
+      "0",
+      "1/2",
+      "1"
+    ]
+  ],
+  "founders": 64,
+  "maximum_cardinality_subsets": [
+    [
+      "A",
+      "C"
+    ]
+  ],
+  "note": "A pruning-list diagnostic, not ancestry or demographic inference; no uncertainty claim.",
+  "order_1": {
+    "r2_matrix": [
+      [
+        1.0,
+        0.5,
+        0.0
+      ],
+      [
+        0.5,
+        1.0,
+        0.5
+      ],
+      [
+        0.0,
+        0.5,
+        1.0
+      ]
+    ],
+    "removed": [
+      "B"
+    ],
+    "retained": [
+      "A",
+      "C"
+    ]
+  },
+  "order_2": {
+    "r2_matrix": [
+      [
+        1.0,
+        0.5,
+        0.0
+      ],
+      [
+        0.5,
+        1.0,
+        0.5
+      ],
+      [
+        0.0,
+        0.5,
+        1.0
+      ]
+    ],
+    "removed": [
+      "B",
+      "C"
+    ],
+    "retained": [
+      "A"
+    ]
+  },
+  "plink": "PLINK v2.0.0-b.1.2LM 64-bit Intel (24 Oct 2026)",
+  "positions_bp": [
+    1,
+    2,
+    3
+  ],
+  "python": "3.14.5",
+  "r2_threshold": 0.2,
+  "step_variants": 1,
+  "threshold_0_6_order_2": {
+    "r2_matrix": [
+      [
+        1.0,
+        0.5,
+        0.0
+      ],
+      [
+        0.5,
+        1.0,
+        0.5
+      ],
+      [
+        0.0,
+        0.5,
+        1.0
+      ]
+    ],
+    "removed": [],
+    "retained": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  "variant_order": [
+    "A",
+    "B",
+    "C"
+  ],
+  "window_variants": 3
+}
