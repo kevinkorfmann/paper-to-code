@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-20 | **slimulations** | [Pulse admixture generates signed LD](examples/slimulations/admixture_ld/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-11-19 | Paper to code | [ESTRA variance compensation: proxy limits](examples/estra_variance/README.md) | CPython 3.14.5; standard library |
 | 2026-11-19 | **slimulations** | [Crossover parity: breakpoints versus recombination](examples/slimulations/crossover_parity/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-11-19 | Inference showcase | [Ancient samples: branch divergence versus TMRCA](examples/inference_showcase/ancient_branch/README.md) | CPython 3.12.11 + existing hash-locked tskit 1.0.3 |

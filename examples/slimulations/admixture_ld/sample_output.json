@@ -1,0 +1,88 @@
+{
+  "N": 40,
+  "haplotype_order": [
+    "AB",
+    "Ab",
+    "aB",
+    "ab"
+  ],
+  "replicates": 1024,
+  "slim": "4.0.1",
+  "treatments": {
+    "half": {
+      "expected_plugin_mean_ld": 0.24375,
+      "first_target_haplotype_counts": [
+        44,
+        0,
+        0,
+        36
+      ],
+      "infinite_mixture_ld": 0.25,
+      "m": 0.5,
+      "mean_ld": 0.24361572265625,
+      "mean_ld_monte_carlo_se": 0.00027273906335486213,
+      "phase": 1,
+      "seed": 202611201
+    },
+    "phase_reversed": {
+      "expected_plugin_mean_ld": -0.24375,
+      "first_target_haplotype_counts": [
+        0,
+        46,
+        34,
+        0
+      ],
+      "infinite_mixture_ld": -0.25,
+      "m": 0.5,
+      "mean_ld": -0.2437945556640625,
+      "mean_ld_monte_carlo_se": 0.00027273906335486213,
+      "phase": -1,
+      "seed": 202611202
+    },
+    "quarter": {
+      "expected_plugin_mean_ld": 0.1828125,
+      "first_target_haplotype_counts": [
+        18,
+        0,
+        0,
+        62
+      ],
+      "infinite_mixture_ld": 0.1875,
+      "m": 0.25,
+      "mean_ld": 0.1819927978515625,
+      "mean_ld_monte_carlo_se": 0.0010628953086135782,
+      "phase": 1,
+      "seed": 202611200
+    },
+    "source_a_only": {
+      "expected_plugin_mean_ld": 0.0,
+      "first_target_haplotype_counts": [
+        80,
+        0,
+        0,
+        0
+      ],
+      "infinite_mixture_ld": 0.0,
+      "m": 1.0,
+      "mean_ld": 0.0,
+      "mean_ld_monte_carlo_se": 0.0,
+      "phase": 1,
+      "seed": 202611203
+    },
+    "source_b_only": {
+      "expected_plugin_mean_ld": 0.0,
+      "first_target_haplotype_counts": [
+        0,
+        0,
+        0,
+        80
+      ],
+      "infinite_mixture_ld": 0.0,
+      "m": 0.0,
+      "mean_ld": 0.0,
+      "mean_ld_monte_carlo_se": 0.0,
+      "phase": 1,
+      "seed": 202611204
+    }
+  }
+}

@@ -1,0 +1,45 @@
+initialize() {
+    if (!exists("N")) defineConstant("N",40);
+    if (!exists("R")) defineConstant("R",1024);
+    if (!exists("M")) defineConstant("M",0.5);
+    if (!exists("PHASE")) defineConstant("PHASE",1);
+    if (N<2 | N>100 | N!=asInteger(N)) stop("invalid N");
+    if (R<2 | R>1024 | R!=asInteger(R)) stop("invalid R");
+    if (!isFinite(asFloat(M)) | M<0 | M>1) stop("invalid M");
+    if (!(PHASE==1 | PHASE == -1)) stop("invalid phase");
+    initializeSLiMModelType("WF");
+    initializeMutationRate(0.0);
+    initializeMutationType("m1",0.5,"f",0.0);
+    initializeMutationType("m2",0.5,"f",0.0);
+    m1.convertToSubstitution=F; m2.convertToSubstitution=F;
+    initializeGenomicElementType("g1",c(m1,m2),c(1,1));
+    initializeGenomicElement(g1,0,1);
+    initializeRecombinationRate(0.0);
+}
+1 early() {
+    for (r in seqLen(R)) {
+        a=sim.addSubpop(3*r+1,N);
+        b=sim.addSubpop(3*r+2,N);
+        target=sim.addSubpop(3*r+3,N);
+        target.setMigrationRates(c(a,b),c(M,1-M));
+    }
+}
+1 late() {
+    for (r in seqLen(R)) {
+        a=sim.subpopulations[3*r]; b=sim.subpopulations[3*r+1];
+        a.genomes.addNewDrawnMutation(m1,0);
+        if (PHASE==1) a.genomes.addNewDrawnMutation(m2,1);
+        else b.genomes.addNewDrawnMutation(m2,1);
+    }
+}
+2 late() {
+    for (r in seqLen(R)) {
+        for (j in 0:2) {
+            pop=sim.subpopulations[3*r+j];
+            a=pop.genomes.countOfMutationsOfType(m1);b=pop.genomes.countOfMutationsOfType(m2);
+            if (any(a>1) | any(b>1)) stop("bad dosage");
+            catn("DATA,"+r+","+j+","+sum(a==1 & b==1)+","+sum(a==1 & b==0)+","+sum(a==0 & b==1)+","+sum(a==0 & b==0));
+        }
+    }
+    sim.simulationFinished();
+}
