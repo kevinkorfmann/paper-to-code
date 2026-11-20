@@ -1,0 +1,41 @@
+{
+  "base_AV": [
+    1.125,
+    1.25,
+    1.625,
+    2.0
+  ],
+  "circulated_AV": [
+    1.0,
+    1.375,
+    1.75,
+    1.875
+  ],
+  "features": {
+    "entropy": 1.095887154213,
+    "maximum": 0.875,
+    "mean": 0.791666666667,
+    "q10": 0.75,
+    "q25": 0.75,
+    "q50": 0.75,
+    "q75": 0.8125,
+    "q90": 0.85,
+    "std": 0.058925565099,
+    "total": 2.375
+  },
+  "finite_merge_values": [
+    0.75,
+    0.75,
+    0.875
+  ],
+  "identical_dissimilarities": true,
+  "identical_features": true,
+  "recovered_token_count": 4.0,
+  "scope": "original nonuniform four-token diagnostic; no trained model",
+  "values": [
+    0,
+    1,
+    2,
+    3
+  ]
+}
