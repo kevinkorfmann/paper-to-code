@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-21 | Paper to code | [XM-Sparse: tile-pipeline scheduling](examples/xm_sparse_pipeline/README.md) | CPython 3.14.5; standard library |
 | 2026-11-20 | Inference showcase | [PLINK LD pruning: pair-check order changes retained markers](examples/inference_showcase/plink_prune_order/README.md) | CPython 3.14.5 + checksum-pinned PLINK 2 |
 | 2026-11-20 | Paper to code | [Attention topology: same features, different readout](examples/attention_topology/README.md) | CPython 3.14.5; standard library |
 | 2026-11-20 | **slimulations** | [Pulse admixture generates signed LD](examples/slimulations/admixture_ld/README.md) | SLiM 4.0.1 + CPython 3.14.5 |

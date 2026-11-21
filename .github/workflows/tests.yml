@@ -25,6 +25,7 @@ jobs:
           python -m unittest examples.bilateral_buckets.test_demo -v
           python -m unittest examples.estra_variance.test_demo -v
           python -m unittest examples.attention_topology.test_demo -v
+          python -m unittest examples.xm_sparse_pipeline.test_demo -v
           python -m unittest discover -s tests -v
           python -m unittest discover -s examples/gated_attention -v
           python -m unittest discover -s examples/multi_head_attention_residuals -v
@@ -59,6 +60,8 @@ jobs:
           diff -u examples/estra_variance/sample_output.json /tmp/estra.json
           python -m examples.attention_topology.demo > /tmp/topology.json
           diff -u examples/attention_topology/sample_output.json /tmp/topology.json
+          python -m examples.xm_sparse_pipeline.demo > /tmp/xm-sparse.json
+          diff -u examples/xm_sparse_pipeline/sample_output.json /tmp/xm-sparse.json
           python -m examples.semantic_block_votes.demo > /tmp/semantic-output.json
           diff -u examples/semantic_block_votes/sample_output.json /tmp/semantic-output.json
           python -m examples.bias_pruning.demo > /tmp/bias-output.json
