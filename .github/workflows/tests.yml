@@ -129,6 +129,8 @@ jobs:
           slim -v
           python -m unittest examples.slimulations.admixture_ld.test_demo -v
           python -m examples.slimulations.admixture_ld.demo --check-sample
+          python -m unittest examples.slimulations.migration_graph.test_demo -v
+          python -m examples.slimulations.migration_graph.demo --check-sample
           python -m unittest examples.slimulations.crossover_parity.test_demo -v
           python -m examples.slimulations.crossover_parity.demo --check-sample
           python -m unittest discover -s examples/slimulations/neutral_drift -v
