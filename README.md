@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-22 | Inference showcase | [Population branch statistic: normalization can reorder windows](examples/inference_showcase/pbs_ranking/README.md) | CPython 3.12.11 + existing hash-locked scikit-allel 1.3.13 |
 | 2026-11-22 | Paper to code | [HiSA: when a key loses its RoPE pairs](examples/hisa_rope_pairs/README.md) | CPython 3.14.5; standard library |
 | 2026-11-22 | **slimulations** | [Neutral drift: correlated frequencies, uncorrelated disjoint changes](examples/slimulations/neutral_temporal_covariance/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-11-21 | **slimulations** | [Same incoming migration, different arrival time](examples/slimulations/migration_graph/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
