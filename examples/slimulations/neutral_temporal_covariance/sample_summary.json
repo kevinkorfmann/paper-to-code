@@ -1,0 +1,34 @@
+{
+  "slim_version": "4.0.1",
+  "seed": 20261122,
+  "diploids_per_population": 20,
+  "replicates": 2048,
+  "initial_copies": 10,
+  "initial_frequency": 0.25,
+  "census_generations": [
+    0,
+    6,
+    12,
+    18
+  ],
+  "covariance_units": "allele frequency squared",
+  "covariances": {
+    "levels_generations_6_and_12": {
+      "estimate": 0.02768219,
+      "monte_carlo_se": 0.001012501,
+      "wf_expectation": 0.026424694
+    },
+    "disjoint_increments_0_6_and_6_12": {
+      "estimate": 0.000385132,
+      "monte_carlo_se": 0.00053837,
+      "wf_expectation": 0.0
+    },
+    "overlapping_increments_0_12_and_6_18": {
+      "estimate": 0.021681213,
+      "monte_carlo_se": 0.001135976,
+      "wf_expectation": 0.022700617
+    }
+  },
+  "lost_at_final_census": 603,
+  "fixed_at_final_census": 17
+}

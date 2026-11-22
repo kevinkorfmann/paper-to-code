@@ -1,0 +1,41 @@
+// Original teaching fixture: a single neutral marker in independent WF populations.
+initialize() {
+    if (!exists("N")) defineConstant("N", 20);
+    if (!exists("REPS")) defineConstant("REPS", 2048);
+    if (!exists("COPIES")) defineConstant("COPIES", 10);
+    if (N < 2 | N > 200 | N != asInteger(N) |
+        REPS < 1 | REPS > 4096 | REPS != asInteger(REPS) |
+        COPIES < 0 | COPIES > 2*N | COPIES != asInteger(COPIES))
+        stop("Invalid population size, number of replicates, or initial allele count.");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;  // Fixed markers must still be counted.
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+
+1 early() {
+    for (r in seqLen(REPS))
+        sim.addSubpop(r + 1, N);
+}
+
+1 late() {
+    // All replicate frequencies are exactly COPIES/(2*N) at the starting census.
+    if (COPIES > 0)
+        for (pop in sim.subpopulations)
+            pop.genomes[seqLen(COPIES)].addNewDrawnMutation(m1, 0);
+}
+
+1:19 late() {
+    elapsed = community.tick - 1;
+    if (elapsed % 6 == 0)
+        for (pop in sim.subpopulations)
+            // Count genomes rather than relying on loss/fixation-filtered objects.
+            catn("DATA," + pop.id + "," + elapsed + "," +
+                sum(pop.genomes.countOfMutationsOfType(m1)));
+    if (elapsed == 18)
+        sim.simulationFinished();
+}
