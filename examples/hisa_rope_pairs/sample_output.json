@@ -1,0 +1,47 @@
+{
+  "rope_frequencies": [
+    1.0,
+    0.25
+  ],
+  "angle_budget_radians": 1.570796327,
+  "keys": [
+    {
+      "distance": 0,
+      "active_pair_indices": [
+        0,
+        1
+      ],
+      "value": 0.0,
+      "partial_logit": 1.0
+    },
+    {
+      "distance": 2,
+      "active_pair_indices": [
+        1
+      ],
+      "value": 10.0,
+      "partial_logit": 0.0
+    },
+    {
+      "distance": 6,
+      "active_pair_indices": [
+        1
+      ],
+      "value": -4.0,
+      "partial_logit": 0.0
+    },
+    {
+      "distance": 7,
+      "active_pair_indices": [],
+      "value": 100.0,
+      "partial_logit": null
+    }
+  ],
+  "fast_pair_angle_at_distance_6_modulo_full_turn_radians": -0.283185307,
+  "hisa_output": 1.271649346,
+  "dense_output": 25.713825818,
+  "causal_pair_products": {
+    "hisa": 50,
+    "dense": 72
+  }
+}
