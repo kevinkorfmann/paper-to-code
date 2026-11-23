@@ -343,6 +343,8 @@ jobs:
           python -m examples.inference_showcase.net_divergence.demo --check-sample
           python -m unittest discover -s examples/inference_showcase/pbs_ranking -v
           python -m examples.inference_showcase.pbs_ranking.demo --check-sample
+          python -m unittest examples.inference_showcase.ld_pairwise_missing.test_demo -v
+          python -m examples.inference_showcase.ld_pairwise_missing.demo --check-sample
 
   moments-migration:
     runs-on: ubuntu-24.04
