@@ -1,0 +1,39 @@
+{
+  "continuous_bounded_same_decoders": [
+    -1.191451035016,
+    4.387169954274
+  ],
+  "decode_then_pool": [
+    -1.280484137526,
+    4.606237528119
+  ],
+  "illustrative_fp16_kv_payload_bytes": 24,
+  "packed_payload_bytes": 6,
+  "packed_tokens_hex": [
+    "a50d",
+    "4c09",
+    "b804"
+  ],
+  "pool_then_decode": [
+    -1.280484137526,
+    4.606237528119
+  ],
+  "quantization_max_abs_error": 0.219067573846,
+  "signed_levels": [
+    [
+      -3,
+      2,
+      5
+    ],
+    [
+      4,
+      -4,
+      1
+    ],
+    [
+      0,
+      3,
+      -4
+    ]
+  ]
+}

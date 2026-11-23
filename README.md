@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-23 | Paper to code | [Transformer-FSQ: pooling before value decoding](examples/fsq_latent_cache/README.md) | CPython 3.14.5; standard library |
 | 2026-11-23 | **slimulations** | [Drift creates LD without a preferred sign](examples/slimulations/neutral_ld_variance/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-11-22 | Inference showcase | [Population branch statistic: normalization can reorder windows](examples/inference_showcase/pbs_ranking/README.md) | CPython 3.12.11 + existing hash-locked scikit-allel 1.3.13 |
 | 2026-11-22 | Paper to code | [HiSA: when a key loses its RoPE pairs](examples/hisa_rope_pairs/README.md) | CPython 3.14.5; standard library |
