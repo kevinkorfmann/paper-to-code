@@ -1,0 +1,36 @@
+{
+  "slim_version": "4.0.1",
+  "generation": 1,
+  "results": [
+    {
+      "diploids": 10,
+      "haps": 20,
+      "seed": 20261123,
+      "replicates": 2048,
+      "mean_D": 0.001121826,
+      "mean_D_expected": 0.0,
+      "mean_D_mcse": 0.001192015,
+      "mean_D_squared": 0.002909842,
+      "mean_D_squared_expected": 0.00296875,
+      "mean_D_squared_mcse": 8.6712e-05,
+      "positive_D": 1007,
+      "negative_D": 961,
+      "zero_D": 80
+    },
+    {
+      "diploids": 40,
+      "haps": 80,
+      "seed": 20261124,
+      "replicates": 2048,
+      "mean_D": 0.001168594,
+      "mean_D_expected": 0.0,
+      "mean_D_mcse": 0.00063022,
+      "mean_D_squared": 0.000814387,
+      "mean_D_squared_expected": 0.000771484,
+      "mean_D_squared_mcse": 2.6317e-05,
+      "positive_D": 1037,
+      "negative_D": 984,
+      "zero_D": 27
+    }
+  ]
+}

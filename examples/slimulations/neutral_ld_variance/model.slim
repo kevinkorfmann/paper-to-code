@@ -1,0 +1,47 @@
+// Two neutral synthetic markers. After the founder census, advance one WF generation.
+initialize() {
+    if (!exists("N")) defineConstant("N", 10);
+    if (!exists("REPS")) defineConstant("REPS", 2048);
+    if (N < 2 | N > 200 | N % 2 != 0 | N != asInteger(N) |
+        REPS < 2 | REPS > 4096 | REPS != asInteger(REPS))
+        stop("N must be even in [2,200] and REPS an integer in [2,4096].");
+    initializeSLiMModelType("WF");
+    initializeSLiMOptions(preventIncidentalSelfing=F);
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    initializeMutationType("m2", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    m2.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 1);
+    initializeRecombinationRate(0.0);
+}
+
+1 early() {
+    for (rep in seqLen(REPS))
+        sim.addSubpop(rep+1, N);
+}
+
+1 late() {
+    // Each population starts with exactly N/2 copies of each haplotype.
+    // There are no marker fitness effects, new mutations, or chromosome switches.
+    quarter = asInteger(N/2);
+    i = seqLen(quarter);
+    for (pop in sim.subpopulations) {
+        genomes = pop.genomes;
+        genomes[c(i, i+quarter)].addNewDrawnMutation(m1, 0);
+        genomes[c(i, i+2*quarter)].addNewDrawnMutation(m2, 1);
+    }
+}
+
+1:2 late() {
+    for (pop in sim.subpopulations) {
+        hasA = pop.genomes.countOfMutationsOfType(m1) > 0;
+        hasB = pop.genomes.countOfMutationsOfType(m2) > 0;
+        catn("DATA," + pop.id + "," + (community.tick-1) + "," +
+            sum(hasA & hasB) + "," + sum(hasA & !hasB) + "," +
+            sum(!hasA & hasB) + "," + sum(!hasA & !hasB));
+    }
+    if (community.tick == 2)
+        sim.simulationFinished();
+}
