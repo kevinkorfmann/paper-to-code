@@ -28,6 +28,7 @@ jobs:
           python -m unittest examples.xm_sparse_pipeline.test_demo -v
           python -m unittest examples.hisa_rope_pairs.test_demo -v
           python -m unittest examples.fsq_latent_cache.test_demo -v
+          python -m unittest examples.depth_kv_replay.test_demo -v
           python -m unittest discover -s tests -v
           python -m unittest discover -s examples/gated_attention -v
           python -m unittest discover -s examples/multi_head_attention_residuals -v
@@ -68,6 +69,8 @@ jobs:
           diff -u examples/hisa_rope_pairs/sample_output.json /tmp/hisa-rope-pairs.json
           python -m examples.fsq_latent_cache.demo > /tmp/fsq-output.json
           diff -u examples/fsq_latent_cache/sample_output.json /tmp/fsq-output.json
+          python -m examples.depth_kv_replay.demo > /tmp/depth-kv-replay.json
+          diff -u examples/depth_kv_replay/sample_output.json /tmp/depth-kv-replay.json
           python -m examples.semantic_block_votes.demo > /tmp/semantic-output.json
           diff -u examples/semantic_block_votes/sample_output.json /tmp/semantic-output.json
           python -m examples.bias_pruning.demo > /tmp/bias-output.json

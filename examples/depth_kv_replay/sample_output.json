@@ -1,0 +1,182 @@
+{
+  "strides": {
+    "1": {
+      "cache_groups": 5,
+      "projection_calls": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "trace": [
+        {
+          "group": 0,
+          "iteration": 0,
+          "outputs": [
+            0.982013790038
+          ],
+          "writer": 0
+        },
+        {
+          "group": 1,
+          "iteration": 1,
+          "outputs": [
+            0.179862099621
+          ],
+          "writer": 1
+        },
+        {
+          "group": 2,
+          "iteration": 2,
+          "outputs": [
+            1.964027580076
+          ],
+          "writer": 2
+        },
+        {
+          "group": 3,
+          "iteration": 3,
+          "outputs": [
+            0.359724199242
+          ],
+          "writer": 3
+        },
+        {
+          "group": 4,
+          "iteration": 4,
+          "outputs": [
+            2.0
+          ],
+          "writer": 4
+        }
+      ]
+    },
+    "2": {
+      "cache_groups": 3,
+      "projection_calls": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "trace": [
+        {
+          "group": 0,
+          "iteration": 0,
+          "outputs": [
+            0.982013790038
+          ],
+          "writer": 0
+        },
+        {
+          "group": 0,
+          "iteration": 1,
+          "outputs": [
+            0.017986209962
+          ],
+          "writer": 0
+        },
+        {
+          "group": 1,
+          "iteration": 2,
+          "outputs": [
+            1.964027580076
+          ],
+          "writer": 2
+        },
+        {
+          "group": 1,
+          "iteration": 3,
+          "outputs": [
+            0.035972419924
+          ],
+          "writer": 2
+        },
+        {
+          "group": 2,
+          "iteration": 4,
+          "outputs": [
+            2.0
+          ],
+          "writer": 4
+        }
+      ]
+    },
+    "5": {
+      "cache_groups": 1,
+      "projection_calls": [
+        [
+          0,
+          0
+        ]
+      ],
+      "trace": [
+        {
+          "group": 0,
+          "iteration": 0,
+          "outputs": [
+            0.982013790038
+          ],
+          "writer": 0
+        },
+        {
+          "group": 0,
+          "iteration": 1,
+          "outputs": [
+            0.017986209962
+          ],
+          "writer": 0
+        },
+        {
+          "group": 0,
+          "iteration": 2,
+          "outputs": [
+            0.982013790038
+          ],
+          "writer": 0
+        },
+        {
+          "group": 0,
+          "iteration": 3,
+          "outputs": [
+            0.017986209962
+          ],
+          "writer": 0
+        },
+        {
+          "group": 0,
+          "iteration": 4,
+          "outputs": [
+            0.5
+          ],
+          "writer": 0
+        }
+      ]
+    }
+  },
+  "visible_tokens": 2
+}
