@@ -1,0 +1,59 @@
+// One-generation clonal ancestry lottery. Marker states have no fitness effects.
+initialize() {
+    initializeSLiMModelType("nonWF");
+    if (!exists("REPS")) defineConstant("REPS", 512);
+    if (!exists("OFFSPRING")) defineConstant("OFFSPRING", 32);
+    if (!exists("MODE")) defineConstant("MODE", 0);
+    if (REPS < 2 | REPS > 2048 | OFFSPRING < 3 | OFFSPRING > 64 |
+        REPS != asInteger(REPS) | OFFSPRING != asInteger(OFFSPRING) |
+        !any(MODE == c(0,1))) stop("invalid settings");
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 3);
+    initializeRecombinationRate(0.0);
+}
+
+1 early() {
+    sim.addSubpop("p1", 4);
+    for (i in 0:3)
+        p1.individuals[i].genomes.addNewDrawnMutation(m1, i);
+    sim.addSubpop("p2", 0);
+}
+
+reproduction(p1) {
+    // One callback produces a panel of disjoint offspring cohorts.
+    self.active = 0;
+    if (community.tick != 2) return;
+    weights = c(1.0,1.0,7.0,7.0);
+    if (MODE == 1) weights = c(1.0,3.0,3.0,9.0);
+    for (rep in seqLen(REPS)) {
+        // Permute lottery weights across neutral founder labels independently.
+        ranked = sample(p1.individuals, 4, replace=F);
+        parents = sample(ranked, OFFSPRING, replace=T, weights=weights);
+        for (parent in parents) {
+            clone = p2.addCloned(parent);
+            clone.tag = rep;
+        }
+    }
+}
+
+2 late() {
+    offspring = p2.individuals;
+    if (size(offspring) != REPS*OFFSPRING) stop("wrong offspring total");
+    ids = offspring.tag;
+    tags = integer(size(offspring));
+    for (i in seqAlong(offspring)) {
+        mutations = offspring[i].genomes.mutationsOfType(m1);
+        if (size(mutations) != 2 | size(unique(mutations)) != 1)
+            stop("clonal marker invariant broken");
+        tags[i] = mutations[0].position;
+    }
+    for (rep in seqLen(REPS)) {
+        group = tags[ids == rep];
+        if (size(group) != OFFSPRING) stop("wrong cohort size");
+        catn("DATA," + rep + "," + paste(sapply(0:3, "sum(group == applyValue);"), sep=","));
+    }
+    sim.simulationFinished();
+}

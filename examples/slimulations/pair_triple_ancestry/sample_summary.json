@@ -1,0 +1,46 @@
+{
+  "slim": "4.0.1",
+  "cohorts_per_lottery": 512,
+  "offspring_per_cohort": 32,
+  "replicate_aggregation": "mean of within-cohort distinct-offspring sharing fractions",
+  "results": [
+    {
+      "weights": [
+        1,
+        1,
+        7,
+        7
+      ],
+      "seed": 20261124,
+      "pair": {
+        "mean": 0.387970955,
+        "monte_carlo_se": 0.002088796,
+        "exact_expectation": 0.390625
+      },
+      "triple": {
+        "mean": 0.165033156,
+        "monte_carlo_se": 0.001766738,
+        "exact_expectation": 0.16796875
+      }
+    },
+    {
+      "weights": [
+        1,
+        3,
+        3,
+        9
+      ],
+      "seed": 20261125,
+      "pair": {
+        "mean": 0.389494865,
+        "monte_carlo_se": 0.003014202,
+        "exact_expectation": 0.390625
+      },
+      "triple": {
+        "mean": 0.189658282,
+        "monte_carlo_se": 0.003256034,
+        "exact_expectation": 0.19140625
+      }
+    }
+  ]
+}

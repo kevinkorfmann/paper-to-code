@@ -141,6 +141,8 @@ jobs:
           python -m examples.slimulations.neutral_temporal_covariance.demo --check-sample
           python -m unittest examples.slimulations.neutral_ld_variance.test_demo -v
           python -m examples.slimulations.neutral_ld_variance.demo --check-sample
+          python -m unittest examples.slimulations.pair_triple_ancestry.test_demo -v
+          python -m examples.slimulations.pair_triple_ancestry.demo --check-sample
           python -m unittest examples.slimulations.crossover_parity.test_demo -v
           python -m examples.slimulations.crossover_parity.demo --check-sample
           python -m unittest discover -s examples/slimulations/neutral_drift -v
