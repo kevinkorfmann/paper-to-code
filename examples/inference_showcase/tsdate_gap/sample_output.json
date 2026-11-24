@@ -1,0 +1,64 @@
+{
+  "versions": {
+    "tsdate": "0.2.7",
+    "tskit": "1.0.3",
+    "numpy": "2.5.4"
+  },
+  "mutation_rate_per_bp_generation": 1e-07,
+  "seed": null,
+  "variational_gamma_iterations": 25,
+  "rescaling_iterations": 0,
+  "runs": [
+    {
+      "treatment": "gap_retained_as_exposure",
+      "nominal_coordinate_length_bp": 2000000,
+      "per_edge_spans_bp": [
+        2000000,
+        2000000
+      ],
+      "per_edge_mutation_counts": [
+        10,
+        10
+      ],
+      "time_estimate_generations": 50.0,
+      "posterior_sd_generations": 10.91089451,
+      "independent_poisson_mle_generations": 50.0,
+      "tip_dates_unchanged": true,
+      "genotype_calls_unchanged_by_dating": true
+    },
+    {
+      "treatment": "gap_masked_coordinates_preserved",
+      "nominal_coordinate_length_bp": 2000000,
+      "per_edge_spans_bp": [
+        1000000,
+        1000000
+      ],
+      "per_edge_mutation_counts": [
+        10,
+        10
+      ],
+      "time_estimate_generations": 100.0,
+      "posterior_sd_generations": 21.82178902,
+      "independent_poisson_mle_generations": 100.0,
+      "tip_dates_unchanged": true,
+      "genotype_calls_unchanged_by_dating": true
+    },
+    {
+      "treatment": "gap_masked_then_trimmed",
+      "nominal_coordinate_length_bp": 1000000,
+      "per_edge_spans_bp": [
+        1000000,
+        1000000
+      ],
+      "per_edge_mutation_counts": [
+        10,
+        10
+      ],
+      "time_estimate_generations": 100.0,
+      "posterior_sd_generations": 21.82178902,
+      "independent_poisson_mle_generations": 100.0,
+      "tip_dates_unchanged": true,
+      "genotype_calls_unchanged_by_dating": true
+    }
+  ]
+}

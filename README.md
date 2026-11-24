@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-24 | Inference showcase | [tsdate: callability gaps change clock exposure](examples/inference_showcase/tsdate_gap/README.md) | CPython 3.12.11 + existing hash-locked tsdate 0.2.7 |
 | 2026-11-23 | Inference showcase | [Signed LD matrices and pairwise missingness](examples/inference_showcase/ld_pairwise_missing/README.md) | CPython 3.12.11 + existing hash-locked scikit-allel 1.3.13 |
 | 2026-11-23 | Paper to code | [Transformer-FSQ: pooling before value decoding](examples/fsq_latent_cache/README.md) | CPython 3.14.5; standard library |
 | 2026-11-23 | **slimulations** | [Drift creates LD without a preferred sign](examples/slimulations/neutral_ld_variance/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
