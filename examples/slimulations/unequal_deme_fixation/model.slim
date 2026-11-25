@@ -1,0 +1,56 @@
+// Unequal-deme neutral fixation in native SLiM WF populations.
+// Run: slim -s 20261125 -d ORIGIN=0 model.slim
+// ORIGIN=0 puts ten copies in the smaller deme, ORIGIN=1 in the larger.
+initialize() {
+    if (!exists("ORIGIN")) defineConstant("ORIGIN", 0);
+    if (!exists("REPS")) defineConstant("REPS", 384);
+    if (ORIGIN != 0 & ORIGIN != 1) stop("ORIGIN must be 0 or 1");
+    if (REPS <= 0) stop("REPS must be positive");
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+
+1 late() {
+    sim.setValue("fixed", 0);
+    sim.setValue("lost", 0);
+    for (i in seqLen(REPS)) {
+        small = sim.addSubpop(2*i + 1, 5);
+        large = sim.addSubpop(2*i + 2, 20);
+        small.setMigrationRates(large, 0.2);
+        large.setMigrationRates(small, 0.2);
+        // Establish ten copies of one mutation in each independent pair.
+        source = small;
+        if (ORIGIN == 1) source = large;
+        sample(source.genomes, 10).addNewDrawnMutation(m1, 0);
+    }
+}
+
+2:401 late() {
+    // Track absorption at the level of each two-deme population.
+    pops = sim.subpopulations;
+    n = size(pops);
+    fixed = sim.getValue("fixed");
+    lost = sim.getValue("lost");
+    if (n > 0) {
+        for (i in seq(0, n - 1, by=2)) {
+            pair = pops[i:(i+1)];
+            count = sum(pair.genomes.countOfMutationsOfType(m1));
+            if (count == 0 | count == 50) {
+                if (count == 0) lost = lost + 1;
+                else fixed = fixed + 1;
+                pair.setSubpopulationSize(0);
+            }
+        }
+    }
+    sim.setValue("fixed", fixed);
+    sim.setValue("lost", lost);
+    if (fixed + lost == REPS | community.tick == 401) {
+        catn("result " + ORIGIN + " " + fixed + " " + lost + " " +
+             (REPS - fixed - lost));
+        sim.simulationFinished();
+    }
+}

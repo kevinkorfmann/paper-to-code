@@ -1,0 +1,3 @@
+SLiM 4.0.1
+origin=0 seed=20261125 fixed=188 lost=196 ongoing=0 fixation=0.489583 theory=0.500000
+origin=1 seed=20261126 fixed=55 lost=329 ongoing=0 fixation=0.143229 theory=0.125000
