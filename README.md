@@ -8,6 +8,7 @@ and explains its limits.
 
 | Date | Category | Example | Reference environment |
 | --- | --- | --- | --- |
+| 2026-11-25 | Paper to code | [SAGA: match logits to merge key heads](examples/saga_scalar_merge/demo.py) | CPython 3.14.5; standard library |
 | 2026-11-24 | Paper to code | [Depth KV replay: fresh queries, cached writers](examples/depth_kv_replay/README.md) | CPython 3.14.5; standard library |
 | 2026-11-24 | **slimulations** | [Equal pairwise sharing, different three-way ancestry](examples/slimulations/pair_triple_ancestry/README.md) | SLiM 4.0.1 + CPython 3.14.5 |
 | 2026-11-24 | Inference showcase | [tsdate: callability gaps change clock exposure](examples/inference_showcase/tsdate_gap/README.md) | CPython 3.12.11 + existing hash-locked tsdate 0.2.7 |
