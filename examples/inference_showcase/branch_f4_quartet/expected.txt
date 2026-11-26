@@ -1,0 +1,5 @@
+AC|BD 70 bp: +2.00 generations
+AD|BC 30 bp: -10.00 generations
+whole sequence: -1.60 generations
+same topology, equal internal lengths: +0.80 generations
+no mutation rows, site f4: 0.00
