@@ -1,0 +1,2 @@
+allele count: source 12.00000, founder mean 2.85693, exact 2.84880, MC SE 0.02027
+gene diversity: source 0.46900, founder mean 0.42395, exact 0.42210, MC SE 0.00339

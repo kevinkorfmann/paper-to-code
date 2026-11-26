@@ -1,0 +1,30 @@
+// Neutral allele richness and gene diversity after one founding generation.
+// Synthetic population, one marker at most per haplotype, no recombination.
+initialize() {
+    initializeMutationRate(0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 10);
+    initializeRecombinationRate(0);
+    if (!exists("REPS")) defineConstant("REPS", 2048);
+}
+1 late() {
+    sim.addSubpop(1, 50);
+    g = p1.genomes;
+    g[70:89].addNewDrawnMutation(m1, 0);
+    for (i in 1:10)
+        g[89+i].addNewDrawnMutation(m1, i);
+    for (i in 1:REPS) {
+        p = sim.addSubpop(i+1, 5);
+        p.setMigrationRates(p1, 1.0);
+    }
+}
+2 late() {
+    for (p in sim.subpopulations[1:REPS]) {
+        c = sim.mutationCounts(p, sim.mutations);
+        c = c(c, 10 - sum(c));
+        catn("WIN " + p.id + " " + sum(c > 0) + " " + sum(c*c));
+    }
+    sim.simulationFinished();
+}
