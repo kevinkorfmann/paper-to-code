@@ -30,6 +30,8 @@ jobs:
           python -m unittest examples.fsq_latent_cache.test_demo -v
           python -m unittest examples.depth_kv_replay.test_demo -v
           python examples/saga_scalar_merge/demo.py --test
+          python -m unittest examples.universal_decay_veto.test_demo -v
+          python -m examples.universal_decay_veto.demo --check-sample
           python -m unittest discover -s tests -v
           python -m unittest discover -s examples/gated_attention -v
           python -m unittest discover -s examples/multi_head_attention_residuals -v
