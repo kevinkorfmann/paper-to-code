@@ -1,0 +1,16 @@
+{
+  "groups": {
+    "siblings": {
+      "mean_frequency": 0.50813,
+      "theory_variance": 0.06875,
+      "variance": 0.067986
+    },
+    "unrelated": {
+      "mean_frequency": 0.501514,
+      "theory_variance": 0.0125,
+      "variance": 0.012272
+    }
+  },
+  "replicates": 2048,
+  "seed": 20261127
+}

@@ -1,0 +1,43 @@
+initialize() {
+    initializeSLiMModelType("nonWF");
+    defineConstant("R", 2048);
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+
+1 early() {
+    sim.addSubpop("p1", 12 * R);
+    sim.addSubpop("p2", 0);
+    genomes = p1.genomes;
+    marked = genomes[runif(size(genomes)) < 0.5];
+    allele = marked[0].addNewDrawnMutation(m1, 0);
+    marked[1:(size(marked)-1)].addMutations(allele);
+}
+
+2 reproduction(p1) {
+    self.active = 0;
+    for (i in seqLen(R)) {
+        parent1 = p1.individuals[12*i];
+        parent2 = p1.individuals[12*i+1];
+        for (j in seqLen(10))
+            p2.addCrossed(parent1, parent2).tag = i;
+    }
+}
+
+2 late() {
+    unrelated = rep(0, R);
+    sibs = rep(0, R);
+    for (i in seqLen(R)) {
+        a = p1.individuals[(12*i+2):(12*i+11)].genomes;
+        unrelated[i] = sum(a.countOfMutationsOfType(m1));
+    }
+    for (child in p2.individuals)
+        sibs[child.tag] = sibs[child.tag] + sum(child.genomes.countOfMutationsOfType(m1));
+    for (i in seqLen(R))
+        catn("DATA," + i + "," + unrelated[i] + "," + sibs[i]);
+    sim.simulationFinished();
+}
