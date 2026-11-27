@@ -1,0 +1,4 @@
+tree intervals: 3
+focal ancestral span: 50/100
+mean_descendants (A, B): 0.80, 0.60
+including absent intervals (A, B): 0.40, 0.30
