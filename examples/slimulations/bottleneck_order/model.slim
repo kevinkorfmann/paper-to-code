@@ -1,0 +1,34 @@
+initialize() {
+    initializeMutationRate(0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);
+    m1.convertToSubstitution = F;
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, 0);
+    initializeRecombinationRate(0.0);
+}
+1 late() {
+    for (i in seqLen(REPS)) {
+        p = sim.addSubpop(i + 1, 20);
+        p.genomes[0:19].addNewDrawnMutation(m1, 0);
+    }
+}
+2 early() {
+    for (p in sim.subpopulations)
+        p.setSubpopulationSize(FIRST);
+}
+3 early() {
+    for (p in sim.subpopulations)
+        p.setSubpopulationSize(SECOND);
+}
+4 early() {
+    for (p in sim.subpopulations)
+        p.setSubpopulationSize(20);
+}
+4 late() {
+    for (p in sim.subpopulations) {
+        if (p.individualCount != 20)
+            stop("Unexpected final census");
+        catn("COUNT " + sum(p.genomes.countOfMutationsOfType(m1)));
+    }
+    sim.simulationFinished();
+}
