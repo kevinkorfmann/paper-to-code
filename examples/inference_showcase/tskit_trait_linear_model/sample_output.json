@@ -1,0 +1,19 @@
+{
+  "windows": [
+    0,
+    10,
+    20
+  ],
+  "site_order": [
+    "group_tag",
+    "within_group_marker"
+  ],
+  "unadjusted_beta_squared": [
+    100.0,
+    4.0
+  ],
+  "group_adjusted_beta_squared": [
+    0.0,
+    4.0
+  ]
+}
